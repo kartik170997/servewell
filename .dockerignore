@@ -1,0 +1,10 @@
+node_modules
+.git
+.env*
+data
+backend/data
+.sites-runtime
+.wrangler
+dist
+__pycache__
+*.zip
