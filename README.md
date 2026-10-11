@@ -19,20 +19,20 @@ Open **http://localhost:5173**. The interface initially shows a clearly labeled 
 4. Click **Connect backend**.
 5. Enter your **Claude API key** and **Pinecone API key**.
 6. Enter the Pinecone **index host** and choose a dedicated namespace.
-7. Save settings. Optionally load available model IDs after saving the keys.
+7. Set CLAUDE_MODEL, EMBEDDING_MODEL, and RERANK_MODEL in .env; restart the backend. Save provider settings.
 8. Click **Test saved settings**; then upload documents.
 
 Claude, Pinecone inference, and index operations incur usage charges in your provider accounts. The app does not provision or purchase a Pinecone index.
 
 ### Pinecone setup
 
-Create an ordinary **dense vector index**, using **cosine** similarity and **1024 dimensions** for the default `multilingual-e5-large` model. Do not use an integrated text-record index for this implementation: Folio explicitly generates embeddings and upserts vectors. Copy the data-plane host from the Pinecone dashboard.
+Create an ordinary **dense vector index**, using **cosine** similarity and **1024 dimensions** for the `multilingual-e5-large` model in `.env.example`. Do not use an integrated text-record index for this implementation: Folio explicitly generates embeddings and upserts vectors. Copy the data-plane host from the Pinecone dashboard.
 
-The embedding and reranking endpoints use the same Pinecone API key. Defaults are `multilingual-e5-large` and `bge-reranker-v2-m3`. Claude's default is `claude-sonnet-4-6`. Model IDs are editable, and **Load models** queries your accounts. Availability depends on provider access and lifecycle. Test settings before ingestion. If you change embedding models, the index dimension must match; changing the vector space requires deleting and re-ingesting the documents.
+The embedding and reranking endpoints use the same Pinecone API key. Model selections come exclusively from the required environment variables in `.env`: `CLAUDE_MODEL` (summaries, metadata, HyDE, ticket decisions and DSPy workflow), `EMBEDDING_MODEL` (ingestion and retrieval), and `RERANK_MODEL`. Settings displays these values read-only. There are no model defaults or saved model overrides. Startup fails with a clear error if any is missing. Docker receives these variables through its `.env` env_file. Restart the backend after changing them. Changing the embedding model requires a matching index dimension and deleting/re-ingesting existing documents.
 
-## Settings fallback from `.env`
+## Provider settings
 
-Missing or blank saved fields fall back to backend environment variables, then built-in defaults. The backend loads the project-root `.env` on startup without overriding existing process environment variables. Nonempty saved settings take priority.
+Non-model settings retain their saved-setting/environment behavior. Model configuration is exclusively environment-based. Use `.env.example` as the configuration template.
 
 ```env
 CLAUDE_API_KEY=your-claude-key
@@ -166,3 +166,34 @@ Provider references:
 - https://docs.pinecone.io/reference/api/2025-10/inference/generate-vectors
 - https://docs.pinecone.io/reference/api/2025-10/inference/rerank
 - https://docs.pinecone.io/reference/api/2025-10/data-plane/query
+
+
+## Live workflow (LangGraph + DSPy)
+
+The **Live workflow** tab starts with your query; an incident/session record is created automatically. Optional store, asset, and customer context can be added before starting. LangGraph executes the actual orchestration, and DSPy typed `Predict` modules perform classification, checklist planning, and feedback assessment using the configured Claude model. The source policy is `backend/escalation_procedure.md`. Existing incident JSON can still be loaded through **Import incident**.
+
+SQLite now stores related `stores`, `users`, `assets`, `tickets`, append-only `ticket_history`, `ticket_labels`, and `ticket_workflow` records. Ticket submitters link to stable user IDs, assets link to stores, and foreign keys are enforced. Additional directory fields from the supplied schema are preserved in JSON payloads; the expandable directory editor supports stores, users, assets, and evaluation labels. Evaluation labels are never supplied to the assistant as ground truth. Tickets retain the supplied external JSON shape.
+
+Workflow:
+
+1. Start with a query, or open a saved workflow. DSPy classifies intent, immediate escalation triggers, exclusions, impact priority, and overrides against the supplied procedure.
+2. Immediate triggers route to the local L2 queue before troubleshooting, with missing checklist information requested in parallel. Otherwise, retrieval uses actual indexed tags matching ticket category/subcategory/tags, or your explicit tag filter. When no matching metadata tags exist, a broad search is explicitly recorded in the trace.
+3. The assistant reuses cached sources. It can refine retrieval or read original text from an already retrieved document, with at most four retrieval/planning hops per pass and two feedback-triggered replans before asking for clarification. Original text is read in bounded windows on demand without changing ingestion, creating chunks, or embedding extra records. Technical steps require valid source references. Sources and hop traces are inspectable.
+4. The full ordered checklist is visible, with a pointer to the active step. A real LangGraph `interrupt()` pauses execution for feedback on that step. Submitting feedback resumes it with `Command(resume=...)`, automatically assesses the result, then advances to the next step, refines retrieval, or checks escalation eligibility. Record what happened and minutes actually spent. Outcomes, user replies, decisions, priority justification, and information updates are timestamped in ticket history. Proposed steps are never automatically recorded as completed. After all checks fail, the graph checks the mandatory information and 15-minute requirement, then escalates automatically once the procedure allows it. Skipped checks are not treated as completed. A newer query can supersede a pending proposal when circumstances change.
+5. Routine L2 escalation requires complete mandatory information, consulted knowledge sources, and at least 15 confirmed troubleshooting minutes. Resolution requires the user's explicit confirmation and resolution notes. Immediate trigger precedence follows the supplied flow diagram.
+6. Escalation creates a local L2 assignment and an email draft, including P1 on-call and customer-escalation manager routing. **No email or Slack messages are sent.** Copy the draft into your approved communication tool. Monitoring actions record customer waits, L2 acknowledgement, customer updates, and SLA breaches. The SLA panel recalculates on manual Refresh; it is not a background notification scheduler.
+
+The SLA table is authoritative: P1 response 15 minutes, P2 1 hour, P3 3 hours, P4 8 business hours. This resolves the procedure's inconsistent P2 example. P4 uses 07:00-23:00 IST, every day; five business days is 80 business hours. Documented customer waits pause active SLA time. Priority overrides stack in listed order, bounded at P1/P4; explicit payment failure/all-POS outage remains P1. Peak hours use the ticket's reported opening time in IST. The supplied procedure's review date has passed; a support owner should review its operational rules before production adoption.
+
+Ticket assistance uses Claude and, for vector/hybrid retrieval, Pinecone. It incurs normal provider charges. Automated tests use the real graph and SQLite checkpointer with mocked model decisions, plus typed DSPy adapter tests. A development classification was also verified with the configured Claude provider. Model classification and real-world troubleshooting outcomes are not guaranteed by automated tests. Provider failures are surfaced rather than inventing a successful answer.
+
+API additions: `GET/POST /api/tickets`, `GET /api/tickets/{id}`, `POST /api/tickets/{id}/query`, `POST /api/tickets/{id}/confirm`, `PUT /api/tickets/{id}/information`, `POST /api/tickets/{id}/monitor`, `GET /api/tickets/procedure`, and `GET/PUT /api/ticket-directory/{stores|users|assets|labels}`. Mutating ticket requests carry the current `version`; queries also carry a unique `request_id` to prevent duplicate processing.
+
+
+### Durable live execution
+
+`data/workflow-checkpoints.sqlite` stores LangGraph checkpoints, separate from the incident records/history in `data/folio.db`. Each session has a stable `live:WF-...` thread ID. Refreshing, disconnecting, or restarting the API does not lose its checklist or current feedback interrupt. Keep both databases when backing up. Checkpoint state contains workflow data, not provider API keys.
+
+The browser consumes an authenticated NDJSON response from `POST /api/live/start`, `/api/live/{id}/query`, `/api/live/{id}/feedback`, or `/api/live/{id}/resume`. Events report running nodes and state snapshots. This is an active request stream, not polling; `/api/documents` remains manual-refresh only. On disconnection the current run finishes to a checkpoint. Refresh restores it through `GET /api/live/{id}`. If a model or retrieval node fails, use **Resume saved operation** to retry that node; completed graph nodes are not rerun. Duplicate starts and stale feedback are guarded.
+
+Graph: `classify -> retrieve <-> plan -> prepare -> interrupt -> feedback -> evaluate -> next step / retrieve / escalation gate -> escalate or resolve`. Immediate triggers shortcut to escalation. DSPy uses typed signatures and a chat adapter; it is not an optimized/trained program, and no optimizer training is implied. Email/Slack notifications remain drafts, and SLA monitoring is manual.

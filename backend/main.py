@@ -8,6 +8,7 @@ import os
 import re
 import sqlite3
 import subprocess
+import sys
 import threading
 import time
 import uuid
@@ -39,12 +40,24 @@ MUTEX = threading.RLock()
 STOP = threading.Event()
 WORKER = None
 
+MODEL_ENV = {
+    'claude_model': 'CLAUDE_MODEL',
+    'embedding_model': 'EMBEDDING_MODEL',
+    'rerank_model': 'RERANK_MODEL',
+}
+
+def model_from_env(name):
+    value = os.getenv(name, '').strip()
+    if not value:
+        raise HTTPException(503, f'Missing model configuration: set {name} in .env and restart the backend.')
+    return value
+
 class Settings(BaseModel):
     claude_key: str = Field(default='', max_length=500)
     pinecone_key: str = Field(default='', max_length=500)
-    claude_model: str = Field(default='claude-sonnet-4-6', min_length=1, max_length=120)
-    embedding_model: str = Field(default='multilingual-e5-large', min_length=1, max_length=120)
-    rerank_model: str = Field(default='bge-reranker-v2-m3', min_length=1, max_length=120)
+    claude_model: str = Field(default_factory=lambda: model_from_env('CLAUDE_MODEL'), min_length=1, max_length=120)
+    embedding_model: str = Field(default_factory=lambda: model_from_env('EMBEDDING_MODEL'), min_length=1, max_length=120)
+    rerank_model: str = Field(default_factory=lambda: model_from_env('RERANK_MODEL'), min_length=1, max_length=120)
     index_host: str = Field(default='', max_length=250)
     namespace: str = Field(default='folio', min_length=1, max_length=100)
     chunk_chars: int = Field(default=900, ge=200, le=1500)
@@ -72,6 +85,7 @@ class Search(BaseModel):
     candidates: int = Field(default=30, ge=5, le=100)
     document_id: str | None = None
     tag: str | None = None
+    tags: list[str] = Field(default_factory=list, max_length=100)
 
 class Enrichment(BaseModel):
     title: str = Field(max_length=250)
@@ -83,6 +97,7 @@ class Enrichment(BaseModel):
 @contextmanager
 def db():
     con = sqlite3.connect(DATA / 'folio.db', timeout=30)
+    con.execute('PRAGMA foreign_keys=ON')
     con.row_factory = sqlite3.Row
     try:
         yield con
@@ -113,13 +128,11 @@ def initialize():
         for row in c.execute("SELECT id,payload FROM documents WHERE status IN ('parsing','summarizing','embedding','indexing')").fetchall():
             d = json.loads(row['payload']); d['status'] = 'queued'; d['error'] = None
             c.execute('UPDATE documents SET status=?,payload=? WHERE id=?', ('queued', json.dumps(d), row['id']))
+    ticket_workflow.initialize()
 
 SETTINGS_ENV = {
     'claude_key': ('CLAUDE_API_KEY', 'ANTHROPIC_API_KEY', 'CLAUDE_KEY', 'claude_key'),
     'pinecone_key': ('PINECONE_API_KEY', 'PINECONE_KEY', 'pinecone_key'),
-    'claude_model': ('CLAUDE_MODEL', 'claude_model'),
-    'embedding_model': ('EMBEDDING_MODEL', 'embedding_model'),
-    'rerank_model': ('RERANK_MODEL', 'rerank_model'),
     'index_host': ('PINECONE_INDEX_HOST', 'INDEX_HOST', 'index_host'),
     'namespace': ('PINECONE_NAMESPACE', 'NAMESPACE', 'namespace'),
 }
@@ -138,8 +151,9 @@ def resolve_settings(saved):
                 values[field] = value
                 break
     for field, value in saved.items():
-        if value is not None and (not isinstance(value, str) or value.strip()):
+        if field not in MODEL_ENV and value is not None and (not isinstance(value, str) or value.strip()):
             values[field] = value
+    values.update({field: model_from_env(name) for field, name in MODEL_ENV.items()})
     return Settings.model_validate(values)
 
 def settings():
@@ -181,7 +195,17 @@ def request(method, url, headers, **kwargs):
                 if r.status_code==401:
                     key='CLAUDE_API_KEY' if provider=='Claude' else 'PINECONE_API_KEY' if provider=='Pinecone' else 'the provider key'
                     raise ValueError(f'{provider} rejected its API key (HTTP 401). Replace the saved key in Settings. If no key is saved, update {key} in .env and restart the backend. Saved keys take priority over .env.')
-                raise ValueError(f'Provider returned HTTP {r.status_code}. Check keys, model access, index configuration, and quota in Settings.')
+                if r.status_code==404:
+                    path=urlparse(url).path
+                    model=kwargs.get('json',{}).get('model')
+                    if provider=='Pinecone' and path in ('/embed','/rerank'):
+                        env_name='EMBEDDING_MODEL' if path=='/embed' else 'RERANK_MODEL'
+                        raise ValueError(f'Pinecone could not find configured model {model!r} (HTTP 404). Set {env_name} in .env to a model supported by Pinecone inference, then restart the backend. Retrieval must use the same embedding model as the indexed documents.')
+                    if provider=='Claude':
+                        raise ValueError('Claude model was not found (HTTP 404). Check CLAUDE_MODEL in .env and model access, then restart the backend.')
+                    if provider=='Pinecone':
+                        raise ValueError('Pinecone index endpoint was not found (HTTP 404). Check the index host in Settings and whether the index still exists.')
+                raise ValueError(f'{provider} returned HTTP {r.status_code}. Check provider access, configuration, and quota.')
             return r.json() if r.content else {}
         except (httpx.TimeoutException, httpx.NetworkError):
             if attempt == 2:
@@ -358,6 +382,7 @@ async def lifespan(app):
     global WORKER
     token=os.getenv('APP_TOKEN','')
     if len(token)<24: raise RuntimeError('APP_TOKEN must contain at least 24 characters. Run setup.py first.')
+    for name in MODEL_ENV.values(): model_from_env(name)
     initialize(); STOP.clear()
     if os.getenv('DISABLE_WORKER')!='1':
         WORKER=threading.Thread(target=worker_loop,daemon=True); WORKER.start()
@@ -392,6 +417,11 @@ def save_settings(body: Settings):
         saved=saved_settings()
         old=resolve_settings(saved)
         updates=body.model_dump(exclude_unset=True)
+        for field, name in MODEL_ENV.items():
+            if field in updates and updates[field] != getattr(old, field):
+                raise HTTPException(422, f'{field} is configured only through {name} in .env. Restart the backend after editing it.')
+            updates.pop(field, None)
+            saved.pop(field, None)
         # Blank key inputs preserve saved keys, or keep using the environment fallback.
         for key in ('claude_key','pinecone_key'):
             if not updates.get(key, '').strip(): updates.pop(key, None)
@@ -520,7 +550,7 @@ def search(body: Search):
     s=settings()
     with db() as c:
         docs={r['id']:json.loads(r['payload']) for r in c.execute("SELECT id,payload FROM documents WHERE status='ready'")}
-        docs={k:v for k,v in docs.items() if (not body.document_id or k==body.document_id) and (not body.tag or body.tag in v['tags'])}
+        docs={k:v for k,v in docs.items() if (not body.document_id or k==body.document_id) and (not body.tag or body.tag in v['tags']) and (not body.tags or set(body.tags).intersection(v['tags']))}
         if not docs: return {'results':[],'mode':body.mode,'reranked':False,'hyde':False,'elapsed_ms':0}
         lexical=[]; vector=[]
         if body.mode in ('lexical','hybrid'):
@@ -537,6 +567,7 @@ def search(body: Search):
                 filters=[]
                 if body.document_id: filters.append({'document_id':{'$eq':body.document_id}})
                 if body.tag: filters.append({'tags':{'$in':[body.tag]}})
+                if body.tags: filters.append({'tags':{'$in':body.tags}})
                 retrieval_text=hypothetical_document(s,query) if body.hyde else query
                 args={'namespace':s.namespace,'vector':embed(s,[retrieval_text],'passage' if body.hyde else 'query')[0],'topK':body.candidates,'includeMetadata':True}
                 if filters: args['filter']=filters[0] if len(filters)==1 else {'$and':filters}
@@ -556,3 +587,16 @@ def search(body: Search):
                 'tags':docs[r['document_id']]['tags'],'score_type':score_type} for r in results[:body.top_k]],
                 'mode':body.mode,'reranked':bool(body.rerank and results),'hyde':body.hyde,'elapsed_ms':round((time.perf_counter()-t)*1000)}
         except ValueError as e: raise HTTPException(502,str(e)) from None
+
+
+if __package__:
+    from . import tickets as ticket_workflow
+else:
+    import tickets as ticket_workflow
+ticket_workflow.install(app, sys.modules[__name__])
+
+if __package__:
+    from . import live_workflow
+else:
+    import live_workflow
+live_workflow.install(app, ticket_workflow)

@@ -106,7 +106,7 @@ def test_saved_values_override_environment_and_blank_values_fall_back(client,mon
     s=main.settings()
     assert s.claude_key=='SAVED_CLAUDE' and s.pinecone_key=='ENV_PINECONE'
     assert s.namespace=='saved-space' and s.index_host=='https://env.svc.pinecone.io'
-    assert client.put('/api/settings',json={'claude_key':'','pinecone_key':'','rerank_model':'custom-rerank'}).status_code==200
+    assert client.put('/api/settings',json={'claude_key':'','pinecone_key':'','rerank_model':main.settings().rerank_model}).status_code==200
     assert main.settings().claude_key=='SAVED_CLAUDE'
     assert main.saved_settings()['pinecone_key']==''
     monkeypatch.setenv('PINECONE_API_KEY','ROTATED_PINECONE')
@@ -158,6 +158,9 @@ def test_failed_docs_invisible_retry_idempotent(client,providers,monkeypatch):
 def test_settings_guards_and_host_validation(client):
     s=configure(client);doc=add_doc(client)
     s.embedding_model='new-model'
+    assert client.put('/api/settings',json=s.model_dump()).status_code==422
+    s.embedding_model=main.settings().embedding_model
+    s.index_host='other.svc.pinecone.io'
     assert client.put('/api/settings',json=s.model_dump()).status_code==409
     assert client.delete('/api/documents/'+doc).status_code==409
     for host in ('http://127.0.0.1','https://evil.com','https://test.pinecone.io@evil.com','https://test.pinecone.io/path','https://test.pinecone.io:444'):
@@ -287,3 +290,27 @@ def test_hyde_rejects_empty_or_truncated_generation(monkeypatch,result):
     monkeypatch.setattr(main,'request',lambda *a,**kw:result)
     with pytest.raises(ValueError,match='complete hypothetical summary'):
         main.hypothetical_document(main.Settings(claude_key='test-key'),'query')
+
+
+@pytest.mark.parametrize('field,name', list(main.MODEL_ENV.items()))
+def test_models_require_environment_and_ignore_saved_values(client, monkeypatch, field, name):
+    monkeypatch.setenv(name, 'environment-model')
+    assert getattr(main.resolve_settings({field:'stale-saved-model'}),field)=='environment-model'
+    response=client.put('/api/settings',json={field:'ui-override'})
+    assert response.status_code==422 and name in response.json()['detail']
+    for value in ('', '   '):
+        monkeypatch.setenv(name,value)
+        response=client.get('/api/settings')
+        assert response.status_code==503 and name in response.json()['detail']
+    monkeypatch.delenv(name)
+    with pytest.raises(main.HTTPException,match='Missing model configuration'):
+        main.resolve_settings({field:'stale-saved-model'})
+
+
+@pytest.mark.parametrize('path,variable', [('/embed','EMBEDDING_MODEL'),('/rerank','RERANK_MODEL')])
+def test_missing_pinecone_model_error_identifies_configuration(monkeypatch,path,variable):
+    monkeypatch.setattr(httpx.Client,'request',lambda *a,**kw:httpx.Response(404,json={'error':'SECRET_RESPONSE'}))
+    with pytest.raises(ValueError) as error:
+        main.request('POST','https://api.pinecone.io'+path,{'Api-Key':'SECRET_KEY'},json={'model':'unsupported-model'})
+    assert variable in str(error.value) and 'unsupported-model' in str(error.value)
+    assert 'SECRET' not in str(error.value)
