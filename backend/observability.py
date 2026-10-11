@@ -151,8 +151,9 @@ def stream_operation(fn):
                 safe(_CLIENT.log_dict,run_id,{'events':events},'logs/events.json')
                 if result:
                     w=result['workflow']
-                    safe(_CLIENT.log_dict,run_id,sanitize({'classification':w.get('classification'),'plan':w.get('plan'),'steps':w.get('steps'),'tool_and_retrieval_trace':w.get('trace'),'checkpoint':w.get('checkpoint')}),'workflow/result.json')
+                    safe(_CLIENT.log_dict,run_id,sanitize({'procedure_ref':result.get('procedure_ref'),'evidence':w.get('evidence'),'classification':w.get('classification'),'plan':w.get('plan'),'steps':w.get('steps'),'tool_and_retrieval_trace':w.get('trace'),'checkpoint':w.get('checkpoint')}),'workflow/result.json')
                     safe(_CLIENT.set_tag,run_id,'ticket_status',result['status'])
+                    safe(_CLIENT.set_tag,run_id,'procedure_version',str(result.get('procedure_ref',{}).get('version','unknown')))
                     safe(_CLIENT.log_metric,run_id,'retrieved_sources',len(w.get('evidence',[])))
                     safe(_CLIENT.log_metric,run_id,'planned_steps',len(w.get('plan',[])))
                     safe(_CLIENT.log_metric,run_id,'escalated',int(result.get('escalation_flag',False)))

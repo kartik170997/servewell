@@ -1,0 +1,14 @@
+import React, {useEffect,useState} from 'react';
+type Api=<T=unknown>(path:string,options?:RequestInit)=>Promise<T>;
+type Revision={id:string;version:number;sha256:string;text:string;note:string;created_at:string};
+export default function ProcedureHistory({api,pinned,close}:{api:Api;pinned?:number;close:()=>void}){
+ const [active,setActive]=useState<Revision|null>(null),[view,setView]=useState<Revision|null>(null),[versions,setVersions]=useState<Revision[]>([]),[text,setText]=useState(''),[note,setNote]=useState(''),[editing,setEditing]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ async function load(){const p=await api<{active:Revision;versions:Revision[]}>('/api/procedures');setActive(p.active);setVersions(p.versions);setView(pinned&&pinned!==p.active.version?await api<Revision>('/api/procedures/'+pinned):p.active)}
+ useEffect(()=>{load().catch(e=>setError(e.message))},[]);
+ async function save(){setBusy(true);setError('');try{const p=await api<Revision>('/api/procedures',{method:'POST',body:JSON.stringify({expected_version:active!.version,text,note})});setEditing(false);await load();setView(p);setNote('')}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
+ return <section className="settings-card"><div className="section-toolbar"><h2>Procedure versions</h2><button className="button secondary" onClick={close}>Close</button></div>{error&&<p role="alert" className="error-box">{error}</p>}
+ <p className="helper">New workflows use the active version. Existing workflows retain their assigned version. Editing prose changes model guidance; enforced SLA timers, priority rules, and escalation gates require a code update.</p>
+ {view&&<><label>Version <select value={view.version} disabled={editing||busy} onChange={async e=>{try{setView(await api<Revision>('/api/procedures/'+e.target.value))}catch(e){setError((e as Error).message)}}}>{versions.map(v=><option key={v.version} value={v.version}>v{v.version}{v.version===active?.version?' · Active':''}{v.version===pinned?' · This workflow':''} — {v.note}</option>)}</select></label><p className="helper">{view.id} · {new Date(view.created_at).toLocaleString()}<br/>SHA256: {view.sha256}</p>
+ {editing?<><label>Procedure text<textarea rows={22} style={{width:'100%'}} value={text} onChange={e=>setText(e.target.value)}/></label><label>Change note<input value={note} onChange={e=>setNote(e.target.value)}/></label><div className="card-actions"><button className="button secondary" disabled={busy} onClick={()=>setEditing(false)}>Cancel</button><button className="button primary" disabled={busy||text.length<100||!note.trim()} onClick={save}>Save and activate v{(active?.version||0)+1}</button></div></>:<><pre className="ticket-procedure">{view.text}</pre><button className="button secondary" onClick={()=>{setText(view.text);setEditing(true)}}>Create revision from this version</button></>}
+ </>}</section>
+}

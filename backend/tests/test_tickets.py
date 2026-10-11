@@ -200,5 +200,6 @@ def test_metadata_filter_is_applied_to_retrieval(client,providers):
     providers.clear()
     client.post('/api/search',json={'query':'hybrid','mode':'vector','rerank':False,'tags':['engineering']})
     args=next(b for u,b in providers if u.endswith('/query'))
-    assert args['filter']=={'tags':{'$in':['engineering']}}
+    assert {'tags':{'$in':['engineering']}} in args['filter']['$and']
+    assert {'document_id':{'$in':[doc]}} in args['filter']['$and']
 

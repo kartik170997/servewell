@@ -32,9 +32,9 @@ from pydantic import BaseModel, Field, field_validator
 # Local runs read the project .env; deployment environment variables take precedence.
 load_dotenv(Path(__file__).resolve().parents[1] / '.env', override=False)
 if __package__:
-    from . import observability
+    from . import observability, versioning
 else:
-    import observability
+    import observability, versioning
 
 DATA = Path(os.getenv('DATA_DIR', './data'))
 MAX_BYTES = 20 * 1024 * 1024
@@ -134,6 +134,7 @@ def initialize():
             d = json.loads(row['payload']); d['status'] = 'queued'; d['error'] = None
             c.execute('UPDATE documents SET status=?,payload=? WHERE id=?', ('queued', json.dumps(d), row['id']))
     ticket_workflow.initialize()
+    versioning.initialize(sys.modules[__name__])
 
 SETTINGS_ENV = {
     'claude_key': ('CLAUDE_API_KEY', 'ANTHROPIC_API_KEY', 'CLAUDE_KEY', 'claude_key'),
@@ -182,6 +183,7 @@ def update_doc(doc_id, **fields):
         row = c.execute('SELECT payload FROM documents WHERE id=?', (doc_id,)).fetchone()
         d = json.loads(row['payload']); d.update(fields)
         c.execute('UPDATE documents SET status=?,payload=? WHERE id=?', (d['status'],json.dumps(d),doc_id))
+        c.execute('UPDATE document_versions SET payload=? WHERE document_id=?', (json.dumps(d),doc_id))
     return d
 
 def now():
@@ -371,6 +373,7 @@ def ingest(doc_id):
             for i,(chunk,vector) in enumerate(zip(batch,vectors)):
                 records.append({'id':f'{doc_id}:{start+i}','values':vector,'metadata':{
                     'document_id':doc_id,'filename':d['filename'],'title':info['title'],'tags':info['tags'],
+                    **{k:d[k] for k in ('lineage_id','document_version','content_sha256') if k in d},
                     'chunk':start+i,'page':chunk['page'] or 0,'text':chunk['text'],'indexing_mode':'document_summary',
                     'summary':info['summary'][:2000],'language':info['language'],'document_type':info['document_type']}})
             update_doc(doc_id,status='indexing',progress=45+int(50*start/len(chunks)))
@@ -504,6 +507,7 @@ async def upload(files: list[UploadFile]=File(...)):
                 (DATA/'uploads'/doc_id).write_bytes(raw)
                 d={'id':doc_id,'filename':name,'extension':ext,'size':len(raw),'created_at':now(),'status':'queued',
                     'title':name,'summary':'','tags':[],'chunk_count':0,'progress':0,'error':None}
+                versioning.register_document(c,d,digest)
                 c.execute('INSERT INTO documents VALUES (?,?,?,?)',(doc_id,digest,'queued',json.dumps(d)))
             results.append(d)
         await f.close()
@@ -539,6 +543,7 @@ def delete(doc_id: str):
         with db() as c:
             c.execute('DELETE FROM chunks_fts WHERE id IN (SELECT id FROM chunks WHERE document_id=?)',(doc_id,))
             c.execute('DELETE FROM chunks WHERE document_id=?',(doc_id,))
+            c.execute('UPDATE document_versions SET deleted_at=? WHERE document_id=?',(now(),doc_id))
             c.execute('DELETE FROM documents WHERE id=?',(doc_id,))
         (DATA/'uploads'/doc_id).unlink(missing_ok=True)
         return {'deleted':doc_id}
@@ -561,7 +566,8 @@ def search(body: Search):
     if body.hyde and body.mode=='lexical': raise HTTPException(422,'HyDE requires vector or hybrid search.')
     s=settings()
     with db() as c:
-        docs={r['id']:json.loads(r['payload']) for r in c.execute("SELECT id,payload FROM documents WHERE status='ready'")}
+        ready=[json.loads(r['payload']) for r in c.execute("SELECT payload FROM documents WHERE status='ready'")]
+        docs={d['id']:d for d in (ready if body.document_id else versioning.current_documents(ready))}
         docs={k:v for k,v in docs.items() if (not body.document_id or k==body.document_id) and (not body.tag or body.tag in v['tags']) and (not body.tags or set(body.tags).intersection(v['tags']))}
         if not docs: return {'results':[],'mode':body.mode,'reranked':False,'hyde':False,'elapsed_ms':0}
         lexical=[]; vector=[]
@@ -576,7 +582,7 @@ def search(body: Search):
                 lexical=[{**dict(r),'score':-r['rank'],'sources':['lexical']} for r in rows]
         try:
             if body.mode in ('vector','hybrid'):
-                filters=[]
+                filters=[{'document_id':{'$in':list(docs)}}]
                 if body.document_id: filters.append({'document_id':{'$eq':body.document_id}})
                 if body.tag: filters.append({'tags':{'$in':[body.tag]}})
                 if body.tags: filters.append({'tags':{'$in':body.tags}})
@@ -596,7 +602,8 @@ def search(body: Search):
                 results=[{**results[r['index']],'retrieval_score':results[r['index']]['score'],'score':r['score']} for r in ranked['data']]
                 score_type='Rerank'
             return {'results':[{**r,'filename':docs[r['document_id']]['filename'],'title':docs[r['document_id']]['title'],
-                'tags':docs[r['document_id']]['tags'],'score_type':score_type} for r in results[:body.top_k]],
+                'tags':docs[r['document_id']]['tags'],'score_type':score_type,
+                **{k:docs[r['document_id']].get(k) for k in ('lineage_id','document_version','content_sha256')}} for r in results[:body.top_k]],
                 'mode':body.mode,'reranked':bool(body.rerank and results),'hyde':body.hyde,'elapsed_ms':round((time.perf_counter()-t)*1000)}
         except ValueError as e: raise HTTPException(502,str(e)) from None
 
@@ -612,3 +619,5 @@ if __package__:
 else:
     import live_workflow
 live_workflow.install(app, ticket_workflow)
+
+versioning.install(sys.modules[__name__])
