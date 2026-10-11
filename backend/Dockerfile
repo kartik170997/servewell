@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends antiword && rm 
 WORKDIR /app
 COPY requirements.lock.txt .
 RUN pip install --no-cache-dir -r requirements.lock.txt
-COPY main.py tickets.py live_workflow.py agent_tools.py escalation_procedure.md ./
+COPY main.py tickets.py live_workflow.py agent_tools.py observability.py mlflow_server.py import_golden.py escalation_procedure.md ./
 RUN useradd -u 10001 -m folio && mkdir /data && chown folio:folio /data
 USER folio
 ENV DATA_DIR=/data

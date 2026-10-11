@@ -2,6 +2,9 @@ services:
   api:
     build: ./backend
     env_file: .env
+    environment:
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+    depends_on: [mlflow]
     ports: ["127.0.0.1:8000:8000"]
     volumes: ["folio-data:/data"]
     restart: unless-stopped
@@ -10,11 +13,23 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+  mlflow:
+    build: ./backend
+    env_file: .env
+    command: ["python", "mlflow_server.py", "--host", "0.0.0.0"]
+    environment:
+      MLFLOW_SERVER_ALLOWED_HOSTS: mlflow:5000,localhost:5000,127.0.0.1:5000
+    ports: ["127.0.0.1:5000:5000"]
+    volumes: ["mlflow-data:/data"]
+    restart: unless-stopped
   web:
     build:
       context: .
       dockerfile: frontend/Dockerfile
+      args:
+        VITE_APP_TOKEN: ${VITE_APP_TOKEN:-}
     ports: ["127.0.0.1:5173:80"]
     depends_on: [api]
 volumes:
   folio-data:
+  mlflow-data:

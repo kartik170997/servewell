@@ -107,7 +107,7 @@ For both local and hosted interfaces, use a comma-separated list. Restart the ba
 
 By default Compose binds only to localhost. For a remote deployment, explicitly configure your TLS reverse proxy/ingress and networking. Configure request-size limits to suit batch uploads (up to 200 MB across 10 files). Never put provider keys into a Vite environment variable or frontend build.
 
-Provider keys persist on the backend. The browser stores only the chosen endpoint URL in localStorage. The workspace token is held in React memory and needs re-entry after a page refresh. Disconnect clears the token and loaded settings. Network errors include guidance for HTTPS and CORS.
+Provider keys persist on the backend. The browser stores only the chosen endpoint URL in localStorage. The workspace token defaults to VITE_APP_TOKEN at frontend build time and remains editable in Settings. Disconnect clears the token and loaded settings. Network errors include guidance for HTTPS and CORS.
 
 ## Develop without Docker
 
@@ -217,3 +217,24 @@ Authenticated agents can discover JSON tool schemas at `GET /api/agent/tools` an
 ```
 
 Send that body to `/api/agent/tools/update_checklist`. `update_ticket` takes `arguments.fields`; `create_ticket` takes `arguments.ticket_data` matching the ticket schema and an explicit unique ticket ID. Duplicate IDs are rejected. Directory facts are read-only in the checklist; the store support phone is kept separate from the reporting user's phone.
+
+
+## MLflow logs, traces and golden datasets
+
+Start the local tracking server with `python -m backend.mlflow_server`. Open **http://localhost:5000**, experiment **folio-workflows**. Docker Compose starts a persistent MLflow service automatically. SQLite tracking data and artifacts are stored in `data/mlflow.db` and `data/mlflow-artifacts` locally, or the `mlflow-data` Docker volume.
+
+Set `MLFLOW_ENABLED=true`, `MLFLOW_TRACKING_URI`, and `MLFLOW_EXPERIMENT_NAME` in `.env`. Each workflow query, feedback or checkpoint resume creates a run with model IDs, timings, outcome metrics, `logs/events.json`, and `workflow/result.json`. Nested spans show LangGraph nodes, DSPy model decisions, retrieval, embedding and agent tools. Traces contain sanitized inputs/outputs and errors, with ticket/session and checkpoint identifiers. Provider credentials and workspace tokens are redacted. Telemetry outages do not stop workflow execution. Tracing starts with new operations; previous executions are not reconstructed. Ingestion and search also emit traces. Supported DSPy usage data is attached to model spans; cost estimates are not invented.
+
+`VITE_APP_TOKEN` prefills the frontend workspace token. Rebuild/restart Vite after changing it; Docker passes this variable as a frontend build argument. The default is embedded in the browser bundle as requested.
+
+Provide reviewed golden cases as JSONL using `evaluation/golden_workflow.example.jsonl` as a template. Include a unique case ID, query, store/asset context, optional feedback turns, and expected classification, priority, escalation decision, relevant document IDs, tool calls, checklist updates and troubleshooting steps. Remove the example-only tag after reviewing labels. The template is not ground truth and is not imported automatically.
+
+Import your reviewed cases with:
+
+```sh
+python -m backend.import_golden datas/golden_workflow.jsonl
+# Update an existing dataset:
+python -m backend.import_golden datas/golden_workflow.jsonl --dataset-id DATASET_ID
+```
+
+This creates a native MLflow GenAI evaluation dataset. Importing a dataset does not run evaluations or train/optimize DSPy. Evaluation/scorers can be added once the reviewed expectations and acceptance criteria are available.

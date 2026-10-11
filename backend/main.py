@@ -31,6 +31,11 @@ from pydantic import BaseModel, Field, field_validator
 
 # Local runs read the project .env; deployment environment variables take precedence.
 load_dotenv(Path(__file__).resolve().parents[1] / '.env', override=False)
+if __package__:
+    from . import observability
+else:
+    import observability
+
 DATA = Path(os.getenv('DATA_DIR', './data'))
 MAX_BYTES = 20 * 1024 * 1024
 MAX_CHARS = 400_000
@@ -157,7 +162,9 @@ def resolve_settings(saved):
     return Settings.model_validate(values)
 
 def settings():
-    return resolve_settings(saved_settings())
+    result=resolve_settings(saved_settings())
+    observability.register_secrets(result.claude_key,result.pinecone_key,os.getenv('APP_TOKEN'))
+    return result
 
 def public_settings(s):
     out = s.model_dump(exclude={'claude_key','pinecone_key'})
@@ -218,6 +225,7 @@ def pine(s, path, body=None, index=False):
     return request('POST' if body is not None else 'GET', (s.index_host if index else 'https://api.pinecone.io') + path,
         {'Api-Key':s.pinecone_key, 'X-Pinecone-Api-Version':'2025-10'}, **({'json':body} if body is not None else {}))
 
+@observability.traced('embed','EMBEDDING')
 def embed(s, texts, input_type):
     result = pine(s, '/embed', {'model':s.embedding_model, 'inputs':[{'text':t} for t in texts],
         'parameters':{'input_type':input_type, 'truncate':'END'}})
@@ -226,6 +234,7 @@ def embed(s, texts, input_type):
         raise ValueError('Embedding provider returned an unexpected number of vectors.')
     return vectors
 
+@observability.traced('hypothetical_document','LLM')
 def hypothetical_document(s, query):
     if not s.claude_key:
         raise ValueError('Add your Claude API key to use HyDE.')
@@ -239,6 +248,7 @@ def hypothetical_document(s, query):
         raise ValueError('HyDE could not generate a complete hypothetical summary. Retry or turn off HyDE.')
     return text
 
+@observability.traced('enrich','LLM')
 def enrich(s, text):
     if not s.claude_key:
         raise ValueError('Add your Claude API key in Settings.')
@@ -330,6 +340,7 @@ def chunk_pages(pages, size, overlap):
             start=max(start+1,end-overlap)
     return output
 
+@observability.traced('ingest','CHAIN')
 def ingest(doc_id):
     try:
         d=get_doc(doc_id); s=settings()
@@ -383,7 +394,7 @@ async def lifespan(app):
     token=os.getenv('APP_TOKEN','')
     if len(token)<24: raise RuntimeError('APP_TOKEN must contain at least 24 characters. Run setup.py first.')
     for name in MODEL_ENV.values(): model_from_env(name)
-    initialize(); STOP.clear()
+    initialize(); observability.configure(); STOP.clear()
     if os.getenv('DISABLE_WORKER')!='1':
         WORKER=threading.Thread(target=worker_loop,daemon=True); WORKER.start()
     yield
@@ -542,6 +553,7 @@ def rrf(lists, k=60):
     return sorted(fused.values(),key=lambda r:r['score'],reverse=True)
 
 @app.post('/api/search',dependencies=[Depends(auth)])
+@observability.traced('search','RETRIEVER')
 def search(body: Search):
     t=time.perf_counter(); query=body.query.strip()
     if not query: raise HTTPException(422,'Enter a search query.')
