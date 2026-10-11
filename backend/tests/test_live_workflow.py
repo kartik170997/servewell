@@ -23,6 +23,11 @@ def live(client,providers,monkeypatch):
     configure(client);doc=add_doc(client);main.ingest(doc)
     client.put('/api/ticket-directory/stores',json={'store_id':'TEST-STORE','store_name':'Test store','city':'Mumbai'})
     client.put('/api/ticket-directory/assets',json={'asset_id':'ASSET-1','store_id':'TEST-STORE','asset_type':'POS Terminal','system_version':'POS v1'})
+    original_predict=L.predict
+    def predicted(signature,*args):
+        if signature is L.InformationSignature: return {'ticket_updates':[],'checklist_updates':[]}
+        return original_predict(signature,*args)
+    monkeypatch.setattr(L,'predict',predicted)
     monkeypatch.setattr(L,'classify',lambda *a:classification())
     monkeypatch.setattr(L,'assess',lambda *a:{'next_action':'continue','reason':'Proceed with the existing checklist.'})
     def planned(*a):
@@ -189,7 +194,8 @@ def test_start_resolves_asset_relationships_and_ignores_spoofed_context(client,l
         seen.append(t)
         return classification()
     monkeypatch.setattr(L,'classify',classified)
-    t=final(start(client,store_id='SPOOF',system_version='SPOOF'))
+    assert start(client,store_id='SPOOF').status_code==422
+    t=final(start(client,store_id='TEST-STORE',system_version='SPOOF'))
     assert t['store_id']=='TEST-STORE' and t['store_name']=='Test store'
     assert t['system_version']=='POS v1'
     assert t['store_details']['city']=='Mumbai'
@@ -202,3 +208,56 @@ def test_unknown_asset_does_not_create_workflow(client,live):
     assert start(client,asset_id='UNKNOWN').status_code==404
     assert start(client,asset_id=' ').status_code==422
     assert client.get('/api/tickets').json()==[]
+
+
+def test_store_only_workflow_populates_checklist(client,live):
+    # Asset is not guessed when a store has several devices.
+    t=final(start(client,asset_id='',store_id='TEST-STORE'))
+    assert t['asset_id']==''
+    assert t['escalation_info']['store_id']=='TEST-STORE'
+    assert t['escalation_info']['store_name']=='Test store'
+    assert t['escalation_info']['city']=='Mumbai'
+
+
+def test_feedback_tools_persist_facts_through_projection_and_restart(client,live,monkeypatch):
+    t=final(start(client))
+    original=L.predict
+    def predicted(signature,*args):
+        if signature is L.InformationSignature:
+            return {'checklist_updates':[{'field':'contact_phone','value':'12345','evidence':'phone 12345'}],
+                'ticket_updates':[{'field':'subcategory','value':'Printer','evidence':'Printer'}]}
+        return original(signature,*args)
+    monkeypatch.setattr(L,'predict',predicted)
+    t=final(feedback(client,t,note='Printer still fails. My phone 12345.'))
+    restored=client.get('/api/live/'+t['ticket_id']).json()
+    assert restored['contact_phone']=='12345' and restored['escalation_info']['contact_phone']=='12345'
+    assert restored['subcategory']=='Printer'
+    assert len([h for h in restored['ticket_history'] if h['actor']=='Agent tool'])==2
+    restored=client.get('/api/live/'+t['ticket_id']).json()
+    assert len([h for h in restored['ticket_history'] if h['actor']=='Agent tool'])==2
+
+
+def test_unquoted_model_facts_are_not_saved(client,live,monkeypatch):
+    monkeypatch.setattr(L,'classify',lambda *a:{**classification(),'checklist_updates':[{'field':'contact_phone','value':'invented','evidence':'not in user query'}]})
+    t=final(start(client))
+    assert not t['contact_phone']
+
+
+def test_store_id_in_first_feedback_is_saved_to_checklist(client,live):
+    client.put('/api/ticket-directory/stores',json={'store_id':'SW-1234','store_name':'Store from feedback','city':'Pune'})
+    t=final(start(client,asset_id='',store_id='TEST-STORE'))
+    t=final(feedback(client,t,note='The store ID is SW-1234. The step did not fix it.'))
+    assert t['store_id']=='SW-1234'
+    assert t['escalation_info']['store_id']=='SW-1234'
+    assert t['escalation_info']['store_name']=='Store from feedback'
+    assert client.get('/api/live/'+t['ticket_id']).json()['store_id']=='SW-1234'
+
+
+def test_external_ticket_tool_changes_survive_graph_resume(client,live):
+    t=final(start(client))
+    r=client.post('/api/agent/tools/update_ticket',json={'ticket_id':t['ticket_id'],'version':t['version'],'arguments':{'fields':{'subject':'Confirmed issue description'}}})
+    assert r.status_code==200
+    t=client.get('/api/live/'+t['ticket_id']).json()
+    assert t['subject']=='Confirmed issue description'
+    t=final(feedback(client,t))
+    assert t['subject']=='Confirmed issue description'

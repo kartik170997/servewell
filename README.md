@@ -203,4 +203,17 @@ Graph: `classify -> retrieve <-> plan -> prepare -> interrupt -> feedback -> eva
 
 Import the relational CSV data with `python -m backend.import_directory datas` after the database has been initialized. The importer validates duplicate IDs and store relationships, then upserts `stores.csv` into `stores` and `assets.csv` into `assets` in one transaction. All CSV columns are retained in each table's JSON payload; `asset_id` and `store_id` provide the SQL relationships. Re-importing updates records without duplicating them.
 
-Start a Live workflow using the issue description and Asset ID. Store and equipment details are resolved from the directory, included in classification/planning, and used to contextualize retrieval. An unknown asset is rejected before creating a workflow. Refreshing/resuming retrieves current directory details. Customer identity and a full address still need confirmation when required; store support phone is not assumed to be the reporting customer's number.
+Start a Live workflow using the issue description and either a Store ID or Asset ID. A store-only workflow does not guess the affected asset. Store and equipment details are resolved from the directory, included in classification/planning, and used to contextualize retrieval. An unknown asset is rejected before creating a workflow. Refreshing/resuming retrieves current directory details. Customer identity and a full address still need confirmation when required; store support phone is not assumed to be the reporting customer's number.
+
+
+## Workflow agent tools
+
+The workflow uses actual DSPy Tool wrappers for `create_ticket`, `update_ticket`, `update_checklist`, `get_ticket`, `lookup_asset`, `lookup_store`, and `list_store_assets`. DSPy extracts explicit user facts with supporting quotes; validated tool calls save them into ticket/checklist fields. Store IDs supplied in queries or feedback are resolved against the directory and reflected in the escalation checklist. Tool changes are checkpointed, recorded in history, and applied once during projection; they cannot mark steps completed or bypass escalation/resolution gates.
+
+Authenticated agents can discover JSON tool schemas at `GET /api/agent/tools` and invoke them at `POST /api/agent/tools/{name}`. Reads take an `arguments` object; ticket reads also require `ticket_id`. Updates require `ticket_id`, current `version`, and `arguments` (optimistic locking rejects stale updates). Example:
+
+```json
+{"ticket_id":"WF-example","version":3,"arguments":{"information":{"store_id":"SW-0001","contact_phone":"user-confirmed-number"}}}
+```
+
+Send that body to `/api/agent/tools/update_checklist`. `update_ticket` takes `arguments.fields`; `create_ticket` takes `arguments.ticket_data` matching the ticket schema and an explicit unique ticket ID. Duplicate IDs are rejected. Directory facts are read-only in the checklist; the store support phone is kept separate from the reporting user's phone.

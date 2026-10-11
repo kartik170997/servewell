@@ -119,18 +119,59 @@ def asset_details(asset_id):
     return {'asset':json.loads(row['asset']),'store':json.loads(row['store'])}
 
 
+def store_details(store_id):
+    with A.db() as c: row=c.execute('SELECT payload FROM stores WHERE store_id=?',(store_id,)).fetchone()
+    if not row: raise HTTPException(404,'Store ID was not found in the store directory.')
+    return json.loads(row['payload'])
+
+
+DIRECTORY_FIELDS = ('store_id','store_name','system_version','asset_type','city','neighborhood','store_type','region_manager','support_phone')
+
+
 def hydrate_asset(ticket, required=False):
-    if not ticket.get('asset_id'):
-        if required: raise HTTPException(422,'Enter an asset ID.')
+    info=ticket.setdefault('escalation_info',{})
+    if ticket.get('asset_id'):
+        try: details=asset_details(ticket['asset_id'])
+        except HTTPException:
+            if required: raise
+            return ticket
+        asset,store=details['asset'],details['store']
+        ticket.update(asset_details=asset,store_details=store,store_id=asset['store_id'],store_name=store['store_name'],system_version=asset.get('system_version',''))
+        if asset.get('asset_type'): info['asset_type']=asset['asset_type']
+    elif ticket.get('store_id') and ticket['store_id']!='UNSPECIFIED':
+        try: store=store_details(ticket['store_id'])
+        except HTTPException:
+            if required: raise
+            return ticket
+        ticket.update(store_details=store,store_name=store['store_name'])
+        ticket.pop('asset_details',None)
+    else:
+        if required: raise HTTPException(422,'Enter an asset ID or store ID.')
         return ticket
-    try: details=asset_details(ticket['asset_id'])
-    except HTTPException:
-        if required: raise
-        return ticket
-    asset,store=details['asset'],details['store']
-    ticket.update(asset_details=asset,store_details=store,store_id=asset['store_id'],store_name=store['store_name'],system_version=asset.get('system_version',''))
-    if asset.get('asset_type'): ticket.setdefault('escalation_info',{})['asset_type']=asset['asset_type']
+    for key in DIRECTORY_FIELDS:
+        if key not in ('store_id','store_name','system_version','asset_type'): info[key]=store.get(key,'')
+    info.update(store_id=ticket['store_id'],store_name=ticket['store_name'],system_version=ticket.get('system_version',''))
     return ticket
+
+
+def apply_information(ticket, information):
+    validate_information(information)
+    asset_id=str(information.get('asset_id',ticket.get('asset_id','')) or '').strip()
+    store_id=str(information.get('store_id',ticket.get('store_id','')) or '').strip()
+    if asset_id:
+        details=asset_details(asset_id)
+        if 'store_id' in information and store_id and details['asset']['store_id']!=store_id:
+            raise HTTPException(422,'Asset belongs to a different store. Provide the matching asset and store IDs.')
+        store_id=details['asset']['store_id']
+    elif store_id and store_id!='UNSPECIFIED': store_details(store_id)
+    ticket['escalation_info'].update(information)
+    if ticket.get('asset_id') and not asset_id:
+        ticket['system_version']=''
+        ticket['escalation_info']['asset_type']=''
+    ticket.update(asset_id=asset_id,store_id=store_id)
+    for field in ('contact_phone','submitted_by'):
+        if field in information: ticket[field]=str(information[field] or '')[:200]
+    return hydrate_asset(ticket)
 
 
 def load(ticket_id):
@@ -254,7 +295,7 @@ def missing_info(t):
 
 
 def validate_information(info):
-    allowed=set(REQUIRED)|{'asset_id','contact_phone','submitted_by','steps_already_tried','diagnostic_links','deadline','prior_troubleshooting_minutes'}
+    allowed=set(REQUIRED)|set(DIRECTORY_FIELDS)|{'asset_id','contact_phone','submitted_by','steps_already_tried','diagnostic_links','deadline','prior_troubleshooting_minutes'}
     if len(json.dumps(info))>24000 or any(k not in allowed for k in info): raise HTTPException(422,'Use the supported checklist fields (at most 24,000 characters).')
     for key,value in info.items():
         if key in ('affected_devices','affected_users','prior_troubleshooting_minutes'):
@@ -486,10 +527,7 @@ def install(app, api):
         validate_information(body.information)
         with LOCK:
             t=load(ticket_id);check_version(t,body.version)
-            t['escalation_info'].update(body.information)
-            for field in ('asset_id','contact_phone','submitted_by'):
-                if field in body.information: t[field]=str(body.information[field] or '')[:100]
-            if 'asset_id' in body.information: hydrate_asset(t, required=True)
+            apply_information(t,body.information)
             if t['status']=='Escalated': escalate(t,'Escalation information updated. Review the refreshed notification draft.')
             return save(t,body.version,[('User','Escalation information updated: '+json.dumps(body.information))])
 
