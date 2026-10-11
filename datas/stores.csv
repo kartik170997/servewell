@@ -1,0 +1,121 @@
+store_id,store_name,city,neighborhood,store_type,region_manager,support_phone
+SW-0001,ServeWell - Banjara Hills,Hyderabad,Banjara Hills,corporate,Lakshmi Krishnan,+91-74572-23434
+SW-0002,ServeWell - Kukatpally,Hyderabad,Kukatpally,franchise,Radha Patel,+91-70976-22280
+SW-0003,ServeWell - Vijayanagar,Bengaluru,Vijayanagar,franchise,Shobha Rao,+91-93462-95181
+SW-0004,ServeWell - Kondapur,Hyderabad,Kondapur,franchise,Saranya Bhat,+91-96523-10851
+SW-0005,ServeWell - Kharadi,Pune,Kharadi,franchise,Nalini Bhat,+91-75094-38221
+SW-0006,ServeWell - New Town,Kolkata,New Town,franchise,Harish Iyer,+91-81763-55082
+SW-0007,ServeWell - Lajpat Nagar,Delhi,Lajpat Nagar,corporate,Sunil Gupta,+91-82403-20328
+SW-0008,ServeWell - Pitampura,Delhi,Pitampura,franchise,Divya Singh,+91-71501-96673
+SW-0009,ServeWell - BTM Layout,Bengaluru,BTM Layout,corporate,Krishnan Iyer,+91-82455-46434
+SW-0010,ServeWell - Kurla,Mumbai,Kurla,franchise,Venkat Pillai,+91-91960-44993
+SW-0011,ServeWell - SR Nagar,Hyderabad,SR Nagar,franchise,Nikhil Shetty,+91-75607-80010
+SW-0012,ServeWell - Gachibowli,Hyderabad,Gachibowli,franchise,Meena Shetty,+91-92549-83000
+SW-0013,ServeWell - Hebbal,Bengaluru,Hebbal,corporate,Swathi Reddy,+91-77505-14207
+SW-0014,ServeWell - Hadapsar,Pune,Hadapsar,franchise,Rekha Goswami,+91-98716-51245
+SW-0015,ServeWell - Yeshwanthpur,Bengaluru,Yeshwanthpur,franchise,Suma Bose,+91-74681-44718
+SW-0016,ServeWell - Kengeri,Bengaluru,Kengeri,franchise,Sanjay Hegde,+91-84038-86484
+SW-0017,ServeWell - Malad West,Mumbai,Malad West,corporate,Suresh Ghosh,+91-86171-21915
+SW-0018,ServeWell - Viman Nagar,Pune,Viman Nagar,franchise,Arun Malhotra,+91-89543-18326
+SW-0019,ServeWell - Bhandup,Mumbai,Bhandup,corporate,Preeti Desai,+91-88128-11504
+SW-0020,ServeWell - Hitech City,Hyderabad,Hitech City,franchise,Sunil Bhat,+91-95185-94012
+SW-0021,ServeWell - Vashi,Mumbai,Vashi,franchise,Smita Sharma,+91-93661-44522
+SW-0022,ServeWell - Navrangpura,Ahmedabad,Navrangpura,franchise,Ravi Shetty,+91-79779-93748
+SW-0023,ServeWell - Saket,Delhi,Saket,franchise,Manish Mehta,+91-87674-79514
+SW-0024,ServeWell - Mylapore,Chennai,Mylapore,franchise,Priya Gupta,+91-81894-50306
+SW-0025,ServeWell - Bellandur,Bengaluru,Bellandur,corporate,Anjali Nair,+91-93983-73699
+SW-0026,ServeWell - Kondhwa,Pune,Kondhwa,corporate,Suresh Das,+91-88015-31643
+SW-0027,ServeWell - Ghatkopar,Mumbai,Ghatkopar,corporate,Sunil Rao,+91-93361-50857
+SW-0028,ServeWell - Versova,Mumbai,Versova,franchise,Preeti Chopra,+91-73965-42493
+SW-0029,ServeWell - Banashankari,Bengaluru,Banashankari,franchise,Shobha Krishnan,+91-89282-38864
+SW-0030,ServeWell - KR Puram,Bengaluru,KR Puram,franchise,Krishnan Singh,+91-99668-14117
+SW-0031,ServeWell - T Nagar,Chennai,T Nagar,franchise,Meena Sen,+91-77020-80678
+SW-0032,ServeWell - Brookefield,Bengaluru,Brookefield,franchise,Lakshmi Das,+91-96460-63354
+SW-0033,ServeWell - JP Nagar,Bengaluru,JP Nagar,franchise,Venkat Malhotra,+91-83470-71213
+SW-0034,ServeWell - Anna Nagar,Chennai,Anna Nagar,franchise,Suma Iyer,+91-71986-62772
+SW-0035,ServeWell - Madhapur,Hyderabad,Madhapur,franchise,Manoj Trivedi,+91-84700-28373
+SW-0036,ServeWell - Mulund,Mumbai,Mulund,franchise,Vijay Chopra,+91-96477-82132
+SW-0037,ServeWell - Nagarbhavi,Bengaluru,Nagarbhavi,corporate,Anjali Naik,+91-75449-63269
+SW-0038,ServeWell - Nehru Place,Delhi,Nehru Place,corporate,Sunita Mehta,+91-82418-10282
+SW-0039,ServeWell - Maninagar,Ahmedabad,Maninagar,corporate,Rajan Bose,+91-79347-65444
+SW-0040,ServeWell - Dilsukhnagar,Hyderabad,Dilsukhnagar,corporate,Shobha Sen,+91-75072-34890
+SW-0041,ServeWell - Andheri West,Mumbai,Andheri West,franchise,Sunil Reddy,+91-94509-51104
+SW-0042,ServeWell - Devanahalli,Bengaluru,Devanahalli,franchise,Preeti Mehta,+91-71863-76562
+SW-0043,ServeWell - Marathahalli,Bengaluru,Marathahalli,franchise,Vijay Naik,+91-83230-25713
+SW-0044,ServeWell - Howrah,Kolkata,Howrah,franchise,Nikhil Patel,+91-90295-20745
+SW-0045,ServeWell - Chembur,Mumbai,Chembur,franchise,Rajesh Desai,+91-76693-97782
+SW-0046,ServeWell - Secunderabad,Hyderabad,Secunderabad,franchise,Suresh Menon,+91-79830-69929
+SW-0047,ServeWell - Vikhroli,Mumbai,Vikhroli,corporate,Amit Bose,+91-90354-83792
+SW-0048,ServeWell - SG Highway,Ahmedabad,SG Highway,franchise,Arjun Desai,+91-74340-55745
+SW-0049,ServeWell - Tambaram,Chennai,Tambaram,franchise,Arun Chopra,+91-97320-81200
+SW-0050,ServeWell - Ameerpet,Hyderabad,Ameerpet,corporate,Vijayalakshmi Menon,+91-87332-11025
+SW-0051,ServeWell - Miyapur,Hyderabad,Miyapur,corporate,Ravi Joshi,+91-78666-25129
+SW-0052,ServeWell - Adyar,Chennai,Adyar,franchise,Nikhil Pillai,+91-93514-54942
+SW-0053,ServeWell - Rajajinagar,Bengaluru,Rajajinagar,franchise,Sanjay Reddy,+91-73024-93136
+SW-0054,ServeWell - Thane West,Mumbai,Thane West,franchise,Nalini Joshi,+91-90876-44335
+SW-0055,ServeWell - Sarjapur,Bengaluru,Sarjapur,franchise,Radha Agarwal,+91-70316-24663
+SW-0056,ServeWell - Kadugodi,Bengaluru,Kadugodi,franchise,Kavitha Trivedi,+91-71180-58393
+SW-0057,ServeWell - Rohini,Delhi,Rohini,franchise,Rahul Chatterjee,+91-81948-15229
+SW-0058,ServeWell - OMR,Chennai,OMR,franchise,Abhishek Iyer,+91-81589-83385
+SW-0059,ServeWell - Nungambakkam,Chennai,Nungambakkam,corporate,Pallavi Verma,+91-77757-31299
+SW-0060,ServeWell - Satellite,Ahmedabad,Satellite,corporate,Priya Shah,+91-94135-53540
+SW-0061,ServeWell - Hinjewadi,Pune,Hinjewadi,corporate,Pallavi Naik,+91-78742-30866
+SW-0062,ServeWell - Baner,Pune,Baner,franchise,Rahul Das,+91-77288-36158
+SW-0063,ServeWell - Deccan,Pune,Deccan,franchise,Sridhar Krishnan,+91-77304-13101
+SW-0064,ServeWell - Kompally,Hyderabad,Kompally,franchise,Vijay Bhat,+91-81506-94080
+SW-0065,ServeWell - Rajouri Garden,Delhi,Rajouri Garden,corporate,Sunil Mukherjee,+91-70904-25118
+SW-0066,ServeWell - Chromepet,Chennai,Chromepet,franchise,Sanjay Patel,+91-73552-88193
+SW-0067,ServeWell - Mira Road,Mumbai,Mira Road,corporate,Radha Kulkarni,+91-86758-25157
+SW-0068,ServeWell - Lokhandwala,Mumbai,Lokhandwala,franchise,Rahul Malhotra,+91-70055-78146
+SW-0069,ServeWell - Porur,Chennai,Porur,franchise,Vijay Mukherjee,+91-90419-51145
+SW-0070,ServeWell - Jubilee Hills,Hyderabad,Jubilee Hills,corporate,Usha Ghosh,+91-80134-97410
+SW-0071,ServeWell - Dadar,Mumbai,Dadar,franchise,Shobha Joshi,+91-76286-65108
+SW-0072,ServeWell - LB Nagar,Hyderabad,LB Nagar,franchise,Deepa Patil,+91-88648-49446
+SW-0073,ServeWell - Andheri East,Mumbai,Andheri East,franchise,Rekha Malhotra,+91-95747-86019
+SW-0074,ServeWell - South Extension,Delhi,South Extension,franchise,Kiran Pillai,+91-86750-72021
+SW-0075,ServeWell - Bibwewadi,Pune,Bibwewadi,corporate,Abhishek Nair,+91-79299-77561
+SW-0076,ServeWell - Kukatpally,Hyderabad,Kukatpally,franchise,Sridhar Naik,+91-92046-50687
+SW-0077,ServeWell - Electronic City,Bengaluru,Electronic City,franchise,Rahul Naik,+91-85569-90120
+SW-0078,ServeWell - Kothrud,Pune,Kothrud,franchise,Vivek Goswami,+91-76371-60328
+SW-0079,ServeWell - Janakpuri,Delhi,Janakpuri,franchise,Rohit Sharma,+91-99250-23970
+SW-0080,ServeWell - FC Road,Pune,FC Road,franchise,Rohit Roy,+91-85222-16582
+SW-0081,ServeWell - Karol Bagh,Delhi,Karol Bagh,franchise,Vijayalakshmi Bose,+91-91875-79616
+SW-0082,ServeWell - Prahlad Nagar,Ahmedabad,Prahlad Nagar,corporate,Kiran Patil,+91-96706-76162
+SW-0083,ServeWell - Jogeshwari,Mumbai,Jogeshwari,corporate,Pallavi Das,+91-84747-43972
+SW-0084,ServeWell - Aundh,Pune,Aundh,corporate,Preeti Sen,+91-90537-41358
+SW-0085,ServeWell - Bandra East,Mumbai,Bandra East,corporate,Lakshmi Bhat,+91-81005-51904
+SW-0086,ServeWell - Velachery,Chennai,Velachery,franchise,Krishnan Tiwari,+91-92739-30028
+SW-0087,ServeWell - Jubilee Hills,Hyderabad,Jubilee Hills,franchise,Nalini Trivedi,+91-85267-64496
+SW-0088,ServeWell - Yelahanka,Bengaluru,Yelahanka,franchise,Swathi Hegde,+91-92790-12560
+SW-0089,ServeWell - Perambur,Chennai,Perambur,franchise,Venkat Chatterjee,+91-94689-61116
+SW-0090,ServeWell - Sholinganallur,Chennai,Sholinganallur,franchise,Pallavi Trivedi,+91-96210-89069
+SW-0091,ServeWell - Chromepet,Chennai,Chromepet,franchise,Radha Sen,+91-70951-60968
+SW-0092,ServeWell - Kandivali,Mumbai,Kandivali,corporate,Ajay Mehta,+91-97541-71261
+SW-0093,ServeWell - Mylapore,Chennai,Mylapore,franchise,Geetha Hegde,+91-88493-96900
+SW-0094,ServeWell - Ejipura,Bengaluru,Ejipura,franchise,Smita Shah,+91-71647-44099
+SW-0095,ServeWell - Powai,Mumbai,Powai,franchise,Nalini Tiwari,+91-79117-65255
+SW-0096,ServeWell - Bandra West,Mumbai,Bandra West,franchise,Pallavi Trivedi,+91-71706-55870
+SW-0097,ServeWell - Indiranagar,Bengaluru,Indiranagar,corporate,Suma Patel,+91-94714-14067
+SW-0098,ServeWell - Park Street,Kolkata,Park Street,corporate,Archana Verma,+91-77816-26544
+SW-0099,ServeWell - Dwarka,Delhi,Dwarka,franchise,Rekha Bose,+91-92920-43586
+SW-0100,ServeWell - Wakad,Pune,Wakad,franchise,Pallavi Gupta,+91-95486-31465
+SW-0101,ServeWell - Salt Lake,Kolkata,Salt Lake,franchise,Usha Goswami,+91-92195-59192
+SW-0102,ServeWell - Worli,Mumbai,Worli,franchise,Saranya Shetty,+91-77957-23356
+SW-0103,ServeWell - Madhapur,Hyderabad,Madhapur,corporate,Nikhil Gupta,+91-96090-84177
+SW-0104,ServeWell - Pimple Saudagar,Pune,Pimple Saudagar,franchise,Abhishek Pandey,+91-72259-76317
+SW-0105,ServeWell - Banjara Hills,Hyderabad,Banjara Hills,corporate,Sridhar Sen,+91-73458-66822
+SW-0106,ServeWell - Gariahat,Kolkata,Gariahat,corporate,Smita Verma,+91-84270-33086
+SW-0107,ServeWell - LB Nagar,Hyderabad,LB Nagar,franchise,Vijayalakshmi Trivedi,+91-95383-73372
+SW-0108,ServeWell - Shahdara,Delhi,Shahdara,franchise,Lakshmi Nair,+91-79139-69087
+SW-0109,ServeWell - Basavanagudi,Bengaluru,Basavanagudi,franchise,Abhishek Tiwari,+91-81023-13761
+SW-0110,ServeWell - Paschim Vihar,Delhi,Paschim Vihar,franchise,Rekha Mishra,+91-96143-43862
+SW-0111,ServeWell - Goregaon East,Mumbai,Goregaon East,franchise,Preeti Rao,+91-72805-41635
+SW-0112,ServeWell - Kondapur,Hyderabad,Kondapur,franchise,Lakshmi Das,+91-91164-74332
+SW-0113,ServeWell - Borivali,Mumbai,Borivali,franchise,Krishnan Chandra,+91-92668-41890
+SW-0114,ServeWell - Lokhandwala,Mumbai,Lokhandwala,franchise,Shobha Roy,+91-81264-65771
+SW-0115,ServeWell - Vastrapur,Ahmedabad,Vastrapur,franchise,Smita Bhat,+91-80047-42951
+SW-0116,ServeWell - Jayanagar,Bengaluru,Jayanagar,franchise,Pallavi Trivedi,+91-94975-34267
+SW-0117,ServeWell - Wilson Garden,Bengaluru,Wilson Garden,franchise,Saranya Roy,+91-89555-47093
+SW-0118,ServeWell - Navrangpura,Ahmedabad,Navrangpura,franchise,Asha Shah,+91-79904-11854
+SW-0119,ServeWell - Hitech City,Hyderabad,Hitech City,franchise,Sunita Agarwal,+91-79572-26551
+SW-0120,ServeWell - Ameerpet,Hyderabad,Ameerpet,franchise,Amit Goswami,+91-79317-71524

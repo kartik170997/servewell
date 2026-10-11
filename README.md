@@ -197,3 +197,10 @@ API additions: `GET/POST /api/tickets`, `GET /api/tickets/{id}`, `POST /api/tick
 The browser consumes an authenticated NDJSON response from `POST /api/live/start`, `/api/live/{id}/query`, `/api/live/{id}/feedback`, or `/api/live/{id}/resume`. Events report running nodes and state snapshots. This is an active request stream, not polling; `/api/documents` remains manual-refresh only. On disconnection the current run finishes to a checkpoint. Refresh restores it through `GET /api/live/{id}`. If a model or retrieval node fails, use **Resume saved operation** to retry that node; completed graph nodes are not rerun. Duplicate starts and stale feedback are guarded.
 
 Graph: `classify -> retrieve <-> plan -> prepare -> interrupt -> feedback -> evaluate -> next step / retrieve / escalation gate -> escalate or resolve`. Immediate triggers shortcut to escalation. DSPy uses typed signatures and a chat adapter; it is not an optimized/trained program, and no optimizer training is implied. Email/Slack notifications remain drafts, and SLA monitoring is manual.
+
+
+## Asset and store directory
+
+Import the relational CSV data with `python -m backend.import_directory datas` after the database has been initialized. The importer validates duplicate IDs and store relationships, then upserts `stores.csv` into `stores` and `assets.csv` into `assets` in one transaction. All CSV columns are retained in each table's JSON payload; `asset_id` and `store_id` provide the SQL relationships. Re-importing updates records without duplicating them.
+
+Start a Live workflow using the issue description and Asset ID. Store and equipment details are resolved from the directory, included in classification/planning, and used to contextualize retrieval. An unknown asset is rejected before creating a workflow. Refreshing/resuming retrieves current directory details. Customer identity and a full address still need confirmation when required; store support phone is not assumed to be the reporting customer's number.

@@ -112,6 +112,27 @@ def history(c, ticket_id, actor, note, at=None):
     c.execute('INSERT INTO ticket_history(ticket_id,timestamp,actor,note) VALUES (?,?,?,?)', (ticket_id, at or timestamp(), actor, note))
 
 
+def asset_details(asset_id):
+    with A.db() as c:
+        row=c.execute('SELECT a.payload AS asset, s.payload AS store FROM assets a JOIN stores s ON s.store_id=a.store_id WHERE a.asset_id=?',(asset_id,)).fetchone()
+    if not row: raise HTTPException(404,'Asset ID was not found in the asset directory. Check the ID or import the asset first.')
+    return {'asset':json.loads(row['asset']),'store':json.loads(row['store'])}
+
+
+def hydrate_asset(ticket, required=False):
+    if not ticket.get('asset_id'):
+        if required: raise HTTPException(422,'Enter an asset ID.')
+        return ticket
+    try: details=asset_details(ticket['asset_id'])
+    except HTTPException:
+        if required: raise
+        return ticket
+    asset,store=details['asset'],details['store']
+    ticket.update(asset_details=asset,store_details=store,store_id=asset['store_id'],store_name=store['store_name'],system_version=asset.get('system_version',''))
+    if asset.get('asset_type'): ticket.setdefault('escalation_info',{})['asset_type']=asset['asset_type']
+    return ticket
+
+
 def load(ticket_id):
     with A.db() as c:
         row=c.execute('SELECT payload,version FROM tickets WHERE ticket_id=?',(ticket_id,)).fetchone()
@@ -120,11 +141,13 @@ def load(ticket_id):
         ticket['ticket_history']=[dict(r) for r in c.execute('SELECT timestamp,actor,note FROM ticket_history WHERE ticket_id=? ORDER BY history_id',(ticket_id,))]
         workflow=c.execute('SELECT payload FROM ticket_workflow WHERE ticket_id=?',(ticket_id,)).fetchone()
         ticket['workflow']=json.loads(workflow['payload']) if workflow else {'evidence':[], 'trace':[], 'messages':[], 'pending':None}
+    hydrate_asset(ticket)
     ticket['sla']=sla_state(ticket)
     return ticket
 
 
 def save(ticket, expected, entries):
+    hydrate_asset(ticket)
     uid='USR-'+hashlib.sha256((ticket['store_id']+'|'+ticket['submitted_by']).encode()).hexdigest()[:16]
     ticket['user_id']=uid
     payload={k:v for k,v in ticket.items() if k not in ('ticket_history','workflow','version','sla')}
@@ -134,8 +157,8 @@ def save(ticket, expected, entries):
             asset=c.execute('SELECT store_id FROM assets WHERE asset_id=?',(ticket['asset_id'],)).fetchone()
             if asset and asset['store_id']!=ticket['store_id']: raise HTTPException(409,'Asset belongs to another store.')
             c.execute('INSERT OR IGNORE INTO assets VALUES (?,?,?)',(ticket['asset_id'],ticket['store_id'],json.dumps({'asset_id':ticket['asset_id'],'store_id':ticket['store_id'],'system_version':ticket['system_version']})))
-        changed=c.execute('UPDATE tickets SET payload=?,status=?,priority=?,asset_id=?,submitted_by=?,version=version+1 WHERE ticket_id=? AND version=?',
-            (json.dumps(payload),ticket['status'],ticket['priority'],ticket['asset_id'] or None,uid,ticket['ticket_id'],expected)).rowcount
+        changed=c.execute('UPDATE tickets SET payload=?,status=?,priority=?,asset_id=?,submitted_by=?,store_id=?,version=version+1 WHERE ticket_id=? AND version=?',
+            (json.dumps(payload),ticket['status'],ticket['priority'],ticket['asset_id'] or None,uid,ticket['store_id'],ticket['ticket_id'],expected)).rowcount
         if not changed: raise HTTPException(409,'Ticket changed. Refresh and try again.')
         c.execute('INSERT OR REPLACE INTO ticket_workflow VALUES (?,?)',(ticket['ticket_id'],json.dumps(ticket['workflow'])))
         for actor,note in entries: history(c,ticket['ticket_id'],actor,note)
@@ -183,6 +206,7 @@ def structured(schema, system, data):
 
 
 def model_ticket(t):
+    hydrate_asset(t)
     compact={k:v for k,v in t.items() if k not in ('workflow','sla','ticket_history')}
     compact['ticket_history']=[{**h,'note':h['note'][:2000]} for h in t['ticket_history'][-20:]]
     compact['history_is_recent_window']=len(t['ticket_history'])>20
@@ -303,13 +327,18 @@ def escalate(t, reason):
 
 def metadata_scope(t, explicit_tag=None):
     with A.db() as c: docs=[json.loads(r['payload']) for r in c.execute("SELECT payload FROM documents WHERE status='ready'")]
-    desired={str(x).strip().casefold() for x in [t['category'],t['subcategory'],*t['tags']] if str(x).strip()}
+    asset=t.get('asset_details',{})
+    desired={str(x).strip().casefold() for x in [t['category'],t['subcategory'],*t['tags'],t.get('system_version',''),asset.get('asset_type',''),asset.get('make',''),asset.get('model','')] if str(x).strip()}
     tags=[explicit_tag] if explicit_tag else sorted({tag for d in docs for tag in d.get('tags',[]) if tag.casefold() in desired})
     return tags,docs
 
 
 def retrieve(t, query, mode, explicit_tag=None):
+    hydrate_asset(t)
     tags,docs=metadata_scope(t,explicit_tag)
+    asset=t.get('asset_details',{})
+    context=' | '.join(str(asset[k]) for k in ('asset_type','make','model','system_version') if asset.get(k))
+    if context: query=query+'\nAsset context: '+context
     # No guessed metadata values: use actual ingested tags or explicitly trace a broad search.
     args={'query':query,'mode':mode,'rerank':False,'top_k':5,'candidates':30,'tags':tags[:100]}
     results=A.search(A.Search(**args))['results']
@@ -460,6 +489,7 @@ def install(app, api):
             t['escalation_info'].update(body.information)
             for field in ('asset_id','contact_phone','submitted_by'):
                 if field in body.information: t[field]=str(body.information[field] or '')[:100]
+            if 'asset_id' in body.information: hydrate_asset(t, required=True)
             if t['status']=='Escalated': escalate(t,'Escalation information updated. Review the refreshed notification draft.')
             return save(t,body.version,[('User','Escalation information updated: '+json.dumps(body.information))])
 
@@ -482,6 +512,9 @@ def install(app, api):
                 w['breach_flagged_at']=timestamp()
                 w['followup_draft']={'to':['l2-lead@servewell.in'],'body':f"SLA breach: {ticket_id}. {body.note}",'sent':False}
             return save(t,body.version,[('L1 Agent',body.event+': '+body.note)])
+
+    @app.get('/api/asset-context/{asset_id}',dependencies=auth)
+    def read_asset_context(asset_id: str): return asset_details(asset_id)
 
     @app.get('/api/ticket-directory/{kind}',dependencies=auth)
     def directory(kind: Literal['stores','users','assets','labels']):

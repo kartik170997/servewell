@@ -152,6 +152,7 @@ def test_information_updates_asset_relation_and_validation(client):
     t=ticket(client)
     url='/api/tickets/'+t['ticket_id']+'/information'
     assert client.put(url,json={'version':t['version'],'information':{'affected_devices':-1}}).status_code==422
+    assert client.put('/api/ticket-directory/assets',json={'asset_id':'NEW-ASSET','store_id':t['store_id'],'system_version':'Updated v2'}).status_code==200
     r=client.put(url,json={'version':t['version'],'information':{'asset_id':'NEW-ASSET','contact_phone':'12345'}});assert r.status_code==200
     with main.db() as c: assert c.execute('SELECT asset_id FROM tickets').fetchone()[0]=='NEW-ASSET'
     assert client.put(url,json={'version':t['version'],'information':{}}).status_code==409

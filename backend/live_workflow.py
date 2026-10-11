@@ -153,7 +153,7 @@ class State(TypedDict, total=False):
 
 
 def fresh(state):
-    return copy.deepcopy(state['ticket'])
+    return W.hydrate_asset(copy.deepcopy(state['ticket']))
 
 
 def audit(t,actor,note):
@@ -269,6 +269,7 @@ def feedback_node(state):
     context=f.get('context',{})
     for key in ('escalation_info','asset_id','contact_phone','submitted_by'):
         if key in context: t[key]=context[key]
+    W.hydrate_asset(t)
     if f['kind']=='query':
         if p: audit(t,'L1 Agent','Pending proposal superseded by new information; not recorded as completed.')
         for step in w.get('plan',[]):
@@ -398,7 +399,7 @@ class StartRequest(BaseModel):
     store_name: str = Field(default='Not provided',max_length=200)
     submitted_by: str = Field(default='Not provided',max_length=200)
     contact_phone: str = Field(default='',max_length=80)
-    asset_id: str = Field(default='',max_length=100)
+    asset_id: str = Field(min_length=1,max_length=100)
     category: str = Field(default='',max_length=120)
     system_version: str = Field(default='',max_length=200)
 
@@ -496,9 +497,10 @@ def install(app,tickets):
             try: t=W.load(ticket_id)
             except HTTPException as e:
                 if e.status_code!=404: raise
-                t=W.create(W.Ticket(ticket_id=ticket_id,store_id=body.store_id or 'UNSPECIFIED',store_name=body.store_name or 'Not provided',
+                context=W.hydrate_asset({'asset_id':body.asset_id.strip()},required=True)
+                t=W.create(W.Ticket(ticket_id=ticket_id,store_id=context['store_id'],store_name=context['store_name'],
                     submitted_by=body.submitted_by or 'Not provided',contact_phone=body.contact_phone,date_opened=W.timestamp(),
-                    subject=body.query[:300],description=body.query,asset_id=body.asset_id,category=body.category,system_version=body.system_version))
+                    subject=body.query[:300],description=body.query,asset_id=context['asset_id'],category=body.category,system_version=context['system_version'],escalation_info=context.get('escalation_info',{})))
         turn=W.Turn(query=body.query,version=t['version'],request_id=body.request_id,mode=body.mode,tag=body.tag)
         def events():
             yield {'type':'created','ticket':t}

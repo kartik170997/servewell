@@ -21,6 +21,8 @@ def final(response):
 @pytest.fixture
 def live(client,providers,monkeypatch):
     configure(client);doc=add_doc(client);main.ingest(doc)
+    client.put('/api/ticket-directory/stores',json={'store_id':'TEST-STORE','store_name':'Test store','city':'Mumbai'})
+    client.put('/api/ticket-directory/assets',json={'asset_id':'ASSET-1','store_id':'TEST-STORE','asset_type':'POS Terminal','system_version':'POS v1'})
     monkeypatch.setattr(L,'classify',lambda *a:classification())
     monkeypatch.setattr(L,'assess',lambda *a:{'next_action':'continue','reason':'Proceed with the existing checklist.'})
     def planned(*a):
@@ -32,7 +34,7 @@ def live(client,providers,monkeypatch):
 
 
 def start(client,**changes):
-    return client.post('/api/live/start',json={'query':'hybrid retrieval is not working','request_id':'live-start-001','mode':'lexical',**changes})
+    return client.post('/api/live/start',json={'query':'hybrid retrieval is not working','request_id':'live-start-001','mode':'lexical','asset_id':'ASSET-1',**changes})
 
 
 def feedback(client,t,**changes):
@@ -179,3 +181,24 @@ def test_restore_reconciles_graph_checkpoint_after_projection_loss(client,live):
     restored=client.get('/api/live/'+t['ticket_id']).json()
     assert restored['workflow']['checkpoint']['id']==checkpoint
     assert restored['workflow']['pending']['kind']=='step'
+
+
+def test_start_resolves_asset_relationships_and_ignores_spoofed_context(client,live,monkeypatch):
+    seen=[]
+    def classified(t,q):
+        seen.append(t)
+        return classification()
+    monkeypatch.setattr(L,'classify',classified)
+    t=final(start(client,store_id='SPOOF',system_version='SPOOF'))
+    assert t['store_id']=='TEST-STORE' and t['store_name']=='Test store'
+    assert t['system_version']=='POS v1'
+    assert t['store_details']['city']=='Mumbai'
+    assert seen[0]['asset_details']['asset_type']=='POS Terminal'
+    assert t['escalation_info']['asset_type']=='POS Terminal'
+    assert client.get('/api/asset-context/ASSET-1').json()['store']['store_id']=='TEST-STORE'
+
+
+def test_unknown_asset_does_not_create_workflow(client,live):
+    assert start(client,asset_id='UNKNOWN').status_code==404
+    assert start(client,asset_id=' ').status_code==422
+    assert client.get('/api/tickets').json()==[]
