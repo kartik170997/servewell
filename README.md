@@ -89,6 +89,8 @@ Provider requests have timeouts and up to three attempts for transient failures.
 | Filters | Document and exact metadata tag |
 | Controls | 1–20 final results; 5–100 API candidates; UI presets 20, 30, 50, 100 |
 
+HyDE is optional and off by default. For vector or hybrid search, Claude generates a hypothetical document summary, which is embedded as a passage to retrieve real indexed documents. Hybrid lexical matching and reranking keep the original query. Generated text is not stored or presented as a source. HyDE adds a Claude call, latency, and provider usage charges. It is unavailable in lexical/sample search; generation failures are reported explicitly.
+
 Reranking is an optional second stage on any retrieval mode. Candidate count must be at least final result count. Search results show source file, document summary (or legacy page/entry), tags, retrieval source, and score type. BM25, cosine similarity, RRF, and reranking scores are not interchangeable or calibrated confidence percentages.
 
 Only ready documents are searched. Hybrid and rerank failures are explicit errors, never silently disguised as successful full retrieval. The current scope is retrieval of document summaries; a generated question-answering/chat stage is not included.

@@ -39,6 +39,8 @@ def providers(monkeypatch):
     def fake_request(method,url,headers,**kw):
         body=kw.get('json',{}); calls.append((url,body))
         if url.endswith('/v1/messages'):
+            if 'tools' not in body:
+                return {'content':[{'type':'text','text':'A hypothetical guide to finding useful information.'}],'stop_reason':'end_turn'}
             return {'content':[{'type':'tool_use','name':'record_document','input':{'title':'RAG handbook','summary':'Hybrid retrieval combines BM25 and vectors.','tags':['engineering','search'],'language':'English','document_type':'Guide'}}]}
         if url.endswith('/embed'): return {'data':[{'values':[0.1,0.2,0.3]} for t in body['inputs']]}
         if url.endswith('/vectors/upsert'): return {'upsertedCount':len(body['vectors'])}
@@ -237,3 +239,51 @@ def test_full_document_is_summarized_once_and_only_summary_is_embedded(client,pr
     assert len(upserts)==1 and len(upserts[0]['vectors'])==1
     assert upserts[0]['vectors'][0]['metadata']['text']==d['summary']
     assert not client.post('/api/search',json={'query':'OriginalOnlyToken','mode':'lexical','rerank':False}).json()['results']
+
+
+@pytest.mark.parametrize('mode',['vector','hybrid'])
+def test_hyde_embeds_generated_summary_and_reranks_original_query(client,providers,mode):
+    configure(client); doc=add_doc(client); main.ingest(doc); providers.clear()
+    response=client.post('/api/search',json={'query':'hybrid','mode':mode,'hyde':True,'rerank':True})
+    assert response.status_code==200
+    data=response.json()
+    assert data['hyde'] is True and data['results']
+    generation=[body for url,body in providers if url.endswith('/v1/messages')]
+    assert len(generation)==1 and generation[0]['messages'][0]['content']=='hybrid'
+    embedding=[body for url,body in providers if url.endswith('/embed')][0]
+    assert embedding['inputs']==[{'text':'A hypothetical guide to finding useful information.'}]
+    assert embedding['parameters']['input_type']=='passage'
+    rerank=[body for url,body in providers if url.endswith('/rerank')][0]
+    assert rerank['query']=='hybrid'
+    assert all(r['text']==main.get_doc(doc)['summary'] for r in data['results'])
+    if mode=='hybrid': assert 'lexical' in data['results'][0]['sources']
+    assert not any(url.endswith('/vectors/upsert') for url,body in providers)
+
+
+def test_hyde_off_keeps_direct_query_and_no_generation(client,providers):
+    configure(client);doc=add_doc(client);main.ingest(doc);providers.clear()
+    r=client.post('/api/search',json={'query':'hybrid','mode':'vector','rerank':False})
+    assert r.status_code==200 and r.json()['hyde'] is False
+    assert not any(url.endswith('/v1/messages') for url,body in providers)
+    embedding=[body for url,body in providers if url.endswith('/embed')][0]
+    assert embedding['inputs']==[{'text':'hybrid'}]
+    assert embedding['parameters']['input_type']=='query'
+
+
+def test_hyde_lexical_empty_and_failed_generation(client,providers,monkeypatch):
+    configure(client)
+    assert client.post('/api/search',json={'query':'hybrid','mode':'lexical','hyde':True}).status_code==422
+    r=client.post('/api/search',json={'query':'hybrid','mode':'hybrid','hyde':True})
+    assert r.json()['hyde'] is False and not providers
+    doc=add_doc(client);main.ingest(doc);providers.clear()
+    monkeypatch.setattr(main,'hypothetical_document',lambda *a: (_ for _ in ()).throw(ValueError('HyDE unavailable')))
+    r=client.post('/api/search',json={'query':'hybrid','mode':'vector','hyde':True})
+    assert r.status_code==502 and r.json()['detail']=='HyDE unavailable'
+    assert not providers
+
+
+@pytest.mark.parametrize('result',[{'content':[]},{'content':[{'type':'text','text':'partial'}],'stop_reason':'max_tokens'}])
+def test_hyde_rejects_empty_or_truncated_generation(monkeypatch,result):
+    monkeypatch.setattr(main,'request',lambda *a,**kw:result)
+    with pytest.raises(ValueError,match='complete hypothetical summary'):
+        main.hypothetical_document(main.Settings(claude_key='test-key'),'query')
