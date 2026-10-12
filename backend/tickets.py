@@ -244,7 +244,7 @@ def structured(schema, system, data):
     s=A.settings()
     if not s.claude_key: raise ValueError('Configure Claude to use the ticket assistant.')
     result=A.request('POST','https://api.anthropic.com/v1/messages',{'x-api-key':s.claude_key,'anthropic-version':'2023-06-01'},json={
-        'model':s.claude_model,'max_tokens':2200,'system':[versioning.cache_block(procedure_for(data.get('ticket'))),{'type':'text','text':system}],
+        'model':s.claude_model,'max_tokens':A.runtime_config.integer('CLAUDE_LEGACY_MAX_TOKENS'),'system':[versioning.cache_block(procedure_for(data.get('ticket'))),{'type':'text','text':system}],
         'tools':[{'name':'workflow_result','description':'Return the next workflow decision.','input_schema':schema.model_json_schema()}],
         'tool_choice':{'type':'tool','name':'workflow_result'},'messages':[{'role':'user','content':json.dumps(privacy.redact(data))}]})
     observability.model_usage({s.claude_model:result.get('usage',{})})
@@ -390,13 +390,16 @@ def retrieve(t, query, mode, explicit_tag=None):
     if context: query=query+'\nAsset context: '+context
     query=privacy.mask_text(query)
     # No guessed metadata values: use actual ingested tags or explicitly trace a broad search.
-    args={'query':query,'mode':mode,'rerank':False,'top_k':5,'candidates':30,'tags':tags[:100]}
-    results=A.search(A.Search(**args))['results']
-    existing={e['id']:e for e in t['workflow']['evidence']}
+    args={'query':query,'mode':mode,'rerank':A.runtime_config.boolean('WORKFLOW_RETRIEVAL_RERANK'),
+          'top_k':A.runtime_config.integer('WORKFLOW_RETRIEVAL_TOP_K'),
+          'candidates':A.runtime_config.integer('WORKFLOW_RETRIEVAL_CANDIDATES'),'tags':tags[:100]}
+    retrieved=A.search(A.Search(**args));results=retrieved['results']
+    accepted={r['document_id']:r for r in results}
+    existing={e['id']:{**e,'score':accepted[e['document_id']]['score'],'score_type':accepted[e['document_id']]['score_type']} for e in t['workflow']['evidence'] if e.get('original') and e['document_id'] in accepted}
     for r in results:
-        existing[r['id']]={k:r.get(k) for k in ('id','document_id','filename','title','text','tags','score','sources','lineage_id','document_version','content_sha256')}
+        existing[r['id']]={k:r.get(k) for k in ('id','document_id','filename','title','text','tags','score','score_type','sources','lineage_id','document_version','content_sha256')}
     t['workflow']['evidence']=list(existing.values())[-20:]
-    return {'action':'retrieve','query':query,'metadata_filter':{'tags_any':tags,'status':'ready'},'matches':len(results),
+    return {'action':'retrieve','query':query,'metadata_filter':{'tags_any':tags,'status':'ready'},'min_score':retrieved.get('min_score'),'score_type':retrieved.get('score_type'),'matches':len(results),
         'procedure_ref':t.get('procedure_ref'),'document_refs':[{k:r.get(k) for k in ('document_id','lineage_id','document_version','content_sha256')} for r in results],
         'note':'Filtered by matching ticket metadata.' if tags else 'No matching ingested tags; searched ready documents explicitly.'}
 

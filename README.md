@@ -271,3 +271,39 @@ A local masking layer processes workflow context, cached procedure text, outboun
 Explicitly labeled contacts such as `My name is Jane Doe. Phone: +91-98765-43210.` are captured locally; model-proposed contact-field updates are ignored. For ambiguous personal information, use the structured checklist fields. This is deterministic masking, not a guarantee of recognizing every name/address in arbitrary prose or source documents. Original files and local checkpoints intentionally retain source data. Previously exported MLflow records or data already sent to providers are not retroactively sanitized by this change.
 
 The frontend connects once on startup using `VITE_APP_TOKEN` and the saved backend URL, or `VITE_BACKEND_URL` (localhost defaults to port 8000). Connection failures open Settings for correction. Document updates remain manual; automatic connection does not enable polling. Vite values are build-time settings; restart Vite or rebuild Docker after changing them.
+
+
+## Retrieval score cutoffs and model limits
+
+All provider model IDs and generation limits are configured in `.env`. The backend validates required values at startup; missing/invalid values fail clearly instead of using code defaults. Restart the backend after changing them. Existing `.env` deployments must add the new settings from `.env.example`. API keys retain their existing saved-settings/environment behavior.
+
+| Setting | Current initial value | Purpose |
+| --- | --- | --- |
+| `CLAUDE_MODEL` | Your existing model ID | Summary, HyDE, and workflow model |
+| `EMBEDDING_MODEL` | Your existing model ID | Pinecone embeddings |
+| `RERANK_MODEL` | Your existing model ID | Pinecone reranking |
+| `CLAUDE_SUMMARY_MAX_TOKENS` | `2200` | Document enrichment output limit |
+| `CLAUDE_HYDE_MAX_TOKENS` | `600` | Hypothetical document output limit |
+| `CLAUDE_WORKFLOW_MAX_TOKENS` | `15000` | DSPy decision output limit |
+| `CLAUDE_LEGACY_MAX_TOKENS` | `2200` | Legacy ticket assistant output limit |
+| `PROVIDER_TIMEOUT_SECONDS` | `90` | Provider/DSPy request timeout |
+| `PROVIDER_MAX_ATTEMPTS` | `3` | Maximum direct HTTP attempts, including the first |
+| `WORKFLOW_MODEL_MAX_RETRIES` | `1` | DSPy retries after the first attempt |
+| `WORKFLOW_RETRIEVAL_TOP_K` | `5` | Workflow result count |
+| `WORKFLOW_RETRIEVAL_CANDIDATES` | `30` | Workflow retrieval pool |
+| `WORKFLOW_RETRIEVAL_RERANK` | `false` | Enable workflow reranking |
+
+Maximum token values are output ceilings, not required generation lengths; they must also be supported by the selected provider/model. No temperature is forced because the configured Claude model may not support it. Provider protocol fields and adapter selection remain implementation details.
+
+The Search playground has a **Minimum score** input. Leave it blank to use the relevant environment default; an explicit value overrides the default for that search. The workflow always uses the environment defaults. Thresholds are inclusive (`score >= cutoff`) and apply to the **final ranking score**, after reranking when enabled and before the response is returned. Rejected results are not supplied as new workflow evidence. Original excerpts survive another retrieval only when their parent document still passes; cached live-workflow evidence is checked against current defaults before reuse. If every candidate is rejected, retrieval returns an empty list without lowering the threshold or retrying unfiltered.
+
+| Setting | Initial value | Applied to |
+| --- | --- | --- |
+| `RETRIEVAL_VECTOR_MIN_SCORE` | `0.5` | Vector similarity without reranking |
+| `RETRIEVAL_RERANK_MIN_SCORE` | `0.3` | Final reranker score, in any retrieval mode |
+| `RETRIEVAL_BM25_MIN_SCORE` | `0` | Lexical BM25 without reranking |
+| `RETRIEVAL_RRF_MIN_SCORE` | `0.01` | Hybrid rank-fusion score without reranking |
+
+These are relevance scores, **not calibrated confidence probabilities**. BM25 is query-dependent and unbounded; RRF uses small rank-based values (with the current two lists and k=60, its maximum is about 0.0328). A 0.7 similarity threshold must not be copied to RRF. Vector thresholds assume a similarity-oriented index such as the existing cosine index. Defaults are starting points, not evaluated guarantees; tune each on reviewed queries and relevant/irrelevant examples. To apply a reranker cutoff to hybrid workflow retrieval, set `WORKFLOW_RETRIEVAL_RERANK=true` and tune `RETRIEVAL_RERANK_MIN_SCORE`.
+
+Example API request: `POST /api/search` with `{"query":"printer offline","mode":"vector","rerank":false,"min_score":0.7}`. Omit `min_score` (or pass null) for the server default. Responses include `min_score` and `score_type`, including empty results. Negative/nonfinite thresholds are rejected; non-BM25 thresholds must be at most 1. Workflow retrieval traces include the effective cutoff and score type.

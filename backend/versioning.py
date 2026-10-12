@@ -7,9 +7,9 @@ from pathlib import Path
 from fastapi import Depends, HTTPException
 from pydantic import BaseModel, Field
 if __package__:
-    from . import privacy
+    from . import privacy, runtime_config
 else:
-    import privacy
+    import privacy, runtime_config
 
 PROCEDURE_ID = 'SOP-IT-L1-002'
 
@@ -68,8 +68,7 @@ def procedure(a, reference=None):
 
 
 def cache_block(p):
-    ttl = os.getenv('PROCEDURE_CACHE_TTL', '1h')
-    if ttl not in ('5m', '1h'): raise ValueError('PROCEDURE_CACHE_TTL must be 5m or 1h.')
+    ttl = runtime_config.cache_ttl()
     return {'type': 'text', 'text': f"Escalation procedure {p['id']} version {p['version']} SHA256 {p['sha256']}\n{privacy.mask_text(p['text'])}",
             'cache_control': {'type': 'ephemeral', 'ttl': ttl}}
 
@@ -104,7 +103,7 @@ def install(a):
         p = procedure(a)
         with a.db() as c:
             versions = [dict(r) for r in c.execute('SELECT id,version,sha256,created_at,note FROM procedure_versions WHERE id=? ORDER BY version DESC', (PROCEDURE_ID,))]
-        return {'active': p, 'versions': versions, 'cache_ttl': os.getenv('PROCEDURE_CACHE_TTL', '1h')}
+        return {'active': p, 'versions': versions, 'cache_ttl': runtime_config.cache_ttl()}
 
     @a.app.get('/api/procedures/{version}', dependencies=auth)
     def get_revision(version: int):

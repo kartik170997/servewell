@@ -161,7 +161,7 @@ def predict(signature, output, context):
     if not s.claude_key: raise ValueError('Configure Claude before starting a live workflow.')
     # No disk cache, prompt history, or credentials are included in graph state.
     lm=dspy.LM('anthropic/'+s.claude_model,api_key=s.claude_key,cache=False,engine='litellm',
-        max_tokens=15000,num_retries=1,timeout=90)
+        max_tokens=W.A.runtime_config.integer('CLAUDE_WORKFLOW_MAX_TOKENS'),num_retries=W.A.runtime_config.integer('WORKFLOW_MODEL_MAX_RETRIES'),timeout=W.A.runtime_config.integer('PROVIDER_TIMEOUT_SECONDS'))
     try:
         # Validate typed outputs in DSPy; Anthropic's native schema subset rejects
         # array/string bounds in these Pydantic models (e.g. maxItems).
@@ -274,7 +274,8 @@ def classify_node(state):
 def prune_evidence(t, tag):
     with W.A.db() as c:
         valid={r['id']:r['text'] for r in c.execute("SELECT c.id,c.text FROM chunks c JOIN documents d ON d.id=c.document_id WHERE d.status='ready'")}
-    t['workflow']['evidence']=[e for e in t['workflow']['evidence'] if e['id'].split('@')[0] in valid
+    cutoffs=W.A.runtime_config.cutoffs()
+    t['workflow']['evidence']=[e for e in t['workflow']['evidence'] if e.get('score_type') in cutoffs and e.get('score',-1)>=cutoffs[e['score_type']] and e['id'].split('@')[0] in valid
         and (not tag or tag in e.get('tags',[])) and (e.get('original') or e['text']==valid[e['id']])]
 
 

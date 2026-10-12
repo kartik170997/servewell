@@ -149,7 +149,7 @@ def stream_operation(fn):
                 except Exception:
                     suppression=_SUPPRESS.set(True)
                 # Models can change between turns; preserve per-turn configuration in artifacts.
-                safe(_CLIENT.log_dict,run_id,{field:os.getenv(field,'') for field in ('CLAUDE_MODEL','EMBEDDING_MODEL','RERANK_MODEL')},f"workflow/turns/{state['turn']:06d}/models.json")
+                safe(_CLIENT.log_dict,run_id,{field:os.getenv(field,'') for field in ('CLAUDE_MODEL','EMBEDDING_MODEL','RERANK_MODEL','CLAUDE_WORKFLOW_MAX_TOKENS','CLAUDE_SUMMARY_MAX_TOKENS','CLAUDE_HYDE_MAX_TOKENS','CLAUDE_LEGACY_MAX_TOKENS','PROVIDER_TIMEOUT_SECONDS','PROVIDER_MAX_ATTEMPTS','WORKFLOW_MODEL_MAX_RETRIES','RETRIEVAL_VECTOR_MIN_SCORE','RETRIEVAL_RERANK_MIN_SCORE','RETRIEVAL_BM25_MIN_SCORE','RETRIEVAL_RRF_MIN_SCORE')},f"workflow/turns/{state['turn']:06d}/models.json")
             else:
                 suppression=_SUPPRESS.set(True)
         try:
