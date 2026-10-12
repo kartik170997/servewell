@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00041",
+  "store_id": "SW-0096",
+  "store_name": "ServeWell - Bandra West",
+  "submitted_by": "Saranya Iyer",
+  "contact_phone": "+91-86561-27499",
+  "date_opened": "2026-05-02T11:05:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Driver Issue",
+  "subject": "StarMC Print v2 driver requires reinstallation - receipt printer unresponsive",
+  "description": "The receipt printer (PRN-0096-P1) at our Bandra West location has become unresponsive and is not accepting print jobs from the POS terminals. When attempting to print orders, the system displays error code 0x00000050 in the StarMC Print v2 v3.0 driver logs and times out after 30 seconds. I have verified the following: (1) USB cable connections are secure and functioning properly, (2) printer hardware powers on and displays no error indicators, (3) test prints initiated directly from the printer's panel menu execute successfully, indicating the hardware is operational, (4) the driver appears in Device Manager but shows a yellow warning triangle with status 'Device Driver Software Not Fully Installed'. I have already attempted: clearing the print queue via Windows services, restarting both the printer and POS terminal, and disabling then re-enabling the device in Device Manager—none of these resolved the issue. This is impacting our ability to print customer receipts and order tickets during peak service hours. The printer has been in service for 14 months without prior issues. A full driver reinstallation is required to restore functionality.",
+  "asset_id": "PRN-0096-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "driver-issue"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-02T11:22:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed receipt printer PRN-0096-P1 is showing driver error 0x00000050 with yellow warning in Device Manager. Hardware test successful—issue is driver-related, not hardware failure."
+    },
+    {
+      "timestamp": "2026-05-02T11:35:45+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted submitter to confirm Windows version and system architecture. Advised to hold pending escalation to L2 for driver package download and remote installation support to avoid further downtime."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

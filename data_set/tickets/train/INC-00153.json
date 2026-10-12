@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00153",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Archana Goswami",
+  "contact_phone": "+91-73276-19602",
+  "date_opened": "2025-12-23T17:45:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online orders not appearing on Kitchen Display System (KDS) - Kukatpally store",
+  "description": "Multiple online orders placed through the ServeWell mobile app and third-party aggregator platforms (Swiggy/Zomato) between 17:15–17:40 IST are not displaying on the Kitchen Display System (CreamTech SC-300 v3.1). Orders are confirmed in the online ordering system backend and payment has been collected, but kitchen staff cannot see order details on the KDS terminal. This is causing severe order fulfillment delays and customer complaints. I have verified: (1) KDS terminal is powered on and networked; (2) no recent system restarts or updates; (3) three orders (Order IDs: OL-89234, OL-89241, OL-89248) confirmed in admin portal but absent from KDS queue; (4) manual order entry to KDS works correctly. The issue appears isolated to the integration between online order management system and KDS. Business impact: Unable to fulfill online orders in real time; estimated 12–15 pending orders queued; customer satisfaction at risk during peak dinner service.",
+  "asset_id": "SSM-0002-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-23T17:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed issue with online orders not syncing to KDS. Requested store to avoid manual workarounds and preserve system logs. Initial diagnosis: possible service disconnection between online order gateway and KDS middleware."
+    },
+    {
+      "timestamp": "2025-12-23T18:01:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Basic troubleshooting attempted: KDS terminal restarted and network connectivity verified (stable). Issue persists—new orders still not appearing. Escalating to L2 technical team for backend order sync investigation."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

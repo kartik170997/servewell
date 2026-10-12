@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00282",
+  "store_id": "SW-0071",
+  "store_name": "ServeWell - Dadar",
+  "submitted_by": "Sunil Trivedi",
+  "contact_phone": "+91-85469-95709",
+  "date_opened": "2025-11-05T20:32:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Terminal Startup",
+  "subject": "POS Terminal T1 fails to boot – stuck on splash screen",
+  "description": "Terminal POS-0071-T1 at the Dadar location is unable to complete startup. The device powers on and displays the OrbitPOS splash screen, but then hangs indefinitely without progressing to the login screen. Staff have attempted a hard reset (power cycle) once, but the issue persists. The terminal has been non-functional for approximately 45 minutes, impacting order entry capacity during peak service hours.",
+  "asset_id": "POS-0071-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "terminal-startup"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-05T20:38:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged. Confirmed terminal is unresponsive during startup sequence. Advised store manager to check power supply and network connectivity; awaiting feedback."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

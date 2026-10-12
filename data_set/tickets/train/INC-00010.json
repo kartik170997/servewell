@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00010",
+  "store_id": "SW-0082",
+  "store_name": "ServeWell - Prahlad Nagar",
+  "submitted_by": "Nandini Krishnan",
+  "contact_phone": "+91-96219-51383",
+  "date_opened": "2026-04-24T14:57:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Network Connectivity",
+  "subject": "POS Terminal T1 Not Responding - Unable to Process Orders",
+  "description": "Store manager reports that POS terminal T1 stopped working at approximately 14:45 IST today. The terminal is powered on and displays the login screen, but fails to connect to the FoodTech server. All transaction attempts result in connection timeout errors. No error messages are displayed on the terminal itself. The issue affects the entire checkout process for the counter. Store has verified that the terminal cables are connected properly and rebooted the device once without success.",
+  "asset_id": "POS-0082-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "network-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-24T15:03:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and categorized under POS. Initial diagnostics requested from store; advised to verify cable connections and restart terminal. No mention of network status or other devices at location."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

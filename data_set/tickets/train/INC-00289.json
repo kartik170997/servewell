@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00289",
+  "store_id": "SW-0069",
+  "store_name": "ServeWell - Porur",
+  "submitted_by": "Ramesh Naik",
+  "contact_phone": "+91-85606-49171",
+  "date_opened": "2026-01-28T19:34:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft serve machine PRN-0069-P1 fails to power on at Porur location",
+  "description": "The soft serve machine at ServeWell - Porur (asset PRN-0069-P1) is not starting despite multiple power-on attempts. The unit shows no lights, sounds, or display when the power switch is activated. No error codes are visible on the interface. The machine was last operational yesterday evening and has not been serviced recently. This is impacting customer service during peak hours.",
+  "asset_id": "PRN-0069-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-28T19:47:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Verified asset PRN-0069-P1 is registered to SW-0069. Escalated to equipment specialist due to no-power symptom and P2 priority."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

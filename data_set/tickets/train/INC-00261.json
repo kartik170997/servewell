@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00261",
+  "store_id": "SW-0090",
+  "store_name": "ServeWell - Sholinganallur",
+  "submitted_by": "Meena Chatterjee",
+  "contact_phone": "+91-78237-40217",
+  "date_opened": "2026-01-18T17:37:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal inaccessible at SW-0090; customers unable to place orders",
+  "description": "The ServeWell online ordering portal at our Sholinganallur location (SW-0090) has been completely unreachable since approximately 17:15 IST today. Customers attempting to access the portal through both the mobile app and web interface receive a connection timeout error after 30 seconds of loading. Our staff has confirmed that the in-store POS systems remain operational and internet connectivity to the store appears stable—speed tests show normal bandwidth. We have already attempted the following troubleshooting steps: (1) cleared browser cache and cookies on three different devices, (2) verified firewall rules on our local network switch (RTR-0090-01), (3) restarted the store WiFi router, and (4) tested from both WiFi and mobile hotspot connections. The issue persists across all access methods. This is impacting our lunch-hour order volume significantly—we estimate we have lost approximately 45-50 orders in the past two hours due to portal unavailability. Immediate resolution is critical as this is our peak ordering window. No recent system changes or updates were made at our location that could have triggered this outage.",
+  "asset_id": "RTR-0090-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-18T17:52:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and initial triage completed. Confirmed portal is down for SW-0090 specifically. Regional DNS health check shows no anomalies. Escalating to network operations team to verify backend connectivity and CDN status."
+    },
+    {
+      "timestamp": "2026-01-18T18:15:47+05:30",
+      "actor": "L1 Agent",
+      "note": "Network operations identified stale BGP route advertising incorrect IP for portal endpoint. Route flushed and corrected on central firewall. Portal connectivity restored and verified functional at 18:14 IST. Customer impact resolved."
+    }
+  ],
+  "resolution_notes": "BGP routing table corruption on the central gateway was causing portal traffic destined for SW-0090 to be routed to an inactive backup server. Network operations flushed the stale route entry and refreshed the routing daemon. Portal connectivity fully restored within 2 minutes of fix deployment. No local switch or firewall rule changes were required.",
+  "status": "Closed"
+}

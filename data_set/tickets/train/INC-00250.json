@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00250",
+  "store_id": "SW-0078",
+  "store_name": "ServeWell - Kothrud",
+  "submitted_by": "Anita Krishnan",
+  "contact_phone": "+91-78943-67125",
+  "date_opened": "2026-01-30T11:48:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Device Connectivity",
+  "subject": "Kitchen POS terminal unable to connect to NetLink router after power reset",
+  "description": "The kitchen POS terminal (MAC: 50:1A:A5:8C:3F:D2) stopped connecting to the NetLink NL-3000 v2.1 router this morning at approximately 11:15 IST after an unplanned power outage at the store. The device previously had stable connectivity on the 'ServeWell-Staff' 5GHz network. Upon restart, the terminal shows the Wi-Fi network in available networks list, but fails to authenticate with error message 'Authentication Failed - Status Code 0x00000001'. The POS terminal is running the latest firmware (v4.2.8) and the issue persists across three manual reconnection attempts. We have also cleared the stored Wi-Fi profile and re-entered the network credentials without success. The kitchen operations team has resorted to using a backup wired terminal, but this is impacting order processing efficiency during our peak lunch hours (currently 11:30-13:00). Asset details: Device IP (last known): 192.168.1.87, Router firmware last updated 2026-01-15, WPA2 Enterprise security protocol in use. The terminal is critical for kitchen order management and the current workaround is unsustainable.",
+  "asset_id": "RTR-0078-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "device-connectivity"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-30T12:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed authentication failure with error code 0x00000001. Advised customer to power cycle the POS terminal and router completely; instructed to wait 2 minutes between power-ups. Awaiting confirmation of outcome."
+    },
+    {
+      "timestamp": "2026-01-30T12:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Customer reports power cycle completed but authentication failure persists. Issue likely related to WPA2 Enterprise certificate mismatch post-outage or router DHCP pool exhaustion. Escalating to L2 network specialist for diagnostic checks."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

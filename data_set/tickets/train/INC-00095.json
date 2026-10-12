@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00095",
+  "store_id": "SW-0084",
+  "store_name": "ServeWell - Aundh",
+  "submitted_by": "Rajesh Kulkarni",
+  "contact_phone": "+91-85585-75715",
+  "date_opened": "2026-04-07T16:32:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "End-of-Day",
+  "subject": "End-of-Day Settlement Hanging at 87% Completion on POS Terminal 1",
+  "description": "End-of-Day settlement process initiated at 16:15 IST on POS Terminal 1 (asset ID POS-0084-T1) has stalled and is not progressing beyond 87% completion. The settlement dialog displays \"Processing transaction reconciliation\" but has remained frozen for approximately 17 minutes without advancing or showing error messages. The terminal becomes unresponsive when attempting to cancel or force-close the dialog. All other POS functions (billing, item lookup, customer search) continue to operate normally on this terminal. The issue is preventing store closure procedures and cash reconciliation for the day. The shift manager reports that the morning shift settled successfully without issues. No recent POS updates or configuration changes were made to the system. Store inventory count is complete and ready for settlement. Exact error message: None displayed; process simply hangs indefinitely. Steps already attempted: (1) Waited 10 minutes for background processes to complete, (2) Attempted Escape key to cancel dialog - no response, (3) Attempted Alt+F4 to close application window - no response, (4) Power-cycled terminal once - issue persists after restart, (5) Verified network connectivity - all lights on connection are green and stable. Business impact: Store manager cannot close registers, reconcile daily sales data, or proceed with end-of-shift procedures affecting store operations.",
+  "asset_id": "POS-0084-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "end-of-day"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-07T16:45:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and categorized. Initial triage confirms POS terminal POS-0084-T1 is network-accessible and running FoodTech POS v5.1.1. Advised store manager to note exact settlement percentage and check for any recent power fluctuations or network interruptions. Awaiting further details on settlement log files."
+    },
+    {
+      "timestamp": "2026-04-07T17:02:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Store confirmed no network interruptions detected and no error logs visible in terminal event viewer. Suggested clearing POS cache and attempting settlement on backup terminal POS-0084-T2 to isolate whether issue is hardware or data-specific. Pending store response."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

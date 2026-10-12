@@ -1,0 +1,26 @@
+{
+  "ticket_id": "INC-00124",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Anjali Mehta",
+  "contact_phone": "+91-81259-39912",
+  "date_opened": "2026-02-27T17:09:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Duplicate orders still appearing despite INC-00015 resolution",
+  "description": "We were told ticket INC-00015 fixed the duplicate order issue last week and everything was back to normal. But customers are still getting charged twice for single orders placed via the app. The POS is working fine and showing correct inventory, but the online platform keeps sending duplicate order confirmations to kitchen. This is happening every 2-3 orders today.",
+  "asset_id": "POS-0109-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [
+    "INC-00015"
+  ],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

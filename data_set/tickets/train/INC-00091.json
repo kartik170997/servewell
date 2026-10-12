@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00091",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Sunita Agarwal",
+  "contact_phone": "+91-78165-25906",
+  "date_opened": "2026-01-02T09:41:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network down at Saket location",
+  "description": "The guest Wi-Fi network at ServeWell - Saket has been down since this morning. Customers are unable to connect to the network and are complaining about lack of internet access. The NetLink router (RTR-0023-01) appears to be powered on, but the guest SSID is not broadcasting. No changes were made to the network configuration recently. This is affecting customer experience during peak hours.",
+  "asset_id": "RTR-0023-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

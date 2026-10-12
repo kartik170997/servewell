@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00214",
+  "store_id": "SW-0009",
+  "store_name": "ServeWell - BTM Layout",
+  "submitted_by": "Harish Kulkarni",
+  "contact_phone": "+91-85337-79352",
+  "date_opened": "2026-03-11T14:05:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhausted - devices unable to connect to network",
+  "description": "Multiple customer and staff devices are failing to connect to our Wi-Fi. Getting DHCP timeout errors. Router shows 100% DHCP lease allocation. Need to check lease pool settings on RTR-0009-01.",
+  "asset_id": "RTR-0009-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

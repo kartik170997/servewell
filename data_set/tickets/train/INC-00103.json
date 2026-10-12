@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00103",
+  "store_id": "SW-0005",
+  "store_name": "ServeWell - Kharadi",
+  "submitted_by": "Rohit Trivedi",
+  "contact_phone": "+91-89458-93647",
+  "date_opened": "2025-11-19T14:38:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhaustion causing guest Wi-Fi connection failures",
+  "description": "Multiple customers are unable to connect to the guest Wi-Fi network at ServeWell Kharadi since morning. When attempting to join the network, devices fail to obtain an IP address. The issue appears to correlate with a high volume of connection attempts. The router (Cisco SG350) is showing signs of DHCP pool exhaustion with active leases remaining uncleared. Initial observation suggests the DHCP lease timeout settings may need adjustment or the pool size requires review.",
+  "asset_id": "RTR-0005-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "DHCP lease duration reduced from 24 hours to 4 hours to accelerate IP reclamation. DHCP pool range expanded from /25 to /24 subnet, increasing available addresses from 126 to 254. Router configuration saved and guest Wi-Fi connectivity restored. Customers now connecting without issue.",
+  "status": "Resolved"
+}

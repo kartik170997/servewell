@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00090",
+  "store_id": "SW-0104",
+  "store_name": "ServeWell - Pimple Saudagar",
+  "submitted_by": "Sunil Banerjee",
+  "contact_phone": "+91-82803-86865",
+  "date_opened": "2026-04-29T13:05:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer not printing orders at Terminal 1",
+  "description": "The receipt printer connected to POS Terminal 1 (OrbitPOS v2.0) has stopped printing customer receipts since this morning around 12:30 PM. Orders are being processed normally in the system, but no physical receipts are being generated. The printer shows no error lights and appears powered on. We have restarted the terminal once without success. This is affecting order fulfillment operations at the counter.",
+  "asset_id": "POS-0104-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-29T13:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial troubleshooting initiated - confirmed printer connection status and OrbitPOS communication logs reviewed. Awaiting L2 escalation for hardware diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

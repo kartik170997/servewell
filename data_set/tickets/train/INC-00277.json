@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00277",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Ramesh Tiwari",
+  "contact_phone": "+91-83862-34347",
+  "date_opened": "2025-11-22T17:08:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Software Update",
+  "subject": "FoodTech POS v4.2.2 software update stuck at 67% installation on Terminal 1",
+  "description": "The POS terminal (POS-0054-T1) at ServeWell Thane West initiated an automatic software update to FoodTech POS v4.2.2 at approximately 16:45 IST on 2025-11-22. The update process has been frozen at 67% completion for over 20 minutes with no progress. The terminal displays a white progress bar with the message \"Installing FoodTech POS v4.2.2... 67% Complete\" but does not advance further. The system is unresponsive to keyboard and touchscreen inputs, preventing any order processing or customer transactions. Attempted troubleshooting steps include: (1) waiting an additional 10 minutes to allow background processes to complete, (2) attempting a soft restart by pressing the power button once (no effect—screen remains locked on update screen), and (3) checking the network connection which appears stable. This terminal handles approximately 40% of peak-hour transactions during lunch service, and the outage is directly impacting customer service capacity. The store manager estimates a business impact of ₹2,500–₹3,500 in lost transaction volume if the issue persists beyond 18:30 IST. Asset information confirmed: Terminal 1 (POS-0054-T1) running FoodTech POS v4.2.2 with Intel processor, 4GB RAM, and standard configuration. No error codes are currently visible on the frozen screen.",
+  "asset_id": "POS-0054-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "software-update"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-22T17:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Advised store manager to attempt a hard restart (hold power button for 10 seconds) and monitor for recovery. Follow-up scheduled in 15 minutes."
+    },
+    {
+      "timestamp": "2025-11-22T17:32:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Hard restart attempted by store manager; update screen persists at 67%. No improvement observed. Issue appears to require backend intervention or manual update process. Escalation to L2 recommended pending technical review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

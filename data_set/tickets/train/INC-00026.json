@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00026",
+  "store_id": "SW-0059",
+  "store_name": "ServeWell - Nungambakkam",
+  "submitted_by": "Rajesh Hegde",
+  "contact_phone": "+91-70081-22208",
+  "date_opened": "2026-02-05T14:04:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Dispensing Issue",
+  "subject": "Soft serve machine PRN-0059-P2 dispensing inconsistent portions",
+  "description": "The soft serve machine at Nungambakkam is dispensing inconsistent cone sizes throughout the day. Some cones are significantly smaller than standard portions while others dispense correctly, affecting customer satisfaction and portion consistency. Staff reports the issue started yesterday afternoon. Basic restart of the machine did not resolve the problem.",
+  "asset_id": "PRN-0059-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "dispensing-issue"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-05T14:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial troubleshooting steps documented: machine restart attempted without resolution. Escalating to equipment specialist team due to persistent dispensing inconsistency."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00265",
+  "store_id": "SW-0107",
+  "store_name": "ServeWell - LB Nagar",
+  "submitted_by": "Pallavi Desai",
+  "contact_phone": "+91-88960-81349",
+  "date_opened": "2026-03-01T21:29:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Timeout",
+  "subject": "Kiosk RTR-0107-01 screen going black after 2 minutes of inactivity",
+  "description": "Customer-facing kiosk at LB Nagar keeps timing out and going to black screen. Screen comes back when touched but this is happening too frequently. Affecting customer experience during peak hours.",
+  "asset_id": "RTR-0107-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "timeout"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

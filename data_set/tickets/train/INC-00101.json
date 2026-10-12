@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00101",
+  "store_id": "SW-0065",
+  "store_name": "ServeWell - Rajouri Garden",
+  "submitted_by": "Rohit Shetty",
+  "contact_phone": "+91-80563-25126",
+  "date_opened": "2026-04-09T18:18:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Payment Reader",
+  "subject": "Payment reader not responding on Kiosk 1 - PRN-0065-P1",
+  "description": "The payment reader on the self-service kiosk at Rajouri Garden is displaying an error code E-402 and refusing to accept card or UPI transactions. Customers are unable to complete purchases using the affected kiosk. The device was powered off and on once without resolution. Store staff report the issue started around 6:00 PM today during peak hours.",
+  "asset_id": "PRN-0065-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "payment-reader"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-09T18:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Remote diagnostics initiated; error code E-402 confirmed in payment reader logs. Recommended power cycle and USB connection check."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

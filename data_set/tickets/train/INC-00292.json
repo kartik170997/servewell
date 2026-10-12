@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00292",
+  "store_id": "SW-0027",
+  "store_name": "ServeWell - Ghatkopar",
+  "submitted_by": "Divya Patil",
+  "contact_phone": "+91-90734-66120",
+  "date_opened": "2025-11-09T14:16:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network unavailable at Ghatkopar location since 13:45 IST",
+  "description": "Guest Wi-Fi (ServeWell-Guest SSID) has been completely down since approximately 13:45 IST today. Customers are unable to connect to the network—the SSID does not appear in available networks list when scanned from multiple devices (iPhone and Android). Staff-facing Wi-Fi (ServeWell-Internal) remains functional. I have verified that the NetLink NL-3000 v2.2 router is powered on and showing status LEDs as active. I attempted a soft restart of the router via the admin console (no change), and confirmed the guest Wi-Fi VLAN configuration in the management interface appears correct. This is impacting customer experience during peak afternoon service hours, with approximately 25-30 customers currently in-store unable to access complimentary internet. Business impact is moderate but immediate resolution is needed to maintain service standards.",
+  "asset_id": "RTR-0027-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-09T14:28:00+05:30",
+      "actor": "L1 Agent - Vikram",
+      "note": "Ticket acknowledged. Confirmed with submitter that guest SSID is not broadcasting. Requested remote access to router to check VLAN and AP status. Advised store manager to inform customers of temporary Wi-Fi unavailability."
+    },
+    {
+      "timestamp": "2025-11-09T14:45:00+05:30",
+      "actor": "L1 Agent - Vikram",
+      "note": "Gained remote access to NetLink NL-3000. Identified guest Wi-Fi VLAN disabled in configuration. Re-enabled guest VLAN (VLAN ID 101) and restarted wireless service. Guest SSID now broadcasting and tested connectivity successfully from test device. Issue resolved."
+    }
+  ],
+  "resolution_notes": "Guest Wi-Fi VLAN (ID 101) was disabled in the NetLink NL-3000 router configuration, likely due to accidental misconfiguration during a recent management interface update. L1 agent remotely re-enabled the guest VLAN and restarted the wireless service. Guest SSID 'ServeWell-Guest' now broadcasting successfully. Verified guest connectivity with test device. Recommended that store management review Wi-Fi access policies and document any recent configuration changes to prevent recurrence.",
+  "status": "Closed"
+}

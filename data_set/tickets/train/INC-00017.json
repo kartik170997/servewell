@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00017",
+  "store_id": "SW-0116",
+  "store_name": "ServeWell - Jayanagar",
+  "submitted_by": "Rajesh Sen",
+  "contact_phone": "+91-84766-53036",
+  "date_opened": "2026-05-05T16:31:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "Soft serve machine freezing product too hard",
+  "description": "Soft serve machine is overcooling the product. Customers complaining that the ice cream is too frozen and difficult to dispense. Machine is running but temperature seems off.",
+  "asset_id": "SSM-0116-01",
+  "system_version": "FrostyPro 800 v1.8",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

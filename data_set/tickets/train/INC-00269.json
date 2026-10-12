@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00269",
+  "store_id": "SW-0117",
+  "store_name": "ServeWell - Wilson Garden",
+  "submitted_by": "Usha Hegde",
+  "contact_phone": "+91-84051-50026",
+  "date_opened": "2026-01-03T08:35:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Payment Timeout",
+  "subject": "Online payment gateway timing out during checkout",
+  "description": "Customers are unable to complete orders—payment gateway keeps timing out. Started this morning, affecting all online orders. Need urgent fix before lunch rush.",
+  "asset_id": "PRN-0117-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "payment-timeout"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

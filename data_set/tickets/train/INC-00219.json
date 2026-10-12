@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00219",
+  "store_id": "SW-0026",
+  "store_name": "ServeWell - Kondhwa",
+  "submitted_by": "Anita Rao",
+  "contact_phone": "+91-73235-14170",
+  "date_opened": "2026-04-14T12:07:00+05:30",
+  "priority": "P1",
+  "category": "POS",
+  "subcategory": "Terminal Startup",
+  "subject": "POS Terminal T1 fails to boot — stuck on splash screen with error code 0x8004",
+  "description": "Main POS terminal (POS-0026-T1) at Kondhwa location will not complete startup. Terminal powers on and displays ServeWell FoodTech splash screen, then hangs for 2–3 minutes before displaying error code 0x8004 (Database Connection Timeout). After error appears, terminal automatically reboots and cycles repeat indefinitely. This has been occurring since approximately 11:45 AM today. Store is unable to process orders on this terminal; we are currently operating with only the secondary terminal, causing significant queue buildup and customer dissatisfaction. I have already attempted all steps from the Terminal Startup troubleshooting runbook: (1) force restarted the terminal using the physical power button, (2) checked all network cables and confirmed they are firmly seated, (3) cleared the local POS cache via Settings > Maintenance > Clear Cache, and (4) verified internet connectivity is stable (other store systems online without issue). Despite completing all documented steps, the terminal continues to fail at the same point in the startup sequence. This is impacting lunch service revenue. Immediate assistance required.",
+  "asset_id": "POS-0026-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "terminal-startup"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-14T12:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged as P1. Confirmed all submitted troubleshooting steps appear to have been completed per runbook. Escalating to L2 POS Specialist for deeper diagnostics; error 0x8004 suggests backend database sync issue rather than local terminal fault."
+    },
+    {
+      "timestamp": "2026-04-14T13:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "L2 identified root cause: network gateway configuration at store had been inadvertently reset during morning router maintenance; DNS resolution for backend database server was failing silently. Terminal cache-clear steps masked the underlying DNS fault. Reconfigured gateway settings and restarted terminal remotely. Terminal now boots successfully."
+    }
+  ],
+  "resolution_notes": "Root cause was misconfigured DNS on store network gateway following routine router maintenance—not a terminal or application fault. The submitted troubleshooting steps (cache clear, power restart, cable checks) were executed correctly but could not resolve a network-layer DNS resolution failure. L2 reconfigured gateway settings and pushed remote terminal restart. Terminal POS-0026-T1 now boots and connects to database successfully. Store returned to full dual-terminal operation at 13:10 IST.",
+  "status": "Resolved"
+}

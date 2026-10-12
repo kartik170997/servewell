@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00268",
+  "store_id": "SW-0115",
+  "store_name": "ServeWell - Vastrapur",
+  "submitted_by": "Sunita Mehta",
+  "contact_phone": "+91-78462-33597",
+  "date_opened": "2026-04-15T20:26:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Sync Failure",
+  "subject": "Online order sync failure between NetLink NL-3000 and central order management system",
+  "description": "Since approximately 19:45 IST today (2026-04-15), orders placed through our ServeWell mobile app and website are not syncing to the kitchen display system (KDS) via the NetLink NL-3000 router (asset RTR-0115-01). Customers can successfully place orders and receive confirmation, but orders are not appearing in the POS or KDS terminals at store SW-0115. Our store manager reports 14 orders affected during peak dinner service (19:45–20:15 IST), with customers becoming frustrated. We manually entered 12 of these orders into the system, but 2 orders remain unaccounted for. No error messages are displayed on the NetLink device status panel, but the 'Sync Status' indicator on the POS management screen shows 'Disconnected' in red. We have already attempted: (1) power cycle of the NetLink NL-3000 router at 20:05 IST with no improvement; (2) verified all ethernet cables are firmly seated and showing green link lights; (3) checked internet connectivity—broadband is active and stable at 45 Mbps; (4) restarted the POS terminal software twice; (5) reviewed firewall rules and confirmed no recent changes. The NetLink device is running system_version NetLink NL-3000 v2.1. Business impact is significant: lost order visibility during peak hours is preventing timely order fulfillment and damaging customer experience. We need urgent diagnostics on the sync connection between NetLink and the central order management system.",
+  "asset_id": "RTR-0115-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "online-orders",
+    "sync-failure"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-15T20:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to L1 support. Initial triage confirms NetLink NL-3000 device is online and responding to ping; however, central sync connection is unresponsive. Requested store to provide recent system logs and confirm if any network configuration changes were made in the past 24 hours."
+    },
+    {
+      "timestamp": "2026-04-15T20:48:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Escalation review initiated due to business impact during peak service hours. Store manager confirmed no recent network or firewall policy changes. Recommended temporary workaround: all incoming orders to be manually verified and re-entered until sync restored. Engineering team notified for root cause investigation on central order management backend."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

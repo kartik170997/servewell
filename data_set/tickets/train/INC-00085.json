@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00085",
+  "store_id": "SW-0060",
+  "store_name": "ServeWell - Satellite",
+  "submitted_by": "Krishnan Bhat",
+  "contact_phone": "+91-88489-18079",
+  "date_opened": "2025-11-24T17:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Screen Frozen",
+  "subject": "POS Terminal T1 Screen Frozen — Unable to Process Orders",
+  "description": "The main POS touchscreen terminal (POS-0060-T1) at the counter has become completely unresponsive since approximately 17:15 IST today. The display shows the order entry screen but does not respond to any touch inputs or keyboard commands. No error messages are displayed on screen. We have attempted the following troubleshooting steps: (1) soft restart of the terminal via the power button — screen remained frozen; (2) waited 5 minutes to allow potential background processes to complete — no change; (3) verified network connectivity to the router is active (LED lights are green); (4) attempted to log out by holding the logout button for 10 seconds — no response. The terminal is currently displaying the last transaction screen from 17:14 IST. This is impacting our service delivery as we have only one backup terminal available and are now facing delays during peak dinner service. System version is FoodTech POS v5.1.1. Asset details confirmed: POS-0060-T1 is the primary front counter terminal installed since March 2024.",
+  "asset_id": "POS-0060-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-24T17:42:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Store confirmed screen is frozen with no touch response. Advised customer to power cycle the terminal completely and wait 2 minutes before restart."
+    },
+    {
+      "timestamp": "2025-11-24T17:51:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Follow-up call conducted — power cycle completed but screen remains frozen on order entry screen. No visible error codes. Ticket assigned to L2 POS Technical team for remote diagnostics and potential hard reset."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

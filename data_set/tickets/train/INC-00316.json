@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00316",
+  "store_id": "SW-0048",
+  "store_name": "ServeWell - SG Highway",
+  "submitted_by": "Sanjay Iyer",
+  "contact_phone": "+91-99303-85223",
+  "date_opened": "2026-01-07T18:36:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Printer Offline",
+  "subject": "Receipt printer PRN-0048-P1 not responding at counter 1",
+  "description": "The Epson TM-T88VI receipt printer at the main counter has gone offline and is not accepting print jobs. Staff attempted to restart the device but it remains unresponsive. The printer shows no error lights on the panel. Power cable appears properly connected. This is affecting order receipt printing during peak service hours.",
+  "asset_id": "PRN-0048-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "printer-offline"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

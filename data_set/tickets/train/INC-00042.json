@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00042",
+  "store_id": "SW-0010",
+  "store_name": "ServeWell - Kurla",
+  "submitted_by": "Pallavi Patel",
+  "contact_phone": "+91-84294-12456",
+  "date_opened": "2025-11-02T14:47:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal inaccessible at Kurla store",
+  "description": "The online ordering portal for ServeWell - Kurla has been unavailable since approximately 14:30 today. Customers attempting to place orders through the web interface receive a connection timeout error. Phone orders are still being accepted. The NetLink NL-3000 router appears to be functioning, but the portal backend may be experiencing issues. This is impacting revenue during peak lunch hours. No recent network changes or updates were made prior to the outage.",
+  "asset_id": "RTR-0010-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00098",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Divya Rao",
+  "contact_phone": "+91-78977-58280",
+  "date_opened": "2026-03-15T21:36:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Screen Frozen",
+  "subject": "POS-0007-T2 touchscreen unresponsive and frozen since 21:30 IST",
+  "description": "The main ordering terminal (POS-0007-T2) at the Lajpat Nagar location has become completely unresponsive as of 21:30 IST on 15-Mar-2026. The screen is displaying the last transaction summary from a customer order but will not accept any touch input or respond to the physical power button. The device shows no error messages—it is simply frozen on the current display. We have attempted a force restart by holding the power button for 30 seconds, which did not resolve the issue. We also verified that all cables are firmly connected and the network indicator light is still active. The terminal was functioning normally until approximately 21:25 IST when it became unresponsive mid-transaction. This is impacting our ability to process orders during peak dinner service; we are currently using the backup terminal (POS-0007-T1) but it is limiting our throughput. Device details confirmed: Asset ID POS-0007-T2, running FoodTech POS v5.1.1. Request urgent investigation and support.",
+  "asset_id": "POS-0007-T2",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-15T21:52:00+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Ticket acknowledged. Attempted remote diagnostics but device is not responding to network pings. Confirmed physical inspection details with submitter—no visible damage, all connections secure. Awaiting escalation to hardware team for potential on-site troubleshooting."
+    },
+    {
+      "timestamp": "2026-03-15T22:04:00+05:30",
+      "actor": "System",
+      "note": "P4 ticket auto-logged. Remote support tools unable to establish connection. Hardware escalation queued for first available technician visit during business hours on 2026-03-16."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

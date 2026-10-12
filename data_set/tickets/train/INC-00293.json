@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00293",
+  "store_id": "SW-0059",
+  "store_name": "ServeWell - Nungambakkam",
+  "submitted_by": "Vivek Goswami",
+  "contact_phone": "+91-76371-60328",
+  "date_opened": "2026-04-22T11:14:00+05:30",
+  "priority": "P1",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online orders not appearing on KDS printer",
+  "description": "Orders coming through online platform are not printing on KDS. Multiple orders stuck since 10:45 AM this morning. Printer is online but no orders showing up.",
+  "asset_id": "PRN-0059-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "KDS print queue service was stalled. Restarted StarMC Print service on terminal. Verified connectivity between POS and KDS. All pending orders re-synced and printing normally.",
+  "status": "Closed"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00224",
+  "store_id": "SW-0101",
+  "store_name": "ServeWell - Salt Lake",
+  "submitted_by": "Asha Bose",
+  "contact_phone": "+91-92837-14159",
+  "date_opened": "2025-12-03T18:28:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Motor Alarm",
+  "subject": "Soft serve machine motor overload alarm triggering intermittently",
+  "description": "Motor overload alarm keeps going off on the soft serve machine at Salt Lake outlet. Been happening since this morning. Already tried resetting the circuit breaker twice and cleared any visible obstructions from the motor fan. The alarm still comes back within 15-20 minutes of reset.",
+  "asset_id": "RTR-0101-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "motor-alarm"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

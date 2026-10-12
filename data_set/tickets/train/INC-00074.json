@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00074",
+  "store_id": "SW-0010",
+  "store_name": "ServeWell - Kurla",
+  "submitted_by": "Vivek Gupta",
+  "contact_phone": "+91-87386-76840",
+  "date_opened": "2026-02-20T16:25:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "StarMC Print v3.0 displaying error code on soft serve machine",
+  "description": "The soft serve machine at our Kurla outlet is displaying an error code on the StarMC Print control panel. The machine was operating normally this morning but started showing the error around 4:00 PM today. The error code appears to be blocking the machine from dispensing, affecting customer orders. We have not yet attempted any troubleshooting steps beyond a basic power cycle.",
+  "asset_id": "PRN-0010-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-20T16:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. L1 support attempting remote diagnostics to identify the specific error code displayed on the machine."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

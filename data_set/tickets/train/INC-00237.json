@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00237",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Shobha Menon",
+  "contact_phone": "+91-83741-39427",
+  "date_opened": "2026-05-09T15:00:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "FrostyPro 800 displaying persistent Error Code E-407 on soft serve machine SSM-0023-01",
+  "description": "The soft serve machine (FrostyPro 800 v2.0, asset ID SSM-0023-01) at ServeWell - Saket began displaying Error Code E-407 on its LED control panel at approximately 2:45 PM IST today (09-May-2026). The error message reads: 'E-407: Compressor Temperature Sensor Malfunction - Manual Reset Required.' The machine ceased dispensing product immediately upon error display and has remained non-functional for the past 12 minutes. We have attempted the standard L1 troubleshooting steps: (1) power cycle by switching off the main breaker for 30 seconds and restarting; (2) checked all visible cable connections to the compressor unit and temperature sensor assembly; (3) reviewed the on-screen diagnostics menu which confirmed the error persists with no additional fault codes displayed. The error code does not clear after restart, and the machine will not enter normal operation mode. Given that we are currently in peak service hours (3:00-5:00 PM), this impacts our ability to fulfill customer orders, and we have already had to turn away approximately 8 customers requesting soft serve items. We have one backup soft serve unit in store, but it is operating at reduced capacity. Immediate escalation and on-site technical support is required to restore this asset to service.",
+  "asset_id": "SSM-0023-01",
+  "system_version": "FrostyPro 800 v2.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-09T15:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed all standard troubleshooting steps already completed by submitter. Error Code E-407 on compressor temperature sensor confirmed as hardware-level fault requiring field technician assessment. Escalating to L2 engineering team and scheduling urgent on-site visit."
+    },
+    {
+      "timestamp": "2026-05-09T15:12:00+05:30",
+      "actor": "System",
+      "note": "Escalation flag activated. Ticket assigned to Field Service Team for same-day response. ETA provided to store: 4:15 PM IST."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

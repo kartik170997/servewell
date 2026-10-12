@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00225",
+  "store_id": "SW-0021",
+  "store_name": "ServeWell - Vashi",
+  "submitted_by": "Pallavi Agarwal",
+  "contact_phone": "+91-87069-26009",
+  "date_opened": "2026-02-26T18:49:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal unavailable - affecting customer orders at Vashi store",
+  "description": "I have been unable to access the ServeWell online ordering portal since approximately 6:15 PM today (26 Feb 2026). When I attempt to log in using my staff credentials (employee ID: PA-0021-847), I receive an error message: 'Session Authentication Failed - User credentials could not be verified.' The portal was working normally during my morning shift. I have cleared browser cache, tried three different browsers (Chrome, Firefox, Safari), disabled ad blockers, and attempted login from both my personal laptop and the store's back-office computer without success. I also tried resetting my password through the 'Forgot Password' link, but that functionality appears to be returning a timeout error. This is impacting my ability to view my scheduled shifts for the upcoming week and verify my hours worked against payroll records. I noticed my February salary was deposited yesterday but appears to be significantly lower than expected - approximately 8,000 rupees short. I need to cross-reference my logged hours in the system to understand the discrepancy, but cannot proceed without portal access. Store operations are not directly affected as the customer-facing online order system remains functional, but I cannot perform my administrative duties regarding staff scheduling and time-tracking verification. I have a payroll inquiry meeting scheduled with store management tomorrow morning and need this resolved urgently.",
+  "asset_id": "POS-0021-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-26T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and initially categorized under Online Orders - Portal Down. Agent performed basic connectivity checks on POS-0021-T1; system shows normal network status. Advised submitter to verify portal URL and check for recent browser updates."
+    },
+    {
+      "timestamp": "2026-02-26T19:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Follow-up call placed to submitter. During conversation, submitter mentioned salary discrepancy and shift-hour verification concerns. Agent noted that issue may be HR/Payroll-related rather than technical portal outage. Ticket flagged for escalation to determine correct assignment."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

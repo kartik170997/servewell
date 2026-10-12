@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00207",
+  "store_id": "SW-0110",
+  "store_name": "ServeWell - Paschim Vihar",
+  "submitted_by": "Sunil Rao",
+  "contact_phone": "+91-78625-92132",
+  "date_opened": "2026-02-27T14:22:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS terminal T1 running very slow during peak hours",
+  "description": "Terminal POS-0110-T1 is freezing and taking 10-15 seconds to process orders. Happening mainly during lunch rush. Staff can't keep up with customers. Restart helps temporarily but issue returns within an hour.",
+  "asset_id": "POS-0110-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

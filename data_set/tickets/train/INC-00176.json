@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00176",
+  "store_id": "SW-0083",
+  "store_name": "ServeWell - Jogeshwari",
+  "submitted_by": "Anita Kaur",
+  "contact_phone": "+91-86674-45838",
+  "date_opened": "2026-01-19T15:00:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online order not appearing on Kitchen Display System (KDS)",
+  "description": "Customer placed an online order through the ServeWell mobile app at 14:45 IST, but the order is not showing on the KDS terminal at the Jogeshwari location. The order was confirmed in the POS system and payment was processed successfully, but kitchen staff have no visibility of the order. This is causing order fulfillment delays.",
+  "asset_id": "POS-0083-T2",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-19T15:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial investigation conducted. Confirmed order exists in POS system (Order #SW-0083-4521). Restarted KDS terminal POS-0083-T2 to sync pending orders."
+    },
+    {
+      "timestamp": "2026-01-19T15:28:00+05:30",
+      "actor": "System",
+      "note": "KDS terminal reboot completed. Order now visible on kitchen display. Order status updated to 'In Preparation'."
+    }
+  ],
+  "resolution_notes": "KDS terminal POS-0083-T2 was experiencing a synchronization issue with the online order queue. A full system restart resolved the connectivity issue and the order immediately synced and appeared on the kitchen display. Order is now being prepared by kitchen staff.",
+  "status": "Resolved"
+}

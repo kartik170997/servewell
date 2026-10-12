@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00070",
+  "store_id": "SW-0099",
+  "store_name": "ServeWell - Dwarka",
+  "submitted_by": "Nalini Ghosh",
+  "contact_phone": "+91-78754-10336",
+  "date_opened": "2026-02-25T15:09:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Receipt printer PRN-0099-P1 printing compressed/distorted format since morning",
+  "description": "The receipt printer (StarMC Print v2 v3.0, asset PRN-0099-P1) at the Dwarka location has been producing incorrectly formatted output since approximately 10:45 AM today. Customer receipts are printing with text appearing compressed horizontally, making item names, prices, and order details difficult to read. The printer was functioning normally yesterday evening. No error messages are displayed on the printer LCD panel. Steps already attempted: (1) Power cycled the printer twice with 2-minute intervals between cycles; (2) Verified paper quality and alignment—no paper jams detected; (3) Checked printer queue on POS terminal and cleared all pending jobs; (4) Accessed printer settings menu and confirmed no recent configuration changes were made. The issue persists across all transactions. This is impacting customer experience as receipts are unreadable, though operational continuity is maintained as we are verbally confirming orders. Immediate attention needed to restore proper receipt formatting during peak service hours.",
+  "asset_id": "PRN-0099-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-25T15:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket assigned to queue for technical review. Confirmed asset PRN-0099-P1 is active and under warranty. Requested that store power-cycle printer one additional time and check for firmware updates available in system settings."
+    },
+    {
+      "timestamp": "2026-02-25T16:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted Nalini Ghosh via phone to gather additional details. Confirmed issue persists after third power cycle; no firmware updates were available. Escalation path initiated pending L2 printer specialist availability for remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

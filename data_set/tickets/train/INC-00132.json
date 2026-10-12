@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00132",
+  "store_id": "SW-0016",
+  "store_name": "ServeWell - Kengeri",
+  "submitted_by": "Krishnan Singh",
+  "contact_phone": "+91-81078-12757",
+  "date_opened": "2026-03-19T19:46:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "CreamTech SC-500 Mix Low Alert - SSM-0016-01",
+  "description": "The soft serve machine (CreamTech SC-500 v2.4) at Kengeri location is displaying a mix low alert on the control panel. The machine continues to operate but the alert has been intermittent since this evening. The mix reservoir appears to be at approximately 30% capacity. We have not attempted any troubleshooting steps yet and are requesting guidance on whether to refill the mix or if there may be a sensor issue.",
+  "asset_id": "SSM-0016-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

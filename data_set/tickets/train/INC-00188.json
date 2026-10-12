@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00188",
+  "store_id": "SW-0042",
+  "store_name": "ServeWell - Devanahalli",
+  "submitted_by": "Vijay Joshi",
+  "contact_phone": "+91-79011-91830",
+  "date_opened": "2025-11-08T07:30:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online order not appearing on kitchen display system",
+  "description": "Customer order came through but kitchen staff not seeing it on KDS. Order placed around 7:15 AM on terminal T2. Please check why online orders not syncing to kitchen display.",
+  "asset_id": "POS-0042-T2",
+  "system_version": "OrbitPOS v2.1",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

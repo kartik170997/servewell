@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00280",
+  "store_id": "SW-0093",
+  "store_name": "ServeWell - Mylapore",
+  "submitted_by": "Rajesh Singh",
+  "contact_phone": "+91-79839-15856",
+  "date_opened": "2026-05-06T09:22:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Payment Timeout",
+  "subject": "CreamTech SC-500 Payment Gateway Timeout - Order Processing Failures Since 09:15 IST",
+  "description": "Since approximately 09:15 IST this morning, our CreamTech SC-500 v2.4 self-ordering kiosk (asset SSM-0093-01) has been experiencing consistent payment gateway timeouts during customer transactions. Customers attempting to complete orders are receiving error code 504 (Gateway Timeout) after 45-60 seconds on the payment confirmation screen, followed by automatic order cancellation. This is preventing order placement and causing customer frustration during our peak breakfast service window. Affected transactions: approximately 12-15 failed orders in the past hour, with customers unable to retry successfully. I have verified: (1) kiosk internet connectivity is stable at 85 Mbps via our primary WiFi network, (2) power supply is normal, (3) no recent system updates or configuration changes, (4) other POS terminals at the location are functioning normally. The payment gateway integration appears to be responding intermittently; some transactions initiated after 09:18 IST succeeded, but the failure rate remains unacceptably high at approximately 70%. Business impact: direct revenue loss during peak hours and potential negative customer experience ratings.",
+  "asset_id": "SSM-0093-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "online-orders",
+    "payment-timeout"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-06T09:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial diagnostic: confirmed payment gateway timeout errors in system logs. Advised store manager to monitor transaction success rate and instructed to restart payment service on kiosk as first-level remediation step."
+    },
+    {
+      "timestamp": "2026-05-06T09:48:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Followed up with store - payment service restart completed, but timeout errors persist at 65% failure rate. Network connectivity confirmed stable. Escalation to payment gateway provider coordination recommended; ticket flagged for L2 technical review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

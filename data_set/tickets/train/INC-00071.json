@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00071",
+  "store_id": "SW-0057",
+  "store_name": "ServeWell - Rohini",
+  "submitted_by": "Mohan Pandey",
+  "contact_phone": "+91-92163-41133",
+  "date_opened": "2025-12-04T16:24:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "StarMC Print v2 printer (PRN-0057-P1) not detected on network at Rohini location",
+  "description": "The kitchen receipt printer (StarMC Print v2 v3.0) at our Rohini store location is not being detected by the POS system or any networked devices. The printer was functioning normally until approximately 15:45 hours today (04-Dec-2025). No error messages are displayed in the StarMC Print application, but the device simply does not appear in the available printers list. I have already attempted the following troubleshooting steps: (1) power cycled the printer three times with 2-minute intervals between cycles, (2) checked all physical network cable connections—Ethernet cable is securely connected to the printer's network port, (3) verified that the printer's IP address (192.168.1.87) shows as offline in the network configuration panel, (4) restarted the POS terminal and the print server software, and (5) confirmed that other devices on the same network are functioning normally. The printer appears to power on normally and the display shows no error codes. This is impacting our kitchen operations—orders are not printing to the kitchen display, causing delays in meal preparation and affecting service speed. Asset details confirmed: Device ID PRN-0057-P1, Model StarMC Print v2, Firmware version v3.0. Request immediate diagnosis and repair.",
+  "asset_id": "PRN-0057-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-04T16:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Extensive troubleshooting already completed by submitter. Verified asset details match records for SW-0057. Network connectivity issue suspected; escalating to L2 hardware diagnostics team for ARP/DHCP verification and printer firmware inspection."
+    },
+    {
+      "timestamp": "2025-12-04T17:05:00+05:30",
+      "actor": "System",
+      "note": "Automated network diagnostics initiated for device PRN-0057-P1 at 192.168.1.87. Ping response timeout recorded; device not responding to network discovery protocols."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

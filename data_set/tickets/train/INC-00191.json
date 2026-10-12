@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00191",
+  "store_id": "SW-0076",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Pooja Pandey",
+  "contact_phone": "+91-93301-95267",
+  "date_opened": "2025-12-13T21:58:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Terminal Startup",
+  "subject": "POS Terminal T1 fails to boot - stuck on splash screen",
+  "description": "Terminal T1 won't start properly—stuck on splash screen for 10+ minutes. Tried power cycle twice, no change. Need this running ASAP for evening service.",
+  "asset_id": "POS-0076-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "terminal-startup"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Cleared application cache and reinstalled FoodTech POS v4.2.1 client. Terminal booted successfully after full restart. Service restored.",
+  "status": "Closed"
+}

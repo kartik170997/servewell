@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00264",
+  "store_id": "SW-0009",
+  "store_name": "ServeWell - BTM Layout",
+  "submitted_by": "Anjali Nair",
+  "contact_phone": "+91-84151-22656",
+  "date_opened": "2026-02-15T18:06:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Slow Network",
+  "subject": "Persistent network slowdown affecting POS and kitchen display systems at BTM Layout",
+  "description": "Since this morning (2026-02-15, approximately 10:30 AM IST), the network connectivity at SW-0009 has degraded significantly. Both the POS terminals and kitchen display system (KDS) are experiencing severe latency, with page load times exceeding 8-12 seconds. Payment processing is intermittently timing out, causing customer friction during peak lunch hours. Wi-Fi signal strength appears adequate (ranging from -55 to -65 dBm on 2.4 GHz), but throughput measured via speed test shows only 2.1 Mbps download and 0.8 Mbps upload, well below the expected 25+ Mbps baseline. The issue persists across all connected devices (POS units, staff tablets, security camera feeds). No recent configuration changes were made. The Cisco SG350 switch (RTR-0009-01, firmware 15.2.1) shows no visible error indicators on the status panel. This is impacting order accuracy and customer satisfaction during our high-traffic window.",
+  "asset_id": "RTR-0009-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "slow-network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-15T18:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial intake completed. Confirmed issue reproducible across multiple POS terminals. Power-cycled RTR-0009-01 and ran basic ping diagnostics to gateway—latency nominal at 15ms. Requested store to monitor for 30 minutes post-restart."
+    },
+    {
+      "timestamp": "2026-02-15T20:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store reports intermittent improvement but slowness recurring. Checked switch port status; identified port 8 (KDS connection) operating at 100 Mbps half-duplex instead of 1 Gbps full-duplex. Escalated to network team for deeper diagnostics and port reconfiguration."
+    }
+  ],
+  "resolution_notes": "Root cause identified as a faulty CAT5e patch cable on port 8 (KDS connection) forcing link negotiation to 100 Mbps half-duplex, creating a network bottleneck. Cable replaced with CAT6A certified patch cable and port reconfigured to enforce Gbps full-duplex. Switch firmware verified as current. Network throughput restored to 28+ Mbps; POS and KDS latency now <2 seconds. Issue resolved 2026-02-15 21:45 IST.",
+  "status": "Resolved"
+}

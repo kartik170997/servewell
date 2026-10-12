@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00236",
+  "store_id": "SW-0070",
+  "store_name": "ServeWell - Jubilee Hills",
+  "submitted_by": "Geetha Nair",
+  "contact_phone": "+91-81449-38992",
+  "date_opened": "2025-11-19T19:45:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Duplicate orders appearing in POS system for single online order submissions",
+  "description": "Starting from approximately 18:30 IST today (2025-11-19), we have been experiencing a critical issue where single customer orders placed through our online ordering platform are being duplicated in the point-of-sale (POS) system. Specifically, when a customer places an order via the mobile app or web portal, the order appears twice in the kitchen display system (KDS) and the receipt printer (PRN-0070-P1, Epson TM-T88VI v1.12) generates duplicate receipts for the same order within 2-3 seconds of the initial submission. This has occurred approximately 12 times between 18:30 and 19:40 IST, affecting customer experience and creating confusion in our kitchen operations. Error messages observed: 'Order ID mismatch detected' briefly appears in the order confirmation screen before clearing. We have already attempted: (1) restarting the POS terminal twice, (2) checking network connectivity (stable on dedicated 50 Mbps line), (3) verifying no duplicate webhooks in the integration logs, and (4) manually canceling duplicate orders in the system. The issue persists even after these troubleshooting steps. Current business impact: 6 customers have complained about double charges on their payment cards, and kitchen staff are having to manually verify and discard duplicate order tickets, causing a 5-7 minute delay in order fulfillment. This is affecting peak dinner service efficiency. Asset details confirmed: POS terminal ID PRN-0070-P1, Epson TM-T88VI printer running firmware version v1.12, integrated with ServeWell online ordering platform (backend version 2.4.1).",
+  "asset_id": "PRN-0070-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-19T19:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial triage confirmed: duplicate orders reproducible, 12+ instances logged. Verified asset PRN-0070-P1 is online and connected. Escalating to L2 Technical Team for integration and system-level investigation."
+    },
+    {
+      "timestamp": "2025-11-19T20:08:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Customer refunds initiated for 6 affected transactions. Advised store manager to enable manual order verification mode temporarily to prevent further payment issues while root cause analysis is underway."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

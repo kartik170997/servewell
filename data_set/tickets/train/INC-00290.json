@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00290",
+  "store_id": "SW-0053",
+  "store_name": "ServeWell - Rajajinagar",
+  "submitted_by": "Swathi Sharma",
+  "contact_phone": "+91-85535-27342",
+  "date_opened": "2025-12-12T20:36:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS terminal T1 losing network connection intermittently",
+  "description": "Terminal T1 at counter keeps disconnecting from network every few minutes. Affects order processing. Already restarted the machine once but issue persists. Need urgent fix.",
+  "asset_id": "POS-0053-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

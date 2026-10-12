@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00151",
+  "store_id": "SW-0029",
+  "store_name": "ServeWell - Banashankari",
+  "submitted_by": "Anjali Kulkarni",
+  "contact_phone": "+91-71237-60374",
+  "date_opened": "2026-02-08T17:00:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS terminal T1 extremely slow during peak hours",
+  "description": "Terminal POS-0029-T1 is running very slow, taking 8-10 seconds to process orders during lunch rush. Already cleared cache and restarted the terminal twice as per the standard runbook, but issue persists. This is impacting checkout speed and customer wait times.",
+  "asset_id": "POS-0029-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

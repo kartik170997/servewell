@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00318",
+  "store_id": "SW-0009",
+  "store_name": "ServeWell - BTM Layout",
+  "submitted_by": "Saranya Pillai",
+  "contact_phone": "+91-96642-40539",
+  "date_opened": "2026-04-14T17:38:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network down at BTM Layout",
+  "description": "Guest Wi-Fi is not broadcasting. Customers unable to connect.",
+  "asset_id": "RTR-0009-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Guest Wi-Fi SSID re-enabled after power cycle of Cisco router. Network restored and verified operational.",
+  "status": "Closed"
+}

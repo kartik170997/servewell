@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00056",
+  "store_id": "SW-0094",
+  "store_name": "ServeWell - Ejipura",
+  "submitted_by": "Manish Naik",
+  "contact_phone": "+91-74933-10835",
+  "date_opened": "2025-12-22T11:36:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Payment Reader",
+  "subject": "Payment reader SSM-0094-01 not responding to card taps",
+  "description": "Self-service kiosk payment reader stopped accepting card payments this morning. Screen shows 'Reader Error' message. Customers unable to complete transactions. Need urgent fix.",
+  "asset_id": "SSM-0094-01",
+  "system_version": "FrostyPro 800 v1.8",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "payment-reader"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

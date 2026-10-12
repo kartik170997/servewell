@@ -1,0 +1,1121 @@
+{
+ "run": "dev-5pc",
+ "set": "dev",
+ "generated_at": "2026-10-12T08:22:24+00:00",
+ "baselines": {
+  "dev": {
+   "always_escalate": {
+    "n": 155,
+    "tp": 103,
+    "fp": 52,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.6645161290322581,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.6645161290322581,
+    "f1": 0.7984496124031008,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "never_escalate": {
+    "n": 155,
+    "tp": 0,
+    "fp": 0,
+    "fn": 103,
+    "tn": 52,
+    "accuracy": 0.33548387096774196,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "ticket_escalation_flag": {
+    "n": 155,
+    "tp": 32,
+    "fp": 3,
+    "fn": 71,
+    "tn": 49,
+    "accuracy": 0.5225806451612903,
+    "recall": 0.3106796116504854,
+    "specificity": 0.9423076923076923,
+    "precision": 0.9142857142857143,
+    "f1": 0.46376811594202894,
+    "balanced_accuracy": 0.6264936519790889,
+    "missed_escalation_rate": 0.6893203883495146,
+    "unnecessary_escalation_rate": 0.057692307692307696
+   },
+   "has_prior_troubleshooting": {
+    "n": 155,
+    "tp": 81,
+    "fp": 15,
+    "fn": 22,
+    "tn": 37,
+    "accuracy": 0.7612903225806451,
+    "recall": 0.7864077669902912,
+    "specificity": 0.7115384615384616,
+    "precision": 0.84375,
+    "f1": 0.8140703517587939,
+    "balanced_accuracy": 0.7489731142643764,
+    "missed_escalation_rate": 0.21359223300970873,
+    "unnecessary_escalation_rate": 0.28846153846153844
+   },
+   "p1_or_p2": {
+    "n": 155,
+    "tp": 42,
+    "fp": 16,
+    "fn": 61,
+    "tn": 36,
+    "accuracy": 0.5032258064516129,
+    "recall": 0.4077669902912621,
+    "specificity": 0.6923076923076923,
+    "precision": 0.7241379310344828,
+    "f1": 0.5217391304347826,
+    "balanced_accuracy": 0.5500373412994772,
+    "missed_escalation_rate": 0.5922330097087378,
+    "unnecessary_escalation_rate": 0.3076923076923077
+   }
+  },
+  "holdout": {
+   "always_escalate": {
+    "n": 65,
+    "tp": 43,
+    "fp": 22,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.6615384615384615,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.6615384615384615,
+    "f1": 0.7962962962962964,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "never_escalate": {
+    "n": 65,
+    "tp": 0,
+    "fp": 0,
+    "fn": 43,
+    "tn": 22,
+    "accuracy": 0.3384615384615385,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "ticket_escalation_flag": {
+    "n": 65,
+    "tp": 15,
+    "fp": 4,
+    "fn": 28,
+    "tn": 18,
+    "accuracy": 0.5076923076923077,
+    "recall": 0.3488372093023256,
+    "specificity": 0.8181818181818182,
+    "precision": 0.7894736842105263,
+    "f1": 0.48387096774193555,
+    "balanced_accuracy": 0.5835095137420719,
+    "missed_escalation_rate": 0.6511627906976745,
+    "unnecessary_escalation_rate": 0.18181818181818182
+   },
+   "has_prior_troubleshooting": {
+    "n": 65,
+    "tp": 28,
+    "fp": 3,
+    "fn": 15,
+    "tn": 19,
+    "accuracy": 0.7230769230769231,
+    "recall": 0.6511627906976745,
+    "specificity": 0.8636363636363636,
+    "precision": 0.9032258064516129,
+    "f1": 0.7567567567567568,
+    "balanced_accuracy": 0.757399577167019,
+    "missed_escalation_rate": 0.3488372093023256,
+    "unnecessary_escalation_rate": 0.13636363636363635
+   },
+   "p1_or_p2": {
+    "n": 65,
+    "tp": 10,
+    "fp": 2,
+    "fn": 33,
+    "tn": 20,
+    "accuracy": 0.46153846153846156,
+    "recall": 0.23255813953488372,
+    "specificity": 0.9090909090909091,
+    "precision": 0.8333333333333334,
+    "f1": 0.3636363636363636,
+    "balanced_accuracy": 0.5708245243128964,
+    "missed_escalation_rate": 0.7674418604651163,
+    "unnecessary_escalation_rate": 0.09090909090909091
+   }
+  }
+ },
+ "retrieval": {
+  "overall": {
+   "hybrid": {
+    "n": 30,
+    "recall@k": 0.6631746031746032,
+    "hit@k": 0.9666666666666667,
+    "precision@k": 0.5866666666666666,
+    "mrr": 0.8413888888888889,
+    "recall@k_with_default_cutoff": 0.6631746031746032,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 4701.0
+   },
+   "hybrid +tags": {
+    "n": 30,
+    "recall@k": 0.40706349206349207,
+    "hit@k": 0.7666666666666667,
+    "precision@k": 0.35333333333333333,
+    "mrr": 0.6903703703703704,
+    "recall@k_with_default_cutoff": 0.40706349206349207,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 4102.5
+   },
+   "hybrid+rerank": {
+    "n": 30,
+    "recall@k": 0.6159523809523808,
+    "hit@k": 1.0,
+    "precision@k": 0.5399999999999999,
+    "mrr": 0.9055555555555554,
+    "recall@k_with_default_cutoff": 0.6159523809523808,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 5795.0
+   },
+   "hybrid+rerank +tags": {
+    "n": 30,
+    "recall@k": 0.42817460317460315,
+    "hit@k": 0.8333333333333334,
+    "precision@k": 0.3733333333333333,
+    "mrr": 0.7416666666666667,
+    "recall@k_with_default_cutoff": 0.42817460317460315,
+    "empty_rate_with_default_cutoff": 0.03333333333333333,
+    "median_ms": 4530.0
+   },
+   "lexical": {
+    "n": 30,
+    "recall@k": 0.6092857142857144,
+    "hit@k": 0.9666666666666667,
+    "precision@k": 0.5400000000000001,
+    "mrr": 0.8402777777777778,
+    "recall@k_with_default_cutoff": 0.6092857142857144,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 188.0
+   },
+   "lexical +tags": {
+    "n": 30,
+    "recall@k": 0.40785714285714286,
+    "hit@k": 0.7666666666666667,
+    "precision@k": 0.3533333333333334,
+    "mrr": 0.7083333333333334,
+    "recall@k_with_default_cutoff": 0.40785714285714286,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 184.0
+   },
+   "vector": {
+    "n": 30,
+    "recall@k": 0.6076190476190476,
+    "hit@k": 0.9333333333333333,
+    "precision@k": 0.5266666666666667,
+    "mrr": 0.8803418803418803,
+    "recall@k_with_default_cutoff": 0.6076190476190476,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 4643.5
+   },
+   "vector +tags": {
+    "n": 30,
+    "recall@k": 0.41063492063492063,
+    "hit@k": 0.7666666666666667,
+    "precision@k": 0.3533333333333334,
+    "mrr": 0.7217340067340068,
+    "recall@k_with_default_cutoff": 0.41063492063492063,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 3888.5
+   },
+   "vector+rerank": {
+    "n": 30,
+    "recall@k": 0.6242857142857141,
+    "hit@k": 1.0,
+    "precision@k": 0.5466666666666666,
+    "mrr": 0.9055555555555554,
+    "recall@k_with_default_cutoff": 0.6242857142857141,
+    "empty_rate_with_default_cutoff": 0.0,
+    "median_ms": 5815.5
+   },
+   "vector+rerank +tags": {
+    "n": 30,
+    "recall@k": 0.42817460317460315,
+    "hit@k": 0.8333333333333334,
+    "precision@k": 0.3733333333333333,
+    "mrr": 0.7416666666666667,
+    "recall@k_with_default_cutoff": 0.42817460317460315,
+    "empty_rate_with_default_cutoff": 0.03333333333333333,
+    "median_ms": 4685.0
+   }
+  },
+  "by_category": {
+   "hybrid": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.7766666666666666,
+     "hit@k": 1.0,
+     "precision@k": 0.6,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.7766666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4344
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.6957142857142857,
+     "hit@k": 1.0,
+     "precision@k": 0.72,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.6957142857142857,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4715
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.31666666666666665,
+     "hit@k": 0.8,
+     "precision@k": 0.28,
+     "mrr": 0.515,
+     "recall@k_with_default_cutoff": 0.31666666666666665,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5133
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.86,
+     "hit@k": 1.0,
+     "precision@k": 0.7200000000000001,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.86,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4957
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.7,
+     "hit@k": 1.0,
+     "precision@k": 0.64,
+     "mrr": 0.7666666666666666,
+     "recall@k_with_default_cutoff": 0.7,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4370
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.63,
+     "hit@k": 1.0,
+     "precision@k": 0.56,
+     "mrr": 0.7666666666666667,
+     "recall@k_with_default_cutoff": 0.63,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4239
+    }
+   },
+   "hybrid +tags": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.4133333333333334,
+     "hit@k": 1.0,
+     "precision@k": 0.31999999999999995,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.4133333333333334,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4281
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.4023809523809524,
+     "hit@k": 1.0,
+     "precision@k": 0.44000000000000006,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.4023809523809524,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3772
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.16666666666666666,
+     "hit@k": 0.6,
+     "precision@k": 0.12000000000000002,
+     "mrr": 0.5422222222222223,
+     "recall@k_with_default_cutoff": 0.16666666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4105
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3642
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.0,
+     "hit@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "recall@k_with_default_cutoff": 0.0,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3560
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.64,
+     "hit@k": 1.0,
+     "precision@k": 0.5599999999999999,
+     "mrr": 0.8,
+     "recall@k_with_default_cutoff": 0.64,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4280
+    }
+   },
+   "hybrid+rerank": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.5966666666666666,
+     "hit@k": 1.0,
+     "precision@k": 0.43999999999999995,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.5966666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5988
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.5657142857142856,
+     "hit@k": 1.0,
+     "precision@k": 0.6,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.5657142857142856,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5376
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.45,
+     "hit@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 0.7666666666666666,
+     "recall@k_with_default_cutoff": 0.45,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5791
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.77,
+     "hit@k": 1.0,
+     "precision@k": 0.6399999999999999,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.77,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5594
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.6433333333333333,
+     "hit@k": 1.0,
+     "precision@k": 0.56,
+     "mrr": 0.8666666666666666,
+     "recall@k_with_default_cutoff": 0.6433333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5562
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.67,
+     "hit@k": 1.0,
+     "precision@k": 0.6000000000000001,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.67,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 6265
+    }
+   },
+   "hybrid+rerank +tags": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.42333333333333334,
+     "hit@k": 1.0,
+     "precision@k": 0.32,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.42333333333333334,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4281
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.4023809523809524,
+     "hit@k": 1.0,
+     "precision@k": 0.44000000000000006,
+     "mrr": 0.75,
+     "recall@k_with_default_cutoff": 0.4023809523809524,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4820
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.3333333333333333,
+     "hit@k": 1.0,
+     "precision@k": 0.27999999999999997,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.3333333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5275
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4903
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.0,
+     "hit@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "recall@k_with_default_cutoff": 0.0,
+     "empty_rate_with_default_cutoff": 0.2,
+     "median_ms": 4292
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.5900000000000001,
+     "hit@k": 1.0,
+     "precision@k": 0.52,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.5900000000000001,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4249
+    }
+   },
+   "lexical": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.61,
+     "hit@k": 1.0,
+     "precision@k": 0.48,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.61,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 201
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.6557142857142857,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.6557142857142857,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 182
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.2833333333333333,
+     "hit@k": 0.8,
+     "precision@k": 0.24,
+     "mrr": 0.575,
+     "recall@k_with_default_cutoff": 0.2833333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 169
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.8099999999999999,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.8099999999999999,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 398
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.6266666666666667,
+     "hit@k": 1.0,
+     "precision@k": 0.5599999999999999,
+     "mrr": 0.7666666666666667,
+     "recall@k_with_default_cutoff": 0.6266666666666667,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 186
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.6699999999999999,
+     "hit@k": 1.0,
+     "precision@k": 0.6,
+     "mrr": 0.8,
+     "recall@k_with_default_cutoff": 0.6699999999999999,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 499
+    }
+   },
+   "lexical +tags": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.4133333333333334,
+     "hit@k": 1.0,
+     "precision@k": 0.31999999999999995,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.4133333333333334,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 192
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.37380952380952376,
+     "hit@k": 1.0,
+     "precision@k": 0.39999999999999997,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.37380952380952376,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 201
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.19999999999999998,
+     "hit@k": 0.6,
+     "precision@k": 0.16,
+     "mrr": 0.55,
+     "recall@k_with_default_cutoff": 0.19999999999999998,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 170
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 176
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.0,
+     "hit@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "recall@k_with_default_cutoff": 0.0,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 184
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.64,
+     "hit@k": 1.0,
+     "precision@k": 0.5599999999999999,
+     "mrr": 0.8,
+     "recall@k_with_default_cutoff": 0.64,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 161
+    }
+   },
+   "vector": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.6633333333333333,
+     "hit@k": 1.0,
+     "precision@k": 0.48,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.6633333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4509
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.599047619047619,
+     "hit@k": 1.0,
+     "precision@k": 0.6399999999999999,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.599047619047619,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4594
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.16666666666666666,
+     "hit@k": 0.6,
+     "precision@k": 0.12000000000000002,
+     "mrr": 0.482051282051282,
+     "recall@k_with_default_cutoff": 0.16666666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4366
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.9099999999999999,
+     "hit@k": 1.0,
+     "precision@k": 0.7600000000000001,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.9099999999999999,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4888
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.48666666666666664,
+     "hit@k": 1.0,
+     "precision@k": 0.44000000000000006,
+     "mrr": 0.8,
+     "recall@k_with_default_cutoff": 0.48666666666666664,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4648
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.72,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4639
+    }
+   },
+   "vector +tags": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.4633333333333334,
+     "hit@k": 1.0,
+     "precision@k": 0.36,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.4633333333333334,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4089
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.37380952380952376,
+     "hit@k": 1.0,
+     "precision@k": 0.39999999999999997,
+     "mrr": 0.8400000000000001,
+     "recall@k_with_default_cutoff": 0.37380952380952376,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3830
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.16666666666666666,
+     "hit@k": 0.6,
+     "precision@k": 0.12000000000000002,
+     "mrr": 0.4904040404040404,
+     "recall@k_with_default_cutoff": 0.16666666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4861
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3609
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.0,
+     "hit@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "recall@k_with_default_cutoff": 0.0,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3663
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.64,
+     "hit@k": 1.0,
+     "precision@k": 0.5599999999999999,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.64,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 3554
+    }
+   },
+   "vector+rerank": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.5966666666666666,
+     "hit@k": 1.0,
+     "precision@k": 0.43999999999999995,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.5966666666666666,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5645
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.5657142857142856,
+     "hit@k": 1.0,
+     "precision@k": 0.6,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.5657142857142856,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5959
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.45,
+     "hit@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 0.7666666666666666,
+     "recall@k_with_default_cutoff": 0.45,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5744
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.6799999999999999,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5832
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.6433333333333333,
+     "hit@k": 1.0,
+     "precision@k": 0.56,
+     "mrr": 0.8666666666666666,
+     "recall@k_with_default_cutoff": 0.6433333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5759
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.67,
+     "hit@k": 1.0,
+     "precision@k": 0.6000000000000001,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.67,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5947
+    }
+   },
+   "vector+rerank +tags": {
+    "Kiosks": {
+     "n": 5,
+     "recall@k": 0.42333333333333334,
+     "hit@k": 1.0,
+     "precision@k": 0.32,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.42333333333333334,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4937
+    },
+    "Online Orders": {
+     "n": 5,
+     "recall@k": 0.4023809523809524,
+     "hit@k": 1.0,
+     "precision@k": 0.44000000000000006,
+     "mrr": 0.75,
+     "recall@k_with_default_cutoff": 0.4023809523809524,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4337
+    },
+    "POS": {
+     "n": 5,
+     "recall@k": 0.3333333333333333,
+     "hit@k": 1.0,
+     "precision@k": 0.27999999999999997,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.3333333333333333,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5001
+    },
+    "Printers": {
+     "n": 5,
+     "recall@k": 0.82,
+     "hit@k": 1.0,
+     "precision@k": 0.68,
+     "mrr": 1.0,
+     "recall@k_with_default_cutoff": 0.82,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 5051
+    },
+    "Soft Serve": {
+     "n": 5,
+     "recall@k": 0.0,
+     "hit@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "recall@k_with_default_cutoff": 0.0,
+     "empty_rate_with_default_cutoff": 0.2,
+     "median_ms": 4375
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "recall@k": 0.5900000000000001,
+     "hit@k": 1.0,
+     "precision@k": 0.52,
+     "mrr": 0.9,
+     "recall@k_with_default_cutoff": 0.5900000000000001,
+     "empty_rate_with_default_cutoff": 0.0,
+     "median_ms": 4423
+    }
+   }
+  }
+ },
+ "workflow": {
+  "tickets": 30,
+  "errors": 0,
+  "error_messages": [],
+  "routing_confusion": {
+   "l1_guided -> l1_guided": 9,
+   "l1_guided -> needs_clarification": 1,
+   "l2_escalation -> l1_guided": 15,
+   "l2_escalation -> l2_escalation": 4,
+   "l2_escalation -> needs_clarification": 1
+  },
+  "escalation_first_turn": {
+   "n": 30,
+   "tp": 4,
+   "fp": 0,
+   "fn": 16,
+   "tn": 10,
+   "accuracy": 0.4666666666666667,
+   "recall": 0.2,
+   "specificity": 1.0,
+   "precision": 1.0,
+   "f1": 0.33333333333333337,
+   "balanced_accuracy": 0.6,
+   "missed_escalation_rate": 0.8,
+   "unnecessary_escalation_rate": 0.0
+  },
+  "escalation_intent": {
+   "n": 30,
+   "tp": 4,
+   "fp": 0,
+   "fn": 16,
+   "tn": 10,
+   "accuracy": 0.4666666666666667,
+   "recall": 0.2,
+   "specificity": 1.0,
+   "precision": 1.0,
+   "f1": 0.33333333333333337,
+   "balanced_accuracy": 0.6,
+   "missed_escalation_rate": 0.8,
+   "unnecessary_escalation_rate": 0.0
+  },
+  "baselines_same_tickets": {
+   "always_escalate": {
+    "n": 30,
+    "tp": 20,
+    "fp": 10,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.6666666666666666,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.6666666666666666,
+    "f1": 0.8,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "ticket_escalation_flag": {
+    "n": 30,
+    "tp": 3,
+    "fp": 1,
+    "fn": 17,
+    "tn": 9,
+    "accuracy": 0.4,
+    "recall": 0.15,
+    "specificity": 0.9,
+    "precision": 0.75,
+    "f1": 0.24999999999999997,
+    "balanced_accuracy": 0.525,
+    "missed_escalation_rate": 0.85,
+    "unnecessary_escalation_rate": 0.1
+   },
+   "has_prior_troubleshooting": {
+    "n": 30,
+    "tp": 14,
+    "fp": 3,
+    "fn": 6,
+    "tn": 7,
+    "accuracy": 0.7,
+    "recall": 0.7,
+    "specificity": 0.7,
+    "precision": 0.8235294117647058,
+    "f1": 0.7567567567567567,
+    "balanced_accuracy": 0.7,
+    "missed_escalation_rate": 0.3,
+    "unnecessary_escalation_rate": 0.3
+   }
+  },
+  "escalation_by_history": {
+   "history=True": {
+    "n": 17,
+    "tp": 4,
+    "fp": 0,
+    "fn": 10,
+    "tn": 3,
+    "accuracy": 0.4117647058823529,
+    "recall": 0.2857142857142857,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.4444444444444445,
+    "balanced_accuracy": 0.6428571428571428,
+    "missed_escalation_rate": 0.7142857142857143,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "history=False": {
+    "n": 13,
+    "tp": 0,
+    "fp": 0,
+    "fn": 6,
+    "tn": 7,
+    "accuracy": 0.5384615384615384,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   }
+  },
+  "escalation_by_category": {
+   "Kiosks": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "tn": 4,
+    "accuracy": 0.8,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Online Orders": {
+    "n": 5,
+    "tp": 2,
+    "fp": 0,
+    "fn": 3,
+    "tn": 0,
+    "accuracy": 0.4,
+    "recall": 0.4,
+    "specificity": null,
+    "precision": 1.0,
+    "f1": 0.5714285714285715,
+    "balanced_accuracy": null,
+    "missed_escalation_rate": 0.6,
+    "unnecessary_escalation_rate": null
+   },
+   "POS": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "tn": 2,
+    "accuracy": 0.4,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Printers": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "tn": 2,
+    "accuracy": 0.4,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Soft Serve": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "tn": 2,
+    "accuracy": 0.4,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Wi-Fi / Network": {
+    "n": 5,
+    "tp": 2,
+    "fp": 0,
+    "fn": 3,
+    "tn": 0,
+    "accuracy": 0.4,
+    "recall": 0.4,
+    "specificity": null,
+    "precision": 1.0,
+    "f1": 0.5714285714285715,
+    "balanced_accuracy": null,
+    "missed_escalation_rate": 0.6,
+    "unnecessary_escalation_rate": null
+   }
+  },
+  "priority_matches_intake": 0.3,
+  "agent_retrieval": {
+   "recall@5": 0.5251587301587302,
+   "hit@5": 0.8,
+   "mrr": 0.7111111111111111
+  },
+  "grounding": {
+   "steps": 120,
+   "steps_with_citation": 1.0,
+   "steps_citing_a_labeled_relevant_doc": 0.725
+  },
+  "latency_seconds": {
+   "p50": 56.5,
+   "p95": 67.8,
+   "max": 74.5
+  },
+  "judge": {
+   "labeled": null,
+   "adversarial": null,
+   "adversarial_by_type": {}
+  }
+ }
+}

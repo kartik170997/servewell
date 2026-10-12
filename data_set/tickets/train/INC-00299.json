@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00299",
+  "store_id": "SW-0055",
+  "store_name": "ServeWell - Sarjapur",
+  "submitted_by": "Sunil Krishnan",
+  "contact_phone": "+91-91221-29528",
+  "date_opened": "2026-01-12T18:55:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - orders not syncing to POS",
+  "description": "Zomato integration has been down since approximately 6:30 PM today. No new orders from Zomato are appearing in the POS system (OrbitPOS v2.1). The store continues to receive orders through the app, but they are not reflecting in our kitchen display and order management workflow. This is causing delays in order fulfillment and customer dissatisfaction. We have verified internet connectivity is stable and the POS terminal is functioning normally for walk-in orders. Immediate attention required to restore the Zomato sync.",
+  "asset_id": "POS-0055-T1",
+  "system_version": "OrbitPOS v2.1",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

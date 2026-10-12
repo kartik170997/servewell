@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00175",
+  "store_id": "SW-0041",
+  "store_name": "ServeWell - Andheri West",
+  "submitted_by": "Rajesh Gupta",
+  "contact_phone": "+91-95314-62976",
+  "date_opened": "2026-01-24T13:44:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Payment Error",
+  "subject": "Payment gateway timeout errors on Terminal 1 during peak hours",
+  "description": "Customers are experiencing repeated payment failures when attempting to complete transactions on POS Terminal 1 at the Andheri West location. The error message displays 'Gateway Timeout - Transaction Cancelled' after 30-40 seconds of processing. This issue has been occurring intermittently since this morning around 11:30 AM, with increased frequency during lunch peak hours. Approximately 8-10 customer transactions have failed in the last two hours, affecting customer satisfaction and sales.",
+  "asset_id": "POS-0041-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "payment-error"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-24T14:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and assigned for triage. Store manager advised to switch to Terminal 2 for payment processing temporarily to minimize customer impact during peak service hours."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

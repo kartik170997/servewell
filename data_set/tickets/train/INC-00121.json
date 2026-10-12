@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00121",
+  "store_id": "SW-0088",
+  "store_name": "ServeWell - Yelahanka",
+  "submitted_by": "Kavitha Verma",
+  "contact_phone": "+91-96579-83772",
+  "date_opened": "2025-12-18T07:16:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS terminal losing network connection intermittently",
+  "description": "Terminal 1 at Yelahanka store keeps dropping network connectivity throughout the day. Staff unable to process orders during these outages.",
+  "asset_id": "POS-0088-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

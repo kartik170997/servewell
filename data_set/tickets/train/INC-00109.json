@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00109",
+  "store_id": "SW-0050",
+  "store_name": "ServeWell - Ameerpet",
+  "submitted_by": "Nikhil Verma",
+  "contact_phone": "+91-92251-68972",
+  "date_opened": "2025-12-07T20:38:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection failing on Ameerpet router - affecting POS sync",
+  "description": "The VPN tunnel on our Cisco router (RTR-0050-01) has gone down, preventing secure communication with the central office. POS terminals are unable to sync transaction data and inventory updates are delayed. The router shows as online but VPN status indicates disconnected. This is impacting our ability to process orders efficiently during peak hours.",
+  "asset_id": "RTR-0050-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-07T20:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed VPN disconnection on Ameerpet site. Requested store to verify internet connectivity and check for any recent configuration changes. Awaiting response."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

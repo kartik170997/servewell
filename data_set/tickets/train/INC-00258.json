@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00258",
+  "store_id": "SW-0105",
+  "store_name": "ServeWell - Banjara Hills",
+  "submitted_by": "Amit Gupta",
+  "contact_phone": "+91-95170-42631",
+  "date_opened": "2026-05-12T09:03:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Printer not working correctly",
+  "description": "The printer is printing wrong stuff. It's messing up our receipts and orders. Every time someone tries to print something it comes out all weird. Not sure what's happening but we need this fixed ASAP because customers are complaining. Can you please check it?",
+  "asset_id": "PRN-0105-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-12T09:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Attempted to reach submitter for clarification on error messages and print samples but phone went to voicemail. Requested detailed troubleshooting logs from store."
+    },
+    {
+      "timestamp": "2026-05-12T09:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Sent standard printer diagnostics checklist via email to store manager. Waiting for store to respond with specific error codes, sample receipt images, and confirmation of recent changes to POS system or network."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

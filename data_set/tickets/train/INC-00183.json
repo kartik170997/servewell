@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00183",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Anjali Das",
+  "contact_phone": "+91-97648-25139",
+  "date_opened": "2026-02-01T07:27:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer offline – Terminal 1 not printing orders since morning",
+  "description": "The receipt printer connected to POS Terminal 1 (asset POS-0022-T1) has stopped responding since approximately 6:45 AM today. When staff attempt to print orders, the FoodTech POS v4.2.3 system displays error code E-PRINT-502 ('Printer communication timeout'). The printer (Zebra TLP 2844Z model) is powered on, has paper loaded, and shows a solid green light, but no print jobs are being processed. We have already attempted the following troubleshooting steps: (1) restarted the POS terminal, (2) checked USB cable connections—all secure, (3) reinstalled printer drivers via Device Manager, (4) cleared the print queue on the host computer, (5) tested with a direct USB test print from Windows—no response. The issue persists across all order types (dine-in, takeaway, delivery). This is impacting service delivery during peak breakfast hours; customers are waiting 8–10 minutes longer while staff manually write receipts. We need urgent resolution to restore normal operations. Store is operating at 70% efficiency due to manual workaround. POS terminal otherwise functioning normally; issue is isolated to printer communication.",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-01T07:42:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Customer has completed comprehensive local troubleshooting. Error E-PRINT-502 suggests firmware or driver communication issue. Remote printer status check initiated from backend—printer responding to network ping but not accepting print jobs."
+    },
+    {
+      "timestamp": "2026-02-01T08:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Advised store manager to power cycle printer for 2 minutes and check for firmware update availability in POS settings. Escalation flagged due to P3 priority + business impact during peak hours. Assigned to L2 Hardware Support team for remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00222",
+  "store_id": "SW-0099",
+  "store_name": "ServeWell - Dwarka",
+  "submitted_by": "Sridhar Goswami",
+  "contact_phone": "+91-72416-26426",
+  "date_opened": "2026-03-22T09:39:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Duplicate orders printing on POS - customers charged twice",
+  "description": "Getting duplicate order prints on the kitchen printer this morning. Started around 9 AM. Multiple customers reporting they were charged twice for the same order on the app. Printer PRN-0099-P1 seems fine otherwise but the orders are coming through twice in the system.",
+  "asset_id": "PRN-0099-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

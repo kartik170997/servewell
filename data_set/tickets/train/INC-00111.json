@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00111",
+  "store_id": "SW-0008",
+  "store_name": "ServeWell - Pitampura",
+  "submitted_by": "Mohan Tiwari",
+  "contact_phone": "+91-99649-86556",
+  "date_opened": "2025-12-09T10:24:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Multiple duplicate orders appearing in system for same customer",
+  "description": "Store manager reports that customers are receiving duplicate order confirmations and being charged multiple times for single orders placed through the online ordering platform. Between 09:15 and 10:10 AM today, at least 3 customers complained about receiving 2-3 identical orders with separate order IDs and payment deductions. The Cisco router RTR-0008-01 is handling the order routing for this location. Immediate investigation needed to identify the root cause and prevent further customer impact.",
+  "asset_id": "RTR-0008-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-09T10:31:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed duplicate order pattern with store manager. Escalated to Network team for router diagnostics and to Order Management team for database transaction review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

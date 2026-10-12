@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00081",
+  "store_id": "SW-0116",
+  "store_name": "ServeWell - Jayanagar",
+  "submitted_by": "Deepa Banerjee",
+  "contact_phone": "+91-70513-37152",
+  "date_opened": "2025-12-25T21:55:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection failing on RTR-0116-01 - unable to access central office systems",
+  "description": "Store staff are unable to connect to the corporate VPN on the main router (RTR-0116-01). The VPN tunnel was working yesterday but stopped responding this morning. Staff cannot access inventory management and payroll systems. The router shows a solid connection to the ISP, but VPN authentication is timing out. No recent configuration changes have been made.",
+  "asset_id": "RTR-0116-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-25T22:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged. Confirmed VPN service is down on RTR-0116-01. Restarted VPN daemon and flushed credential cache. VPN tunnel reconnected successfully and staff can now access central systems."
+    }
+  ],
+  "resolution_notes": "VPN service was stuck in failed state due to cached authentication credentials. L1 support restarted the VPN daemon process and cleared the credential cache on RTR-0116-01, which restored connectivity to corporate systems. No firmware update or hardware replacement required.",
+  "status": "Resolved"
+}

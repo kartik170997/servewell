@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00158",
+  "store_id": "SW-0068",
+  "store_name": "ServeWell - Lokhandwala",
+  "submitted_by": "Swathi Hegde",
+  "contact_phone": "+91-77627-30922",
+  "date_opened": "2026-02-08T11:11:00+05:30",
+  "priority": "P1",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "RTR-0068-01 Soft Serve Mix Low Alert - Machine Unable to Dispense",
+  "description": "The soft serve machine (NetLink NL-3000 v2.2, Asset ID: RTR-0068-01) at ServeWell - Lokhandwala has been triggering persistent 'Mix Low' alerts since approximately 10:45 AM this morning. The machine displays error code MIX-LOW-002 on the operator panel and has stopped dispensing product entirely. We have confirmed that the mix hopper was filled to capacity at 09:30 AM today, ruling out a genuine depletion scenario. The refrigeration unit appears to be functioning normally (temperature display reads 2°C as expected). We have attempted a manual reset of the machine twice using the power cycle method, but the alert persists immediately upon restart. The issue is severely impacting customer service during peak lunch hours, with at least 20+ customers turned away in the past 45 minutes. This machine is our only soft serve unit at this location. Immediate escalation to technical team is required to restore service.",
+  "asset_id": "RTR-0068-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-08T11:22:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed asset details and error code MIX-LOW-002 matches sensor malfunction pattern. Escalating to L2 Technical Support for sensor diagnostics and potential component replacement."
+    },
+    {
+      "timestamp": "2026-02-08T11:35:42+05:30",
+      "actor": "L1 Agent",
+      "note": "Store manager Swathi Hegde confirmed mix hopper refill timestamp and verified refrigeration operating normally; ruling out supply and cooling issues. Awaiting L2 technician dispatch with sensor replacement kit."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

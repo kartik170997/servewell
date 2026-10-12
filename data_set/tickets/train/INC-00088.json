@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00088",
+  "store_id": "SW-0011",
+  "store_name": "ServeWell - SR Nagar",
+  "submitted_by": "Vijayalakshmi Shetty",
+  "contact_phone": "+91-71989-57307",
+  "date_opened": "2026-01-05T07:23:00+05:30",
+  "priority": "P1",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Device Connectivity",
+  "subject": "Device not connecting to network",
+  "description": "The device is not connecting. Nothing is working. The Wi-Fi is down or something. We have breakfast rush starting soon and cannot operate without this. Please fix immediately. Multiple devices are affected but I'm not sure which ones exactly.",
+  "asset_id": "RTR-0011-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "device-connectivity"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-05T07:31:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment: Submitter unable to provide specific device names or error messages. Requested clarification on which POS terminals or devices are failing to connect. Attempted to reach store via phone but line busy due to morning rush."
+    },
+    {
+      "timestamp": "2026-01-05T08:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store manager confirmed router RTR-0011-01 had power cycled successfully at 08:10 IST. All POS devices (4x terminals) and kitchen display system now showing connected status. Network stability confirmed after 5-minute monitoring interval."
+    }
+  ],
+  "resolution_notes": "Router RTR-0011-01 was in a hung state requiring power cycle. Full shutdown and restart of NetLink NL-3000 v2.2 restored connectivity to all downstream devices. All POS terminals and KDS now fully operational. Advised store manager to monitor for recurrence and document any future disconnection events with specific device details.",
+  "status": "Resolved"
+}

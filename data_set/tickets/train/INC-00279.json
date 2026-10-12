@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00279",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Nikhil Iyer",
+  "contact_phone": "+91-75813-72373",
+  "date_opened": "2025-11-18T10:24:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "StarMC Print v3.0 printer PRN-0054-P1 not detected on POS terminal",
+  "description": "Good morning, I'm writing to report a critical issue with our receipt printer at the Thane West location. The StarMC Print v2 v3.0 device (asset ID PRN-0054-P1) has stopped being recognized by our POS system since this morning at approximately 09:45 IST. I've verified the following: (1) the printer is powered on and showing no error lights, (2) the USB cable is firmly connected to the POS terminal, (3) I've restarted the POS system twice and the printer still does not appear in device manager, (4) I attempted to reinstall the printer drivers from the StarMC suite but the system cannot locate the hardware. The error message displayed in the POS application is 'Device PRN-0054-P1 offline - no active connection detected.' This is impacting our kitchen operations as we cannot print order tickets, causing delays in food preparation. I've already tried power-cycling both the printer and terminal, checking cable connections, and reviewing device manager logs, but the issue persists. Please advise on next steps or escalate to hardware support if needed.",
+  "asset_id": "PRN-0054-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-18T10:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Initial troubleshooting steps documented by submitter appear thorough. Requested remote access to POS terminal to run diagnostic logs and confirm hardware detection status."
+    },
+    {
+      "timestamp": "2025-11-18T11:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote session established but submitter mentioned during chat that actual issue is missing salary deposit from November payroll - appears to be HR/Payroll matter misfiled under IT. Advised to contact HR but escalating for proper categorization."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

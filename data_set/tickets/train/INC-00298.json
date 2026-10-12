@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00298",
+  "store_id": "SW-0008",
+  "store_name": "ServeWell - Pitampura",
+  "submitted_by": "Suma Verma",
+  "contact_phone": "+91-92981-80300",
+  "date_opened": "2026-01-03T09:31:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Screen Frozen",
+  "subject": "KitchenBridge v2.3 kiosk screen frozen – no POS sync",
+  "description": "The KitchenBridge v2.3 kitchen display kiosk (asset KSK-0008-01) has been completely frozen since approximately 08:45 AM this morning. The screen is unresponsive to all touch inputs and keyboard commands. This unit is responsible for displaying real-time order tickets from our POS system, and the freeze has prevented kitchen staff from receiving new orders for the past 45 minutes. Error logs from the device show repeated timeout messages: 'SYNC_FAILED: Connection to POS gateway lost.' We have already attempted: (1) power cycle of the device (held reset button for 10 seconds), (2) checking network connectivity via ethernet port – lights are on and stable, (3) restarting the KitchenBridge v2.3 service via local admin panel (no effect). The POS terminal at counter is functioning normally and orders are being placed, but kitchen staff cannot see them. This is severely impacting order fulfillment and customer wait times. We need urgent assistance to restore sync between KitchenBridge v2.3 and our POS before lunch service peak at 12:00 PM.",
+  "asset_id": "KSK-0008-01",
+  "system_version": "KitchenBridge v2.3",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-03T09:47:00+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Ticket received and acknowledged. Requested network diagnostics output and clarification on KitchenBridge v2.3 version compatibility with current POS build. Unable to locate system documentation in knowledge base; escalating to L2 for investigation."
+    },
+    {
+      "timestamp": "2026-01-03T10:15:00+05:30",
+      "actor": "System",
+      "note": "Automatic escalation triggered due to unknown_system chaos type. Ticket routed to Infrastructure team for KitchenBridge v2.3 investigation."
+    }
+  ],
+  "resolution_notes": "L2 Infrastructure team identified that KitchenBridge v2.3 is a legacy system running on deprecated API endpoints that were decommissioned in the recent POS gateway update (v4.8). Network connectivity was intact but POS sync was failing due to SSL certificate mismatch. Temporary workaround applied: configured KitchenBridge v2.3 to use legacy gateway proxy on network switch. Permanent resolution: recommend upgrade to KitchenBridge v3.1 (currently documented and supported) which includes native support for POS v4.8. Kiosk screen responsive and displaying orders as of 10:42 AM.",
+  "status": "Closed"
+}

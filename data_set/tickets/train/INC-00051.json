@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00051",
+  "store_id": "SW-0074",
+  "store_name": "ServeWell - South Extension",
+  "submitted_by": "Lakshmi Chatterjee",
+  "contact_phone": "+91-98713-28777",
+  "date_opened": "2026-05-13T20:49:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection dropping intermittently on Cisco SG350 router at South Extension store",
+  "description": "The Cisco SG350-28GP managed switch (RTR-0074-01, firmware v15.2.1) is experiencing intermittent VPN tunnel disconnections affecting our point-of-sale (POS) systems and kitchen display systems (KDS). The VPN drops approximately every 15–20 minutes for 2–3 minutes at a time, then reconnects automatically. Error messages observed in the router logs: \"IPSec tunnel negotiation timeout\" and \"Phase 1 authentication failure.\" We have already attempted the following troubleshooting steps: (1) power-cycled the router twice, (2) verified the VPN client credentials are correct in the router configuration, (3) confirmed the ISP connection is stable (no packet loss, ping latency normal at 28ms), and (4) checked firewall rules on the corporate gateway—all appear correct. The issue is impacting transaction processing; during disconnections, orders cannot be synced to the central inventory system, and staff must manually re-enter orders once connectivity is restored. This is causing delays during peak lunch hours (12:00–14:30 IST). The store currently has 6 active POS terminals and 3 KDS units all dependent on this VPN tunnel. Store manager reports this issue started on 2026-05-13 at approximately 19:30 IST without any recent router configuration changes.",
+  "asset_id": "RTR-0074-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-13T21:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed all basic troubleshooting steps have been performed by submitter. Verified asset RTR-0074-01 is under active warranty. Escalating to Network Engineering team (L2) due to persistent IPSec authentication failures and business-critical impact on POS operations."
+    },
+    {
+      "timestamp": "2026-05-13T21:32:00+05:30",
+      "actor": "System",
+      "note": "Ticket automatically assigned to L2 Network Engineering queue. Priority maintained at P2 due to revenue impact and active POS downtime risk."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

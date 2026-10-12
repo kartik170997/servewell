@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00047",
+  "store_id": "SW-0038",
+  "store_name": "ServeWell - Nehru Place",
+  "submitted_by": "Manoj Mukherjee",
+  "contact_phone": "+91-77537-59786",
+  "date_opened": "2025-11-12T16:55:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Multiple duplicate orders appearing in POS system for same customer transactions",
+  "description": "Between 15:30 and 16:45 IST today, customers ordering through our online aggregator platform (Zomato/Swiggy) are experiencing duplicate order entries in the FoodTech POS terminal. Specifically, when a customer places a single order, the system is creating 2–3 identical order records within 30–60 seconds of the initial transaction. This has caused: (1) Kitchen staff receiving duplicate print tickets leading to food preparation errors; (2) Customer confusion due to multiple charge notifications; (3) Order fulfillment delays as staff attempt to identify which ticket is valid. I have confirmed this affects approximately 12 orders during the incident window. No manual intervention or system restart has resolved the issue yet. The POS terminal (Asset ID: POS-0038-T1) was last rebooted on 2025-11-10. FoodTech POS version running is v5.1.1.",
+  "asset_id": "POS-0038-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-12T17:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment completed. Confirmed duplicate order records present in transaction log. Verified network connectivity to aggregator APIs is stable. Recommended cache flush and API gateway reset."
+    },
+    {
+      "timestamp": "2025-11-12T17:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Executed database sync cycle and cleared POS order queue buffer. Duplicate orders ceased appearing after remediation. Monitoring active order stream for recurrence over next 2 hours."
+    }
+  ],
+  "resolution_notes": "Issue resolved by clearing the POS order queue buffer and performing a full database synchronization cycle between the terminal and central order management system. Root cause identified as a caching layer timeout in the aggregator API integration causing duplicate transaction submissions. No further duplicate orders observed post-resolution.",
+  "status": "Resolved"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00034",
+  "store_id": "SW-0092",
+  "store_name": "ServeWell - Kandivali",
+  "submitted_by": "Kiran Kumar",
+  "contact_phone": "+91-73049-48566",
+  "date_opened": "2025-11-03T15:12:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "NetLink NL-3000 router experiencing frequent intermittent connectivity drops affecting POS and ordering terminals",
+  "description": "ServeWell Kandivali location is experiencing intermittent Wi-Fi connectivity drops on the NetLink NL-3000 v2.1 router (asset RTR-0092-01). The network drops occur approximately every 15-25 minutes, lasting 2-5 minutes per instance, and directly impacts POS terminal responsiveness, online ordering synchronization, and staff mobile devices used for kitchen displays. We have confirmed the issue affects both the 2.4 GHz and 5 GHz bands. Steps already attempted: (1) power cycled the router twice with 5-minute intervals, (2) verified all cable connections are secure at WAN and LAN ports, (3) checked for loose antenna connections, (4) reviewed current connected device count (stable at 18 devices), (5) confirmed no recent configuration changes were made, (6) verified router uptime is 8 days without issues prior to yesterday evening. The issue started on 2025-11-02 at approximately 19:30 IST. Business impact is significant as each drop causes transaction delays and customer frustration during peak lunch hours (12:00-14:00). No error lights are visible on the device front panel, and the router maintains its IP address (192.168.1.1) throughout the drops. We need immediate diagnostics and potential hardware replacement evaluation.",
+  "asset_id": "RTR-0092-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-03T15:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and initial validation completed. Confirmed asset RTR-0092-01 is registered to SW-0092. Advised submitter to check for firmware updates and monitor logs; escalation to L2 Network team initiated due to business impact and prior troubleshooting depth."
+    },
+    {
+      "timestamp": "2025-11-03T16:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote diagnostics request sent to store manager. Instructed to capture router syslog for last 24 hours and monitor DHCP lease renewals during next drop window. Marked for escalation flag review given P3 priority and operational impact on POS systems."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

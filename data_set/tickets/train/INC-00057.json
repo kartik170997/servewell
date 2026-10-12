@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00057",
+  "store_id": "SW-0104",
+  "store_name": "ServeWell - Pimple Saudagar",
+  "submitted_by": "Ramesh Iyer",
+  "contact_phone": "+91-96198-80371",
+  "date_opened": "2026-05-08T16:56:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty program points not syncing to customer account on POS terminal T1",
+  "description": "Since 15:30 hours today, the loyalty program module on POS terminal T1 (asset ID POS-0104-T1) is failing to sync customer loyalty points after transactions. When customers present their loyalty card or mobile number at checkout, the OrbitPOS v2.0 system displays the customer profile correctly, but after transaction completion, the earned points are not being credited to their account. Error message observed: 'Loyalty Sync Failed - Connection Timeout (Error Code: LSY-4002)'. This occurs consistently across all transaction types (dine-in, takeaway, online order pickup). We have already attempted: (1) restarting the POS terminal, (2) checking network connectivity (WiFi and LAN both functional), (3) verifying loyalty module is enabled in store settings. The issue persists. Business impact is moderate—customers are becoming frustrated as loyalty incentives are not being recorded, potentially affecting repeat visit rates and customer satisfaction. Store is operational but loyalty engagement is compromised. OrbitPOS version confirmed as v2.0 with latest patch applied as of 07-May-2026.",
+  "asset_id": "POS-0104-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-08T17:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Verified store network connectivity is stable and POS terminal is online. Confirmed OrbitPOS v2.0 is running with latest patches. Attempted to reset loyalty module cache remotely—issue persists. Escalation to L2 backend team recommended for loyalty sync service investigation."
+    },
+    {
+      "timestamp": "2026-05-08T17:45:00+05:30",
+      "actor": "System",
+      "note": "L1 troubleshooting completed. Ticket status remains Open pending L2 backend analysis of loyalty transaction queue."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00210",
+  "store_id": "SW-0102",
+  "store_name": "ServeWell - Worli",
+  "submitted_by": "Vijay Chatterjee",
+  "contact_phone": "+91-93251-76426",
+  "date_opened": "2026-02-22T10:58:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Blank Receipt",
+  "subject": "Receipt printer printing blank pages at Worli store",
+  "description": "Receipt printer PRN-0102-P1 is printing completely blank receipts since this morning. All orders are going through but customers are not getting printed receipts. Paper roll appears to be loaded correctly. Please check ASAP.",
+  "asset_id": "PRN-0102-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "blank-receipt"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

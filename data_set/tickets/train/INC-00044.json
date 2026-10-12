@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00044",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Rajan Malhotra",
+  "contact_phone": "+91-73471-11382",
+  "date_opened": "2026-05-16T10:42:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "WiFi intermittent drops affecting POS and ordering systems",
+  "description": "The WiFi network at ServeWell - Adyar has been experiencing intermittent disconnections throughout the day, particularly during peak hours between 12:00 PM and 2:00 PM. Point-of-sale terminals lose connectivity for 30-60 seconds at a time, disrupting order processing and payment transactions. Staff have reported the issue starting approximately 3 days ago. The NetLink NL-3000 router appears to be functioning normally based on LED indicators, but devices are unable to maintain stable connections.",
+  "asset_id": "RTR-0052-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-16T10:58:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial assessment: customer advised to check router placement and verify no physical obstructions. Escalation to L2 network team recommended if issue persists."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

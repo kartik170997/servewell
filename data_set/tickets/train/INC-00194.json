@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00194",
+  "store_id": "SW-0037",
+  "store_name": "ServeWell - Nagarbhavi",
+  "submitted_by": "Nandini Iyer",
+  "contact_phone": "+91-85785-18367",
+  "date_opened": "2026-03-30T08:00:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhaustion causing new devices unable to connect to network",
+  "description": "Multiple staff members report that new devices (tablets, smartphones) are unable to obtain IP addresses and connect to the store Wi-Fi network. The NetLink NL-3000 router appears to be running out of available DHCP addresses, with existing connections remaining stable but new connection attempts timing out. This issue started this morning around 7:30 AM and is impacting POS terminal setup and guest Wi-Fi access. No recent configuration changes were made to the router.",
+  "asset_id": "RTR-0037-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-30T08:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Initial assessment confirms DHCP issue; L1 recommended checking DHCP pool size and connected device count. Escalation flagged due to business impact."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

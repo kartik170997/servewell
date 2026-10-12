@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00305",
+  "store_id": "SW-0100",
+  "store_name": "ServeWell - Wakad",
+  "submitted_by": "Smita Malhotra",
+  "contact_phone": "+91-97057-87656",
+  "date_opened": "2026-02-26T18:09:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Blank Receipt",
+  "subject": "Receipt printer outputting blank pages at Wakad location",
+  "description": "The receipt printer (StarMC Print v2) at the counter is producing completely blank receipts since this afternoon. Customers are unable to receive itemized receipts for their orders. The printer powers on and feeds paper normally, but no text or images are appearing on the output. This is affecting order fulfillment and customer experience during peak dinner service.",
+  "asset_id": "PRN-0100-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "blank-receipt"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-26T18:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and assigned. Initial troubleshooting steps recommended: verify print driver is active and check for paper jam or ribbon issues."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00212",
+  "store_id": "SW-0085",
+  "store_name": "ServeWell - Bandra East",
+  "submitted_by": "Mohan Mukherjee",
+  "contact_phone": "+91-93601-24855",
+  "date_opened": "2026-02-21T09:14:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "CreamTech SC-300 producing excessively frozen soft serve product at Bandra East",
+  "description": "The soft serve machine (CreamTech SC-300 v3.1) at ServeWell - Bandra East has been producing significantly over-frozen product since yesterday evening (2026-02-20 around 18:30 IST). Customers are reporting that the soft serve consistency is too hard and icy, making it difficult to consume directly from the cone. The product temperature appears to be below the recommended serving range. We have verified that the ambient room temperature is normal (~24°C) and the machine's external cooling unit is functioning normally with no visible frost or ice buildup. The digital display shows a freezing point temperature of -8°C, which is approximately 3-4°C lower than the standard setting of -4°C to -5°C. Attempted troubleshooting: (1) manually adjusted the temperature dial down and back up to factory default position—no change; (2) power cycled the machine by switching the main breaker off for 5 minutes and restarting—issue persists; (3) checked all intake hoses and confirmed no kinks or blockages; (4) reviewed maintenance logs and confirmed the last scheduled service was 45 days ago (within the 90-day window). This is impacting customer satisfaction and sales during peak afternoon hours. We require urgent support to diagnose and resolve the overcooling malfunction.",
+  "asset_id": "SSM-0085-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-21T09:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial ticket received and logged. Acknowledged submitter's troubleshooting steps and confirmed asset details. Requested photos of digital display temperature readings and advised to monitor product temperature with external thermometer until resolution."
+    },
+    {
+      "timestamp": "2026-02-21T10:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Verified machine model and firmware version against support database. Identified potential thermostat calibration drift as likely root cause. Escalation to L2 technical team recommended due to persistence after basic troubleshooting; flagged for same-day diagnostic support."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

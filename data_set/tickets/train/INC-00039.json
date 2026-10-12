@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00039",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Anjali Patil",
+  "contact_phone": "+91-98535-60140",
+  "date_opened": "2026-01-23T19:03:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Menu Mismatch",
+  "subject": "Online menu displaying discontinued items; customer orders failing at checkout",
+  "description": "Since approximately 2:30 PM today (23-Jan-2026), our online ordering platform (accessible via website and mobile app) is displaying menu items that were removed from inventory on 15-Jan-2026, specifically the 'Tandoori Paneer Wrap' and 'Masala Fries Supreme' variants. When customers attempt to place orders containing these items, they receive the error message: 'Item unavailable at this location. Please refresh menu.' However, the menu does not refresh properly, and the items remain visible. This has resulted in at least 8 failed order attempts documented in our store logs, with customers abandoning carts or calling the store directly to place orders instead. Our POS system (asset POS-0022-T1, FoodTech POS v4.2.3) shows these items as correctly marked 'inactive' in backend inventory, but the online menu sync appears broken. Store staff have verified inventory settings are correct and have attempted a manual menu refresh from the POS terminal twice with no resolution. Business impact: Lost online order revenue, customer frustration, and increased call-center load as customers reach out manually.",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "online-orders",
+    "menu-mismatch"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-23T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed menu mismatch issue affecting online ordering platform. Preliminary check indicates menu sync service may require restart; escalating to backend team for API-level menu cache verification."
+    },
+    {
+      "timestamp": "2026-01-23T19:45:00+05:30",
+      "actor": "System",
+      "note": "Auto-diagnostic initiated on POS-0022-T1; menu sync logs retrieved and attached to ticket for analysis."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

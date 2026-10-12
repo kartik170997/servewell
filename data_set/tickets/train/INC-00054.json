@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00054",
+  "store_id": "SW-0053",
+  "store_name": "ServeWell - Rajajinagar",
+  "submitted_by": "Ravi Verma",
+  "contact_phone": "+91-83961-95403",
+  "date_opened": "2026-03-28T15:07:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Network Connectivity",
+  "subject": "POS Terminal T1 Not Responding - Connection Lost",
+  "description": "POS terminal T1 stopped responding at approximately 15:00 IST during peak lunch service. The terminal displays 'Unable to connect to server' error and all transaction processing has halted. We have restarted the terminal twice but the issue persists. Upon investigation, we noticed that the router light indicator is off and there is no connectivity to other networked devices in the store either. The WiFi network is not broadcasting and all staff devices are also unable to connect to the internet.",
+  "asset_id": "POS-0053-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-28T15:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Initial assessment suggests network connectivity issue rather than POS system failure. Requesting store manager to verify router status and check power connections."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

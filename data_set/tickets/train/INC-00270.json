@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00270",
+  "store_id": "SW-0117",
+  "store_name": "ServeWell - Wilson Garden",
+  "submitted_by": "Arjun Ghosh",
+  "contact_phone": "+91-84600-73806",
+  "date_opened": "2026-04-24T21:20:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router Offline",
+  "subject": "Cisco SG350 Router RTR-0117-01 Completely Offline at Wilson Garden Store",
+  "description": "The primary router (Cisco SG350 15.2.1, asset ID RTR-0117-01) at ServeWell - Wilson Garden (SW-0117) has gone completely offline as of approximately 21:15 IST on 24-Apr-2026. All front-of-house POS terminals, kitchen display systems, and back-office workstations have lost network connectivity. The device shows no LED indicators (power and network lights are dark), and there is no response to ping attempts from adjacent network equipment. I have already verified: (1) power cable is properly seated at wall outlet and device, (2) confirmed wall outlet has power using a test light, (3) attempted a hard reset by power cycling for 30 seconds, and (4) confirmed no visible physical damage or cable disconnections at the device. Business impact is critical—all seven POS terminals are down, preventing order processing and payment acceptance. The store is currently unable to operate efficiently. Immediate escalation and remote diagnostics or onsite visit required. Last system status check showed device was functioning normally at 20:45 IST.",
+  "asset_id": "RTR-0117-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "router-offline"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-24T21:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and severity confirmed as P2. Initial troubleshooting notes reviewed—power and cable checks already completed by submitter. Escalated to L2 Network Team for remote diagnostics and possible hardware replacement evaluation."
+    },
+    {
+      "timestamp": "2026-04-24T21:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store manager contacted to confirm no further power outages or electrical incidents reported. L2 attempting remote management interface access; no response detected. Hardware failure suspected; onsite visit being scheduled for 25-Apr morning."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

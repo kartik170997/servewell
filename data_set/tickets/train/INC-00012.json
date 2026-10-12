@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00012",
+  "store_id": "SW-0034",
+  "store_name": "ServeWell - Anna Nagar",
+  "submitted_by": "Manoj Naik",
+  "contact_phone": "+91-79142-83149",
+  "date_opened": "2026-02-26T21:34:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "NetLink NL-3000 router experiencing intermittent connectivity drops during peak hours",
+  "description": "We are experiencing recurring Wi-Fi disconnections at our Anna Nagar location affecting both customer-facing ordering kiosks and kitchen display systems. The router (NetLink NL-3000 v2.2, asset RTR-0034-01) drops internet connectivity approximately every 15-20 minutes during lunch rush (12:00-14:30) and dinner service (19:00-21:30), lasting 2-5 minutes per dropout. During these outages, all POS terminals lose network access, preventing order processing and payment acceptance. We have verified that the router remains powered and the ethernet uplinks show as physically connected, but traffic ceases momentarily. The issue began three days ago (24 Feb) and has progressively worsened. We have already attempted: (1) power cycling the router multiple times, (2) checking cable connections at both WAN and LAN ports, (3) reviewing router logs via web console—no error messages visible. The issue is severely impacting operations, causing customer dissatisfaction and potential revenue loss during peak service times. We need this escalated for immediate investigation of potential hardware degradation or configuration drift.",
+  "asset_id": "RTR-0034-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-26T22:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment completed. Confirmed asset details and connectivity status. Recommending firmware version check and remote diagnostic access to router management interface. Ticket routed to Network team pending escalation criteria review."
+    },
+    {
+      "timestamp": "2026-02-27T08:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Outbound call made to Manoj Naik to confirm timing of next intermittent event for real-time monitoring. Advised store team to document exact dropout times and client device counts affected. Waiting for network team availability for remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

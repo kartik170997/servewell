@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00233",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Abhishek Iyer",
+  "contact_phone": "+91-98774-27601",
+  "date_opened": "2025-11-18T21:15:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "Online order auto-accept feature not functioning - orders stuck in pending state",
+  "description": "Since approximately 20:45 IST today, the automated order acceptance feature on our kitchen display system (StarMC Print v2 v3.0) has stopped working. Orders arriving from online channels (Swiggy, Zomato, and our ServeWell app) are now appearing in the pending queue but are NOT being auto-accepted as configured. This requires our kitchen staff to manually accept each order, creating a significant bottleneck during peak dinner service. We have verified that: (1) the auto-accept toggle is enabled in the Order Acceptance settings, (2) minimum order value filters are correctly set to ₹150, (3) the system clock is synchronized, and (4) no recent configuration changes were made. The error log shows no explicit error messages, but the event timestamp for auto-acceptance triggers has ceased since 20:45. Approximately 47 orders have accumulated in pending state over the last 25 minutes, impacting customer wait times and kitchen efficiency. This is affecting revenue tracking and real-time order fulfillment metrics.",
+  "asset_id": "PRN-0002-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-18T21:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed issue with L1 triage: auto-accept feature disabled during peak hours. Requested store manager to provide recent configuration change logs and system restart attempt timeline."
+    },
+    {
+      "timestamp": "2025-11-18T21:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store confirmed no manual configuration changes made. Advised immediate system restart of PRN-0002-P1 device and requested updated screenshot of Order Acceptance settings after restart. Monitoring order queue status."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

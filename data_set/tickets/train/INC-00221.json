@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00221",
+  "store_id": "SW-0011",
+  "store_name": "ServeWell - SR Nagar",
+  "submitted_by": "Meena Chopra",
+  "contact_phone": "+91-99665-77286",
+  "date_opened": "2025-11-14T17:30:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Receipt printer printing garbled text and wrong format",
+  "description": "Receipt printer PRN-0011-P1 is printing orders in wrong format—text is jumbled and columns are misaligned. Affecting order fulfillment at counter. Started this morning around 10 AM.",
+  "asset_id": "PRN-0011-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

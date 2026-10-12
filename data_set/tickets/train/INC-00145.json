@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00145",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Suma Agarwal",
+  "contact_phone": "+91-72396-48096",
+  "date_opened": "2025-12-07T09:11:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Garbled Text",
+  "subject": "Receipt printer PRN-0007-P1 printing garbled/corrupted characters on all orders",
+  "description": "Since this morning at approximately 08:45 IST, the Epson TM-T88VI receipt printer (Asset ID: PRN-0007-P1) at the Lajpat Nagar store has been producing receipts with severely garbled and illegible text output. Customer names, order items, prices, and transaction IDs are printing as random characters, boxes, and corrupted symbols, making receipts unusable and creating significant operational disruption. The printer was functioning normally until yesterday evening. Error messages observed: intermittent \"Communication Error\" alerts on the POS terminal (Model: NCR Aloha 8.1) when attempting to print. The printer powers on, feeds paper correctly, and executes print jobs, but all text output is corrupted regardless of content. Steps already attempted: (1) Restarted the printer via power cycle (2 minutes off, then on) — issue persists; (2) Checked USB cable connection and confirmed secure seating on both printer and POS terminal; (3) Cleared print queue on the POS system; (4) Verified printer driver version is current (v1.12). The issue affects all transactions and orders cannot be properly documented for customers, impacting customer satisfaction and audit trail. Approximately 250+ customers affected since 08:45 this morning. Business impact: High — currently using manual paper receipts as temporary workaround, but this is unsustainable during peak lunch service hours (12:00-14:30).",
+  "asset_id": "PRN-0007-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "garbled-text"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-07T09:28:15+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Ticket received and prioritized as P2 due to business impact on customer transactions. Initial assessment: hardware-level print corruption likely due to firmware or connection issue. Requested detailed error logs from POS terminal and confirmation of printer power specifications."
+    },
+    {
+      "timestamp": "2025-12-07T09:45:32+05:30",
+      "actor": "L1 Agent - Priya Sharma",
+      "note": "Store manager confirmed no recent power surges or electrical incidents at location. Advised escalation to L2 hardware support for potential print head diagnostics or firmware rollback. Escalation flag activated due to time-sensitive nature and inability to process customer receipts."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

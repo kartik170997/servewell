@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00117",
+  "store_id": "SW-0055",
+  "store_name": "ServeWell - Sarjapur",
+  "submitted_by": "Kiran Mehta",
+  "contact_phone": "+91-94368-72216",
+  "date_opened": "2026-02-27T17:33:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "Online orders not auto-accepting on POS terminal",
+  "description": "Auto-accept feature is not functioning on the order printer. Orders placed through the online platform are not being automatically accepted and appear to be stuck in pending state.",
+  "asset_id": "PRN-0055-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

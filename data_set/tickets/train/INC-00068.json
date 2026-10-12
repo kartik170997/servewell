@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00068",
+  "store_id": "SW-0019",
+  "store_name": "ServeWell - Bhandup",
+  "submitted_by": "Lakshmi Chandra",
+  "contact_phone": "+91-86038-28634",
+  "date_opened": "2026-05-12T19:26:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Printer Offline",
+  "subject": "Receipt printer offline at Bhandup store",
+  "description": "The receipt printer at the counter is not responding. No error messages visible on the device.",
+  "asset_id": "PRN-0019-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "printer-offline"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

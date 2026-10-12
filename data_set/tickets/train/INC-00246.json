@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00246",
+  "store_id": "SW-0060",
+  "store_name": "ServeWell - Satellite",
+  "submitted_by": "Vijayalakshmi Das",
+  "contact_phone": "+91-94957-51973",
+  "date_opened": "2026-03-22T12:49:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "Soft Serve Machine Mix Level Alert - Machine not triggering low stock notification",
+  "description": "The soft serve machine (POS-0060-T1) at ServeWell - Satellite is displaying inconsistent mix level alert behavior. Since yesterday evening (2026-03-21 approximately 18:30 IST), the machine has failed to trigger the expected low-mix alert notifications when the hopper levels drop below the 20% threshold. We manually checked the hopper at approximately 12:15 PM today and confirmed the mix level is currently at approximately 15% capacity, yet no alert was generated on the POS terminal or manager dashboard. This is impacting our operational efficiency as staff cannot proactively order replacement mix canisters. The machine continues to dispense soft serve without restrictions, and there are no error messages displayed on the FoodTech POS v5.1.1 interface. We have already power-cycled the machine once and verified the physical mix level sensors appear clean with no visible blockages. The issue persists after restart. Business impact: medium—we risk running out of mix during peak evening service if not resolved today.",
+  "asset_id": "POS-0060-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-22T13:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial review confirms asset POS-0060-T1 is active in system. Requested detailed logs from soft serve machine and confirmed mix sensor calibration status—sensor appears to be reporting data but alert logic may not be triggering correctly. Escalation to equipment specialist team recommended."
+    },
+    {
+      "timestamp": "2026-03-22T13:42:00+05:30",
+      "actor": "System",
+      "note": "Automated diagnostics run on POS-0060-T1 completed; sensor connectivity confirmed normal, firmware version current. Alert rule configuration queued for manual review by L2 team."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

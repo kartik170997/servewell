@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00045",
+  "store_id": "SW-0061",
+  "store_name": "ServeWell - Hinjewadi",
+  "submitted_by": "Venkat Pillai",
+  "contact_phone": "+91-99304-85197",
+  "date_opened": "2025-11-03T18:53:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve machine showing error code — completely frustrated with lack of support",
+  "description": "I am absolutely done with this system. The soft serve machine (RTR-0061-01) keeps throwing up some error code on the display and I don't even know what it says anymore because I've stared at it for hours. This has been happening on and off for the past THREE WEEKS and nobody from your team has actually helped us. We've called before, sent emails, and every time someone says they'll look into it and then nothing happens. My staff is exhausted, customers are complaining because we can't serve soft serve, and I'm losing revenue every single day this machine sits broken. The head office keeps telling me to submit tickets but tickets don't fix anything — people do. I need someone who actually knows what they're doing to come down here and either fix this machine or replace it. This is ridiculous. We're a franchise paying good money for this equipment and support and frankly the service is pathetic. I don't even care what the error code is anymore — I just need this resolved TODAY not next week or next month. The system version is NetLink NL-3000 v2.2 if that even matters at this point.",
+  "asset_id": "RTR-0061-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-03T19:15:00+05:30",
+      "actor": "L1 Agent - Priya Sharma",
+      "note": "Ticket received and queued. Attempted to contact submitter at provided number; call went to voicemail. Will try again tomorrow morning."
+    },
+    {
+      "timestamp": "2025-11-03T21:42:00+05:30",
+      "actor": "System",
+      "note": "Auto-assignment to Level 1 Support queue. Estimated response time: 24 hours."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00169",
+  "store_id": "SW-0093",
+  "store_name": "ServeWell - Mylapore",
+  "submitted_by": "Sunita Tiwari",
+  "contact_phone": "+91-84359-65004",
+  "date_opened": "2026-04-13T18:56:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "CreamTech SC-500 soft serve machine producing excessively hard/frozen product",
+  "description": "The soft serve machine (CreamTech SC-500 v2.4, Asset ID SSM-0093-01) at our Mylapore location has been dispensing product that is far too hard and dense since approximately 17:30 hours today. Customers are unable to consume the product normally—it requires excessive effort to draw from the nozzle and emerges in chunks rather than the smooth, creamy consistency expected. The machine's display shows normal operating temperature readings (−5°C), but the actual product temperature appears significantly lower. We have attempted the following troubleshooting steps: (1) soft reset of the machine via the control panel, (2) verification of mix supply levels (all adequate), (3) inspection of the refrigeration coils for ice buildup (none visible), and (4) manual temperature probe check at the dispensing nozzle showing −8.2°C instead of the target −5°C. This issue is impacting peak dinner service; we have already had three customer complaints and are losing sales. The machine is our primary soft serve unit and we cannot operate effectively without it. Request urgent inspection and calibration of the temperature control system.",
+  "asset_id": "SSM-0093-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-13T19:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed all troubleshooting steps already attempted by store. Temperature sensor malfunction suspected; escalating to L2 Technical team for diagnostics and potential sensor replacement."
+    },
+    {
+      "timestamp": "2026-04-13T19:34:00+05:30",
+      "actor": "System",
+      "note": "Ticket assigned to L2 Field Service queue for same-day visit scheduling."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

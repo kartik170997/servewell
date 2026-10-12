@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00006",
+  "store_id": "SW-0038",
+  "store_name": "ServeWell - Nehru Place",
+  "submitted_by": "Deepa Singh",
+  "contact_phone": "+91-76126-32779",
+  "date_opened": "2026-04-12T18:45:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network unavailable at Nehru Place store",
+  "description": "Guest Wi-Fi network has been down since approximately 6:30 PM today. Customers are unable to connect to the guest network, though staff Wi-Fi appears to be functioning normally. The router (RTR-0038-01) is powered on and showing normal LED indicators. This is impacting customer experience during peak evening hours.",
+  "asset_id": "RTR-0038-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-12T19:02:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Initial troubleshooting indicates guest Wi-Fi SSID is not broadcasting. Recommended power cycle of router; escalating to L2 for further diagnosis."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

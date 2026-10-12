@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00170",
+  "store_id": "SW-0025",
+  "store_name": "ServeWell - Bellandur",
+  "submitted_by": "Geetha Pillai",
+  "contact_phone": "+91-84976-34979",
+  "date_opened": "2025-11-12T21:10:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Cleaning Cycle",
+  "subject": "Soft serve machine cleaning cycle stuck at 45% completion",
+  "description": "The soft serve machine (POS-0025-T1) initiated its automated cleaning cycle this evening but has become unresponsive midway through the process. The display shows the cycle at 45% completion and has not progressed for approximately 25 minutes. The machine is currently non-functional and unable to serve customers. We have attempted a power cycle but the issue persists. The cleaning solution appears to be circulating normally, but the cycle completion logic seems to have failed.",
+  "asset_id": "POS-0025-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "cleaning-cycle"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

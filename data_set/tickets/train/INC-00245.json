@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00245",
+  "store_id": "SW-0108",
+  "store_name": "ServeWell - Shahdara",
+  "submitted_by": "Manish Bhat",
+  "contact_phone": "+91-88882-15273",
+  "date_opened": "2025-11-21T16:02:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS terminal losing network connection intermittently",
+  "description": "POS terminal T1 at counter keeps dropping connection during peak hours. Orders aren't going through properly. Network seems fine on other devices but this terminal keeps disconnecting every few minutes.",
+  "asset_id": "POS-0108-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00104",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Venkat Banerjee",
+  "contact_phone": "+91-92059-76904",
+  "date_opened": "2025-11-06T13:07:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "WiFi completely broken AGAIN - DHCP issue, can't take this anymore",
+  "description": "I am absolutely DONE with this system. The WiFi at Saket has been dropping connectivity all morning and I have no idea what's happening. Guests can't connect, staff tablets won't load orders, and I'm standing here like an idiot trying to explain why we can't process payments properly. This is the third time this month we've had network problems and nobody from your team seems to care. I've rebooted the router about ten times already and it makes NO DIFFERENCE. One minute devices connect fine, the next minute nothing works. How am I supposed to run a restaurant when the technology fails constantly? I don't even know what DHCP means but apparently that's what your last agent mentioned before hanging up on me. Why can't you people build a system that actually works? This is costing us customers and my team is frustrated. I need someone to fix this TODAY because I can't keep making excuses to customers.",
+  "asset_id": "RTR-0023-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-06T13:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket auto-assigned to Ravi Kumar (L1 Support). Initial assessment: submitter reports WiFi intermittency. Escalation flag noted due to emotional tone and frequency of complaints."
+    },
+    {
+      "timestamp": "2025-11-06T13:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Attempted phone contact at provided number - customer did not answer. Sent diagnostic instructions via email asking submitter to check DHCP pool status and provide device count currently connected."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

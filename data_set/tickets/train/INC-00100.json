@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00100",
+  "store_id": "SW-0012",
+  "store_name": "ServeWell - Gachibowli",
+  "submitted_by": "Shobha Chandra",
+  "contact_phone": "+91-88089-52746",
+  "date_opened": "2026-04-24T13:12:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Screen Frozen",
+  "subject": "Kiosk screen frozen - RTR-0012-01",
+  "description": "The ordering kiosk screen is completely frozen and unresponsive. Customer unable to place order. Screen does not respond to touch input.",
+  "asset_id": "RTR-0012-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

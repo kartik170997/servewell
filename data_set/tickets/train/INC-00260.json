@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00260",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Anjali Bose",
+  "contact_phone": "+91-84555-85108",
+  "date_opened": "2025-11-20T19:31:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "NetLink NL-3000 generating duplicate orders for single customer submissions",
+  "description": "Starting from 18:45 IST today (20-Nov-2025), the NetLink NL-3000 v2.1 router at SW-0052 (Adyar) has been creating duplicate orders in the ServeWell online ordering system. Customers are reporting that their single order submissions result in 2–3 identical orders appearing in our kitchen display system (KDS) and billing records. This has affected approximately 12 customer transactions in the past 2 hours, causing confusion in order fulfillment and customer complaints. Error message observed in system logs: \"Order synchronization collision detected; duplicate gateway acknowledgment received.\" Steps already attempted: (1) Manually cancelled 8 duplicate orders and contacted affected customers; (2) Power-cycled the NetLink router once; (3) Verified internet connectivity is stable at 45 Mbps; (4) Checked order submission timestamps—duplicates appear within 2–3 seconds of original submission. Business impact: Kitchen staff is unable to distinguish genuine from duplicate orders, leading to potential over-preparation and customer dissatisfaction. This is impacting peak dinner service (18:00–22:00 IST). Asset details confirmed: NetLink NL-3000 (Asset ID: RTR-0052-01), firmware v2.1, MAC: 1C:2D:4E:5F:8A:9B, IP: 192.168.1.105. Requesting urgent technical intervention to prevent further order duplication and restore service reliability.",
+  "asset_id": "RTR-0052-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-20T19:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed duplicate order issue affecting KDS. Advised store manager to enable manual order verification mode temporarily and suggested checking NetLink device logs for gateway communication errors. Case flagged for potential firmware or gateway synchronization fault."
+    },
+    {
+      "timestamp": "2025-11-20T20:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Customer callback received confirming duplicate charge on payment gateway. Remote diagnostics initiated on NetLink NL-3000 device; request sent to L2 Technical team for immediate router firmware analysis and possible replacement or gateway reconfiguration."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

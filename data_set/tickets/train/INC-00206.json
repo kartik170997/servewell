@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00206",
+  "store_id": "SW-0053",
+  "store_name": "ServeWell - Rajajinagar",
+  "submitted_by": "Suresh Shetty",
+  "contact_phone": "+91-79923-41722",
+  "date_opened": "2026-05-06T14:45:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Garbled Text",
+  "subject": "Receipt printer outputting garbled/unreadable text at Rajajinagar store",
+  "description": "The Epson TM-T88VI receipt printer (PRN-0053-P1) at ServeWell - Rajajinagar has been producing garbled and unreadable text on customer receipts since approximately 2:15 PM today (6th May 2026). Instead of clear alphanumeric characters, the printer outputs random symbols, broken characters, and misaligned text across the receipt. This issue is affecting all transactions processed through the POS terminal connected to this printer. The printer still powers on normally, the paper feed mechanism functions without jam, and no error lights are illuminated on the device. I have already attempted the following troubleshooting steps: (1) powered off and restarted the printer, (2) checked and cleaned the print head with the provided maintenance cloth, (3) verified the USB cable connection is secure at both ends, (4) tested with a fresh roll of thermal receipt paper, and (5) reviewed the printer settings in the ServeWell POS software—all settings appear correct and unchanged. The issue persists across multiple test prints. Business impact: We are currently unable to issue legible customer receipts, which is affecting transaction records and customer satisfaction. The store remains operational but staff are manually writing receipt numbers as a temporary workaround. Asset details confirmed: Epson TM-T88VI, System Version v1.12, Asset ID PRN-0053-P1. Request urgent attention.",
+  "asset_id": "PRN-0053-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "garbled-text"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-06T15:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and validated. Confirmed all troubleshooting steps attempted by submitter are appropriate. Garbled text issue appears hardware-related rather than software-based given print head cleaning did not resolve."
+    },
+    {
+      "timestamp": "2026-05-06T15:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote diagnostic check initiated on printer firmware. Device firmware version v1.12 confirmed current and up-to-date. Escalated to L2 Hardware Support due to persistent garbled output despite all standard troubleshooting—likely requires printer replacement or component repair."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

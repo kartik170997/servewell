@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00075",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Harish Kulkarni",
+  "contact_phone": "+91-89756-15183",
+  "date_opened": "2026-01-02T11:13:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - orders not syncing to RTR-0007-01",
+  "description": "The Zomato order integration for ServeWell - Lajpat Nagar has been non-functional since approximately 10:45 AM IST today. New orders placed on Zomato are not appearing in our NetLink NL-3000 v2.1 POS system (asset RTR-0007-01), causing a significant backlog of unacknowledged orders. We have verified that: (1) the Zomato restaurant dashboard shows orders as placed and awaiting merchant response; (2) the NetLink POS device is online and operational for counter orders; (3) no error messages appear in the system logs, but the integration status indicator displays 'Connection Failed'; (4) we attempted a manual sync refresh at 10:58 AM with no resolution; (5) we restarted the RTR device at 11:05 AM but the Zomato feed remains disconnected. Currently, we have 12 unprocessed Zomato orders pending, and our kitchen staff cannot begin preparation without seeing these orders in our system. This is impacting customer satisfaction and delivery fulfillment metrics. We request immediate investigation into the API connectivity between Zomato and our NetLink system.",
+  "asset_id": "RTR-0007-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-02T11:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Confirmed Zomato integration status as 'Connection Failed' in RTR-0007-01 logs. Verified POS device connectivity and network status are normal. Escalating to Zomato integration specialist team for API-level diagnostics."
+    },
+    {
+      "timestamp": "2026-01-02T11:35:00+05:30",
+      "actor": "System",
+      "note": "Automated notification sent to store: ticket assigned to Technical Support queue. ETA for L2 contact: 30 minutes."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

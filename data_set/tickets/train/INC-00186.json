@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00186",
+  "store_id": "SW-0047",
+  "store_name": "ServeWell - Vikhroli",
+  "submitted_by": "Dinesh Tiwari",
+  "contact_phone": "+91-83394-54350",
+  "date_opened": "2026-01-27T18:05:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "FrostyPro 800 displaying error code on soft serve machine",
+  "description": "The soft serve machine (SSM-0047-01) at the Vikhroli location is displaying an unidentified error code on its display panel, preventing normal operation. The machine was functioning normally until approximately 6:00 PM today when the error appeared. Staff attempted a simple restart but the error persists. No prior troubleshooting steps have been documented, and the specific error code has not been noted by the reporting staff.",
+  "asset_id": "SSM-0047-01",
+  "system_version": "FrostyPro 800 v2.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-27T18:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Requested store staff to capture exact error code display and machine status for further diagnosis."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

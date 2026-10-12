@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00301",
+  "store_id": "SW-0108",
+  "store_name": "ServeWell - Shahdara",
+  "submitted_by": "Divya Agarwal",
+  "contact_phone": "+91-90728-38487",
+  "date_opened": "2026-02-10T12:18:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection dropping intermittently on RTR-0108-01",
+  "description": "The VPN tunnel to the corporate network is experiencing intermittent connectivity failures at the Shahdara location. Staff are unable to access the centralized POS management system and inventory databases for approximately 15-20 minutes at a time, with the connection briefly restoring before failing again. The issue started this morning around 11:45 AM. The Cisco router shows active but unstable VPN session status. No configuration changes were made recently on the device.",
+  "asset_id": "RTR-0108-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

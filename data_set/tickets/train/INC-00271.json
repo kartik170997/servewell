@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00271",
+  "store_id": "SW-0061",
+  "store_name": "ServeWell - Hinjewadi",
+  "submitted_by": "Arjun Gupta",
+  "contact_phone": "+91-98426-99220",
+  "date_opened": "2026-02-04T11:37:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online orders from aggregators not appearing on Kitchen Display System",
+  "description": "Since approximately 10:45 AM today (04-Feb-2026), orders placed through Zomato and Swiggy are not being transmitted to the Kitchen Display System (KDS) screen at terminal POS-0061-T1. Walk-in and phone orders are processing normally to the KDS. We have received 7 confirmed online orders via the aggregator platforms in the past 45 minutes, but none appear on the KDS queue, causing kitchen staff confusion and potential order delays. Error message observed in the POS system: 'Aggregator sync timeout - Order INC-00271-ZM-4521 failed to push to KDS (Error Code: AGG-SYNC-4042)'. I have already attempted: (1) restarting the POS terminal, (2) checking internet connectivity (confirmed stable), (3) verifying aggregator credentials in system settings (appear correct), and (4) manually refreshing the order sync from the POS menu. The issue persists. This is impacting service efficiency and risking customer dissatisfaction. Store traffic is moderate but expected to increase during lunch rush in 90 minutes.",
+  "asset_id": "POS-0061-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-04T11:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial triage completed. Confirmed aggregator sync logs show intermittent timeouts on the store's gateway connection. Remote diagnostics initiated to check server-side aggregator API status."
+    },
+    {
+      "timestamp": "2026-02-04T12:08:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Escalated to L2 technical team due to recurring sync errors and business impact. Recommended temporary workaround: manually input aggregator orders into KDS until resolution. Ticket flagged for priority investigation."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

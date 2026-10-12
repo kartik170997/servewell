@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00252",
+  "store_id": "SW-0083",
+  "store_name": "ServeWell - Jogeshwari",
+  "submitted_by": "Anita Kapoor",
+  "contact_phone": "+91-98926-82179",
+  "date_opened": "2026-01-30T10:58:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - orders not syncing to POS at SW-0083",
+  "description": "Since approximately 10:45 AM today (30-Jan-2026), the Zomato order integration has gone completely offline at our Jogeshwari outlet. No new orders from Zomato are appearing in our POS system, though the Cisco router (RTR-0083-01) shows normal connectivity and all other systems are functioning normally. We have verified: (1) Internet connectivity is stable with 45 Mbps download speed confirmed via speedtest; (2) POS terminal is operational and receiving orders from other channels (Google, direct phone bookings); (3) Zomato restaurant portal on web browser shows our outlet is still 'ONLINE' for orders but no orders are being transmitted to our system. The integration error log on the POS displays: 'Zomato API Gateway Timeout - Connection refused on port 443' recurring every 2-3 minutes. We have attempted basic troubleshooting: restarted the POS terminal twice, restarted the Cisco router (SG350 v15.2.1), cleared browser cache and checked Zomato partner dashboard (no visible alerts). Currently, we are receiving 8-10 online orders per hour through Zomato on average during lunch service, so this downtime is directly impacting our revenue. Business impact is moderate as we are manually taking Zomato orders via phone and entering them into POS, but this is error-prone and slowing down our kitchen operations.",
+  "asset_id": "RTR-0083-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-30T11:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment completed. Confirmed router connectivity and POS terminal operational. Escalation to Network Operations team required for Zomato API gateway investigation. Ticket assigned to queue for further diagnosis."
+    },
+    {
+      "timestamp": "2026-01-30T11:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted store to confirm no recent network configuration changes. Verified firewall rules allow Zomato API traffic on port 443. Issue appears to be upstream with Zomato API gateway rather than local network configuration."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

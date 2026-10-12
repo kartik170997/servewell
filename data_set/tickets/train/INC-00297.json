@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00297",
+  "store_id": "SW-0116",
+  "store_name": "ServeWell - Jayanagar",
+  "submitted_by": "Anjali Shetty",
+  "contact_phone": "+91-83879-46265",
+  "date_opened": "2026-01-09T11:38:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Swiggy Down",
+  "subject": "Swiggy integration not syncing orders to POS system since 11:15 AM",
+  "description": "Swiggy integration has been non-functional since approximately 11:15 AM this morning. Orders placed by customers on the Swiggy platform are not appearing in our POS terminal (POS-0116-T1) or in the FoodTech POS v4.2.1 backend dashboard. We have verified that: (1) the store is actively listed on Swiggy and accepting orders, (2) no error messages appear in the POS system itself, (3) network connectivity is stable and other systems are functioning normally, and (4) the last successful order sync occurred at 10:58 AM. We attempted basic troubleshooting including restarting the POS terminal and checking internet connectivity, but the issue persists. This is impacting our ability to fulfill online orders, and we currently have 7 unacknowledged orders showing in Swiggy's consumer app with no visibility in our kitchen. Business impact is moderate—we are losing order fulfillment capacity and risking customer satisfaction on a high-traffic lunch period. Requesting urgent investigation of the API integration between Swiggy and our FoodTech POS system.",
+  "asset_id": "POS-0116-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "swiggy-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-09T11:45:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial acknowledgment received. Confirmed store network status is stable and POS terminal is online. Requested store manager to check Swiggy merchant dashboard for any notifications or API errors on their end."
+    },
+    {
+      "timestamp": "2026-01-09T11:52:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Store confirmed no error notifications in Swiggy merchant portal. Attempted remote POS system log review to identify integration layer issues. Ticket escalated to Level 2 backend team for API connectivity diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

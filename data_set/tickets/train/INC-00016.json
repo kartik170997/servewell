@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00016",
+  "store_id": "SW-0120",
+  "store_name": "ServeWell - Ameerpet",
+  "submitted_by": "Pallavi Gupta",
+  "contact_phone": "+91-94473-72773",
+  "date_opened": "2026-05-05T17:35:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Printer Offline",
+  "subject": "StarMC Print v2 Printer (PRN-0120-P1) Showing Offline Status at Ameerpet",
+  "description": "The primary receipt printer (StarMC Print v2 v3.0, asset PRN-0120-P1) at ServeWell - Ameerpet has been displaying an offline status since approximately 17:15 IST today. The device is physically powered on and connected via USB to the POS terminal, but the print queue shows \"Printer Offline\" error and all print jobs are being rejected with error code ERR-P502. The printer LED indicator is solid amber rather than the normal green state. I have already attempted the following troubleshooting steps: (1) restarted the printer via power cycle (off for 2 minutes, then on); (2) checked USB cable connection—it appears firmly seated; (3) reviewed the printer's local web interface at 192.168.1.45, which loads but shows \"Device Status: Offline\" with no error logs; (4) attempted to re-add the printer in Windows Device Settings, but it is not being detected. The printer is currently needed for order tickets during dinner service, though we are managing with the secondary printer temporarily. This is impacting operational efficiency. Please advise on next steps or arrange on-site repair if hardware failure is suspected.",
+  "asset_id": "PRN-0120-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "printer-offline"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-05T17:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Initial assessment confirms printer offline status and customer's troubleshooting attempts are documented and reasonable. Assigned for further diagnostics."
+    },
+    {
+      "timestamp": "2026-05-05T18:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote ping to printer IP 192.168.1.45 successful; however, SNMP query shows device driver mismatch. Recommended uninstalling and reinstalling StarMC Print v3.0 driver from support portal, scheduled follow-up call at 19:00 IST."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

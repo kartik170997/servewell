@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00007",
+  "store_id": "SW-0080",
+  "store_name": "ServeWell - FC Road",
+  "submitted_by": "Manish Hegde",
+  "contact_phone": "+91-71491-19514",
+  "date_opened": "2026-02-08T14:40:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty program points not syncing to customer accounts at FC Road",
+  "description": "Customers are unable to earn and redeem loyalty points through the POS terminal at our FC Road location. When transactions are completed, the points are not being credited to customer profiles in the loyalty system. This has been occurring since this morning around 10:30 AM. We have verified that customer loyalty accounts exist in the system and the POS terminal is otherwise functioning normally for regular transactions. No error messages are displayed during checkout, but the points simply do not appear in the customer's loyalty balance after payment.",
+  "asset_id": "POS-0080-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

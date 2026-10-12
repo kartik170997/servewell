@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00311",
+  "store_id": "SW-0035",
+  "store_name": "ServeWell - Madhapur",
+  "submitted_by": "Harish Shetty",
+  "contact_phone": "+91-75055-61068",
+  "date_opened": "2025-12-18T17:37:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router Offline",
+  "subject": "Cisco SG350 Router RTR-0035-01 Completely Offline at Madhapur",
+  "description": "The Cisco SG350 router (RTR-0035-01) at ServeWell - Madhapur store is completely offline and unresponsive. All Wi-Fi connectivity and wired network connections are down, affecting point-of-sale systems and customer operations. The device shows no power indicators or LED activity. Basic power cycle has not resolved the issue. Store staff attempted a restart approximately 10 minutes ago without success.",
+  "asset_id": "RTR-0035-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "router-offline"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-18T17:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to network support queue. Confirmed with store that power cable connections are secure and outlet is functional. Pending remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

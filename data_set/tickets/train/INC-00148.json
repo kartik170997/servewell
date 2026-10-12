@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00148",
+  "store_id": "SW-0086",
+  "store_name": "ServeWell - Velachery",
+  "submitted_by": "Preeti Roy",
+  "contact_phone": "+91-92552-91033",
+  "date_opened": "2026-02-14T14:02:00+05:30",
+  "priority": "P1",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - no online orders received since 13:45 IST",
+  "description": "The Zomato integration for ServeWell - Velachery has been completely non-functional since approximately 13:45 IST today (14 February 2026). No new online orders from Zomato are being received in the StarMC Print v2 system (PRN-0086-P1), though the ordering app shows our restaurant as open and accepting orders. We have verified that: (1) the printer is powered on and connected to the network, (2) manual test prints from the terminal work without issue, (3) our internet connectivity is stable (confirmed via ping tests and other cloud services), and (4) there are no recent system updates or configuration changes on our end. During this 17-minute outage window, we have missed at least 8-10 customer orders based on phone callbacks from frustrated customers who placed orders on Zomato. This is causing significant revenue loss and customer satisfaction issues during our peak lunch service hours. The integration status dashboard in our backend shows a red alert flag but provides no specific error code. We require immediate escalation to the integration team to restore Zomato connectivity.",
+  "asset_id": "PRN-0086-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-14T14:05:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Confirmed Zomato integration status is offline via backend dashboard. Verified network connectivity at store location is stable. Escalating to Integration Team (L2) immediately due to P1 priority and active revenue impact."
+    },
+    {
+      "timestamp": "2026-02-14T14:08:15+05:30",
+      "actor": "System",
+      "note": "Escalation flag activated. Ticket routed to Integration_Support queue and assigned case reference ZOM-INC-00148 for vendor coordination."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

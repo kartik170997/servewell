@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00179",
+  "store_id": "SW-0010",
+  "store_name": "ServeWell - Kurla",
+  "submitted_by": "Swathi Shetty",
+  "contact_phone": "+91-86191-70811",
+  "date_opened": "2026-04-15T20:09:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "WiFi connectivity drops every 15-20 minutes affecting POS and kitchen displays",
+  "description": "ServeWell - Kurla is experiencing intermittent WiFi disconnections on the guest and operational networks. The NetLink NL-3000 router (RTR-0010-01) loses connectivity approximately every 15-20 minutes, lasting 30-45 seconds each time. This is severely impacting point-of-sale (POS) operations during peak hours (18:00-22:00), causing transaction delays and customer dissatisfaction. Kitchen display system (KDS) also loses connection intermittently, disrupting order flow. All connected devices (5 POS terminals, 2 KDS units, staff devices) are affected simultaneously, indicating a router-level issue rather than device-specific problem. Error messages observed: 'Network Unreachable' on POS terminals and automatic WiFi reconnection cycles on mobile devices. Issue began 3 days ago (2026-04-12) and is occurring consistently. Store manager reports this is impacting approximately 40-50 orders per evening service. Router firmware version confirmed as NetLink NL-3000 v2.2. No recent configuration changes or power outages reported. Basic troubleshooting attempted: router restart (temporary 2-hour relief), power cycle of all client devices, and verification of DHCP settings.",
+  "asset_id": "RTR-0010-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-15T20:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Remote diagnostics scheduled for 2026-04-16 morning. Customer advised to document disconnect times and reboot router if drops exceed 5 minutes during business hours."
+    },
+    {
+      "timestamp": "2026-04-15T21:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Requested router access logs and WiFi signal strength reports from store. Preliminary assessment suggests possible interference or thermal throttling; escalation to L2 Network Engineering pending log review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

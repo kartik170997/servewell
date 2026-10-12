@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00259",
+  "store_id": "SW-0067",
+  "store_name": "ServeWell - Mira Road",
+  "submitted_by": "Venkat Mishra",
+  "contact_phone": "+91-85953-73191",
+  "date_opened": "2026-04-17T13:23:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Payment Reader",
+  "subject": "Payment reader on kiosk PRN-0067-P1 not accepting card transactions",
+  "description": "The payment reader on self-service kiosk PRN-0067-P1 at Mira Road location is displaying an error code E-402 whenever customers attempt to swipe or insert payment cards. The reader was functioning normally this morning but started showing the error from approximately 1 PM onwards. Customers are unable to complete transactions and the kiosk is currently offline for payment processing. The device appears to be powered on and the display is responsive, but the card slot is not accepting any input.",
+  "asset_id": "PRN-0067-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "payment-reader"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

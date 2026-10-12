@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00167",
+  "store_id": "SW-0108",
+  "store_name": "ServeWell - Shahdara",
+  "submitted_by": "Krishnan Patel",
+  "contact_phone": "+91-96379-51347",
+  "date_opened": "2026-03-17T18:15:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "ServeWell online ordering portal inaccessible at Shahdara location",
+  "description": "The online ordering portal for ServeWell - Shahdara (SW-0108) has been completely unavailable since approximately 17:45 IST on 2026-03-17. Customers attempting to place orders through the web and mobile interfaces are receiving a persistent 503 Service Unavailable error message. All in-store POS terminals (asset POS-0108-T1) continue to function normally for walk-in customers. The portal was operational this morning with no reported issues until the outage began this evening. Business impact is moderate but growing—we have received approximately 12 customer complaints in the past 30 minutes, and we estimate we are losing online order revenue during peak dinner hours. Store staff have verified that internet connectivity to the location is stable and confirmed through manual browser testing on multiple devices (iOS, Android, desktop) that the portal remains inaccessible. No recent updates or maintenance windows were scheduled for this timeframe. FoodTech POS system version is v4.2.1. Immediate investigation and restoration of the online ordering portal is requested.",
+  "asset_id": "POS-0108-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-17T18:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial triage confirms portal returning 503 errors. Verified store internet connectivity is stable. Recommended store staff to continue accepting in-store orders while investigation proceeds."
+    },
+    {
+      "timestamp": "2026-03-17T18:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Checked FoodTech POS backend status dashboard—no system-wide outage detected. Issue appears localized to SW-0108 portal instance. Escalation to L2 backend team recommended for deeper diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

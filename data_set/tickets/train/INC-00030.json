@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00030",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Ajay Banerjee",
+  "contact_phone": "+91-84299-89457",
+  "date_opened": "2026-01-24T07:07:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "End-of-Day",
+  "subject": "EOD settlement failing on terminal T1",
+  "description": "POS terminal T1 won't complete end-of-day settlement. System hangs at cash reconciliation step. Unable to close shift. Need urgent fix before next service.",
+  "asset_id": "POS-0056-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "end-of-day"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Cleared transaction cache and restarted POS terminal. EOD settlement completed successfully on retry.",
+  "status": "Closed"
+}

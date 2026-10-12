@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00022",
+  "store_id": "SW-0005",
+  "store_name": "ServeWell - Kharadi",
+  "submitted_by": "Nalini Naik",
+  "contact_phone": "+91-71615-72287",
+  "date_opened": "2026-02-07T17:31:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Duplicate orders appearing in kitchen display system for same customer",
+  "description": "Since this morning around 10:00 AM, the FrostyPro 800 ordering system has been generating duplicate orders in the kitchen display system. When customers place orders through the online portal, the same order appears twice with different order IDs, causing kitchen staff confusion and delayed order fulfillment. This has affected approximately 8-10 orders so far. The issue persists even after a manual system refresh was attempted by store staff.",
+  "asset_id": "SSM-0005-01",
+  "system_version": "FrostyPro 800 v1.8",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-07T17:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed issue affects kitchen display system with duplicate order entries. Requested confirmation on whether issue persists and if system logs show any error patterns."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

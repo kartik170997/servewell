@@ -170,6 +170,21 @@ class WorkflowOutputError(AdapterParseError):
         super().__init__(adapter_name='ProcedureChatAdapter',signature=signature,lm_response='',message=code)
 
 
+def consistency_reason(output, value):
+    # Schema-valid but self-contradictory decisions must not reach the user, e.g. a plan marked
+    # sufficient with no steps, or a clarification whose "question" is not a question.
+    action=value.get('evidence_action') or value.get('next_action')
+    if output=='plan' and action=='sufficient' and not value.get('steps'): return 'plan_without_steps'
+    if action=='clarify' and '?' not in value.get('question',''): return 'clarify_without_question'
+    return None
+
+
+CONSISTENCY_FEEDBACK={
+    'plan_without_steps':'evidence_action was sufficient but steps was empty. Put every troubleshooting check in steps, not in summary, or choose search, read or clarify.',
+    'clarify_without_question':'clarify requires question to contain one complete question for the user ending with a question mark.',
+}
+
+
 def validation_reason(error):
     if hasattr(error,'validation_code'): return error.validation_code
     cause=error.__cause__
@@ -206,6 +221,9 @@ class ProcedureChatAdapter(dspy.JSONAdapter):
             elif isinstance(node,list):
                 for child in node: require_support(child)
         require_support(schema)
+        # An optional steps array was observed being omitted while steps were written into summary.
+        plan=schema.get('$defs',{}).get('PlanResult')
+        if plan: plan['required']=list(dict.fromkeys(plan['required']+['steps']))
         for name, definition in schema.get('$defs',{}).items():
             citation=definition.get('properties',{}).get('citations')
             choices=self.step_citations if name=='PlannedStep' else self.response_citations
@@ -269,6 +287,7 @@ def predict(signature, output, context):
                             raise WorkflowOutputError(signature,'support_metadata_invalid')
                     if any(not set(step['citations']).issubset(context.get('allowed_citation_ids',[])) for step in value.get('steps',[])):
                         raise WorkflowOutputError(signature,'step_citations_invalid')
+                    if consistency_reason(output,value): raise WorkflowOutputError(signature,consistency_reason(output,value))
                     break
                 except AdapterParseError as invalid:
                     reason=validation_reason(invalid)
@@ -279,7 +298,8 @@ def predict(signature, output, context):
                     context={**context,'output_validation_feedback':
                             'The previous output failed validation ('+reason+'). Return JSON matching the schema, including non-null '
                         'confidence (0 to 1), confidence_reason and nonempty valid citations for the overall decision '
-                        'AND EACH planned step. Step citations must use allowed_citation_ids. Never output Python constructors.'}
+                        'AND EACH planned step. Step citations must use allowed_citation_ids. Never output Python constructors. '
+                        +CONSISTENCY_FEEDBACK.get(reason,'')}
                     # Regenerate from the original trusted instructions and redacted
                     # context. Never execute or log malformed model output.
                     import logging

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00127",
+  "store_id": "SW-0013",
+  "store_name": "ServeWell - Hebbal",
+  "submitted_by": "Sunil Tiwari",
+  "contact_phone": "+91-76208-35312",
+  "date_opened": "2026-01-08T15:02:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Paper Jam",
+  "subject": "Printer paper jam - receipt printer not working",
+  "description": "Receipt printer at counter 2 has a paper jam and won't clear. I've tried pulling the paper out but it's stuck. Also my January salary hasn't shown up in my account yet - can you check on that too? Need this fixed ASAP.",
+  "asset_id": "PRN-0013-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "paper-jam"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

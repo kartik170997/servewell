@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00024",
+  "store_id": "SW-0075",
+  "store_name": "ServeWell - Bibwewadi",
+  "submitted_by": "Ravi Goswami",
+  "contact_phone": "+91-95544-23237",
+  "date_opened": "2025-11-04T19:44:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "End-of-Day",
+  "subject": "POS Terminal T1 - End-of-Day Settlement Timeout Error",
+  "description": "Store manager reports that POS Terminal T1 is unable to complete end-of-day settlement. The terminal displays a timeout error message when attempting to reconcile cash and card transactions from today's trading session. Manager has already confirmed that all transactions were processed successfully throughout the day; the issue appears only during the settlement phase. No prior troubleshooting steps have been attempted beyond a single refresh attempt.",
+  "asset_id": "POS-0075-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "end-of-day"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-04T19:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial verification confirms POS Terminal T1 is online and responsive. Advised store manager to check network connectivity and restart the settlement process; awaiting update."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

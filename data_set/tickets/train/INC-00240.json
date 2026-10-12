@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00240",
+  "store_id": "SW-0078",
+  "store_name": "ServeWell - Kothrud",
+  "submitted_by": "Arjun Agarwal",
+  "contact_phone": "+91-76778-95799",
+  "date_opened": "2026-03-08T18:41:00+05:30",
+  "priority": "P1",
+  "category": "Printers",
+  "subcategory": "Garbled Text",
+  "subject": "Receipt printer PRN-0078-P1 printing garbled/corrupted characters on all receipts",
+  "description": "The kitchen receipt printer (StarMC Print v2 v3.0, Asset ID: PRN-0078-P1) located at the counter has begun outputting illegible, corrupted text on all customer receipts since approximately 17:45 IST today. Instead of clear itemized orders and pricing, the printer is producing random special characters, symbols, and fragmented text that makes receipts completely unreadable. This is severely impacting customer service and order fulfillment—we cannot provide legible receipts to customers, and kitchen staff cannot read incoming orders. We have already attempted the following troubleshooting steps: (1) power cycled the printer three times, (2) cleared the print queue via the StarMC administration panel, (3) checked the USB cable connection (appears secure), (4) reprinted a test page which also produced garbled output, and (5) verified the printer driver version in system settings (v3.0 confirmed). The issue persists across all print jobs regardless of source. No recent updates or configuration changes were made to this device. This is a critical issue affecting store operations and revenue. Immediate escalation and on-site support are required.",
+  "asset_id": "PRN-0078-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "garbled-text"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-08T18:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged as P1. Confirmed receipt printer malfunction affecting active store operations. Requested clarity on print driver logs; awaiting response from submitter before escalation."
+    },
+    {
+      "timestamp": "2026-03-08T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Submitter confirmed driver logs show no errors; hardware-level issue suspected. Escalating to L2 Hardware Support for potential printhead or firmware inspection."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

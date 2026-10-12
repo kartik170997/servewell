@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00155",
+  "store_id": "SW-0009",
+  "store_name": "ServeWell - BTM Layout",
+  "submitted_by": "Kiran Kaur",
+  "contact_phone": "+91-96850-44517",
+  "date_opened": "2026-03-19T18:31:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve machine showing error code — fed up with constant breakdowns and zero support",
+  "description": "I am absolutely DONE with this soft serve machine and honestly this entire POS system. We have been dealing with constant error codes on terminal T2 for the past THREE WEEKS and every single time we call support, we get the same runaround. Today it's showing some cryptic error message again — I didn't even bother noting down the exact code because frankly what's the point? Nothing ever gets fixed anyway.\n\nThis is the FIFTH time this month alone that this machine has gone down during peak hours. Do you know what that means? Angry customers, lost sales, staff standing around doing nothing, and me dealing with complaints all day. We've already lost count of how many disappointed customers we've turned away because we can't serve soft serve cones.\n\nI've tried everything — restarting the terminal, unplugging and replugging it, clearing the cache (or at least what I think is the cache), and nothing works. I even called the regional manager yesterday and got told \"we're looking into it\" which is corporate speak for \"we don't care.\"\n\nI don't even know what version we're running anymore — it's FoodTech POS v5.1.1 according to the system info, but honestly I'm not sure these versions even matter because the software just keeps breaking regardless. This is completely unacceptable. We pay good money for this system and the support is absolutely useless. I need this fixed TODAY, not next week, not tomorrow — TODAY. If this isn't resolved by end of business I'm escalating this to the area manager because I'm tired of wasting my time with support tickets that go nowhere.",
+  "asset_id": "POS-0009-T2",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-19T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to L1 queue. Attempted phone contact at provided number but no response. Sent diagnostic form link to submitter via email for troubleshooting steps."
+    },
+    {
+      "timestamp": "2026-03-19T20:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Submitter responded with frustration; declined to provide specific error code or run diagnostics. Advised that escalation to L2 hardware team requires diagnostic data. Follow-up scheduled for tomorrow morning."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

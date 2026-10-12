@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00185",
+  "store_id": "SW-0030",
+  "store_name": "ServeWell - KR Puram",
+  "submitted_by": "Suma Nair",
+  "contact_phone": "+91-93058-22475",
+  "date_opened": "2026-01-04T08:23:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Device Connectivity",
+  "subject": "POS terminal unable to connect to WiFi network",
+  "description": "The POS terminal in the kitchen area is unable to connect to the WiFi network. The device shows \"No Network Available\" error and cannot authenticate with the NetLink NL-3000 router. This is impacting order management at the store. I have restarted the device once but the issue persists. The router appears to be functioning normally as other devices in the store are connected without issues.",
+  "asset_id": "RTR-0030-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "device-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

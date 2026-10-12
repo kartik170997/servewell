@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00118",
+  "store_id": "SW-0009",
+  "store_name": "ServeWell - BTM Layout",
+  "submitted_by": "Amit Kapoor",
+  "contact_phone": "+91-96946-74251",
+  "date_opened": "2026-04-25T16:51:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Dispensing Issue",
+  "subject": "Soft serve machine RTR-0009-01 dispensing inconsistent cone fill volumes",
+  "description": "The soft serve ice cream machine (RTR-0009-01) at our BTM Layout store is dispensing inconsistent volumes of product per cone. Some cones receive approximately 60-70% of the normal serving size, while others dispense the correct full serving. This inconsistency began on 25-Apr-2026 around 14:30 IST during peak lunch service. The machine does not display any error codes on the control panel, and the hydraulic pump appears to be operating normally with no unusual sounds. We have already attempted the following troubleshooting steps: (1) Checked the product hopper level—adequate supply present; (2) Cleaned the dispensing nozzle and tip—no blockages found; (3) Powered the machine off/on twice—issue persists; (4) Verified the foot pedal is fully engaging. The business impact is moderate: we are unable to serve consistent portion sizes, which affects customer satisfaction and portion cost accuracy during our 12:00-15:00 peak service window. Approximately 120+ cones have been served with inconsistent volumes over the past 2 hours. Machine asset details confirmed: Model RTR-0009-01, Network Version Cisco SG350 15.2.1, last maintenance service was on 10-Apr-2026.",
+  "asset_id": "RTR-0009-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "dispensing-issue"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-25T17:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial ticket review completed. Confirmed all basic troubleshooting steps have been performed by submitter. Recommended checking the air pressure regulator valve and freezing cylinder temperature sensor before field escalation."
+    },
+    {
+      "timestamp": "2026-04-25T17:42:00+05:30",
+      "actor": "Store Manager",
+      "note": "Submitter confirmed air pressure gauge reads 55 PSI (within normal range 50-60 PSI). Freezing cylinder temperature holding steady at -8°C. Issue remains unresolved; awaiting field technician assignment."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

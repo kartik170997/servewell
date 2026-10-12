@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00166",
+  "store_id": "SW-0016",
+  "store_name": "ServeWell - Kengeri",
+  "submitted_by": "Lakshmi Kapoor",
+  "contact_phone": "+91-90937-91633",
+  "date_opened": "2025-12-26T20:09:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Motor Alarm",
+  "subject": "CreamTech SC-500 motor overload alarm triggered - SSM-0016-01",
+  "description": "The soft serve machine at Kengeri location has been displaying a motor overload alarm since approximately 8:00 PM today. The machine continues to operate but the alarm persists intermittently. No unusual sounds or vibrations have been noted, and the machine has been in regular use throughout the day. The alarm appears to trigger randomly during operation cycles. We have attempted a basic power cycle but the alarm returned within 15 minutes of restart.",
+  "asset_id": "SSM-0016-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "motor-alarm"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

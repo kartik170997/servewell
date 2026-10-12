@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00248",
+  "store_id": "SW-0073",
+  "store_name": "ServeWell - Andheri East",
+  "submitted_by": "Anjali Menon",
+  "contact_phone": "+91-84044-27786",
+  "date_opened": "2026-02-12T18:10:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Blank Receipt",
+  "subject": "Receipt printer printing blank pages",
+  "description": "Epson TM-T88VI at counter 1 is printing completely blank receipts. Paper is loaded and printer seems to be functioning otherwise. Started happening this evening. Need urgent fix.",
+  "asset_id": "PRN-0073-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "blank-receipt"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

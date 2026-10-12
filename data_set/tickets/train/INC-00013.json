@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00013",
+  "store_id": "SW-0012",
+  "store_name": "ServeWell - Gachibowli",
+  "submitted_by": "Rahul Kumar",
+  "contact_phone": "+91-73070-38657",
+  "date_opened": "2026-04-13T08:01:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhaustion - devices unable to connect",
+  "description": "Multiple customer and staff devices unable to obtain IP addresses since morning. DHCP server appears to be out of available leases. POS terminals intermittently disconnecting. Need immediate pool reset or investigation.",
+  "asset_id": "RTR-0012-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

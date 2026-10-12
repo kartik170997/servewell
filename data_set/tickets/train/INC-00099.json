@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00099",
+  "store_id": "SW-0089",
+  "store_name": "ServeWell - Perambur",
+  "submitted_by": "Venkat Kumar",
+  "contact_phone": "+91-85819-23703",
+  "date_opened": "2026-05-11T15:35:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhaustion causing devices to fail connection at Perambur outlet",
+  "description": "Multiple customer and staff devices are unable to connect to the Wi-Fi network at ServeWell - Perambur. When attempting to join the network, devices either fail to obtain an IP address or experience prolonged connection timeouts. The issue began approximately 2 hours ago during the lunch rush. We suspect the DHCP pool on router RTR-0089-01 has been exhausted, preventing new device connections. Currently affecting POS systems and customer-facing tablets.",
+  "asset_id": "RTR-0089-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-11T15:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial troubleshooting steps recommended: restart router and verify DHCP configuration. Awaiting store feedback."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

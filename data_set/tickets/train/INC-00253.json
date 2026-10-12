@@ -1,0 +1,37 @@
+{
+  "ticket_id": "INC-00253",
+  "store_id": "SW-0042",
+  "store_name": "ServeWell - Devanahalli",
+  "submitted_by": "Kavitha Reddy",
+  "contact_phone": "+91-87529-12900",
+  "date_opened": "2025-11-18T09:08:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration not syncing orders despite ticket INC-00015 resolution confirmation",
+  "description": "We are experiencing a critical issue with Zomato order integration at ServeWell - Devanahalli (SW-0042). Orders placed on Zomato are not appearing in our POS system (asset POS-0042-T1, FoodTech POS v4.2.1). The Zomato integration was confirmed as fully resolved and back to normal operation as of yesterday per ticket INC-00015, but orders are still not syncing. We have verified that the Zomato API credentials are correct and the integration shows as 'Active' in the system dashboard. However, we have not received any new orders from Zomato since 06:30 AM today, whereas our in-store and other delivery partner orders are processing normally. We have already attempted: (1) restarting the POS terminal, (2) checking network connectivity (confirmed working), (3) manually re-authenticating the Zomato connection through the POS settings, and (4) reviewing POS logs which show no Zomato webhook activity. Interestingly, the system reports the Zomato connection as 'stable and fully operational' in the integration health check, yet zero orders are being received. This directly contradicts the previous resolution. Business impact: We are losing online orders during peak lunch service hours, with customers ordering on Zomato but our staff unable to prepare food due to non-visibility in POS. Store manager estimates loss of approximately 15-20 orders per hour.",
+  "asset_id": "POS-0042-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [
+    "INC-00015"
+  ],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-18T09:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to queue. Attempted remote verification of Zomato connection status - system shows healthy connection and last webhook received at 06:31 AM. Informed submitter that INC-00015 documented full restoration; however, acknowledged current lack of order flow requires investigation."
+    },
+    {
+      "timestamp": "2025-11-18T09:35:00+05:30",
+      "actor": "System",
+      "note": "Automated health check executed: Zomato integration reported as 'Operational'. No error codes detected in POS logs. Recommendation: escalate to backend integration team for webhook audit."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

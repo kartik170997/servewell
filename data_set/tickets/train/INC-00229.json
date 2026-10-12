@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00229",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Rohit Pandey",
+  "contact_phone": "+91-72887-67240",
+  "date_opened": "2026-01-20T16:27:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "PIN Pad",
+  "subject": "PIN Pad unresponsive on Terminal 1 - unable to process card payments",
+  "description": "The PIN pad attached to POS terminal 1 at Navrangpura store is not responding to customer inputs. When customers attempt to enter their PIN for card transactions, the device shows no response and the payment cannot be completed. The terminal itself is functioning normally and transactions are being logged, but the PIN pad display is blank and buttons are unresponsive. This is affecting card payment processing at the counter. No error codes are visible on the POS screen.",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "pin-pad"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

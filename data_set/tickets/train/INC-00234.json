@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00234",
+  "store_id": "SW-0003",
+  "store_name": "ServeWell - Vijayanagar",
+  "submitted_by": "Meena Sharma",
+  "contact_phone": "+91-88544-99889",
+  "date_opened": "2025-12-21T13:54:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Software Crash",
+  "subject": "Kiosk KSK-0003-01 caught in continuous restart loop",
+  "description": "The self-service ordering kiosk at Vijayanagar location is experiencing repeated software crashes and rebooting automatically every 30-40 seconds. The device boots to the ServeWell Kiosk v2.1 splash screen, attempts to load the menu, then crashes and restarts without completing initialization. This has been ongoing since approximately 1:30 PM today, preventing customers from placing orders via the kiosk. Store staff has attempted a single power cycle without resolution.",
+  "asset_id": "KSK-0003-01",
+  "system_version": "ServeWell Kiosk v2.1",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "software-crash"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-21T14:02:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Remote diagnostics queued; initial assessment suggests possible database connectivity issue or corrupted cache on device. Advised store manager to power down kiosk and await further instructions."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

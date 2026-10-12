@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00005",
+  "store_id": "SW-0017",
+  "store_name": "ServeWell - Malad West",
+  "submitted_by": "Priya Patel",
+  "contact_phone": "+91-91743-56771",
+  "date_opened": "2025-11-22T17:59:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Payment Reader",
+  "subject": "Payment reader not accepting my card this month",
+  "description": "The payment reader at my register keeps rejecting my personal card when I try to clock in or access the shift schedule app. I think something is wrong with the hardware but honestly my salary didn't reflect last month either. Can you check if there's a system issue blocking my access?",
+  "asset_id": "RTR-0017-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "payment-reader"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

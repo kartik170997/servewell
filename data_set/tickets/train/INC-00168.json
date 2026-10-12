@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00168",
+  "store_id": "SW-0017",
+  "store_name": "ServeWell - Malad West",
+  "submitted_by": "Abhishek Gupta",
+  "contact_phone": "+91-88480-38569",
+  "date_opened": "2025-11-18T19:41:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - orders not syncing to POS system",
+  "description": "The Zomato order integration at ServeWell - Malad West has been completely down since approximately 19:30 IST today (2025-11-18). New orders placed by customers on the Zomato platform are not appearing in our POS system or kitchen display screen. The printer (Asset ID: PRN-0017-P2, Epson TM-T88VI v1.12) is functional and operational, but no order receipts are being generated for any Zomato orders. We have verified that our store is still active and visible on the Zomato app. Local WiFi connectivity to the POS terminal is stable with no network interruptions detected. We have already attempted: (1) restarting the POS terminal and Zomato plugin, (2) checking API credentials in the system settings, and (3) verifying store activation status in the Zomato merchant dashboard. The issue persists across all three of our tablets in the kitchen. This is causing significant operational disruption during peak dinner hours, with multiple customer complaints and potential order fulfillment delays. We are currently manually taking Zomato orders via phone as a workaround, but this is unsustainable. Immediate escalation and investigation of the integration backend is required.",
+  "asset_id": "PRN-0017-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-18T19:52:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed store is active on Zomato dashboard and local network connectivity is stable. Advised customer that integration backend status is being checked; escalating to L2 integration team for API logs review."
+    },
+    {
+      "timestamp": "2025-11-18T20:08:15+05:30",
+      "actor": "System",
+      "note": "Ticket automatically routed to Integration Support queue with P2 priority. Awaiting L2 agent assignment."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

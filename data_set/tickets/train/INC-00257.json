@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00257",
+  "store_id": "SW-0005",
+  "store_name": "ServeWell - Kharadi",
+  "submitted_by": "Mohan Shah",
+  "contact_phone": "+91-95197-27750",
+  "date_opened": "2025-11-12T13:22:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Touchscreen",
+  "subject": "Kiosk touchscreen misaligned—taps registering offset",
+  "description": "Kiosk P1 touchscreen is not responding correctly to taps. Inputs are registering 2-3 cm off from where customers touch. This is affecting order placement during lunch rush. Needs immediate calibration or replacement.",
+  "asset_id": "PRN-0005-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "touchscreen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

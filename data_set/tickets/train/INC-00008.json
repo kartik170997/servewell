@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00008",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Arun Joshi",
+  "contact_phone": "+91-78811-49469",
+  "date_opened": "2026-01-14T13:24:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Scanner",
+  "subject": "Barcode scanner T1 not reading codes at checkout",
+  "description": "Scanner at terminal 1 stopped reading barcodes this morning. Orders backed up during lunch rush. Scanner was working fine yesterday. Need urgent fix.",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "scanner"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "USB cable reseated and scanner recalibrated. Device responding normally to test scans. Confirmed with store manager.",
+  "status": "Closed"
+}

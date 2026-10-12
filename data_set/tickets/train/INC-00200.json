@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00200",
+  "store_id": "SW-0088",
+  "store_name": "ServeWell - Yelahanka",
+  "submitted_by": "Suma Nair",
+  "contact_phone": "+91-77282-56567",
+  "date_opened": "2026-03-23T09:18:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi Network Down at Yelahanka Store - No Connectivity Since 08:45 AM",
+  "description": "Guest Wi-Fi network has been completely unavailable since approximately 08:45 AM today (23-Mar-2026). Customers attempting to connect to the 'ServeWell_Guest' SSID receive no response or are unable to authenticate after providing the access code. The issue was first reported by a customer at 08:50 AM, and multiple customers since have complained about inability to access Wi-Fi during peak breakfast service hours. The internal staff network (ServeWell_Internal) continues to function normally on the same NetLink NL-3000 router, indicating the problem is isolated to the guest network configuration or guest VLAN. I have already attempted the following troubleshooting steps: (1) power-cycled the router RTR-0088-01 at 08:55 AM with no improvement, (2) verified the router is powered on and all indicator lights show normal status except the guest Wi-Fi LED which is amber/offline, (3) checked the router's web admin panel and confirmed the guest network is enabled in settings, and (4) restarted the guest Wi-Fi service from the admin dashboard at 09:10 AM. The issue persists. This is impacting customer experience during peak operating hours and we estimate 40-50 customers have been unable to connect in the last 25 minutes. Asset details confirmed: NetLink NL-3000 v2.1, Asset ID RTR-0088-01, located in the back office equipment cabinet.",
+  "asset_id": "RTR-0088-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-23T09:22:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged. Confirmed guest Wi-Fi SSID 'ServeWell_Guest' is offline. Customer impact is high during breakfast service. Requested remote access to router to diagnose configuration issue versus hardware failure."
+    },
+    {
+      "timestamp": "2026-03-23T09:28:45+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote access granted. Preliminary diagnostics show guest network DHCP pool is exhausted and no new client connections are being assigned IPs. Investigating whether DHCP lease table is corrupted or if there is a memory leak in the router firmware. Escalating to L2 Network Engineering team for firmware analysis and possible reset of guest network configuration."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

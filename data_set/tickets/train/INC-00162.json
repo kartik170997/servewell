@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00162",
+  "store_id": "SW-0111",
+  "store_name": "ServeWell - Goregaon East",
+  "submitted_by": "Vijayalakshmi Agarwal",
+  "contact_phone": "+91-81985-21836",
+  "date_opened": "2026-03-04T19:18:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer offline on terminal 1",
+  "description": "Receipt printer connected to POS terminal 1 stopped printing orders since this afternoon. Customers getting frustrated. Tried power cycling but issue persists. Need urgent fix.",
+  "asset_id": "POS-0111-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Printer driver was outdated. Updated to latest version compatible with FoodTech POS v4.2.1 and reinstalled USB connection. Printer reconnected and test receipt printed successfully.",
+  "status": "Resolved"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00114",
+  "store_id": "SW-0010",
+  "store_name": "ServeWell - Kurla",
+  "submitted_by": "Asha Ghosh",
+  "contact_phone": "+91-96250-99051",
+  "date_opened": "2025-11-11T18:55:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Paper Jam",
+  "subject": "Paper jam in receipt printer PRN-0010-P1",
+  "description": "Receipt printer not printing. Paper appears to be stuck inside the mechanism.",
+  "asset_id": "PRN-0010-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "paper-jam"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

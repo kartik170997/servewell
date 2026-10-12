@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00256",
+  "store_id": "SW-0077",
+  "store_name": "ServeWell - Electronic City",
+  "submitted_by": "Ravi Rao",
+  "contact_phone": "+91-79707-39816",
+  "date_opened": "2026-05-10T15:48:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "Auto-accept feature not functioning for incoming online orders",
+  "description": "The automatic order acceptance feature on our online ordering system has stopped working since this morning. Orders placed through the ServeWell mobile app and website are not being automatically accepted by the kitchen display system and remain in pending status indefinitely. Staff have had to manually accept each order, causing delays during peak lunch hours. The issue started around 10:30 AM today. We have checked basic connectivity and the system appears to be online, but auto-accept remains inactive.",
+  "asset_id": "RTR-0077-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00046",
+  "store_id": "SW-0087",
+  "store_name": "ServeWell - Jubilee Hills",
+  "submitted_by": "Suma Iyer",
+  "contact_phone": "+91-71986-62772",
+  "date_opened": "2026-03-02T19:26:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Sync Failure",
+  "subject": "StarMC Print PRN-0087-P1 not syncing online orders from aggregator platforms",
+  "description": "Since approximately 18:45 IST on 2026-03-02, the receipt printer (PRN-0087-P1) at ServeWell Jubilee Hills has stopped synchronizing incoming online orders from our aggregator partners (Swiggy, Zomato, UberEats). Orders are being placed successfully on the platforms and customer payments are confirmed, but no print tickets are being generated at the store, resulting in orders not being prepared. Kitchen staff are unaware of these orders and we are accumulating delayed deliveries. The StarMC Print v3.0 system shows no error messages in the console, but the sync status indicator on the terminal displays 'Connection Timeout' when attempting to fetch from the order queue. We have already: (1) power-cycled the printer twice, (2) checked network connectivity (WiFi signal is strong at -45 dBm), (3) verified printer IP address is still 192.168.1.87, (4) attempted manual sync refresh from the admin panel without success. Business impact is critical during evening peak hours—we are currently receiving approximately 15-20 online orders per hour with zero fulfillment visibility. This is affecting our customer ratings and delivery partner satisfaction.",
+  "asset_id": "PRN-0087-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "sync-failure"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-02T19:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and categorized. Initial remote diagnostics initiated—confirmed printer is online and responding to network pings. Requested store manager to check if printer firmware is up-to-date and verify API credentials in StarMC admin console."
+    },
+    {
+      "timestamp": "2026-03-02T19:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store confirmed firmware is current (v3.0.8). However, API authentication token in system appears to have expired 2026-03-02 at 17:30 IST. Advised store manager to regenerate token from aggregator integration panel. Awaiting confirmation of token refresh completion before proceeding to L2."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

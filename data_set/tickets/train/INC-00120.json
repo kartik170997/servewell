@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00120",
+  "store_id": "SW-0018",
+  "store_name": "ServeWell - Viman Nagar",
+  "submitted_by": "Saranya Tiwari",
+  "contact_phone": "+91-81519-66280",
+  "date_opened": "2025-12-25T17:47:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Payment Error",
+  "subject": "Payment processing timeout on Terminal 1 - multiple failed card transactions",
+  "description": "Starting approximately 17:30 IST today, Terminal 1 (POS-0018-T1) has been experiencing consistent payment processing failures during card transactions. When customers attempt to pay via credit/debit card, the system displays error code ERR-4521 (\"Payment Gateway Timeout\") and hangs for 45-60 seconds before timing out. The transaction does not complete, but customer cards are being charged intermittently, creating duplicate charges in some cases. Cash transactions on the same terminal process normally. We have attempted the following: (1) restarted the terminal twice, (2) checked network connectivity—both Ethernet and WiFi show normal signal strength, (3) verified internet speed at 45 Mbps download / 12 Mbps upload, (4) reviewed POS logs and found repeated gateway timeout entries. This is impacting service during our peak dinner rush; we have had to manually void and reprocess 8 transactions in the last 15 minutes, causing customer dissatisfaction and delays. The issue appears isolated to this terminal as Terminal 2 is processing payments without incident.",
+  "asset_id": "POS-0018-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "payment-error"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-25T17:52:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed terminal is online and network connectivity is stable. Initial troubleshooting steps documented by submitter appear thorough. Escalating to L2 Payment Systems team for gateway diagnostics."
+    },
+    {
+      "timestamp": "2025-12-25T18:01:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote access to terminal logs initiated. Payment gateway connection parameters verified as correct. No local POS configuration issues detected. Waiting for L2 to check payment processor status and gateway server logs on their end."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

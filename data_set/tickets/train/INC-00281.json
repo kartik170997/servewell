@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00281",
+  "store_id": "SW-0086",
+  "store_name": "ServeWell - Velachery",
+  "submitted_by": "Venkat Agarwal",
+  "contact_phone": "+91-98971-63264",
+  "date_opened": "2025-12-03T07:19:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Cleaning Cycle",
+  "subject": "Soft serve machine cleaning cycle stuck at rinse phase - POS-0086-T1",
+  "description": "The soft serve ice cream machine (asset POS-0086-T1) initiated its automated cleaning cycle at approximately 06:45 AM today as scheduled. However, the cleaning cycle has become stuck during the rinse phase and has not progressed for over 30 minutes. The machine display shows status code 'CLN-RNS-03' with no error message details. The rinse pump appears to be running continuously without cycling through the normal rinse-drain sequence. I have attempted the following troubleshooting steps: (1) waited 15 minutes for automatic cycle completion, (2) manually stopped the cycle using the emergency stop button, (3) powered down the machine for 2 minutes and restarted it, (4) checked water supply valve at the machine inlet which is fully open. After restart, the machine entered cleaning cycle mode again but exhibits identical behavior. The machine is unable to complete cleaning and return to operational status, which is impacting service capacity during peak breakfast hours. No error logs are currently visible on the touchscreen interface. The machine is running FoodTech POS v4.2.2.",
+  "asset_id": "POS-0086-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "cleaning-cycle"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-03T07:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Confirmed asset POS-0086-T1 is assigned to SW-0086 Velachery store. Requested store manager to verify current machine status and check water inlet pressure while awaiting technical review."
+    },
+    {
+      "timestamp": "2025-12-03T07:48:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store manager confirmed cleaning cycle still stuck at rinse phase with error code CLN-RNS-03 persisting. Machine unable to drain; escalation to technical team recommended pending hardware diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

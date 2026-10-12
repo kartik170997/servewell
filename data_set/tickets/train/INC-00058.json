@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00058",
+  "store_id": "SW-0098",
+  "store_name": "ServeWell - Park Street",
+  "submitted_by": "Rohit Malhotra",
+  "contact_phone": "+91-81149-46421",
+  "date_opened": "2026-03-24T10:45:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Paper Jam",
+  "subject": "Paper jam in PRN-0098-P1 affecting receipt printing",
+  "description": "The StarMC Print v2 printer at Park Street location has a paper jam blocking normal operations. Staff reports that the printer stopped responding during peak lunch service and is currently unable to print receipts. The jam appears to be in the main feed mechanism. Previous attempt to clear the jam was unsuccessful, and the printer remains non-functional. This is impacting customer checkout efficiency.",
+  "asset_id": "PRN-0098-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "paper-jam"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

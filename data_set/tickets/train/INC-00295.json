@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00295",
+  "store_id": "SW-0110",
+  "store_name": "ServeWell - Paschim Vihar",
+  "submitted_by": "Shobha Agarwal",
+  "contact_phone": "+91-78187-22415",
+  "date_opened": "2026-05-02T10:22:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Software Update",
+  "subject": "FoodTech POS v4.2.3 update stuck at 67% installation; terminal unresponsive",
+  "description": "ServeWell - Paschim Vihar POS Terminal 1 (asset POS-0110-T1) began a software update to FoodTech POS v4.2.3 at approximately 09:15 IST this morning. The update progress bar has been frozen at 67% for over 1 hour. The terminal display shows 'Installing core modules...' but no further progress is evident. The terminal is completely unresponsive to touch input and keyboard commands. We have attempted a soft restart by waiting 15 minutes without power-off, but the update process resumed at the same 67% position. A hard power restart was avoided to prevent data corruption during the update cycle. The store is operating on a secondary POS terminal (POS-0110-T2) but is experiencing reduced checkout capacity during peak lunch service hours (11:00-14:00). This is impacting customer throughput and creating queues at the counter. Estimated business impact: 15-20% reduction in transaction processing speed during peak hours.",
+  "asset_id": "POS-0110-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "software-update"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-02T10:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Remote diagnostics initiated to verify update process status and identify any network/connectivity issues affecting the installation."
+    },
+    {
+      "timestamp": "2026-05-02T10:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Confirmed update process is hung; reboot of terminal recommended to clear stuck installation. Escalation to L2 technical team being prepared for manual update recovery if soft reset fails."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00069",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Suresh Mukherjee",
+  "contact_phone": "+91-99536-74248",
+  "date_opened": "2026-01-18T09:04:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal unreachable since morning",
+  "description": "Online orders portal is not accessible. Customers cannot place orders through the app/website. Getting error when trying to load the portal. Need urgent fix as we're losing orders.",
+  "asset_id": "PRN-0056-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

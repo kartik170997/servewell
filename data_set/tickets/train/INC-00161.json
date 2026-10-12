@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00161",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Ramesh Agarwal",
+  "contact_phone": "+91-97520-74349",
+  "date_opened": "2025-12-19T13:44:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "FrostyPro 800 soft serve machine producing excessively hard frozen product",
+  "description": "The soft serve machine at Lajpat Nagar store is dispensing product that is frozen too hard, making it difficult for customers to consume. The mix appears to be overcooling inside the barrel, resulting in a texture closer to ice cream than soft serve. This started occurring yesterday afternoon and has continued into today. The machine is operational and running, but the temperature settings appear to be causing the product quality issue. No adjustments have been attempted yet due to uncertainty about the correct procedure.",
+  "asset_id": "SSM-0007-01",
+  "system_version": "FrostyPro 800 v1.8",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

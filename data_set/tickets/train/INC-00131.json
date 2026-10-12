@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00131",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Mohan Chopra",
+  "contact_phone": "+91-82460-26199",
+  "date_opened": "2026-04-13T11:49:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router Offline",
+  "subject": "NetLink NL-3000 Router Completely Offline at Lajpat Nagar",
+  "description": "The primary router (NetLink NL-3000 v2.1) at ServeWell - Lajpat Nagar went completely offline this morning around 11:45 AM. All Wi-Fi connectivity to the store network has been lost, affecting POS terminals and staff devices. Power light on the router is not illuminated, and there is no response when attempting to power cycle the device. No prior troubleshooting steps have been attempted.",
+  "asset_id": "RTR-0007-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "router-offline"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-13T12:02:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Instructed submitter to verify power cable connection and outlet functionality before further escalation."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

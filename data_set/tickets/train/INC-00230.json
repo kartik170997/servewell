@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00230",
+  "store_id": "SW-0026",
+  "store_name": "ServeWell - Kondhwa",
+  "submitted_by": "Suresh Shetty",
+  "contact_phone": "+91-79922-90534",
+  "date_opened": "2025-12-12T12:59:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Receipt printer outputting garbled/misaligned text",
+  "description": "PRN-0026-P1 started printing receipts in wrong format yesterday. Text is misaligned and some characters are not displaying correctly. Affecting counter operations. Need urgent fix.",
+  "asset_id": "PRN-0026-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

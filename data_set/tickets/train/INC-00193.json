@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00193",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Smita Kaur",
+  "contact_phone": "+91-95346-50723",
+  "date_opened": "2025-11-20T16:23:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Sync Failure",
+  "subject": "Online orders not syncing to POS terminal since 3:45 PM — Swiggy and Zomato orders stuck in pending state",
+  "description": "Since approximately 15:45 IST today, online orders placed through Swiggy and Zomato are not syncing to our POS terminal (POS-0052-T1). Orders are visible in the respective third-party partner dashboards but do not appear in FoodTech POS v4.2.2. Currently, there are 12 unacknowledged orders in the Swiggy queue and 8 in the Zomato queue. Kitchen staff have been manually taking orders via phone, causing service delays and customer dissatisfaction. Error message displayed on POS terminal when attempting manual sync: \"Sync Error 0x4E2 — API Connection Timeout. Unable to fetch orders from partner gateway.\" Steps already attempted: (1) Restarted POS terminal twice, (2) Verified internet connectivity — stable at 45 Mbps download/8 Mbps upload, (3) Checked FoodTech sync logs showing repeated \"Connection refused\" responses from partner API endpoints, (4) Attempted manual order import function — returns same timeout error. Business impact is high: online channels represent approximately 35% of daily revenue for this store. Immediate resolution needed to prevent further order cancellations and customer complaints.",
+  "asset_id": "POS-0052-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "online-orders",
+    "sync-failure"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-20T16:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed internet connectivity is stable and POS terminal is online. Escalated to L2 technical team due to repeated API timeout errors and business impact confirmation."
+    },
+    {
+      "timestamp": "2025-11-20T16:48:00+05:30",
+      "actor": "System",
+      "note": "Escalation flag activated. Ticket assigned to L2 Network & Integration team for investigation of partner API gateway connectivity issue."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

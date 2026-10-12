@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00228",
+  "store_id": "SW-0073",
+  "store_name": "ServeWell - Andheri East",
+  "submitted_by": "Rajan Mukherjee",
+  "contact_phone": "+91-99299-99463",
+  "date_opened": "2026-02-10T10:27:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Menu Mismatch",
+  "subject": "Menu items showing unavailable on online ordering platform but available in store",
+  "description": "Some items from our chicken combo section are not appearing on the online ordering app but customers are requesting them at the counter. The router might need a refresh or the menu sync is broken. Need this fixed ASAP as we're losing online orders.",
+  "asset_id": "RTR-0073-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "menu-mismatch"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

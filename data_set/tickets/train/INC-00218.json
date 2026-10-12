@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00218",
+  "store_id": "SW-0034",
+  "store_name": "ServeWell - Anna Nagar",
+  "submitted_by": "Krishnan Patel",
+  "contact_phone": "+91-91908-37102",
+  "date_opened": "2026-04-18T20:09:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Not on KDS",
+  "subject": "Online order not appearing on kitchen display system",
+  "description": "We just received an online order through the app but it's not showing up on the KDS. Customer is waiting and kitchen has no visibility of the order. Need immediate help to get this order printed.",
+  "asset_id": "PRN-0034-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "not-on-kds"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

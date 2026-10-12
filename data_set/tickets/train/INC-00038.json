@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00038",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Rekha Rao",
+  "contact_phone": "+91-74134-15593",
+  "date_opened": "2026-03-09T16:57:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Touchscreen",
+  "subject": "Kiosk POS-0023-T2 touchscreen not responding accurately to taps",
+  "description": "The touchscreen on kiosk POS-0023-T2 at our Saket location is experiencing calibration issues. Customers report that their taps and swipes are not registering in the correct locations on the screen—for example, pressing the 'Confirm Order' button often registers clicks elsewhere. The issue became noticeable this morning and has persisted throughout the afternoon service. The screen display itself appears normal with no cracks or physical damage visible. We have not attempted any troubleshooting steps yet as this requires technical expertise.",
+  "asset_id": "POS-0023-T2",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "touchscreen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

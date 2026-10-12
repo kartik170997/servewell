@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00136",
+  "store_id": "SW-0035",
+  "store_name": "ServeWell - Madhapur",
+  "submitted_by": "Rohit Das",
+  "contact_phone": "+91-96211-65278",
+  "date_opened": "2026-04-09T11:56:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "Soft serve mix level low - kiosk alert triggered",
+  "description": "Getting continuous mix low alert on the kiosk display since morning. The machine is still dispensing but the alert keeps appearing. Need someone to check the mix cartridge level and refill if needed.",
+  "asset_id": "KSK-0035-01",
+  "system_version": "ServeWell Kiosk v2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

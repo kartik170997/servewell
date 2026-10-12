@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00043",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Ajay Trivedi",
+  "contact_phone": "+91-86001-34123",
+  "date_opened": "2026-04-25T12:16:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal not accessible at Navrangpura location",
+  "description": "Customers unable to place orders through our online portal since around 11:45 AM. Portal shows timeout errors when accessed. Store is receiving walk-in orders but losing online revenue. Need urgent fix.",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

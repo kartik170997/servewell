@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00064",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Meena Singh",
+  "contact_phone": "+91-95340-46585",
+  "date_opened": "2025-12-22T20:58:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer not printing orders at POS terminal T1",
+  "description": "The receipt printer connected to POS terminal T1 has stopped printing customer receipts since approximately 20:45 today. Orders are being processed normally in the FoodTech POS system, but no physical receipts are being generated. The printer appears to be powered on and connected, but the system shows no response when attempting to print test receipts. This is affecting customer service as we cannot provide order confirmations.",
+  "asset_id": "POS-0052-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-22T21:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to queue. Initial troubleshooting advised: restart POS terminal and check USB/network cable connections to printer."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

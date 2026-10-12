@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00278",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Nikhil Chatterjee",
+  "contact_phone": "+91-81522-23579",
+  "date_opened": "2026-03-24T12:42:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Epson TM-T88VI Receipt Printer Not Detected on POS Network",
+  "description": "The receipt printer (Epson TM-T88VI, Asset ID: PRN-0007-P1) at the counter station has stopped being recognized by the POS system since this morning around 11:30 AM. The printer was functioning normally until yesterday evening. When attempting to print a test receipt, the system displays error message: 'Printer Not Found - Please check device connection and restart.' The device is powered on, all USB cables are securely connected to the POS terminal, and the indicator lights show normal operation. I have already attempted the following troubleshooting steps: (1) power cycled the printer twice, (2) checked USB cable connections and reseated them, (3) restarted the POS terminal, (4) verified printer is not offline in Windows device manager, and (5) confirmed driver version is EpsonTM-T88VI v1.12. The issue persists after all these steps. This is impacting order fulfillment as we cannot generate kitchen receipts, causing delays in food preparation. Currently using manual order tickets as a temporary workaround, but this is significantly reducing operational efficiency during peak lunch hours.",
+  "asset_id": "PRN-0007-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-24T13:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial ticket review completed. Confirmed all basic troubleshooting steps have been performed by submitter. Requested store team to check BIOS USB port settings and provide Device Manager screenshot for further diagnosis."
+    },
+    {
+      "timestamp": "2026-03-24T13:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Screenshot received showing device not appearing in Device Manager. Printer likely requires driver reinstallation or USB port may be faulty. Escalation to L2 hardware support recommended."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

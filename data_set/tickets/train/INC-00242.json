@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00242",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Lakshmi Mehta",
+  "contact_phone": "+91-93427-94671",
+  "date_opened": "2026-01-14T16:14:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Network Connectivity",
+  "subject": "POS terminal not responding - system down",
+  "description": "POS terminal T1 stopped working around 4 PM. Screen is on but nothing loads. Tried restart but still not responding. Cashier says WiFi light on router is off.",
+  "asset_id": "POS-0056-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "network-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

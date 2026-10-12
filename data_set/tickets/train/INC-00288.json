@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00288",
+  "store_id": "SW-0070",
+  "store_name": "ServeWell - Jubilee Hills",
+  "submitted_by": "Vijay Chopra",
+  "contact_phone": "+91-81323-87014",
+  "date_opened": "2025-12-30T14:40:00+05:30",
+  "priority": "P1",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Epson TM-T88VI Receipt Printer Not Detected on POS System",
+  "description": "The receipt printer (Epson TM-T88VI, Asset ID: PRN-0070-P1) at ServeWell - Jubilee Hills is not being detected by the POS system and is preventing orders from printing. The printer was functioning normally until approximately 2:15 PM IST today. When attempting to print a test receipt, the system returns error: 'Printer Device Not Found - Check Connection.' The printer power indicator is illuminated and the device appears to be powered on, but the USB cable connection has been verified to be secure. We have already attempted: (1) restarting the POS terminal, (2) checking USB port connections on both printer and terminal, (3) power cycling the printer for 30 seconds, and (4) verifying no error lights on the printer panel. The issue is now impacting all food order fulfillment as kitchen tickets cannot be printed. Currently operating with manual order taking, which is severely slowing service during peak lunch hours. This requires immediate attention to restore normal operations.",
+  "asset_id": "PRN-0070-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-30T14:55:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed printer asset PRN-0070-P1 is registered to SW-0070 store. Initial diagnostics requested from submitter including device manager status on POS terminal."
+    },
+    {
+      "timestamp": "2025-12-30T15:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "L1 troubleshooting completed: verified USB drivers are installed and up-to-date on POS system. Printer not appearing in Device Manager. Escalating to L2 Hardware Support for potential USB port failure or firmware corruption diagnosis."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

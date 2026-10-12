@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00204",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Smita Singh",
+  "contact_phone": "+91-92564-17852",
+  "date_opened": "2026-04-13T07:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS Terminal T1 losing network intermittently during peak hours",
+  "description": "Terminal T1 at Adyar location keeps dropping connection during breakfast rush. Takes 5-10 mins to reconnect. Affecting order processing speed. Can't identify if it's WiFi or ethernet issue right now.",
+  "asset_id": "POS-0052-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

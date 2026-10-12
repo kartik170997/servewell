@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00195",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Shobha Agarwal",
+  "contact_phone": "+91-85851-43263",
+  "date_opened": "2026-03-25T12:39:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Slow Network",
+  "subject": "Internet is impossibly slow — why is nothing being done about this?",
+  "description": "I am absolutely FRUSTRATED with this situation. Every single day our WiFi crawls at a snail's pace, and I am tired of hearing 'it will be fixed soon' from corporate. This is affecting EVERYTHING — customer experience, staff efficiency, POS systems timing out, online ordering platforms lagging. Do you people understand what it's like to run a restaurant when the internet decides to take a nap every 20 minutes? I've been promised fixes for WEEKS now. The system just keeps dropping, buffering, and making us look incompetent in front of customers. My team can't process payments smoothly, the kitchen display system freezes, and don't even get me started on the delivery partner app integration. Nobody seems to care that we're losing money and reputation because of this. How is this still a P3? This should be CRITICAL. I'm doing everything right on my end — the equipment is fine, the router is in the right spot — but apparently the IT department would rather field complaints than actually SOLVE problems. This is unacceptable. I need someone who actually knows what they're doing to look at this, not another ticket that sits in a queue for three days.",
+  "asset_id": "RTR-0023-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "slow-network"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-25T13:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Attempted to contact submitter but line was busy; left callback message. Will perform standard diagnostics once contact established."
+    },
+    {
+      "timestamp": "2026-03-25T14:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted store and confirmed WiFi intermittent slowness reported. Recommended basic router restart and suggested checking for interference; submitter declined, requesting immediate escalation to senior technical team."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

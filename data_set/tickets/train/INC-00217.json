@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00217",
+  "store_id": "SW-0081",
+  "store_name": "ServeWell - Karol Bagh",
+  "submitted_by": "Usha Mishra",
+  "contact_phone": "+91-85782-80735",
+  "date_opened": "2026-02-28T20:34:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Payment Timeout",
+  "subject": "Payment gateway timeout on Terminal 3 during peak hours",
+  "description": "Customers unable to complete online orders at terminal 3. Payment processing hangs after 30-40 seconds, forcing cancellations. Issue started this evening around 8:15 PM. Multiple failed transactions reported.",
+  "asset_id": "POS-9072-T5",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "payment-timeout"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Payment gateway connectivity issue resolved after network timeout buffer adjustment on gateway config. Terminal 3 now processing orders normally.",
+  "status": "Resolved"
+}

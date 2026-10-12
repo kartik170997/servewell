@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00314",
+  "store_id": "SW-0037",
+  "store_name": "ServeWell - Nagarbhavi",
+  "submitted_by": "Suma Trivedi",
+  "contact_phone": "+91-87180-74738",
+  "date_opened": "2026-05-11T20:59:00+05:30",
+  "priority": "P2",
+  "category": "Kiosks",
+  "subcategory": "Software Crash",
+  "subject": "RTR-0037-01 entering continuous crash loop – unable to accept customer orders",
+  "description": "The NetLink NL-3000 v2.2 kiosk (RTR-0037-01) at Nagarbhavi location has been experiencing a critical software crash loop since approximately 20:45 IST today. The unit boots and displays the ServeWell menu splash screen for 8–12 seconds, then abruptly black-screens and automatically restarts. This cycle repeats continuously without allowing customer interaction or order placement. No error codes or diagnostic messages are visible during the crash. We have already attempted the following troubleshooting steps: (1) performed a hard power cycle by disconnecting and reconnecting the unit for 30 seconds; (2) verified all cable connections (power, network, display) are secure; (3) checked network connectivity—the unit appears to receive IP address via DHCP but does not stabilize long enough to fully initialize the application layer. The kiosk is our primary ordering terminal during evening peak hours. With this unit offline, we are unable to process digital orders and are manually taking orders on paper, significantly impacting service speed and customer satisfaction. The issue began immediately after the evening shift commenced and did not occur during the afternoon service window. Request immediate technical intervention to diagnose root cause and restore functionality.",
+  "asset_id": "RTR-0037-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "software-crash"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-11T21:12:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket triaged and reviewed. Confirmed customer has performed standard power cycle and cable checks. Assigned to Level 2 Kiosk Support for remote diagnostics and potential firmware rollback assessment."
+    },
+    {
+      "timestamp": "2026-05-11T21:18:45+05:30",
+      "actor": "L1 Agent",
+      "note": "Attempted remote connection to RTR-0037-01 management interface but unit does not respond due to crash loop preventing network stability. Escalation to onsite technician recommended given P2 priority and business impact during peak hours."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

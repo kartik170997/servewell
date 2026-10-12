@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00033",
+  "store_id": "SW-0026",
+  "store_name": "ServeWell - Kondhwa",
+  "submitted_by": "Suma Chatterjee",
+  "contact_phone": "+91-75209-45916",
+  "date_opened": "2025-11-26T17:50:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Multiple duplicate orders appearing in system since afternoon",
+  "description": "Customers are receiving duplicate order confirmations for single online orders placed through our app. Started noticing around 3 PM today. Not sure if it's a network issue or system glitch. Affecting order fulfillment.",
+  "asset_id": "RTR-0026-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

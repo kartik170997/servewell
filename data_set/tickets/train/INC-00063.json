@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00063",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Abhishek Mishra",
+  "contact_phone": "+91-93250-18511",
+  "date_opened": "2025-12-22T08:08:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS terminal losing network connectivity intermittently",
+  "description": "Terminal T1 is dropping connection every few minutes during lunch rush. Not affecting orders immediately but causing delays and payment processing issues. Restarted the device once this morning but problem persists.",
+  "asset_id": "POS-0109-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

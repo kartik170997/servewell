@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00239",
+  "store_id": "SW-0029",
+  "store_name": "ServeWell - Banashankari",
+  "submitted_by": "Nalini Mishra",
+  "contact_phone": "+91-97193-93055",
+  "date_opened": "2026-01-24T15:49:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS Terminal T1 intermittent network connectivity issues",
+  "description": "The POS terminal at counter 1 (POS-0029-T1) is experiencing intermittent network disconnections throughout the day, causing transaction delays and customer checkout delays. The terminal connects and drops connection every 5-10 minutes, affecting order processing efficiency. The issue started this morning around 14:30 IST. Terminal has been restarted once by staff but the problem persists.",
+  "asset_id": "POS-0029-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-24T15:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Confirmed with store manager that terminal T1 has unstable network connection. Advised to check ethernet cable connection and restart device."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

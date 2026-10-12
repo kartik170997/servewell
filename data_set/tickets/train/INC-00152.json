@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00152",
+  "store_id": "SW-0018",
+  "store_name": "ServeWell - Viman Nagar",
+  "submitted_by": "Venkat Trivedi",
+  "contact_phone": "+91-81093-94252",
+  "date_opened": "2025-11-05T12:50:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal unavailable at Viman Nagar location since 12:30 PM",
+  "description": "The ServeWell online ordering portal has been completely inaccessible since approximately 12:30 PM IST today. Customers attempting to place orders through the web portal receive a blank white screen with no error message displayed. Mobile app orders are functioning normally, but web portal traffic has resulted in zero completed orders in the past 20 minutes. I have verified internet connectivity is stable (80 Mbps download speed confirmed), cleared browser cache and cookies on both Chrome and Firefox, and attempted access from three different devices—issue persists across all. The POS system at the counter (FoodTech POS v4.2.3) is operational and processing in-store transactions without issue. This is impacting our lunch service peak hours, and we are receiving customer complaints. Asset identifier: POS-0018-T1. Requesting immediate investigation into portal backend connectivity or server status.",
+  "asset_id": "POS-0018-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-05T13:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and initial triage completed. Confirmed portal is down for SW-0018 location only; other store locations reporting normal portal access. Escalating to backend infrastructure team for server diagnostics."
+    },
+    {
+      "timestamp": "2025-11-05T13:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Advising customer to temporarily direct web orders to mobile app and counter orders. Estimated resolution time pending backend investigation results."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

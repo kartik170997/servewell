@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00139",
+  "store_id": "SW-0032",
+  "store_name": "ServeWell - Brookefield",
+  "submitted_by": "Venkat Verma",
+  "contact_phone": "+91-79032-34704",
+  "date_opened": "2025-11-01T19:01:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Cleaning Cycle",
+  "subject": "Soft serve machine cleaning cycle stuck",
+  "description": "The CreamTech soft serve machine at our store appears to be stuck in cleaning cycle mode. The cycle started this evening but has not completed. Machine is non-operational.",
+  "asset_id": "SSM-0032-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "cleaning-cycle"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00087",
+  "store_id": "SW-0019",
+  "store_name": "ServeWell - Bhandup",
+  "submitted_by": "Pallavi Singh",
+  "contact_phone": "+91-77798-55457",
+  "date_opened": "2025-11-09T09:38:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Screen Frozen",
+  "subject": "POS Terminal T1 screen unresponsive—frozen on order confirmation page",
+  "description": "The POS terminal (POS-0019-T1) at counter 1 has become completely unresponsive as of 09:35 AM today. The touchscreen is frozen on the order confirmation page and does not respond to any taps or input. The system remains powered on with no error messages visible; the display shows the last order (Order #4782) in a static state. I have already attempted the following troubleshooting steps: (1) waited 5 minutes for the system to auto-recover, (2) performed a soft restart by holding the power button for 10 seconds, and (3) checked all cable connections at the rear of the unit—all appear secure. After restart, the system boots normally and displays the login screen, but freezes again within 2–3 minutes of resuming normal operations. This is impacting service at our primary counter, forcing customers to queue at the secondary counter and causing estimated 15–20 minute delays during peak lunch service. The issue is intermittent but recurring. System version confirmed as FoodTech POS v5.1.1.",
+  "asset_id": "POS-0019-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "screen-frozen"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-09T10:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment completed; confirmed POS-0019-T1 freezes intermittently after boot. Recommended checking for available FoodTech POS patches and reviewing system logs for memory leaks or thermal throttling. Escalating to L2 technical support for deeper diagnostics."
+    },
+    {
+      "timestamp": "2025-11-09T10:32:00+05:30",
+      "actor": "System",
+      "note": "Ticket escalated to Level 2 Support. Remote diagnostic tools enabled on asset POS-0019-T1 for real-time monitoring."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00092",
+  "store_id": "SW-0091",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Preeti Pillai",
+  "contact_phone": "+91-88379-52604",
+  "date_opened": "2026-02-14T18:13:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router Offline",
+  "subject": "NetLink Router RTR-0091-01 completely offline at Chromepet store",
+  "description": "The NetLink NL-3000 v2.2 router at our Chromepet location has gone completely offline since approximately 6:00 PM today. All wireless connectivity is unavailable, affecting both customer Wi-Fi and back-office operations. The router shows no lights and is unresponsive to power cycling attempts. This is impacting POS systems and customer service at the store.",
+  "asset_id": "RTR-0091-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "router-offline"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-14T18:27:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. L1 agent confirmed router is not responding to ping attempts and requested store manager to verify power connections and restart sequence."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

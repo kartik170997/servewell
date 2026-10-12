@@ -1,0 +1,26 @@
+{
+  "ticket_id": "INC-00035",
+  "store_id": "SW-0046",
+  "store_name": "ServeWell - Secunderabad",
+  "submitted_by": "Swathi Iyer",
+  "contact_phone": "+91-73928-20287",
+  "date_opened": "2026-05-08T10:15:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "End-of-Day",
+  "subject": "EOD settlement stuck - but ticket INC-00015 said this was fixed yesterday",
+  "description": "End of day settlement is failing again on Terminal 1. System hangs at 98% completion every time we try to close out. However, we were told by support yesterday (INC-00015) that the OrbitPOS v2.1 update resolved all EOD issues and the terminal was working perfectly. Terminal is currently functional for transactions but refuses to settle. Please advise - this contradicts the resolution from yesterday.",
+  "asset_id": "POS-0046-T1",
+  "system_version": "OrbitPOS v2.1",
+  "tags": [
+    "pos",
+    "end-of-day"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [
+    "INC-00015"
+  ],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

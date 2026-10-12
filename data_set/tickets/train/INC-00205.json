@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00205",
+  "store_id": "SW-0074",
+  "store_name": "ServeWell - South Extension",
+  "submitted_by": "Geetha Rao",
+  "contact_phone": "+91-72490-87607",
+  "date_opened": "2026-04-05T18:45:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS Terminal T1 experiencing significant lag during peak service hours",
+  "description": "POS terminal T1 (located at Counter 1, main ordering station) is exhibiting severe performance degradation, particularly during lunch and dinner rush periods (12:00–14:00 and 18:30–21:00). Transaction processing times have increased from the standard 3–5 seconds to 15–20 seconds per order entry. System is also freezing intermittently for 2–3 seconds when opening the payment module or pulling up order history. The terminal occasionally becomes unresponsive when multiple menu categories are accessed in rapid succession. Error message \"Database connection timeout\" appears sporadically in the system logs. This is impacting customer throughput and checkout speed, causing queue buildup and customer dissatisfaction. Rebooting the terminal provides temporary relief (2–3 hours of normal operation) before slowness returns. Device specifications confirmed: OrbitPOS v2.1, Intel Core i5 processor, 8GB RAM, Windows 10 embedded, standard network connectivity via ethernet (ping response normal, ~15ms). No recent software updates or hardware changes were made to this terminal. Counter is handling approximately 120–150 transactions per shift. We have attempted two restarts already (most recent at 18:30 IST today), but the issue persists.",
+  "asset_id": "POS-0074-T1",
+  "system_version": "OrbitPOS v2.1",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-05T19:15:00+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Ticket received and acknowledged. Confirmed issue reproduction during call with store manager; terminal responding sluggishly during live order entry. Requested disk space and memory utilization details; awaiting store response."
+    },
+    {
+      "timestamp": "2026-04-05T19:35:00+05:30",
+      "actor": "L1 Agent - Priya Singh",
+      "note": "Received disk usage report: 78% full (87GB of 111GB used). Database cache files in /logs folder consuming ~4.2GB. Recommended immediate cache cleanup and escalated to L2 for potential database optimization or hardware diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

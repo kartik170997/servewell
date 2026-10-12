@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00110",
+  "store_id": "SW-0089",
+  "store_name": "ServeWell - Perambur",
+  "submitted_by": "Rohit Chandra",
+  "contact_phone": "+91-78920-75597",
+  "date_opened": "2025-11-19T07:10:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "Soft serve mix low alert triggered on SC-500 machine",
+  "description": "Mix low alert on the CreamTech soft serve machine. Machine keeps showing low mix warning even after we refilled the hopper yesterday. Not sure if sensor issue or actual stock problem.",
+  "asset_id": "SSM-0089-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Sensor calibration reset performed remotely. Alert cleared after recalibration. Mix level confirmed normal.",
+  "status": "Resolved"
+}

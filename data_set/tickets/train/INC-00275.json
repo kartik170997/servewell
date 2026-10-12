@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00275",
+  "store_id": "SW-0045",
+  "store_name": "ServeWell - Chembur",
+  "submitted_by": "Suresh Pandey",
+  "contact_phone": "+91-86874-83616",
+  "date_opened": "2026-02-15T14:29:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Device Connectivity",
+  "subject": "Kitchen POS terminal unable to connect to Wi-Fi; persistent connection drops every 5-10 minutes",
+  "description": "The POS terminal in the kitchen prep area (MAC: 00:1A:2B:3C:4D:5E) is experiencing intermittent Wi-Fi connectivity issues. Device successfully joins the ServeWell-Main SSID but disconnects after 5–10 minutes of operation. Upon reconnection, the terminal loses all active orders and kitchen display integration. Issue began at approximately 13:45 IST today and has persisted for over 40 minutes, affecting order accuracy and kitchen workflow. The device is running Android 10 with POS software v4.8.2. Steps already attempted: (1) Restarted POS terminal twice—issue recurred within minutes both times; (2) Moved terminal closer to router RTR-0045-01 (Cisco SG350)—no improvement; (3) Verified DHCP lease was active and IP assigned correctly (192.168.1.87); (4) Confirmed no MAC filtering rules blocking the device; (5) Checked router logs briefly but require deeper diagnostics. No other devices in the area report connectivity loss, suggesting this may be device-specific or channel interference. Business impact is high during peak dinner service—orders are being missed and kitchen staff are unable to view digital tickets reliably.",
+  "asset_id": "RTR-0045-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "device-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-15T14:45:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and categorized as device connectivity issue. Initial check: confirmed router RTR-0045-01 is online and serving other devices without reported issues; advised submitter to check device Wi-Fi adapter firmware version and attempt factory reset if firmware is outdated."
+    },
+    {
+      "timestamp": "2026-02-15T15:12:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Follow-up: Submitter reports device Wi-Fi adapter firmware is current. Factory reset was not attempted due to active order data on terminal. Escalation to L2 network engineering recommended for detailed router channel analysis and possible interference diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

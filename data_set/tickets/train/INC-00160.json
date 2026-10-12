@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00160",
+  "store_id": "SW-0118",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Arun Reddy",
+  "contact_phone": "+91-86640-20500",
+  "date_opened": "2026-01-15T10:03:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "Auto-accept feature not functioning in order management system",
+  "description": "The auto-accept functionality for online orders is not working as expected on the CreamTech SC-300 system at our Navrangpura store. Orders placed through our online platform are no longer being automatically accepted and are instead remaining in pending status indefinitely. This is causing delays in order fulfillment and customer notifications. The feature was working correctly until yesterday. No recent system updates or configuration changes were made to our knowledge.",
+  "asset_id": "SSM-0118-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

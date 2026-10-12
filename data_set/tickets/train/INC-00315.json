@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00315",
+  "store_id": "SW-0096",
+  "store_name": "ServeWell - Bandra West",
+  "submitted_by": "Mohan Mehta",
+  "contact_phone": "+91-76025-13027",
+  "date_opened": "2026-04-17T11:45:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Receipt printer printing garbled/misaligned text on all orders",
+  "description": "Since 09:30 AM today, the receipt printer at counter 2 (PRN-0096-P2) has been printing all customer receipts with severely misaligned text and garbled characters. The first 3–4 lines of every receipt are offset to the right by approximately 2 cm, making them unreadable. Font rendering appears corrupted mid-print. This is impacting order fulfillment as staff cannot read order details from printed receipts, causing delays during peak lunch rush (currently experiencing ~40 orders/hour). Customers are also receiving illegible receipts. We have already attempted: (1) cleared the print queue via StarMC Print v2 admin panel and restarted the print service (did not resolve); (2) performed a full soft reset of the printer hardware by power-cycling for 30 seconds (issue persists); (3) reinstalled the latest printer drivers from the StarMC dashboard and rebooted the POS workstation (problem still occurs). Paper stock and ribbon appear normal. All other POS functions working correctly. Business impact: HIGH — orders cannot be processed efficiently and customer experience degraded.",
+  "asset_id": "PRN-0096-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-17T12:10:00+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Ticket received and acknowledged. Confirmed submitter has already tried standard troubleshooting per runbook (queue clear, power cycle, driver reinstall). Escalating to L2 hardware diagnostics team for further investigation as issue persists after all documented steps."
+    },
+    {
+      "timestamp": "2026-04-17T12:35:00+05:30",
+      "actor": "System",
+      "note": "Ticket auto-assigned to Hardware Support queue. Remote diagnostics initiated on PRN-0096-P2."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

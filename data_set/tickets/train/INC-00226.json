@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00226",
+  "store_id": "SW-0032",
+  "store_name": "ServeWell - Brookefield",
+  "submitted_by": "Arun Iyer",
+  "contact_phone": "+91-82535-15075",
+  "date_opened": "2026-02-14T07:11:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Garbled Text",
+  "subject": "Kitchen printer P2 printing garbled characters on receipts",
+  "description": "Printer PRN-0032-P2 in kitchen is outputting garbled text on order receipts since this morning. Makes orders unreadable. Need urgent fix.",
+  "asset_id": "PRN-0032-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "garbled-text"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

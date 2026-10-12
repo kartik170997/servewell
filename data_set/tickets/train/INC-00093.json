@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00093",
+  "store_id": "SW-0027",
+  "store_name": "ServeWell - Ghatkopar",
+  "submitted_by": "Venkat Chopra",
+  "contact_phone": "+91-73358-90754",
+  "date_opened": "2026-01-08T19:50:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection failing on RTR-0027-01 — unable to establish secure tunnel to corporate gateway",
+  "description": "The NetLink NL-3000 v2.2 router (RTR-0027-01) at ServeWell - Ghatkopar is experiencing persistent VPN connectivity failures. All attempts to establish a secure VPN tunnel to the corporate gateway are timing out with error code 'ERR_VPN_HANDSHAKE_TIMEOUT_10061'. The issue began at approximately 18:30 IST on 2026-01-08. POS terminals and kitchen display systems are unable to sync with the centralized inventory and payment processing systems, directly impacting order fulfillment and revenue reconciliation. Local Wi-Fi connectivity (non-VPN) appears functional. We have already attempted: (1) power cycling the router twice, (2) verifying WAN connection status (stable at 45 Mbps), (3) checking VPN credentials in the router management interface (credentials confirmed correct), and (4) reviewing recent firewall logs on the router (no blocked outbound connections detected on port 1194 or 443). The store is currently operating on degraded mode with manual POS backup procedures in place, but this is not sustainable beyond 2-3 hours. Immediate investigation into corporate VPN gateway logs and potential IPsec configuration drift is required.",
+  "asset_id": "RTR-0027-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-08T20:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and initial triage completed. Confirmed WAN connectivity is stable and local Wi-Fi is operational. Requested store manager to preserve router logs for further analysis. Assigned to Network Engineering team for VPN gateway-side investigation."
+    },
+    {
+      "timestamp": "2026-01-08T20:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote SSH access to RTR-0027-01 established successfully; verified VPN client configuration appears syntactically correct. Escalating to L2 Network Engineering for VPN server-side diagnostics and potential certificate or gateway configuration issues."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

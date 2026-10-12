@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00216",
+  "store_id": "SW-0101",
+  "store_name": "ServeWell - Salt Lake",
+  "submitted_by": "Anita Krishnan",
+  "contact_phone": "+91-81659-82487",
+  "date_opened": "2025-11-20T12:38:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS Terminal T1 running very slow during peak hours",
+  "description": "Terminal 1 is extremely sluggish, taking 10+ seconds to process orders. Affecting service speed. Restarted once but issue persists.",
+  "asset_id": "POS-0101-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

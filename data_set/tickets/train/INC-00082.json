@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00082",
+  "store_id": "SW-0017",
+  "store_name": "ServeWell - Malad West",
+  "submitted_by": "Ravi Chopra",
+  "contact_phone": "+91-73267-78937",
+  "date_opened": "2026-04-30T21:51:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Terminal Startup",
+  "subject": "POS Terminal T1 fails to boot - stuck on splash screen with error code 0x8004",
+  "description": "POS Terminal T1 at ServeWell Malad West is experiencing a critical startup failure preventing restaurant operations. The terminal displays the FoodTech POS splash screen but hangs indefinitely with error code '0x8004 - Database Connection Timeout' appearing intermittently in the bottom-left corner. The issue began at approximately 21:30 IST on 2026-04-30 after a routine power cycle. Steps already attempted: (1) Hard reset via power button hold for 10 seconds - no change, (2) Checked network connectivity - Ethernet cable is physically connected and green light is active, (3) Verified router/WiFi status - all other devices on network are functioning normally, (4) Attempted safe mode boot - terminal enters safe mode but POS application still fails to initialize. The system version is confirmed as FoodTech POS v5.1.0. Business impact is high: this is the primary ordering terminal for counter operations, currently affecting peak dinner service with approximately 40-50 customers per hour unable to place orders. Asset details confirmed - Device serial: POS-0017-T1, installed 2025-08-15, last successful boot was 2026-04-30 at 19:45 IST. Request urgent L2 support to investigate database connectivity issue or potential storage corruption.",
+  "asset_id": "POS-0017-T1",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "pos",
+    "terminal-startup"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-30T22:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and initial diagnostics initiated. Confirmed network connectivity is stable and no recent firmware updates were deployed. Advised submitter to check POS database logs in /var/log/foodtech/ directory and provide output."
+    },
+    {
+      "timestamp": "2026-04-30T22:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Submitter reports database logs show repeated connection refusal from localhost:5432. Attempted remote database connectivity test from store server - connection successful. Issue appears isolated to terminal T1. Escalation to L2 database team recommended."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00021",
+  "store_id": "SW-0092",
+  "store_name": "ServeWell - Kandivali",
+  "submitted_by": "Lakshmi Bhat",
+  "contact_phone": "+91-81005-51904",
+  "date_opened": "2026-05-12T10:53:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "Soft serve machine RTR-0092-01 producing excessively frozen product",
+  "description": "The soft serve machine at Kandivali store is dispensing product that is overly hardened and difficult for customers to consume. The mix appears to be freezing too solid, resulting in complaints from customers and potential product waste. The NetLink NL-3000 unit appears to be running normally without error codes, but the temperature regulation seems to be set too low. We have not attempted any adjustments yet pending technical guidance.",
+  "asset_id": "RTR-0092-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

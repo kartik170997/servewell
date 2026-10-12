@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00235",
+  "store_id": "SW-0108",
+  "store_name": "ServeWell - Shahdara",
+  "submitted_by": "Vivek Iyer",
+  "contact_phone": "+91-99602-92242",
+  "date_opened": "2026-04-05T19:22:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "Wi-Fi connectivity dropping intermittently at Shahdara store—POS and kitchen display affected",
+  "description": "Since approximately 15:00 IST today (5 April 2026), the primary Wi-Fi network at ServeWell - Shahdara (SW-0108) has been experiencing intermittent disconnections lasting 30–90 seconds. The issue affects both POS terminals in the front-of-house area and the kitchen display system (KDS), causing order entry delays and kitchen visibility gaps. Affected devices show SSID 'ServeWell-Business' dropping from available networks, then reconnecting automatically within the stated window. This occurs roughly every 45–60 minutes, with last confirmed incident at 18:45 IST. No error messages are logged on client devices; however, the Cisco SG350 managed switch (RTR-0108-01, firmware 15.2.1) shows intermittent port activity spikes on the AP uplink. Already attempted: (1) power-cycled the primary access point twice; (2) verified all Ethernet connections to the router are seated firmly; (3) confirmed no active channel interference on 5 GHz band via mobile Wi-Fi analyzer app; (4) restarted the POS terminals. Business impact is moderate—orders are still being processed, but operational efficiency has dropped ~15% due to re-entry delays and staff re-authentication cycles. No recent firmware updates or configuration changes were made to networking equipment.",
+  "asset_id": "RTR-0108-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-05T19:28:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged. Remote diagnostics initiated—confirmed Cisco SG350 is responsive and showing normal CPU/memory utilization at 34% and 42% respectively. Advised submitter to enable router logging and monitor for next occurrence."
+    },
+    {
+      "timestamp": "2026-04-05T19:35:42+05:30",
+      "actor": "L1 Agent",
+      "note": "Escalation hold placed pending next intermittent event logs from store. Requested submitter to capture switch syslog output and client DHCP renewal timing during next disconnection to narrow root cause (AP, switch port, or DHCP server)."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

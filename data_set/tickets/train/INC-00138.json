@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00138",
+  "store_id": "SW-0104",
+  "store_name": "ServeWell - Pimple Saudagar",
+  "submitted_by": "Abhishek Banerjee",
+  "contact_phone": "+91-92307-28340",
+  "date_opened": "2026-01-10T11:41:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router Offline",
+  "subject": "NetLink router RTR-0104-01 completely offline - no connectivity",
+  "description": "Router went down this morning around 11:30 AM. No lights on the device, all store terminals and kitchen display systems disconnected. Need urgent fix - store operations affected.",
+  "asset_id": "RTR-0104-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "router-offline"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

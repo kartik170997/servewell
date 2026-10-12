@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00060",
+  "store_id": "SW-0071",
+  "store_name": "ServeWell - Dadar",
+  "submitted_by": "Sanjay Roy",
+  "contact_phone": "+91-98587-89507",
+  "date_opened": "2025-11-21T08:46:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Screen Frozen",
+  "subject": "POS terminal T1 screen frozen - unable to process orders",
+  "description": "The POS terminal at counter 1 (POS-0071-T1) has become unresponsive. The screen is displaying the last order entry screen but is not accepting any keyboard or touch input. The terminal was operational this morning but froze approximately 15 minutes ago during peak breakfast service. A soft reboot was attempted by holding the power button but the screen remains frozen on the same display. This is impacting order processing at the main counter.",
+  "asset_id": "POS-0071-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

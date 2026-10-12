@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00319",
+  "store_id": "SW-0063",
+  "store_name": "ServeWell - Deccan",
+  "submitted_by": "Kiran Kapoor",
+  "contact_phone": "+91-78951-38255",
+  "date_opened": "2026-04-02T08:56:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft serve machine PRN-0063-P1 fails to power on at Deccan store",
+  "description": "The soft serve machine (asset PRN-0063-P1) at ServeWell - Deccan store will not start or respond to power-on commands. When the power switch is toggled to ON position, there is no audible response, no indicator lights illuminate, and the display panel remains completely dark. The machine has been in regular operation until yesterday evening (2026-04-01 approximately 19:30 IST) when it shut down unexpectedly mid-service. We attempted the following troubleshooting steps: (1) verified wall outlet is functional by plugging in an alternate device successfully, (2) checked the main power cord for visible damage or loose connections—all appear intact, (3) reset the circuit breaker serving the machine and attempted restart, (4) waited 5 minutes and performed a cold boot attempt. None of these steps restored function. The machine remains completely unresponsive with zero signs of electrical activity. This is impacting our afternoon service menu significantly as soft serve is a high-margin item with consistent customer demand during peak hours (12:00-15:00 IST). We require urgent diagnosis and repair to resume normal operations. Asset details confirmed: PRN-0063-P1, StarMC Print v2 v3.0 system version.",
+  "asset_id": "PRN-0063-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-02T09:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed with submitter that basic power troubleshooting was completed. Escalating to Field Engineering team for on-site diagnostics; possible power supply or internal component failure suspected."
+    },
+    {
+      "timestamp": "2026-04-02T09:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Field tech assigned; ETA provided to store manager as approximately 11:30 IST same day. Store advised to temporarily disable soft serve from POS menu to avoid customer disappointment."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

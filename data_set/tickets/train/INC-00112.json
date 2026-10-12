@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00112",
+  "store_id": "SW-0021",
+  "store_name": "ServeWell - Vashi",
+  "submitted_by": "Archana Chatterjee",
+  "contact_phone": "+91-89455-54089",
+  "date_opened": "2026-05-02T12:51:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Dispensing Issue",
+  "subject": "Soft serve machine dispensing inconsistent portion sizes at Vashi outlet",
+  "description": "The soft serve machine at ServeWell - Vashi is dispensing inconsistent quantities of ice cream, with portions varying significantly between consecutive servings despite consistent nozzle pressure settings. Staff report that some servings are noticeably smaller while others overflow, affecting customer satisfaction and inventory tracking. The issue began approximately 2 hours ago during peak service hours. No error codes are displayed on the machine interface, and basic manual checks have been inconclusive.",
+  "asset_id": "PRN-0021-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "dispensing-issue"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-02T13:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and assigned to L1 support queue. Initial troubleshooting steps requested from store staff including nozzle inspection and pressure calibration check."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

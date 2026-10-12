@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00089",
+  "store_id": "SW-0089",
+  "store_name": "ServeWell - Perambur",
+  "submitted_by": "Harish Goswami",
+  "contact_phone": "+91-85847-41886",
+  "date_opened": "2026-03-09T11:21:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "KitchenBridge v2.3 printer output format incorrect",
+  "description": "KitchenBridge v2.3 is not syncing properly with our POS system and the kitchen printer is producing garbled order tickets in wrong format. Orders are printing but the item details and quantities are cut off or misaligned. This is affecting kitchen operations.",
+  "asset_id": "PRN-0089-P1",
+  "system_version": "KitchenBridge v2.3",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00094",
+  "store_id": "SW-0034",
+  "store_name": "ServeWell - Anna Nagar",
+  "submitted_by": "Lakshmi Chopra",
+  "contact_phone": "+91-94699-44995",
+  "date_opened": "2026-03-12T12:05:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Screen Frozen",
+  "subject": "Kiosk PRN-0034-P2 screen frozen, unresponsive to touch input",
+  "description": "The ordering kiosk at the Anna Nagar location is displaying a frozen screen and is not responding to any touch inputs. The display appears to be stuck on the main menu screen since approximately 11:45 AM this morning. Customers are unable to place orders using this unit. A basic power cycle was attempted by store staff without success. The kiosk requires immediate attention to restore service.",
+  "asset_id": "PRN-0034-P2",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-12T12:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial troubleshooting steps to be provided to store manager via phone. Remote diagnostics will be attempted if basic steps fail."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

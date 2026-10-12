@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00141",
+  "store_id": "SW-0001",
+  "store_name": "ServeWell - Banjara Hills",
+  "submitted_by": "Usha Pillai",
+  "contact_phone": "+91-95144-27987",
+  "date_opened": "2026-01-12T17:43:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Screen Frozen",
+  "subject": "POS-0001-T1 kiosk screen frozen, unresponsive to touch input",
+  "description": "The ordering kiosk at the counter has become completely frozen and is not responding to any touch input. The display shows the menu selection screen but no buttons are registering taps. Customers are unable to place orders using this unit. A soft restart was attempted by Usha but the issue persists. The kiosk is currently offline and impacting customer service.",
+  "asset_id": "POS-0001-T1",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-12T17:51:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket assigned to L1 support. Remote diagnostics initiated to check system logs and touch panel calibration status."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

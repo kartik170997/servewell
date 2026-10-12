@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00119",
+  "store_id": "SW-0057",
+  "store_name": "ServeWell - Rohini",
+  "submitted_by": "Radha Iyer",
+  "contact_phone": "+91-94116-95678",
+  "date_opened": "2026-03-27T08:17:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty points not syncing to customer accounts",
+  "description": "Loyalty program transactions from yesterday evening are not reflecting in customer accounts. Customers are complaining they're not getting points credited. POS terminal seems to be processing sales normally but sync to loyalty backend appears stuck.",
+  "asset_id": "POS-0057-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

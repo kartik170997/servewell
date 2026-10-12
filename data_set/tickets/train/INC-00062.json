@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00062",
+  "store_id": "SW-0091",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Radha Menon",
+  "contact_phone": "+91-75406-89602",
+  "date_opened": "2026-02-05T09:46:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Touchscreen",
+  "subject": "POS-0091-T1 Touchscreen Calibration Drift - Customer Order Misselections",
+  "description": "The touchscreen on kiosk POS-0091-T1 at ServeWell Chromepet is experiencing persistent calibration drift affecting customer interactions. When customers attempt to select menu items, their touch inputs register 15–20mm offset to the right and 8–10mm downward from the intended target area. For example, when a customer taps the 'Paneer Butter Masala' button, the system registers the tap on 'Dal Makhani' instead, leading to incorrect orders and customer frustration. This issue began approximately 4 days ago (around 2026-02-01) and has gradually worsened. The kiosk is still operational but requires users to tap significantly to the left and upward of their intended selection, reducing usability and slowing order entry during peak hours (12:00–14:00 and 19:00–21:00). I have confirmed the issue persists across all menu screens and both portrait and landscape orientations. The physical touchscreen surface shows no visible cracks or damage. Device reboots (both soft and hard resets via power cycle) have been attempted three times without improvement. No recent software updates or hardware modifications were performed on this unit. Business impact: Approximately 12–15% of kiosk orders during lunch service yesterday (2026-02-04) were incorrect due to misselections, resulting in customer complaints and wasted food preparation.",
+  "asset_id": "POS-0091-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "touchscreen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-05T10:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned to hardware queue. Confirmed asset POS-0091-T1 exists in inventory system and is located at SW-0091 Chromepet. Remote diagnostics initiated to check firmware version and calibration data."
+    },
+    {
+      "timestamp": "2026-02-05T11:32:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted store manager Radha Menon to confirm issue reproducibility and collect additional details on failure timeline. Recommended placing out-of-service notice on kiosk if touch accuracy drops below 70% to prevent further customer impact. Escalation to L2 hardware engineering pending."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00140",
+  "store_id": "SW-0027",
+  "store_name": "ServeWell - Ghatkopar",
+  "submitted_by": "Nandini Malhotra",
+  "contact_phone": "+91-97383-23621",
+  "date_opened": "2026-01-22T15:05:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Payment Error",
+  "subject": "Payment transaction failing on POS terminal T1",
+  "description": "Payments are not processing on the POS terminal. Customer transactions are getting stuck during payment authorization.",
+  "asset_id": "POS-0027-T1",
+  "system_version": "FoodTech POS v5.1.1",
+  "tags": [
+    "pos",
+    "payment-error"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00300",
+  "store_id": "SW-0043",
+  "store_name": "ServeWell - Marathahalli",
+  "submitted_by": "Asha Pandey",
+  "contact_phone": "+91-88361-83071",
+  "date_opened": "2025-12-12T07:13:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network Connectivity",
+  "subject": "POS terminal T2 offline and not accepting orders",
+  "description": "POS terminal at counter 2 stopped responding since this morning. Can't ring up any sales. Internet lights on the wall router appear to be off. Staff says WiFi isn't showing up on their phones either.",
+  "asset_id": "POS-0043-T2",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

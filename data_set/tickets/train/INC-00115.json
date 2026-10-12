@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00115",
+  "store_id": "SW-0033",
+  "store_name": "ServeWell - JP Nagar",
+  "submitted_by": "Naveen Kumar",
+  "contact_phone": "+91-94544-80702",
+  "date_opened": "2025-11-13T11:24:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft Serve Machine POS-0033-T1 fails to power on at JP Nagar outlet",
+  "description": "The soft serve machine (asset POS-0033-T1) located at the counter failed to start this morning at approximately 10:45 AM. When the power switch is toggled, there is no response—no lights, no beeping, and no motor engagement. The machine was last used yesterday evening without any reported issues. Power cable appears visually intact and is properly connected to the wall outlet. We have verified that the outlet itself is functional by plugging in another device (blender) which powered on normally. The compressor unit shows no signs of damage or unusual noise. This machine handles approximately 40–50% of our soft serve orders during peak hours (11 AM–2 PM and 6 PM–9 PM), and we are currently unable to serve soft serve products, directly impacting customer satisfaction and revenue during lunch service. No error codes or messages are displayed as the unit does not power on at all. Steps already attempted: (1) toggled power switch multiple times, (2) checked wall outlet functionality with secondary device, (3) inspected power cable for visible damage, (4) waited 5 minutes and retried. Requesting immediate technical support to diagnose and resolve the power issue.",
+  "asset_id": "POS-0033-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-13T11:32:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and logged. Performed initial remote diagnostic review of POS-0033-T1 configuration—no recent firmware updates or configuration changes detected that could cause power failure. Advised submitter to check circuit breaker for the outlet and confirm no thermal overload trips; escalation recommended if issue persists after basic checks."
+    },
+    {
+      "timestamp": "2025-11-13T11:47:30+05:30",
+      "actor": "Store Manager",
+      "note": "Circuit breaker checked and appears normal. Power outlet tested again with backup device—outlet is confirmed functional. Machine still unresponsive. Requesting field technician dispatch to physically inspect unit for internal power supply failure."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

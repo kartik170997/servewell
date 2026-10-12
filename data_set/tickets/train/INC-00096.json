@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00096",
+  "store_id": "SW-0110",
+  "store_name": "ServeWell - Paschim Vihar",
+  "submitted_by": "Smita Desai",
+  "contact_phone": "+91-77150-71171",
+  "date_opened": "2025-12-28T11:38:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft serve machine not powering on at Paschim Vihar",
+  "description": "The soft serve machine (RTR-0110-01) won't start. No response when switched on. Need urgent check as lunch rush starting soon.",
+  "asset_id": "RTR-0110-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

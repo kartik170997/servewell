@@ -1,0 +1,257 @@
+ticket_id,store_id,date_opened,priority,category,subcategory,status,chaos_type,escalation_flag,filename
+INC-00001,SW-0023,2026-04-04T10:01:00+05:30,P4,POS,Loyalty Sync,Open,,False,raw/INC-00001.json
+INC-00004,SW-0110,2025-12-10T08:30:00+05:30,P3,POS,PIN Pad,Open,,False,raw/INC-00004.json
+INC-00005,SW-0017,2025-11-22T17:59:00+05:30,P2,Kiosks,Payment Reader,Open,misdirection,False,raw/INC-00005.json
+INC-00006,SW-0038,2026-04-12T18:45:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Open,,True,raw/INC-00006.json
+INC-00007,SW-0080,2026-02-08T14:40:00+05:30,P3,POS,Loyalty Sync,Open,,False,raw/INC-00007.json
+INC-00008,SW-0022,2026-01-14T13:24:00+05:30,P3,POS,Scanner,Closed,,True,raw/INC-00008.json
+INC-00010,SW-0082,2026-04-24T14:57:00+05:30,P2,POS,Network Connectivity,Open,miscategorized,False,raw/INC-00010.json
+INC-00011,SW-0054,2026-04-18T09:57:00+05:30,P4,Wi-Fi / Network,DHCP,Open,false_asset,True,raw/INC-00011.json
+INC-00012,SW-0034,2026-02-26T21:34:00+05:30,P3,Wi-Fi / Network,Intermittent,Open,,False,raw/INC-00012.json
+INC-00013,SW-0012,2026-04-13T08:01:00+05:30,P2,Wi-Fi / Network,DHCP,Open,,False,raw/INC-00013.json
+INC-00014,SW-0037,2026-02-22T11:23:00+05:30,P1,Soft Serve,Dispensing Issue,Open,unknown_system,False,raw/INC-00014.json
+INC-00015,SW-0102,2025-12-11T18:45:00+05:30,P3,POS,Printer Integration,Open,,False,raw/INC-00015.json
+INC-00016,SW-0120,2026-05-05T17:35:00+05:30,P4,Printers,Printer Offline,Open,,False,raw/INC-00016.json
+INC-00017,SW-0116,2026-05-05T16:31:00+05:30,P3,Soft Serve,Overcooling,Open,,False,raw/INC-00017.json
+INC-00018,SW-0001,2026-03-17T10:46:00+05:30,P3,POS,Network,Open,,False,raw/INC-00018.json
+INC-00019,SW-0109,2026-01-19T09:13:00+05:30,P2,POS,Slow Performance,Closed,,True,raw/INC-00019.json
+INC-00020,SW-0066,2025-11-02T11:28:00+05:30,P2,Online Orders,Order Acceptance,Open,,False,raw/INC-00020.json
+INC-00021,SW-0092,2026-05-12T10:53:00+05:30,P3,Soft Serve,Overcooling,Open,,True,raw/INC-00021.json
+INC-00022,SW-0005,2026-02-07T17:31:00+05:30,P2,Online Orders,Duplicate Orders,Open,,False,raw/INC-00022.json
+INC-00023,SW-0071,2026-04-15T12:00:00+05:30,P2,Online Orders,Order Acceptance,Open,,False,raw/INC-00023.json
+INC-00024,SW-0075,2025-11-04T19:44:00+05:30,P3,POS,End-of-Day,Open,,False,raw/INC-00024.json
+INC-00025,SW-0058,2026-01-29T15:24:00+05:30,P4,Wi-Fi / Network,Guest Wi-Fi,Open,,False,raw/INC-00025.json
+INC-00026,SW-0059,2026-02-05T14:04:00+05:30,P2,Soft Serve,Dispensing Issue,Open,,True,raw/INC-00026.json
+INC-00028,SW-0044,2026-01-15T11:58:00+05:30,P1,Online Orders,Zomato Down,Open,,False,raw/INC-00028.json
+INC-00029,SW-0113,2026-01-03T15:38:00+05:30,P3,Printers,Not Detected,Open,,False,raw/INC-00029.json
+INC-00030,SW-0056,2026-01-24T07:07:00+05:30,P3,POS,End-of-Day,Closed,,False,raw/INC-00030.json
+INC-00031,SW-0100,2025-12-22T12:26:00+05:30,P4,Printers,Printer Offline,Open,,True,raw/INC-00031.json
+INC-00033,SW-0026,2025-11-26T17:50:00+05:30,P4,Online Orders,Duplicate Orders,Open,,False,raw/INC-00033.json
+INC-00034,SW-0092,2025-11-03T15:12:00+05:30,P3,Wi-Fi / Network,Intermittent,Open,,True,raw/INC-00034.json
+INC-00035,SW-0046,2026-05-08T10:15:00+05:30,P2,POS,End-of-Day,Open,contradictory,True,raw/INC-00035.json
+INC-00037,SW-0037,2026-03-05T14:13:00+05:30,P2,Soft Serve,Mix Low Alert,Open,,False,raw/INC-00037.json
+INC-00038,SW-0023,2026-03-09T16:57:00+05:30,P4,Kiosks,Touchscreen,Open,,False,raw/INC-00038.json
+INC-00039,SW-0022,2026-01-23T19:03:00+05:30,P2,Online Orders,Menu Mismatch,Open,,False,raw/INC-00039.json
+INC-00040,SW-0056,2026-02-24T14:43:00+05:30,P4,Online Orders,Menu Mismatch,Open,,False,raw/INC-00040.json
+INC-00041,SW-0096,2026-05-02T11:05:00+05:30,P4,Printers,Driver Issue,Open,,False,raw/INC-00041.json
+INC-00042,SW-0010,2025-11-02T14:47:00+05:30,P3,Online Orders,Portal Down,Open,,False,raw/INC-00042.json
+INC-00043,SW-0022,2026-04-25T12:16:00+05:30,P3,Online Orders,Portal Down,Open,,False,raw/INC-00043.json
+INC-00044,SW-0052,2026-05-16T10:42:00+05:30,P3,Wi-Fi / Network,Intermittent,Open,,False,raw/INC-00044.json
+INC-00045,SW-0061,2025-11-03T18:53:00+05:30,P3,Soft Serve,Error Code,Open,emotional,False,raw/INC-00045.json
+INC-00046,SW-0087,2026-03-02T19:26:00+05:30,P3,Online Orders,Sync Failure,Open,,False,raw/INC-00046.json
+INC-00047,SW-0038,2025-11-12T16:55:00+05:30,P2,Online Orders,Duplicate Orders,Resolved,,False,raw/INC-00047.json
+INC-00048,SW-0114,2026-03-23T18:35:00+05:30,P3,Online Orders,Duplicate Orders,Open,false_asset,False,raw/INC-00048.json
+INC-00051,SW-0074,2026-05-13T20:49:00+05:30,P2,Wi-Fi / Network,VPN,Open,,False,raw/INC-00051.json
+INC-00053,SW-0031,2025-11-24T21:14:00+05:30,P4,Soft Serve,Dispensing Issue,Open,,True,raw/INC-00053.json
+INC-00054,SW-0053,2026-03-28T15:07:00+05:30,P2,POS,Network Connectivity,Open,miscategorized,False,raw/INC-00054.json
+INC-00056,SW-0094,2025-12-22T11:36:00+05:30,P2,Kiosks,Payment Reader,Open,,True,raw/INC-00056.json
+INC-00057,SW-0104,2026-05-08T16:56:00+05:30,P3,POS,Loyalty Sync,Open,,False,raw/INC-00057.json
+INC-00058,SW-0098,2026-03-24T10:45:00+05:30,P2,Printers,Paper Jam,Open,,False,raw/INC-00058.json
+INC-00059,SW-0066,2025-12-06T20:55:00+05:30,P3,POS,Printer Integration,Open,contradictory,True,raw/INC-00059.json
+INC-00060,SW-0071,2025-11-21T08:46:00+05:30,P3,POS,Screen Frozen,Open,,False,raw/INC-00060.json
+INC-00062,SW-0091,2026-02-05T09:46:00+05:30,P4,Kiosks,Touchscreen,Open,,False,raw/INC-00062.json
+INC-00063,SW-0109,2025-12-22T08:08:00+05:30,P4,POS,Network,Open,,False,raw/INC-00063.json
+INC-00064,SW-0052,2025-12-22T20:58:00+05:30,P3,POS,Printer Integration,Open,,False,raw/INC-00064.json
+INC-00068,SW-0019,2026-05-12T19:26:00+05:30,P4,Printers,Printer Offline,Open,,False,raw/INC-00068.json
+INC-00069,SW-0056,2026-01-18T09:04:00+05:30,P2,Online Orders,Portal Down,Open,,False,raw/INC-00069.json
+INC-00070,SW-0099,2026-02-25T15:09:00+05:30,P3,Printers,Wrong Output,Open,,False,raw/INC-00070.json
+INC-00071,SW-0057,2025-12-04T16:24:00+05:30,P3,Printers,Not Detected,Open,,False,raw/INC-00071.json
+INC-00073,SW-0114,2026-04-11T09:51:00+05:30,P4,POS,Printer Integration,Open,,True,raw/INC-00073.json
+INC-00074,SW-0010,2026-02-20T16:25:00+05:30,P3,Soft Serve,Error Code,Open,,False,raw/INC-00074.json
+INC-00075,SW-0007,2026-01-02T11:13:00+05:30,P3,Online Orders,Zomato Down,Open,,False,raw/INC-00075.json
+INC-00078,SW-0102,2025-12-12T16:15:00+05:30,P3,Soft Serve,Error Code,Open,,True,raw/INC-00078.json
+INC-00079,SW-0087,2026-03-10T11:42:00+05:30,P2,Soft Serve,Machine Won't Start,Open,,False,raw/INC-00079.json
+INC-00081,SW-0116,2025-12-25T21:55:00+05:30,P2,Wi-Fi / Network,VPN,Resolved,,False,raw/INC-00081.json
+INC-00082,SW-0017,2026-04-30T21:51:00+05:30,P3,POS,Terminal Startup,Open,,False,raw/INC-00082.json
+INC-00083,SW-0023,2026-04-15T20:04:00+05:30,P3,POS,Terminal Startup,Open,,False,raw/INC-00083.json
+INC-00085,SW-0060,2025-11-24T17:34:00+05:30,P3,POS,Screen Frozen,Open,,False,raw/INC-00085.json
+INC-00087,SW-0019,2025-11-09T09:38:00+05:30,P3,POS,Screen Frozen,Open,,True,raw/INC-00087.json
+INC-00088,SW-0011,2026-01-05T07:23:00+05:30,P1,Wi-Fi / Network,Device Connectivity,Resolved,vague,True,raw/INC-00088.json
+INC-00089,SW-0089,2026-03-09T11:21:00+05:30,P4,Printers,Wrong Output,Open,unknown_system,True,raw/INC-00089.json
+INC-00090,SW-0104,2026-04-29T13:05:00+05:30,P2,POS,Printer Integration,Open,,False,raw/INC-00090.json
+INC-00091,SW-0023,2026-01-02T09:41:00+05:30,P4,Wi-Fi / Network,Guest Wi-Fi,Open,,True,raw/INC-00091.json
+INC-00092,SW-0091,2026-02-14T18:13:00+05:30,P4,Wi-Fi / Network,Router Offline,Open,,True,raw/INC-00092.json
+INC-00093,SW-0027,2026-01-08T19:50:00+05:30,P2,Wi-Fi / Network,VPN,Open,,False,raw/INC-00093.json
+INC-00094,SW-0034,2026-03-12T12:05:00+05:30,P4,Kiosks,Screen Frozen,Open,,False,raw/INC-00094.json
+INC-00095,SW-0084,2026-04-07T16:32:00+05:30,P4,POS,End-of-Day,Open,,False,raw/INC-00095.json
+INC-00096,SW-0110,2025-12-28T11:38:00+05:30,P4,Soft Serve,Machine Won't Start,Open,,False,raw/INC-00096.json
+INC-00097,SW-0096,2026-01-17T11:17:00+05:30,P3,POS,Slow Performance,Closed,,True,raw/INC-00097.json
+INC-00098,SW-0007,2026-03-15T21:36:00+05:30,P4,POS,Screen Frozen,Open,,False,raw/INC-00098.json
+INC-00099,SW-0089,2026-05-11T15:35:00+05:30,P3,Wi-Fi / Network,DHCP,Open,,False,raw/INC-00099.json
+INC-00100,SW-0012,2026-04-24T13:12:00+05:30,P4,Kiosks,Screen Frozen,Open,,False,raw/INC-00100.json
+INC-00101,SW-0065,2026-04-09T18:18:00+05:30,P2,Kiosks,Payment Reader,Open,,False,raw/INC-00101.json
+INC-00102,SW-0117,2026-04-15T07:58:00+05:30,P2,Printers,Paper Jam,Open,,True,raw/INC-00102.json
+INC-00103,SW-0005,2025-11-19T14:38:00+05:30,P3,Wi-Fi / Network,DHCP,Resolved,,False,raw/INC-00103.json
+INC-00104,SW-0023,2025-11-06T13:07:00+05:30,P3,Wi-Fi / Network,DHCP,Open,emotional,True,raw/INC-00104.json
+INC-00106,SW-0111,2025-12-02T11:28:00+05:30,P2,Online Orders,Zomato Down,Open,,False,raw/INC-00106.json
+INC-00107,SW-0111,2026-04-02T07:17:00+05:30,P2,POS,Network,Open,,False,raw/INC-00107.json
+INC-00109,SW-0050,2025-12-07T20:38:00+05:30,P2,Wi-Fi / Network,VPN,Open,,False,raw/INC-00109.json
+INC-00110,SW-0089,2025-11-19T07:10:00+05:30,P4,Soft Serve,Mix Low Alert,Resolved,,False,raw/INC-00110.json
+INC-00111,SW-0008,2025-12-09T10:24:00+05:30,P2,Online Orders,Duplicate Orders,Open,,True,raw/INC-00111.json
+INC-00112,SW-0021,2026-05-02T12:51:00+05:30,P3,Soft Serve,Dispensing Issue,Open,,False,raw/INC-00112.json
+INC-00114,SW-0010,2025-11-11T18:55:00+05:30,P3,Printers,Paper Jam,Open,,False,raw/INC-00114.json
+INC-00115,SW-0033,2025-11-13T11:24:00+05:30,P3,Soft Serve,Machine Won't Start,Open,,False,raw/INC-00115.json
+INC-00116,SW-0101,2025-11-09T16:23:00+05:30,P2,POS,Cash Drawer,Open,,False,raw/INC-00116.json
+INC-00117,SW-0055,2026-02-27T17:33:00+05:30,P4,Online Orders,Order Acceptance,Open,,False,raw/INC-00117.json
+INC-00118,SW-0009,2026-04-25T16:51:00+05:30,P3,Soft Serve,Dispensing Issue,Open,,False,raw/INC-00118.json
+INC-00119,SW-0057,2026-03-27T08:17:00+05:30,P3,POS,Loyalty Sync,Open,,True,raw/INC-00119.json
+INC-00120,SW-0018,2025-12-25T17:47:00+05:30,P3,POS,Payment Error,Open,,False,raw/INC-00120.json
+INC-00121,SW-0088,2025-12-18T07:16:00+05:30,P4,POS,Network,Open,,False,raw/INC-00121.json
+INC-00122,SW-0086,2026-05-06T20:15:00+05:30,P3,Online Orders,Swiggy Down,Open,,False,raw/INC-00122.json
+INC-00123,SW-0082,2026-01-17T07:45:00+05:30,P4,Wi-Fi / Network,Guest Wi-Fi,Open,,False,raw/INC-00123.json
+INC-00124,SW-0109,2026-02-27T17:09:00+05:30,P4,Online Orders,Duplicate Orders,Open,contradictory,False,raw/INC-00124.json
+INC-00125,SW-0116,2026-04-13T11:10:00+05:30,P3,POS,Loyalty Sync,Open,,False,raw/INC-00125.json
+INC-00126,SW-0012,2025-11-02T14:17:00+05:30,P3,Wi-Fi / Network,Device Connectivity,Open,,True,raw/INC-00126.json
+INC-00127,SW-0013,2026-01-08T15:02:00+05:30,P2,Printers,Paper Jam,Open,misdirection,True,raw/INC-00127.json
+INC-00128,SW-0119,2026-04-13T10:03:00+05:30,P3,POS,Scanner,Open,,False,raw/INC-00128.json
+INC-00129,SW-0058,2025-11-18T14:28:00+05:30,P3,POS,Screen Frozen,Open,,True,raw/INC-00129.json
+INC-00130,SW-0029,2025-11-09T11:38:00+05:30,P4,POS,Network Connectivity,Open,miscategorized,False,raw/INC-00130.json
+INC-00131,SW-0007,2026-04-13T11:49:00+05:30,P4,Wi-Fi / Network,Router Offline,Open,,False,raw/INC-00131.json
+INC-00132,SW-0016,2026-03-19T19:46:00+05:30,P3,Soft Serve,Mix Low Alert,Open,,True,raw/INC-00132.json
+INC-00133,SW-0087,2025-11-27T08:20:00+05:30,P3,Printers,Not Detected,Open,,False,raw/INC-00133.json
+INC-00136,SW-0035,2026-04-09T11:56:00+05:30,P3,Soft Serve,Mix Low Alert,Open,,False,raw/INC-00136.json
+INC-00138,SW-0104,2026-01-10T11:41:00+05:30,P2,Wi-Fi / Network,Router Offline,Open,,True,raw/INC-00138.json
+INC-00139,SW-0032,2025-11-01T19:01:00+05:30,P3,Soft Serve,Cleaning Cycle,Open,,False,raw/INC-00139.json
+INC-00140,SW-0027,2026-01-22T15:05:00+05:30,P4,POS,Payment Error,Open,,False,raw/INC-00140.json
+INC-00141,SW-0001,2026-01-12T17:43:00+05:30,P3,Kiosks,Screen Frozen,Open,,False,raw/INC-00141.json
+INC-00142,SW-0109,2026-03-31T18:54:00+05:30,P3,Online Orders,Zomato Down,Open,,False,raw/INC-00142.json
+INC-00143,SW-0088,2026-03-27T07:16:00+05:30,P2,Soft Serve,Machine Won't Start,Open,,True,raw/INC-00143.json
+INC-00144,SW-0055,2025-11-29T20:57:00+05:30,P3,Wi-Fi / Network,VPN,Open,,False,raw/INC-00144.json
+INC-00145,SW-0007,2025-12-07T09:11:00+05:30,P2,Printers,Garbled Text,Open,,True,raw/INC-00145.json
+INC-00146,SW-0071,2026-04-20T17:05:00+05:30,P4,Wi-Fi / Network,DHCP,Open,,False,raw/INC-00146.json
+INC-00147,SW-0113,2026-04-02T15:18:00+05:30,P2,Printers,Not Detected,Open,,False,raw/INC-00147.json
+INC-00148,SW-0086,2026-02-14T14:02:00+05:30,P1,Online Orders,Zomato Down,Open,,True,raw/INC-00148.json
+INC-00149,SW-0120,2026-05-02T16:03:00+05:30,P3,POS,Network,Open,vague,True,raw/INC-00149.json
+INC-00150,SW-0060,2025-12-30T15:15:00+05:30,P3,Soft Serve,Mix Low Alert,Open,,True,raw/INC-00150.json
+INC-00151,SW-0029,2026-02-08T17:00:00+05:30,P3,POS,Slow Performance,Open,red_herring,True,raw/INC-00151.json
+INC-00152,SW-0018,2025-11-05T12:50:00+05:30,P3,Online Orders,Portal Down,Open,,False,raw/INC-00152.json
+INC-00153,SW-0002,2025-12-23T17:45:00+05:30,P2,Online Orders,Not on KDS,Open,,False,raw/INC-00153.json
+INC-00154,SW-0059,2026-05-15T12:06:00+05:30,P4,Printers,Not Detected,Open,,False,raw/INC-00154.json
+INC-00155,SW-0009,2026-03-19T18:31:00+05:30,P3,Soft Serve,Error Code,Open,emotional,False,raw/INC-00155.json
+INC-00156,SW-0109,2025-12-30T15:22:00+05:30,P1,Wi-Fi / Network,Slow Network,Open,,True,raw/INC-00156.json
+INC-00157,SW-0008,2025-12-26T14:28:00+05:30,P2,Online Orders,Portal Down,Open,,True,raw/INC-00157.json
+INC-00158,SW-0068,2026-02-08T11:11:00+05:30,P1,Soft Serve,Mix Low Alert,Open,,False,raw/INC-00158.json
+INC-00159,SW-0066,2025-12-15T11:03:00+05:30,P2,Online Orders,Portal Down,Open,,False,raw/INC-00159.json
+INC-00160,SW-0118,2026-01-15T10:03:00+05:30,P3,Online Orders,Order Acceptance,Open,,False,raw/INC-00160.json
+INC-00161,SW-0007,2025-12-19T13:44:00+05:30,P3,Soft Serve,Overcooling,Open,,False,raw/INC-00161.json
+INC-00162,SW-0111,2026-03-04T19:18:00+05:30,P2,POS,Printer Integration,Resolved,,False,raw/INC-00162.json
+INC-00163,SW-0070,2026-04-30T18:22:00+05:30,P3,Kiosks,Touchscreen,Open,,False,raw/INC-00163.json
+INC-00164,SW-0054,2025-12-23T18:43:00+05:30,P3,Soft Serve,Error Code,Open,,False,raw/INC-00164.json
+INC-00165,SW-0083,2026-02-12T13:24:00+05:30,P1,Online Orders,Duplicate Orders,Open,,False,raw/INC-00165.json
+INC-00166,SW-0016,2025-12-26T20:09:00+05:30,P3,Soft Serve,Motor Alarm,Open,,True,raw/INC-00166.json
+INC-00167,SW-0108,2026-03-17T18:15:00+05:30,P4,Online Orders,Portal Down,Open,,False,raw/INC-00167.json
+INC-00168,SW-0017,2025-11-18T19:41:00+05:30,P2,Online Orders,Zomato Down,Open,,False,raw/INC-00168.json
+INC-00169,SW-0093,2026-04-13T18:56:00+05:30,P2,Soft Serve,Overcooling,Open,,False,raw/INC-00169.json
+INC-00170,SW-0025,2025-11-12T21:10:00+05:30,P3,Soft Serve,Cleaning Cycle,Open,,True,raw/INC-00170.json
+INC-00173,SW-0093,2026-02-23T19:03:00+05:30,P3,Online Orders,Swiggy Down,Open,,False,raw/INC-00173.json
+INC-00174,SW-0083,2025-11-16T15:37:00+05:30,P3,Online Orders,Portal Down,Open,,False,raw/INC-00174.json
+INC-00175,SW-0041,2026-01-24T13:44:00+05:30,P3,POS,Payment Error,Open,,True,raw/INC-00175.json
+INC-00176,SW-0083,2026-01-19T15:00:00+05:30,P4,Online Orders,Not on KDS,Resolved,,False,raw/INC-00176.json
+INC-00179,SW-0010,2026-04-15T20:09:00+05:30,P2,Wi-Fi / Network,Intermittent,Open,,False,raw/INC-00179.json
+INC-00180,SW-0059,2026-01-12T18:53:00+05:30,P3,POS,Printer Integration,Open,false_asset,False,raw/INC-00180.json
+INC-00181,SW-0090,2025-12-14T15:40:00+05:30,P3,POS,End-of-Day,Open,,True,raw/INC-00181.json
+INC-00183,SW-0022,2026-02-01T07:27:00+05:30,P3,POS,Printer Integration,Open,,True,raw/INC-00183.json
+INC-00185,SW-0030,2026-01-04T08:23:00+05:30,P2,Wi-Fi / Network,Device Connectivity,Open,,False,raw/INC-00185.json
+INC-00186,SW-0047,2026-01-27T18:05:00+05:30,P2,Soft Serve,Error Code,Open,,False,raw/INC-00186.json
+INC-00188,SW-0042,2025-11-08T07:30:00+05:30,P2,Online Orders,Not on KDS,Open,,False,raw/INC-00188.json
+INC-00189,SW-0102,2025-11-22T10:28:00+05:30,P3,Soft Serve,Error Code,Open,vague,False,raw/INC-00189.json
+INC-00191,SW-0076,2025-12-13T21:58:00+05:30,P2,POS,Terminal Startup,Closed,,False,raw/INC-00191.json
+INC-00193,SW-0052,2025-11-20T16:23:00+05:30,P2,Online Orders,Sync Failure,Open,,True,raw/INC-00193.json
+INC-00194,SW-0037,2026-03-30T08:00:00+05:30,P4,Wi-Fi / Network,DHCP,Open,,True,raw/INC-00194.json
+INC-00195,SW-0023,2026-03-25T12:39:00+05:30,P3,Wi-Fi / Network,Slow Network,Open,emotional,True,raw/INC-00195.json
+INC-00197,SW-0041,2026-04-19T09:15:00+05:30,P4,Printers,Wrong Output,Open,,True,raw/INC-00197.json
+INC-00198,SW-0035,2025-12-27T11:05:00+05:30,P3,Printers,Not Detected,Resolved,emotional,False,raw/INC-00198.json
+INC-00200,SW-0088,2026-03-23T09:18:00+05:30,P2,Wi-Fi / Network,Guest Wi-Fi,Open,,False,raw/INC-00200.json
+INC-00202,SW-0091,2025-12-31T17:43:00+05:30,P3,POS,Network,Open,,False,raw/INC-00202.json
+INC-00204,SW-0052,2026-04-13T07:31:00+05:30,P3,POS,Network,Open,,False,raw/INC-00204.json
+INC-00205,SW-0074,2026-04-05T18:45:00+05:30,P4,POS,Slow Performance,Open,,True,raw/INC-00205.json
+INC-00206,SW-0053,2026-05-06T14:45:00+05:30,P4,Printers,Garbled Text,Open,,True,raw/INC-00206.json
+INC-00207,SW-0110,2026-02-27T14:22:00+05:30,P2,POS,Slow Performance,Open,,False,raw/INC-00207.json
+INC-00210,SW-0102,2026-02-22T10:58:00+05:30,P3,Printers,Blank Receipt,Open,,True,raw/INC-00210.json
+INC-00211,SW-0006,2026-01-11T15:16:00+05:30,P2,Wi-Fi / Network,Guest Wi-Fi,Open,,False,raw/INC-00211.json
+INC-00212,SW-0085,2026-02-21T09:14:00+05:30,P2,Soft Serve,Overcooling,Open,,False,raw/INC-00212.json
+INC-00214,SW-0009,2026-03-11T14:05:00+05:30,P2,Wi-Fi / Network,DHCP,Open,,True,raw/INC-00214.json
+INC-00216,SW-0101,2025-11-20T12:38:00+05:30,P3,POS,Slow Performance,Open,,False,raw/INC-00216.json
+INC-00217,SW-0081,2026-02-28T20:34:00+05:30,P2,Online Orders,Payment Timeout,Resolved,false_asset,False,raw/INC-00217.json
+INC-00218,SW-0034,2026-04-18T20:09:00+05:30,P3,Online Orders,Not on KDS,Open,,False,raw/INC-00218.json
+INC-00219,SW-0026,2026-04-14T12:07:00+05:30,P1,POS,Terminal Startup,Resolved,red_herring,True,raw/INC-00219.json
+INC-00221,SW-0011,2025-11-14T17:30:00+05:30,P2,Printers,Wrong Output,Open,,False,raw/INC-00221.json
+INC-00222,SW-0099,2026-03-22T09:39:00+05:30,P3,Online Orders,Duplicate Orders,Open,,False,raw/INC-00222.json
+INC-00223,SW-0064,2026-03-27T09:33:00+05:30,P2,POS,Cash Drawer,Resolved,,False,raw/INC-00223.json
+INC-00224,SW-0101,2025-12-03T18:28:00+05:30,P2,Soft Serve,Motor Alarm,Open,red_herring,False,raw/INC-00224.json
+INC-00225,SW-0021,2026-02-26T18:49:00+05:30,P2,Online Orders,Portal Down,Open,misdirection,True,raw/INC-00225.json
+INC-00226,SW-0032,2026-02-14T07:11:00+05:30,P4,Printers,Garbled Text,Open,,False,raw/INC-00226.json
+INC-00227,SW-0056,2026-02-14T07:01:00+05:30,P4,Printers,Not Detected,Open,,False,raw/INC-00227.json
+INC-00228,SW-0073,2026-02-10T10:27:00+05:30,P3,Online Orders,Menu Mismatch,Open,,False,raw/INC-00228.json
+INC-00229,SW-0022,2026-01-20T16:27:00+05:30,P3,POS,PIN Pad,Open,,True,raw/INC-00229.json
+INC-00230,SW-0026,2025-12-12T12:59:00+05:30,P4,Printers,Wrong Output,Open,,False,raw/INC-00230.json
+INC-00233,SW-0002,2025-11-18T21:15:00+05:30,P4,Online Orders,Order Acceptance,Open,,False,raw/INC-00233.json
+INC-00234,SW-0003,2025-12-21T13:54:00+05:30,P3,Kiosks,Software Crash,Open,,False,raw/INC-00234.json
+INC-00235,SW-0108,2026-04-05T19:22:00+05:30,P2,Wi-Fi / Network,Intermittent,Open,,False,raw/INC-00235.json
+INC-00236,SW-0070,2025-11-19T19:45:00+05:30,P2,Online Orders,Duplicate Orders,Open,,False,raw/INC-00236.json
+INC-00237,SW-0023,2026-05-09T15:00:00+05:30,P2,Soft Serve,Error Code,Open,,True,raw/INC-00237.json
+INC-00238,SW-0039,2026-01-17T07:25:00+05:30,P4,Soft Serve,Error Code,Open,,False,raw/INC-00238.json
+INC-00239,SW-0029,2026-01-24T15:49:00+05:30,P3,POS,Network,Open,,False,raw/INC-00239.json
+INC-00240,SW-0078,2026-03-08T18:41:00+05:30,P1,Printers,Garbled Text,Open,,False,raw/INC-00240.json
+INC-00241,SW-0002,2025-11-20T20:42:00+05:30,P2,POS,Cash Drawer,Open,,False,raw/INC-00241.json
+INC-00242,SW-0056,2026-01-14T16:14:00+05:30,P2,POS,Network Connectivity,Open,miscategorized,False,raw/INC-00242.json
+INC-00244,SW-0018,2026-02-22T17:16:00+05:30,P4,Online Orders,Swiggy Down,Open,,False,raw/INC-00244.json
+INC-00245,SW-0108,2025-11-21T16:02:00+05:30,P3,POS,Network,Open,,True,raw/INC-00245.json
+INC-00246,SW-0060,2026-03-22T12:49:00+05:30,P3,Soft Serve,Mix Low Alert,Open,,False,raw/INC-00246.json
+INC-00247,SW-0074,2026-04-26T18:31:00+05:30,P4,Soft Serve,Overcooling,Open,,False,raw/INC-00247.json
+INC-00248,SW-0073,2026-02-12T18:10:00+05:30,P4,Printers,Blank Receipt,Open,,False,raw/INC-00248.json
+INC-00249,SW-0086,2026-04-22T07:23:00+05:30,P2,Wi-Fi / Network,VPN,Closed,misdirection,False,raw/INC-00249.json
+INC-00250,SW-0078,2026-01-30T11:48:00+05:30,P4,Wi-Fi / Network,Device Connectivity,Open,,True,raw/INC-00250.json
+INC-00252,SW-0083,2026-01-30T10:58:00+05:30,P4,Online Orders,Zomato Down,Open,,False,raw/INC-00252.json
+INC-00253,SW-0042,2025-11-18T09:08:00+05:30,P3,Online Orders,Zomato Down,Open,contradictory,False,raw/INC-00253.json
+INC-00256,SW-0077,2026-05-10T15:48:00+05:30,P3,Online Orders,Order Acceptance,Open,,False,raw/INC-00256.json
+INC-00257,SW-0005,2025-11-12T13:22:00+05:30,P2,Kiosks,Touchscreen,Open,,False,raw/INC-00257.json
+INC-00258,SW-0105,2026-05-12T09:03:00+05:30,P3,Printers,Wrong Output,Open,vague,False,raw/INC-00258.json
+INC-00259,SW-0067,2026-04-17T13:23:00+05:30,P2,Kiosks,Payment Reader,Open,,True,raw/INC-00259.json
+INC-00260,SW-0052,2025-11-20T19:31:00+05:30,P2,Online Orders,Duplicate Orders,Open,,False,raw/INC-00260.json
+INC-00261,SW-0090,2026-01-18T17:37:00+05:30,P3,Online Orders,Portal Down,Closed,,False,raw/INC-00261.json
+INC-00262,SW-0038,2025-12-23T19:03:00+05:30,P3,Kiosks,Software Crash,Open,,False,raw/INC-00262.json
+INC-00264,SW-0009,2026-02-15T18:06:00+05:30,P2,Wi-Fi / Network,Slow Network,Resolved,,False,raw/INC-00264.json
+INC-00265,SW-0107,2026-03-01T21:29:00+05:30,P3,Kiosks,Timeout,Open,,False,raw/INC-00265.json
+INC-00266,SW-0090,2026-04-08T15:16:00+05:30,P3,Soft Serve,Cleaning Cycle,Open,,False,raw/INC-00266.json
+INC-00268,SW-0115,2026-04-15T20:26:00+05:30,P3,Online Orders,Sync Failure,Open,,False,raw/INC-00268.json
+INC-00269,SW-0117,2026-01-03T08:35:00+05:30,P3,Online Orders,Payment Timeout,Open,,False,raw/INC-00269.json
+INC-00270,SW-0117,2026-04-24T21:20:00+05:30,P2,Wi-Fi / Network,Router Offline,Open,,True,raw/INC-00270.json
+INC-00271,SW-0061,2026-02-04T11:37:00+05:30,P3,Online Orders,Not on KDS,Open,,True,raw/INC-00271.json
+INC-00272,SW-0046,2026-01-08T15:52:00+05:30,P3,Online Orders,Duplicate Orders,Resolved,,True,raw/INC-00272.json
+INC-00273,SW-0095,2026-03-28T10:16:00+05:30,P3,Wi-Fi / Network,Intermittent,Open,,False,raw/INC-00273.json
+INC-00274,SW-0049,2025-12-07T16:42:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Open,,False,raw/INC-00274.json
+INC-00275,SW-0045,2026-02-15T14:29:00+05:30,P3,Wi-Fi / Network,Device Connectivity,Open,,False,raw/INC-00275.json
+INC-00277,SW-0054,2025-11-22T17:08:00+05:30,P2,POS,Software Update,Open,,False,raw/INC-00277.json
+INC-00278,SW-0007,2026-03-24T12:42:00+05:30,P3,Printers,Not Detected,Open,,False,raw/INC-00278.json
+INC-00279,SW-0054,2025-11-18T10:24:00+05:30,P2,Printers,Not Detected,Open,misdirection,False,raw/INC-00279.json
+INC-00280,SW-0093,2026-05-06T09:22:00+05:30,P2,Online Orders,Payment Timeout,Open,,False,raw/INC-00280.json
+INC-00281,SW-0086,2025-12-03T07:19:00+05:30,P4,Soft Serve,Cleaning Cycle,Open,,False,raw/INC-00281.json
+INC-00282,SW-0071,2025-11-05T20:32:00+05:30,P3,POS,Terminal Startup,Open,,True,raw/INC-00282.json
+INC-00286,SW-0072,2026-01-20T10:41:00+05:30,P3,POS,Loyalty Sync,Open,,True,raw/INC-00286.json
+INC-00288,SW-0070,2025-12-30T14:40:00+05:30,P1,Printers,Not Detected,Open,,False,raw/INC-00288.json
+INC-00289,SW-0069,2026-01-28T19:34:00+05:30,P2,Soft Serve,Machine Won't Start,Open,,True,raw/INC-00289.json
+INC-00290,SW-0053,2025-12-12T20:36:00+05:30,P2,POS,Network,Open,,False,raw/INC-00290.json
+INC-00291,SW-0111,2026-03-03T08:08:00+05:30,P3,Soft Serve,Overcooling,Open,,False,raw/INC-00291.json
+INC-00292,SW-0027,2025-11-09T14:16:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Closed,,True,raw/INC-00292.json
+INC-00293,SW-0059,2026-04-22T11:14:00+05:30,P1,Online Orders,Not on KDS,Closed,,False,raw/INC-00293.json
+INC-00295,SW-0110,2026-05-02T10:22:00+05:30,P2,POS,Software Update,Open,,False,raw/INC-00295.json
+INC-00296,SW-0007,2026-05-10T18:47:00+05:30,P2,Printers,Blank Receipt,Open,vague,False,raw/INC-00296.json
+INC-00297,SW-0116,2026-01-09T11:38:00+05:30,P3,Online Orders,Swiggy Down,Open,,False,raw/INC-00297.json
+INC-00298,SW-0008,2026-01-03T09:31:00+05:30,P4,Kiosks,Screen Frozen,Closed,unknown_system,False,raw/INC-00298.json
+INC-00299,SW-0055,2026-01-12T18:55:00+05:30,P4,Online Orders,Zomato Down,Open,,True,raw/INC-00299.json
+INC-00300,SW-0043,2025-12-12T07:13:00+05:30,P3,POS,Network Connectivity,Open,miscategorized,False,raw/INC-00300.json
+INC-00301,SW-0108,2026-02-10T12:18:00+05:30,P3,Wi-Fi / Network,VPN,Open,,False,raw/INC-00301.json
+INC-00302,SW-0043,2025-11-25T15:43:00+05:30,P4,Online Orders,Menu Mismatch,Resolved,,False,raw/INC-00302.json
+INC-00304,SW-0076,2026-02-26T08:16:00+05:30,P4,Soft Serve,Machine Won't Start,Open,,False,raw/INC-00304.json
+INC-00305,SW-0100,2026-02-26T18:09:00+05:30,P4,Printers,Blank Receipt,Open,,True,raw/INC-00305.json
+INC-00306,SW-0106,2026-04-01T16:09:00+05:30,P4,Kiosks,Screen Frozen,Open,,False,raw/INC-00306.json
+INC-00307,SW-0051,2025-12-27T19:36:00+05:30,P3,POS,PIN Pad,Resolved,vague,False,raw/INC-00307.json
+INC-00308,SW-0042,2026-03-15T20:23:00+05:30,P4,POS,Slow Performance,Open,,False,raw/INC-00308.json
+INC-00311,SW-0035,2025-12-18T17:37:00+05:30,P3,Wi-Fi / Network,Router Offline,Open,,False,raw/INC-00311.json
+INC-00313,SW-0004,2026-02-03T12:43:00+05:30,P3,Printers,Not Detected,Open,,False,raw/INC-00313.json
+INC-00314,SW-0037,2026-05-11T20:59:00+05:30,P2,Kiosks,Software Crash,Open,,False,raw/INC-00314.json
+INC-00315,SW-0096,2026-04-17T11:45:00+05:30,P2,Printers,Wrong Output,Open,red_herring,False,raw/INC-00315.json
+INC-00316,SW-0048,2026-01-07T18:36:00+05:30,P3,Printers,Printer Offline,Open,,False,raw/INC-00316.json
+INC-00318,SW-0009,2026-04-14T17:38:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Closed,,False,raw/INC-00318.json
+INC-00319,SW-0063,2026-04-02T08:56:00+05:30,P3,Soft Serve,Machine Won't Start,Open,,False,raw/INC-00319.json

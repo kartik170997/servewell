@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00198",
+  "store_id": "SW-0035",
+  "store_name": "ServeWell - Madhapur",
+  "submitted_by": "Suma Trivedi",
+  "contact_phone": "+91-96503-45235",
+  "date_opened": "2025-12-27T11:05:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Printer not detected - why does nothing ever work around here",
+  "description": "I am absolutely fed up. The printer just stopped working AGAIN and honestly I don't even know what the problem is anymore. This is the third time this month! Every single day something breaks in this store and I'm expected to just keep running operations smoothly while the POS system falls apart piece by piece. Nobody tells me anything, support takes forever, and I'm stuck dealing with angry customers while bills aren't printing. I've got a queue of 20 people right now and I can't even process payments properly. Why does management keep buying these cheap printers? Why can't IT just FIX things when they break instead of sending tickets to some queue that nobody looks at? I'm done. Just done. Make it work or send someone here to actually help.",
+  "asset_id": "PRN-0035-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": "Store manager called back after 2 hours. Printer had been unplugged accidentally during cleaning. USB cable reseated and power cycled. Device now detected and operational. Advised staff on proper shutdown procedures.",
+  "status": "Resolved"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00106",
+  "store_id": "SW-0111",
+  "store_name": "ServeWell - Goregaon East",
+  "submitted_by": "Sridhar Banerjee",
+  "contact_phone": "+91-88929-50988",
+  "date_opened": "2025-12-02T11:28:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - no orders received since 10:45 AM",
+  "description": "The Zomato integration on our NetLink NL-3000 router (RTR-0111-01) has been non-functional since approximately 10:45 AM this morning. Our POS system is unable to receive or sync any orders placed through the Zomato platform. Error message displayed on the order management dashboard reads: 'Zomato Gateway Connection Failed - HTTP 503 Service Unavailable.' We have already attempted the following troubleshooting steps: (1) restarted the NetLink router at 11:05 AM with no improvement, (2) verified internet connectivity is stable (15 Mbps download, 8 Mbps upload confirmed), (3) checked firewall rules to ensure Zomato API endpoints are whitelisted, and (4) confirmed other integrations (Swiggy, our own website) are functioning normally. This is impacting customer satisfaction significantly as we are losing online orders during peak lunch hours. We have approximately 12-15 pending orders stuck in the queue that customers can see as accepted but we cannot fulfill due to this integration failure. We need urgent resolution to restore Zomato order flow.",
+  "asset_id": "RTR-0111-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-02T11:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and initial assessment confirmed. Verified store has active Zomato merchant account and API credentials are current. Recommended checking Zomato's service status page; no known platform outages reported at this time."
+    },
+    {
+      "timestamp": "2025-12-02T11:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Confirmed router connectivity is stable and other integrations working. Suspected Zomato API authentication issue or temporary service degradation on Zomato's end. Escalation initiated to L2 technical team for deeper diagnostics on API credentials and network logs."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

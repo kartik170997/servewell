@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00001",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Sunita Kumar",
+  "contact_phone": "+91-74840-86888",
+  "date_opened": "2026-04-04T10:01:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty points not syncing to customer accounts on Terminal 2",
+  "description": "Customers purchasing through POS terminal 2 are not receiving loyalty points after transactions complete. The loyalty program module appears to be running but the point accumulation is not reflecting in the customer database. This has been happening since approximately 9:30 AM today. Staff have confirmed multiple transactions where points should have been credited but customers are unable to view updated balances on the kiosk.",
+  "asset_id": "POS-0023-T2",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

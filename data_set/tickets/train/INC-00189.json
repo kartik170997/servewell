@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00189",
+  "store_id": "SW-0102",
+  "store_name": "ServeWell - Worli",
+  "submitted_by": "Archana Ghosh",
+  "contact_phone": "+91-78667-31983",
+  "date_opened": "2025-11-22T10:28:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve machine showing error code - not working",
+  "description": "The soft serve machine is broken. There's an error code on the screen but I can't read it properly. Machine won't dispense anything. Please fix ASAP as we have customers waiting.",
+  "asset_id": "RTR-0102-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-22T10:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received. Requested submitter to provide exact error code displayed on machine screen and clarify when issue started. Awaiting response."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

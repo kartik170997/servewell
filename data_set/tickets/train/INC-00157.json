@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00157",
+  "store_id": "SW-0008",
+  "store_name": "ServeWell - Pitampura",
+  "submitted_by": "Meena Rao",
+  "contact_phone": "+91-74002-69600",
+  "date_opened": "2025-12-26T14:28:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal inaccessible at Pitampura",
+  "description": "Customers unable to place orders through the online portal since this afternoon. Portal returns error when accessed. Store is losing orders.",
+  "asset_id": "SSM-0008-01",
+  "system_version": "FrostyPro 800 v2.0",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00302",
+  "store_id": "SW-0043",
+  "store_name": "ServeWell - Marathahalli",
+  "submitted_by": "Saranya Verma",
+  "contact_phone": "+91-81462-50662",
+  "date_opened": "2025-11-25T15:43:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Menu Mismatch",
+  "subject": "Discontinued Paneer Tikka Wrap still appearing in online menu and receiving orders",
+  "description": "The Paneer Tikka Wrap (Item ID: PTW-043-001) was discontinued from our in-store menu on 2025-11-20 but continues to appear in the online ordering portal accessible via our website and aggregator apps (Zomato, Swiggy). Since the discontinuation, we have received 7 customer orders for this item between 2025-11-22 and 2025-11-25. Each time, kitchen staff inform customers via phone that the item is unavailable, creating friction and negative customer experience. The item does not appear in the FoodTech POS v4.2.1 local inventory on terminal POS-0043-T1, but the online catalog sync appears to have failed. This is causing operational disruption during peak hours (11:30–14:00 and 18:00–21:00) when most online orders arrive. I have confirmed with our menu management team that the product status was marked as 'Inactive' in the central menu database on 2025-11-20 at 10:15 IST, but the change has not propagated to the online ordering channels.",
+  "asset_id": "POS-0043-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "menu-mismatch"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-25T16:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed item PTW-043-001 is inactive in local POS system. Initiated manual menu sync trigger from FoodTech admin console and notified integration team of potential aggregator sync delay."
+    },
+    {
+      "timestamp": "2025-11-25T17:45:00+05:30",
+      "actor": "System",
+      "note": "Automated menu synchronization completed. Item removed from online catalog across Zomato and Swiggy channels. Store notified; no pending orders for discontinued item detected."
+    }
+  ],
+  "resolution_notes": "Menu synchronization issue resolved by triggering full catalog refresh from FoodTech admin console. Paneer Tikka Wrap (PTW-043-001) successfully removed from all online ordering channels (website, Zomato, Swiggy) on 2025-11-25 at 17:45 IST. Root cause identified as delayed aggregator sync following menu update on 2025-11-20. Implemented additional monitoring alert for future menu status changes to flag synchronization delays within 2 hours.",
+  "status": "Resolved"
+}

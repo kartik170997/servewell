@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00180",
+  "store_id": "SW-0059",
+  "store_name": "ServeWell - Nungambakkam",
+  "submitted_by": "Sanjay Shah",
+  "contact_phone": "+91-83340-76353",
+  "date_opened": "2026-01-12T18:53:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer not printing at Terminal 3 - POS-9177-T1",
+  "description": "The receipt printer connected to Terminal 3 at the counter has stopped working since approximately 6:45 PM today. Orders are being processed in the FoodTech POS system v4.2.1 without errors, but no receipts are being printed. The printer appears to be powered on and connected, but the POS system is not sending output to it. This is impacting customer service as we cannot provide printed receipts. We have restarted the terminal once but the issue persists.",
+  "asset_id": "POS-9177-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

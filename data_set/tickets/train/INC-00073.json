@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00073",
+  "store_id": "SW-0114",
+  "store_name": "ServeWell - Lokhandwala",
+  "submitted_by": "Rajesh Chatterjee",
+  "contact_phone": "+91-86888-62196",
+  "date_opened": "2026-04-11T09:51:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer offline - POS terminal T1 unable to communicate with printer",
+  "description": "The receipt printer connected to POS terminal T1 (asset POS-0114-T1) at ServeWell Lokhandwala has been non-functional since approximately 09:15 IST this morning. When customers complete transactions, the system displays error message: 'Printer Offline - Unable to establish connection on LPT1'. The printer unit (Epson TM-M30) shows no error lights and appears powered on, but no test prints are being generated. We have already attempted the following troubleshooting steps: (1) Power cycled the printer twice with 30-second intervals; (2) Checked all USB and power cables are securely connected; (3) Restarted the POS terminal; (4) Verified printer driver status in device manager showing 'Device Error'. The printer was functioning normally until yesterday evening. Business impact: moderate - we are currently manually writing receipts for customers, but this is slowing down service during peak lunch hours (11:30-13:30). Running FoodTech POS v4.2.2. Request urgent investigation and either remote driver reinstallation or technician dispatch if hardware replacement is required.",
+  "asset_id": "POS-0114-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-11T10:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed asset details and system version. Advised submitter to check printer USB cable connection and attempt uninstall/reinstall of printer driver from device manager before escalation."
+    },
+    {
+      "timestamp": "2026-04-11T10:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Store manager confirmed driver reinstallation attempt unsuccessful - error persists. Escalating to L2 hardware support team for potential driver corruption or port failure diagnosis."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

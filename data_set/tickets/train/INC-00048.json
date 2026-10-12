@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00048",
+  "store_id": "SW-0114",
+  "store_name": "ServeWell - Lokhandwala",
+  "submitted_by": "Shobha Chandra",
+  "contact_phone": "+91-86537-54238",
+  "date_opened": "2026-03-23T18:35:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Duplicate Orders",
+  "subject": "Terminal 3 processing duplicate online orders intermittently",
+  "description": "Store manager reports that Terminal 3 at the Lokhandwala location has been creating duplicate order records when processing online orders through the FoodTech POS system. Customers are receiving multiple order confirmations for single submissions, leading to confusion and customer complaints. The issue appears intermittent and occurs approximately 2-3 times per shift. No manual workaround attempted yet pending technical guidance.",
+  "asset_id": "POS-8341-T2",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "online-orders",
+    "duplicate-orders"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-23T18:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Requested store manager to capture screenshots of duplicate orders and note exact timestamps of next occurrence for troubleshooting."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

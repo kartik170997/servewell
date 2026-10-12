@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00023",
+  "store_id": "SW-0071",
+  "store_name": "ServeWell - Dadar",
+  "submitted_by": "Usha Pillai",
+  "contact_phone": "+91-94520-55069",
+  "date_opened": "2026-04-15T12:00:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "OrbitPOS auto-accept feature not functioning for online orders",
+  "description": "The automatic order acceptance feature in OrbitPOS v2.0 has stopped working at the Dadar location. Online orders placed through our platform are no longer being auto-accepted and are stuck in pending status, requiring manual intervention. This is causing delays in order fulfillment and impacting customer experience. The issue began this morning around 11:30 AM. Store staff have attempted refreshing the system but the problem persists.",
+  "asset_id": "POS-0071-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-15T12:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Confirmed that auto-accept setting is enabled in system configuration. Advised store manager to check network connectivity and POS terminal status while investigation continues."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

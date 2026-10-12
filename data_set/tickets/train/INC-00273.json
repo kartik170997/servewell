@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00273",
+  "store_id": "SW-0095",
+  "store_name": "ServeWell - Powai",
+  "submitted_by": "Asha Malhotra",
+  "contact_phone": "+91-72292-97062",
+  "date_opened": "2026-03-28T10:16:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Intermittent",
+  "subject": "WiFi connectivity drops affecting POS terminals and customer hotspot at Powai store",
+  "description": "ServeWell - Powai experiencing recurring WiFi disconnections on the primary NetLink NL-3000 router (RTR-0095-01). Symptoms began approximately 4 days ago (around 2026-03-24) and have intensified during peak hours (11:30 AM–2:30 PM). The affected devices include 3 POS terminals in the dining area, 2 kitchen display system (KDS) units, and the guest WiFi network used by customers. During disconnection events, devices show \"No Internet\" error but remain connected to the SSID; reconnection occurs spontaneously within 2–5 minutes. No error logs are visible in the router's web console. Store staff have already attempted: (1) power cycling the router twice, (2) restarting individual POS devices, and (3) checking Ethernet cable connections (all appear secure). Business impact is moderate—order processing delays during peak service windows, customer complaints about WiFi unavailability, and potential lost revenue from slower transaction throughput. Estimated frequency: 3–4 disconnection incidents per shift. Last incident occurred this morning at 09:45 IST, lasting approximately 3 minutes.",
+  "asset_id": "RTR-0095-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "intermittent"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-28T10:42:00+05:30",
+      "actor": "L1 Agent - Rajesh Kumar",
+      "note": "Initial contact made with store manager. Confirmed issue reproducibility and noted peak-hour pattern. Requested full network topology diagram and thermal readings from router; awaiting response. Advised temporary mitigation: reducing simultaneous WiFi device count during peak hours."
+    },
+    {
+      "timestamp": "2026-03-28T11:18:00+05:30",
+      "actor": "L1 Agent - Priya Sharma",
+      "note": "Remote diagnostic initiated; detected 2.4 GHz band signal degradation (-65 dBm at 15 meters) and intermittent channel interference at channels 6 and 11. Recommended firmware update check and potential interference source audit. Escalation to L2 network engineering recommended pending additional device logs."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

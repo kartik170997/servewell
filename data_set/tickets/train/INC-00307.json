@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00307",
+  "store_id": "SW-0051",
+  "store_name": "ServeWell - Miyapur",
+  "submitted_by": "Smita Gupta",
+  "contact_phone": "+91-92880-77922",
+  "date_opened": "2025-12-27T19:36:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "PIN Pad",
+  "subject": "PIN pad not responding at register",
+  "description": "The pin pad machine is not working. Customers cannot make card payments. This is a big problem. Please fix it ASAP. We are losing business because of this. I don't know what happened, it was working fine this morning and now it just stopped. Nothing is showing on the screen. The register still works but the payment terminal is completely down.",
+  "asset_id": "POS-0051-T1",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "pos",
+    "pin-pad"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-27T19:52:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Contacted store manager Smita. Advised basic troubleshooting: power cycle the PIN pad device and check physical connections. Awaiting response."
+    },
+    {
+      "timestamp": "2025-12-27T20:18:45+05:30",
+      "actor": "L1 Agent",
+      "note": "Customer confirmed power cycle resolved the issue. PIN pad is now responding and processing card transactions normally. Marked ticket as resolved."
+    }
+  ],
+  "resolution_notes": "Issue resolved through power cycle of PIN pad device (POS-0051-T1). Device reconnected to network and resumed normal payment processing functionality.",
+  "status": "Resolved"
+}

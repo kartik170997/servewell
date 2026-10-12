@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00097",
+  "store_id": "SW-0096",
+  "store_name": "ServeWell - Bandra West",
+  "submitted_by": "Swathi Banerjee",
+  "contact_phone": "+91-78828-64627",
+  "date_opened": "2026-01-17T11:17:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS terminal T1 running very slow during peak hours",
+  "description": "Terminal POS-0096-T1 is lagging heavily - orders taking 3-4 seconds to process. Affecting checkout speed during lunch rush. Please check and fix ASAP.",
+  "asset_id": "POS-0096-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-17T11:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Cleared POS cache and restarted terminal. Performance restored to normal."
+    }
+  ],
+  "resolution_notes": "Cache memory overflow identified and cleared. Terminal restarted successfully. POS responsiveness returned to baseline within acceptable range.",
+  "status": "Closed"
+}

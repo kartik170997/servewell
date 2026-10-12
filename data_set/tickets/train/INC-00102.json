@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00102",
+  "store_id": "SW-0117",
+  "store_name": "ServeWell - Wilson Garden",
+  "submitted_by": "Mohan Shah",
+  "contact_phone": "+91-71190-62034",
+  "date_opened": "2026-04-15T07:58:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Paper Jam",
+  "subject": "Paper jam in receipt printer PRN-0117-P1 blocking orders",
+  "description": "Receipt printer jammed this morning. Can't print bills. Tried clearing it but paper is stuck inside. Need urgent fix as lunch service starts soon.",
+  "asset_id": "PRN-0117-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "paper-jam"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

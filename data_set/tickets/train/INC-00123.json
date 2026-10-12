@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00123",
+  "store_id": "SW-0082",
+  "store_name": "ServeWell - Prahlad Nagar",
+  "submitted_by": "Ravi Sharma",
+  "contact_phone": "+91-88810-47268",
+  "date_opened": "2026-01-17T07:45:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network down at Prahlad Nagar location",
+  "description": "The guest Wi-Fi network at ServeWell - Prahlad Nagar has been offline since approximately 7:30 AM this morning. Customers are unable to connect to the network, and the SSID is not appearing in available networks. The primary router (RTR-0082-01) appears to be powered on with indicator lights, but guests cannot authenticate or access internet connectivity. This is affecting customer experience during breakfast service.",
+  "asset_id": "RTR-0082-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-17T07:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial triage performed - confirmed guest Wi-Fi SSID not broadcasting. Advised submitter to check router power and restart device as first troubleshooting step."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

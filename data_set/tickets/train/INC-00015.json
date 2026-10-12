@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00015",
+  "store_id": "SW-0102",
+  "store_name": "ServeWell - Worli",
+  "submitted_by": "Lakshmi Sen",
+  "contact_phone": "+91-70861-57303",
+  "date_opened": "2025-12-11T18:45:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer not printing orders",
+  "description": "Receipt printer attached to terminal T1 is not producing any output. Orders are being processed in the POS system but receipts are not printing.",
+  "asset_id": "POS-0102-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

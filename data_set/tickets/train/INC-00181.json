@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00181",
+  "store_id": "SW-0090",
+  "store_name": "ServeWell - Sholinganallur",
+  "submitted_by": "Manoj Kumar",
+  "contact_phone": "+91-84451-51116",
+  "date_opened": "2025-12-14T15:40:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "End-of-Day",
+  "subject": "End-of-day settlement failing on Terminal 1",
+  "description": "EOD settlement process hanging on POS-0090-T1. Getting error when trying to finalize today's transactions. Unable to close register.",
+  "asset_id": "POS-0090-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "end-of-day"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

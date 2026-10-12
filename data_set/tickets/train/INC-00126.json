@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00126",
+  "store_id": "SW-0012",
+  "store_name": "ServeWell - Gachibowli",
+  "submitted_by": "Archana Malhotra",
+  "contact_phone": "+91-90758-66283",
+  "date_opened": "2025-11-02T14:17:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Device Connectivity",
+  "subject": "Kitchen POS terminal unable to connect to RTR-0012-01 after network reconfiguration",
+  "description": "Kitchen POS terminal (IP: 192.168.1.45) is unable to connect to the primary router RTR-0012-01 (Cisco SG350) following yesterday's network reconfiguration. The device was previously connected without issues. Error observed on POS screen: 'No Network Connection - Unable to Reach Gateway.' The device shows the Wi-Fi network SSID (ServeWell-Gachibowli-5GHz) in available networks but fails to authenticate; connection attempt times out after 30 seconds with error code E-0847. All other POS terminals in the billing area are connecting successfully. This terminal is critical for kitchen order display—orders are currently being manually written and conveyed, impacting order accuracy and table service speed. I have already power-cycled the terminal twice and cleared cached network settings without resolution. Network adapter shows updated drivers (last updated 2025-10-28). Firewall rules on the router may need review. Please advise urgently as this is affecting kitchen operations.",
+  "asset_id": "RTR-0012-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "device-connectivity"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-02T14:32:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Confirmed kitchen POS terminal cannot authenticate to primary router. Advised user to verify Wi-Fi password and attempted remote DHCP lease renewal—device still unable to obtain IP address. Escalating to Network Team for router-side diagnostics."
+    },
+    {
+      "timestamp": "2025-11-02T15:08:44+05:30",
+      "actor": "System",
+      "note": "Escalation flag activated due to business impact (kitchen operations affected) and unsuccessful L1 remediation steps. Ticket marked for priority network review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00197",
+  "store_id": "SW-0041",
+  "store_name": "ServeWell - Andheri West",
+  "submitted_by": "Meena Krishnan",
+  "contact_phone": "+91-72447-36569",
+  "date_opened": "2026-04-19T09:15:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Wrong Output",
+  "subject": "Receipt printer outputting garbled text and misaligned formatting",
+  "description": "The receipt printer (Epson TM-T88VI) at counter 2 is producing incorrectly formatted output since approximately 08:45 AM today. Receipts are printing with random character substitution in the item descriptions, prices are appearing in wrong columns, and line breaks are not aligning properly. The header and footer sections are also mispositioned, creating an unprofessional appearance that impacts customer experience. We have attempted to reboot the printer twice and cleared the print queue via POS terminal without resolution. Additionally, we verified that the same receipt template prints correctly from the backup printer at counter 1. Error messages observed: none on terminal display, but printer status shows 'Template Error' in maintenance mode. This is affecting order fulfillment efficiency and customer satisfaction at our busiest service counter. Asset details confirmed: PRN-0041-P1, Epson TM-T88VI firmware v1.12, installed March 2025.",
+  "asset_id": "PRN-0041-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "wrong-output"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-19T09:32:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial contact established with Meena Krishnan. Confirmed issue reproduction and verified counter 1 backup printer functioning normally. Advised to switch to backup counter temporarily for customer orders."
+    },
+    {
+      "timestamp": "2026-04-19T10:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remotely accessed printer settings and confirmed template configuration mismatch with current firmware version. Escalating to L2 for firmware rollback or template reconfiguration assessment."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00296",
+  "store_id": "SW-0007",
+  "store_name": "ServeWell - Lajpat Nagar",
+  "submitted_by": "Swathi Chandra",
+  "contact_phone": "+91-87169-20911",
+  "date_opened": "2026-05-10T18:47:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Blank Receipt",
+  "subject": "Printer not working - blank receipts printing",
+  "description": "The printer is broken. It's printing blank receipts and we cannot issue customer receipts. This is a major issue. Please fix ASAP. The machine is in the counter area.",
+  "asset_id": "PRN-0007-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "blank-receipt"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-10T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Attempted to gather more details from submitter regarding error codes, paper status, and recent maintenance history but received no response."
+    },
+    {
+      "timestamp": "2026-05-10T19:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Attempted basic troubleshooting call to store but line was busy. Scheduled follow-up for morning shift to verify printer connectivity and paper supply status."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

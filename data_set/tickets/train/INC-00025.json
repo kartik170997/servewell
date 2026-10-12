@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00025",
+  "store_id": "SW-0058",
+  "store_name": "ServeWell - OMR",
+  "submitted_by": "Vijayalakshmi Patel",
+  "contact_phone": "+91-79663-12631",
+  "date_opened": "2026-01-29T15:24:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network unavailable at OMR location - RTR-0058-01",
+  "description": "Guest Wi-Fi network (SSID: ServeWell-Guest) has been completely non-functional since approximately 14:45 hours today. Customers are unable to connect to the network; devices display 'no internet' error after successfully joining the SSID. Internal staff Wi-Fi on the same NetLink NL-3000 router remains operational. No changes were made to the network configuration prior to the outage. Basic troubleshooting already attempted: (1) Power cycled the router twice with 2-minute intervals between cycles, (2) Verified ethernet WAN connection to modem is active and shows green status lights, (3) Checked guest Wi-Fi SSID broadcast settings in router admin panel - SSID broadcast is enabled. The guest Wi-Fi downtime is impacting customer experience and store reputation, as approximately 80-120 daily customers depend on this connectivity. Router asset RTR-0058-01 (NetLink NL-3000 v2.2) requires remote diagnostics or on-site inspection to identify root cause and restore service.",
+  "asset_id": "RTR-0058-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-29T15:31:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged and logged by Rajesh Kumar. Confirmed guest Wi-Fi outage with submitter; internal Wi-Fi operational. Scheduled remote diagnostic session for 16:00 hours. Requested store to document connected device count and any error messages displayed on client devices."
+    },
+    {
+      "timestamp": "2026-01-29T15:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Remote connection established to RTR-0058-01 management interface. Guest Wi-Fi DHCP pool confirmed active but client devices reporting zero gateway connectivity. Preliminary assessment suggests potential WAN failover or DHCP-to-WAN routing misconfiguration post-power cycle. Escalating to L2 Network Engineering team for detailed packet analysis and configuration review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

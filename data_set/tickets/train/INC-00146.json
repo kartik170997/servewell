@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00146",
+  "store_id": "SW-0071",
+  "store_name": "ServeWell - Dadar",
+  "submitted_by": "Harish Das",
+  "contact_phone": "+91-71426-93318",
+  "date_opened": "2026-04-20T17:05:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "DHCP pool exhaustion on RTR-0071-01 causing guest Wi-Fi connectivity issues",
+  "description": "Multiple guests at the Dadar location are unable to connect to the guest Wi-Fi network. Upon investigation, the NetLink NL-3000 router appears to have exhausted its DHCP address pool, preventing new device connections. The issue began this afternoon around 4:45 PM and has persisted. Previous troubleshooting involved a basic restart of the router, but the problem recurred within an hour.",
+  "asset_id": "RTR-0071-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-20T17:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed DHCP pool exhaustion on RTR-0071-01 with 254/254 addresses allocated. Advised store manager to check for rogue DHCP clients or IP address leaks before escalation."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00238",
+  "store_id": "SW-0039",
+  "store_name": "ServeWell - Maninagar",
+  "submitted_by": "Nikhil Rao",
+  "contact_phone": "+91-85696-51180",
+  "date_opened": "2026-01-17T07:25:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "CreamTech SC-300 displaying Error Code E-142 on startup",
+  "description": "The soft serve machine (CreamTech SC-300 v3.1, Asset ID: SSM-0039-01) at ServeWell - Maninagar began displaying Error Code E-142 on the control panel display this morning at approximately 06:45 IST. The error appears immediately upon powering on the unit and persists across multiple restart attempts. The machine will not enter operational mode and the compressor does not engage when the error is present. We have already attempted: (1) unplugging the unit for 30 seconds and restarting, (2) checking all visible cable connections at the rear panel—all connections appear secure, and (3) reviewing the quick-start troubleshooting section in the user manual, which does not reference Error Code E-142. This is impacting our morning service as we cannot dispense soft serve ice cream to customers. The machine is currently powered off to prevent potential damage. Asset details confirmed: Serial Number SSM-0039-01, purchased March 2024, last preventive maintenance completed November 2025. We request immediate technical support to resolve this issue and restore service.",
+  "asset_id": "SSM-0039-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-17T07:38:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Error Code E-142 requires technical diagnostics beyond L1 support. Confirming asset serial number and maintenance history with store; flagging for L2 equipment specialist review."
+    },
+    {
+      "timestamp": "2026-01-17T08:15:00+05:30",
+      "actor": "System",
+      "note": "Ticket assigned to Equipment Troubleshooting queue for L2 evaluation. Store manager Nikhil Rao notified that technician assessment will be prioritized pending parts availability."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

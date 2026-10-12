@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00159",
+  "store_id": "SW-0066",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Ravi Chopra",
+  "contact_phone": "+91-86509-39038",
+  "date_opened": "2025-12-15T11:03:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal completely unavailable at Chromepet location since 10:45 AM",
+  "description": "The ServeWell online ordering portal (customer-facing web and mobile app) has been completely inaccessible since approximately 10:45 AM IST on 15-Dec-2025. Customers attempting to place orders through the portal receive a generic HTTP 503 Service Unavailable error message. All in-store POS systems remain operational, but we are unable to process online orders placed through our website or mobile application. The receipt printer (asset PRN-0066-P1, Epson TM-T88VI v1.12) is functioning correctly for in-store transactions. This outage is directly impacting revenue during peak lunch hours and causing customer dissatisfaction, with approximately 25-30 pending online orders stuck in the system queue. I have confirmed that our store's internet connectivity is stable (tested via direct ping to 8.8.8.8 with 100% success rate), and all other networked systems are responding normally. The issue appears to be centralized at the portal backend level rather than at the store infrastructure level.",
+  "asset_id": "PRN-0066-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-15T11:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and logged. Initial verification performed: confirmed portal unavailability across multiple access points (web and mobile). Store connectivity verified as stable. Escalating to L2 backend systems team for urgent investigation."
+    },
+    {
+      "timestamp": "2025-12-15T11:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Customer follow-up call completed with store manager to gather additional context on order volume impact. Informed that approximately 25-30 online orders are queued and waiting. No ETA provided yet from L2 team."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00223",
+  "store_id": "SW-0064",
+  "store_name": "ServeWell - Kompally",
+  "submitted_by": "Shobha Gupta",
+  "contact_phone": "+91-78577-44116",
+  "date_opened": "2026-03-27T09:33:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Cash Drawer",
+  "subject": "POS Terminal T1 Cash Drawer Not Responding to Open/Close Commands",
+  "description": "Cash drawer on POS terminal T1 (asset POS-0064-T1) is completely unresponsive to both manual and automated open/close commands since approximately 08:45 AM today. When staff attempt to open the drawer via the FoodTech POS v4.2.1 interface, no physical response occurs—no buzzing sound, no drawer movement. Error message displayed on POS screen: 'Cash Drawer Error: Device Timeout (Code 0x2847)'. The drawer was functioning normally yesterday evening during close-out. Staff have already attempted power-cycling the terminal twice and restarting the POS application, but the issue persists. This is affecting transaction completion workflow—customers are waiting while staff manually record cash received, creating queue delays during peak lunch service. Store is currently operating in 'degraded mode' with one of two functional terminals. Backup drawer on terminal T2 is handling overflow, but full POS capability restoration is urgent.",
+  "asset_id": "POS-0064-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "cash-drawer"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-27T10:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial troubleshooting completed: confirmed device timeout persists after terminal restart and POS reboot; checked USB cable connection to cash drawer (secure); verified no firmware update available for FoodTech v4.2.1. Escalating to L2 for potential hardware diagnostics."
+    },
+    {
+      "timestamp": "2026-03-27T11:47:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Hardware technician replaced faulty cash drawer solenoid assembly (internal malfunction preventing mechanical response). Cash drawer now opens and closes correctly; error code 0x2847 no longer appearing. Terminal T1 fully operational. Customer confirmed normal function during post-repair testing."
+    }
+  ],
+  "resolution_notes": "Cash drawer malfunction was caused by failed solenoid actuator assembly preventing physical response to control signals. Hardware was replaced by on-site technician; all error codes cleared and full POS functionality restored. Terminal T1 tested and confirmed operational as of 11:50 AM.",
+  "status": "Resolved"
+}

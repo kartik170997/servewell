@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00154",
+  "store_id": "SW-0059",
+  "store_name": "ServeWell - Nungambakkam",
+  "submitted_by": "Harish Nair",
+  "contact_phone": "+91-88089-48427",
+  "date_opened": "2026-05-15T12:06:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Epson TM-T88VI receipt printer not detected by POS system at Nungambakkam store",
+  "description": "The Epson TM-T88VI receipt printer (asset PRN-0059-P1, v1.12) connected to the main POS terminal is not being recognized by the system since this morning at approximately 11:45 AM. The printer does not appear in the Devices list within the POS application, and no USB or network connection status indicators are visible. The printer unit powers on normally with green LED indicators active, and the physical USB cable appears firmly connected to the POS workstation. We have already attempted the following troubleshooting steps: (1) restarted the POS application twice, (2) checked Device Manager on the workstation and confirmed the printer driver is installed but shows a yellow exclamation mark, (3) unplugged and reconnected the USB cable after waiting 30 seconds, and (4) verified that no other devices are competing for the same USB port. This is impacting the speed of our order fulfillment during peak lunch hours, as we are currently manually writing receipts for all transactions. The store manager has confirmed this is the only receipt printer available at this location. Request immediate remote diagnostics or on-site support to restore printer functionality.",
+  "asset_id": "PRN-0059-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-15T12:18:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Assigned to hardware support queue. Initial assessment: Device Manager driver issue with yellow exclamation mark suggests driver corruption or USB communication failure. Customer has completed basic troubleshooting steps appropriately."
+    },
+    {
+      "timestamp": "2026-05-15T12:31:45+05:30",
+      "actor": "L1 Agent",
+      "note": "Attempted remote connection to workstation to verify driver status and perform driver reinstall. Connection established successfully; proceeding with driver rollback and USB port reset procedure."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

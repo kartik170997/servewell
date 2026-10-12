@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00014",
+  "store_id": "SW-0037",
+  "store_name": "ServeWell - Nagarbhavi",
+  "submitted_by": "Sunil Sharma",
+  "contact_phone": "+91-92536-74478",
+  "date_opened": "2026-02-22T11:23:00+05:30",
+  "priority": "P1",
+  "category": "Soft Serve",
+  "subcategory": "Dispensing Issue",
+  "subject": "KitchenBridge v2.3 soft-serve dispenser not syncing with POS — inconsistent portion sizes",
+  "description": "The soft-serve dispensing machine (RTR-0037-01) is not syncing properly with our KitchenBridge v2.3 system. Orders coming through the POS are not being reflected in the dispenser queue, causing staff to manually input portion sizes and leading to inconsistent servings. The machine was working normally yesterday morning, but started showing sync errors around 9:00 AM today. We have restarted the dispenser twice with no improvement. This is impacting customer service and order fulfillment significantly.",
+  "asset_id": "RTR-0037-01",
+  "system_version": "KitchenBridge v2.3",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "dispensing-issue"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-22T11:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged as P1. Confirmed that KitchenBridge v2.3 is not a documented system in our knowledge base. Escalation required — requesting information from store on system origin and vendor details."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

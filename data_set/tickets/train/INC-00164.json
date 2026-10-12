@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00164",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Arjun Patil",
+  "contact_phone": "+91-73857-47054",
+  "date_opened": "2025-12-23T18:43:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve machine displaying error code E-402 on POS terminal",
+  "description": "The soft serve ice cream machine at our Thane West location is showing error code E-402 on the POS touchscreen terminal. The machine was operating normally this morning, but the error appeared around 6:30 PM today during peak service hours. The machine is currently non-functional and we are unable to dispense soft serve to customers. We have restarted the POS terminal once but the error code persists on the display.",
+  "asset_id": "POS-0054-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "error-code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

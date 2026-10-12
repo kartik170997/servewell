@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00019",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Arjun Trivedi",
+  "contact_phone": "+91-97365-79013",
+  "date_opened": "2026-01-19T09:13:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Slow Performance",
+  "subject": "POS Terminal T1 experiencing severe lag during peak lunch service",
+  "description": "POS terminal T1 at Basavanagudi location has been exhibiting significant performance degradation since 08:45 AM today, impacting order processing during peak lunch service. Terminal takes 8–12 seconds to respond to each touch input and transaction completion takes 25–35 seconds (normal: 3–5 seconds). Error message 'Database Query Timeout' appears intermittently in the bottom-left corner of the screen. The issue persists across all menu categories and payment methods. No recent software updates or hardware changes were made. Restarting the terminal twice and clearing the local cache did not resolve the issue. This is directly affecting customer throughput; we are currently experiencing 15–20 minute delays in order fulfillment. All other terminals (T2 and T3) are operating normally. Asset details confirmed: POS-0109-T1, running FoodTech POS v4.2.1, Intel Core i5 with 8GB RAM.",
+  "asset_id": "POS-0109-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "slow-performance"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-19T09:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial assessment: Confirmed terminal is responsive but slow. Checked local disk space (78% full), verified network connectivity (stable), and confirmed database connection status. Preliminary diagnosis suggests potential database contention or cache corruption."
+    },
+    {
+      "timestamp": "2026-01-19T10:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Escalated to L2 Backend Systems team due to persistent timeouts and full disk capacity. Identified that POS transaction logs have grown to 12GB. Recommended clearing archived logs and running database optimization routine."
+    }
+  ],
+  "resolution_notes": "L2 team cleared 8.5GB of archived transaction logs and executed database optimization script on the local cache repository. Terminal disk space reduced to 42% utilization. Database query performance restored to baseline. Terminal T1 now processing transactions in 3–4 seconds. Issue fully resolved and verified during subsequent peak service window.",
+  "status": "Closed"
+}

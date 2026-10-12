@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00128",
+  "store_id": "SW-0119",
+  "store_name": "ServeWell - Hitech City",
+  "submitted_by": "Mohan Menon",
+  "contact_phone": "+91-98857-72350",
+  "date_opened": "2026-04-13T10:03:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Scanner",
+  "subject": "Barcode scanner POS-0119-T1 not reading product codes — affecting checkout operations",
+  "description": "The barcode scanner connected to Counter 1 POS terminal (POS-0119-T1) is experiencing intermittent and now complete failure to read product barcodes. Issue began approximately 48 hours ago with occasional unread scans, now progressing to no recognition of any barcode input. When attempting to scan item barcodes, the scanner emits the standard beep sound indicating attempted read, but no data is transmitted to the FoodTech POS v4.2.1 system — the product field remains blank and order entry stalls. Staff are forced to manually key in product codes, significantly slowing service during peak hours and degrading customer experience. This morning (13-Apr, 09:45 IST) the scanner failed completely during breakfast service rush, causing 15-20 minute delays per order. We have already attempted: (1) power cycling the scanner and POS terminal, (2) cleaning the scanner lens with lint-free cloth, (3) checking USB cable connections — all connections are secure. The scanner hardware appears physically intact with no visible damage. This is impacting our lunch service capacity as Counter 1 normally handles 40% of daily transactions.",
+  "asset_id": "POS-0119-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "scanner"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-13T10:18:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket reviewed and preliminary diagnosis initiated. Confirmed with Mohan that scanner hardware is intact and connections verified. Requested system event logs from POS terminal to check for USB communication errors or driver conflicts."
+    },
+    {
+      "timestamp": "2026-04-13T10:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Advised store to perform factory reset of scanner device and reinstall USB drivers from FoodTech support portal. If issue persists after reset, ticket will require hardware replacement escalation. Store to provide update within 2 hours."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

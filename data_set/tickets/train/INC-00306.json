@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00306",
+  "store_id": "SW-0106",
+  "store_name": "ServeWell - Gariahat",
+  "submitted_by": "Anjali Patel",
+  "contact_phone": "+91-91019-85598",
+  "date_opened": "2026-04-01T16:09:00+05:30",
+  "priority": "P4",
+  "category": "Kiosks",
+  "subcategory": "Screen Frozen",
+  "subject": "Kiosk KSK-0106-01 touchscreen unresponsive - frozen on order summary screen",
+  "description": "Kiosk KSK-0106-01 (TouchPoint K1 v1.1) located at ServeWell - Gariahat has become completely unresponsive as of approximately 15:45 IST today. The display is frozen on the order summary screen showing a customer's partial order from lunch service. The touchscreen does not respond to any input—taps, swipes, or button presses have no effect. No error messages are displayed on screen. The kiosk was operational during the morning shift but became unresponsive during peak lunch hours, impacting customer experience at our self-service ordering station. I have already attempted the following troubleshooting steps: (1) waited 5 minutes for any background process to complete, (2) pressed the physical reset button on the back panel for 3 seconds, (3) unplugged the power cable for 30 seconds and reconnected it. After these steps, the kiosk powered back on but remained frozen on the same order summary screen. The issue persists. This is impacting our lunch service efficiency as we cannot utilize this kiosk, forcing customers to queue at the main counter. Please advise on next steps or schedule an on-site technician visit.",
+  "asset_id": "KSK-0106-01",
+  "system_version": "TouchPoint K1 v1.1",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "screen-frozen"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-01T16:22:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial contact made with submitter. Confirmed kiosk remains frozen after power cycle. No error logs visible. Suggested checking network connectivity and waiting for remote diagnostics run."
+    },
+    {
+      "timestamp": "2026-04-01T16:35:00+05:30",
+      "actor": "System",
+      "note": "Remote diagnostic tool attempted connection to KSK-0106-01 but failed to establish session. Device appears offline or unresponsive to management network. Ticket status remains Open pending L2 escalation review."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

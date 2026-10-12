@@ -1,0 +1,26 @@
+{
+  "ticket_id": "INC-00059",
+  "store_id": "SW-0066",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Rajan Mukherjee",
+  "contact_phone": "+91-96242-82165",
+  "date_opened": "2025-12-06T20:55:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Printer Integration",
+  "subject": "Receipt printer offline — contradicts earlier resolution ticket INC-00015",
+  "description": "The receipt printer on terminal POS-0066-T1 is not printing. Yesterday, ticket INC-00015 was marked resolved with a note stating the printer connection was fully restored and the store confirmed all receipts were printing normally. However, since this morning, customers are not receiving receipts and the printer shows as offline in OrbitPOS v2.1 dashboard. Staff reports the printer was working perfectly yesterday afternoon after the fix, but now it is completely non-functional again. USB cable connections appear intact. No error logs visible in the system. The printer itself powers on but does not respond to print jobs from the POS terminal.",
+  "asset_id": "POS-0066-T1",
+  "system_version": "OrbitPOS v2.1",
+  "tags": [
+    "pos",
+    "printer-integration"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [
+    "INC-00015"
+  ],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

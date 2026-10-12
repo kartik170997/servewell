@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00020",
+  "store_id": "SW-0066",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Ravi Kumar",
+  "contact_phone": "+91-72936-56388",
+  "date_opened": "2025-11-02T11:28:00+05:30",
+  "priority": "P2",
+  "category": "Online Orders",
+  "subcategory": "Order Acceptance",
+  "subject": "Auto-accept feature disabled on order management system - orders not routing to kitchen display",
+  "description": "Since 2025-11-02 at approximately 10:45 IST, the automatic order acceptance feature on our point-of-sale (POS) integrated order management system has stopped functioning. Previously, all incoming orders from our online delivery partners (Swiggy, Zomato, and our own app) were being automatically accepted and immediately routed to the kitchen display system (KDS) when store status was marked as 'accepting orders.' Now, all incoming orders are remaining in a 'pending acceptance' state in the order queue and require manual intervention to accept each order individually. This has resulted in a 12-15 minute delay in order preparation and kitchen staff are now manually clicking to accept each order, creating operational bottlenecks during peak hours. We have verified that: (1) store status is correctly set to 'accepting orders' in the admin dashboard, (2) internet connectivity is stable (no packet loss, latency 28ms average), (3) the POS system shows no error logs related to order routing, and (4) the Cisco SG350 network device is operational with no interface errors. The issue persists across all three online delivery partner integrations simultaneously, suggesting a configuration or backend connectivity problem rather than a partner-specific issue. Current business impact: approximately 35-40 orders processed since issue onset with manual acceptance adding significant delay.",
+  "asset_id": "RTR-0066-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "online-orders",
+    "order-acceptance"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-02T11:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Confirmed store connectivity and verified POS system is online. Instructed submitter to check admin portal settings for auto-accept toggle. Will investigate backend order routing logs."
+    },
+    {
+      "timestamp": "2025-11-02T11:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial investigation shows auto-accept toggle is enabled in admin settings but orders not being auto-routed to KDS. Network connectivity test passed. Escalating to Level 2 for backend order routing diagnostics and POS integration verification."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

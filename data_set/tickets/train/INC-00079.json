@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00079",
+  "store_id": "SW-0087",
+  "store_name": "ServeWell - Jubilee Hills",
+  "submitted_by": "Deepa Patil",
+  "contact_phone": "+91-88648-49446",
+  "date_opened": "2026-03-10T11:42:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft serve machine PRN-0087-P1 fails to power on at Jubilee Hills outlet",
+  "description": "The soft serve ice cream machine (PRN-0087-P1) at ServeWell - Jubilee Hills store is not starting. When the power switch is turned on, there is no response—no lights, no sounds, and no cooling function. The machine has been idle since yesterday evening closing. We attempted a simple power reset by switching it off and on again, but the issue persists. This is impacting our service as we cannot dispense soft serve to customers. Immediate attention needed to restore machine functionality.",
+  "asset_id": "PRN-0087-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

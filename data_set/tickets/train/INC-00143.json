@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00143",
+  "store_id": "SW-0088",
+  "store_name": "ServeWell - Yelahanka",
+  "submitted_by": "Divya Chatterjee",
+  "contact_phone": "+91-92619-25389",
+  "date_opened": "2026-03-27T07:16:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "Soft serve machine PRN-0088-P1 fails to power on at Yelahanka location",
+  "description": "The soft serve machine (PRN-0088-P1) at ServeWell - Yelahanka is not responding to power-on attempts. Staff attempted to start the machine this morning for service preparation, but the unit shows no signs of power—no display, no compressor activation, or any audible response. The machine was last operational yesterday evening without reported issues. No error codes are visible on the control panel.",
+  "asset_id": "PRN-0088-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-27T07:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Advised submitter to check power outlet connection and circuit breaker status. Escalation flagged due to business impact on peak service hours."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

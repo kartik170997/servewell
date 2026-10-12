@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00147",
+  "store_id": "SW-0113",
+  "store_name": "ServeWell - Borivali",
+  "submitted_by": "Radha Chopra",
+  "contact_phone": "+91-99100-39949",
+  "date_opened": "2026-04-02T15:18:00+05:30",
+  "priority": "P2",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Epson TM-T88VI receipt printer not detected on POS system",
+  "description": "The receipt printer (PRN-0113-P1) at the Borivali store is not being recognized by the POS system. Staff attempted to print a test receipt this morning and received a device not found error. The printer appears to be powered on and connected via USB, but the system does not show it in the available devices list. This is impacting order processing as receipts cannot be printed.",
+  "asset_id": "PRN-0113-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-02T15:25:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed printer is powered on and USB cable is connected. Requested store staff to restart the POS terminal and retry printer detection."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

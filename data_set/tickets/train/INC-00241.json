@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00241",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Arjun Bose",
+  "contact_phone": "+91-82229-17923",
+  "date_opened": "2025-11-20T20:42:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Cash Drawer",
+  "subject": "Cash drawer unit on Terminal 1 unresponsive - no solenoid activation or status feedback",
+  "description": "The cash drawer attached to POS Terminal 1 (asset POS-0002-T1) has become completely unresponsive as of approximately 20:30 IST today. When attempting to open the drawer through the OrbitPOS v2.0 interface (End of Day/Cash Management module), the solenoid does not activate and no audible click or mechanical response is observed. The POS terminal displays no error message, and the drawer status in the software continues to show as 'Ready' despite physical non-responsiveness. This has directly impacted our evening service: three transaction batches were unable to complete their cash reconciliation, and our closing manager was forced to manually audit the physical drawer against register records (taking 45 minutes instead of the standard 12 minutes). The USB connection to the drawer unit appears secure with no loose cables or visible damage. The POS terminal itself is functioning normally for all other operations including payment processing and inventory management. We have already attempted: (1) soft restart of the POS terminal via system menu, (2) power cycle of the dedicated cash drawer unit by disconnecting and reconnecting the power supply for 30 seconds, (3) verification that the drawer lock mechanism is not physically jammed (manual override rod functions normally). The drawer remains unresponsive after all troubleshooting attempts.",
+  "asset_id": "POS-0002-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "cash-drawer"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-20T20:58:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed asset POS-0002-T1 is a standard ServeWell cash drawer unit. Submitter has completed all basic troubleshooting steps. Requested diagnostic logs from OrbitPOS v2.0 system to check for hardware communication errors."
+    },
+    {
+      "timestamp": "2025-11-20T21:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Diagnostic logs reviewed - no USB communication errors detected at software level. Device Manager shows drawer recognized by system but solenoid control commands are not being executed. Escalation recommended to hardware support team for solenoid or driver module inspection."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

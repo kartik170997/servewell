@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00142",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Manish Ghosh",
+  "contact_phone": "+91-74599-68487",
+  "date_opened": "2026-03-31T18:54:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration offline - orders not syncing to POS system",
+  "description": "The Zomato order integration at ServeWell Basavanagudi (SW-0109) has been non-functional since approximately 18:45 IST on 31-Mar-2026. New orders placed by customers on the Zomato platform are not appearing in our NetLink NL-3000 POS system (RTR-0109-01). We have verified the following: (1) The POS system itself is operational and processing walk-in/cash orders normally; (2) Zomato merchant dashboard shows orders are being placed but our kitchen display system receives no notification; (3) Network connectivity to the router is stable with no packet loss; (4) We attempted a soft restart of the POS terminal at 18:48 IST with no resolution; (5) We logged out and back into the Zomato integration settings without success. This is directly impacting revenue as we are unable to fulfill approximately 8-12 orders per hour that are being placed through Zomato. Customers are experiencing delayed fulfillment notifications and at-risk of cancellation. The store manager has instructed staff to manually check Zomato orders every 5 minutes as a temporary workaround, but this is unsustainable during peak hours.",
+  "asset_id": "RTR-0109-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-31T19:02:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed with Manish that Zomato orders are not syncing to POS. Advised to verify API credentials and check Zomato merchant portal status while we investigate backend connectivity."
+    },
+    {
+      "timestamp": "2026-03-31T19:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Performed diagnostic check on RTR-0109-01 system logs. No recent errors detected in integration module. Confirmed NetLink version is current. Issue appears to be external Zomato API or authentication-related rather than hardware failure. Ticket pending escalation to integration support team."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

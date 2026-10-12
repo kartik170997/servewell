@@ -193,7 +193,8 @@ def test_planner_maps_only_valid_source_aliases(client,providers,monkeypatch):
         'evidence':[{'id':'long-document-id:0@16000','document_id':'long-document-id','text':'Source text'}]}}
     def predicted(*args):
         context=args[-1]
-        assert context['allowed_citation_ids']==['S1']
+        # Evidence aliases plus the pinned procedure, which is citable for standard L1 steps.
+        assert context['allowed_citation_ids']==['S1',L.procedure_citation(t)]
         assert context['evidence'][0]['id']=='S1'
         return {'steps':[{'title':'Check','instructions':'Check source','expected_result':'Pass','citations':['S1']}],'document_id':'S1'}
     monkeypatch.setattr(L,'predict',predicted)

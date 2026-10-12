@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00174",
+  "store_id": "SW-0083",
+  "store_name": "ServeWell - Jogeshwari",
+  "submitted_by": "Rajan Roy",
+  "contact_phone": "+91-80444-64568",
+  "date_opened": "2025-11-16T15:37:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Portal Down",
+  "subject": "Online ordering portal not accessible at Jogeshwari location",
+  "description": "Customers unable to place orders through the online portal since this afternoon. Orders timing out and portal shows connection errors. Store staff cannot access the backend either to process pending orders.",
+  "asset_id": "PRN-0083-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "online-orders",
+    "portal-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

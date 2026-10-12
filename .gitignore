@@ -5,3 +5,5 @@ data/
 .venv/
 __pycache__/
 .pytest_cache/
+evaluation/*.log
+evaluation/results/smoke/

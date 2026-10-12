@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00313",
+  "store_id": "SW-0004",
+  "store_name": "ServeWell - Kondapur",
+  "submitted_by": "Sanjay Menon",
+  "contact_phone": "+91-95654-85821",
+  "date_opened": "2026-02-03T12:43:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Kitchen receipt printer PRN-0004-P1 not detected by StarMC Print system",
+  "description": "The kitchen receipt printer (Asset ID: PRN-0004-P1) at the Kondapur store has become undetectable by the StarMC Print v3.0 system since this morning at approximately 12:15 IST. The printer was functioning normally yesterday evening. When staff attempt to print orders from the POS terminal, the system displays error message: 'Printer PRN-0004-P1 not found on network.' The printer hardware itself powers on, shows no error lights, and has been rebooted twice without resolution. Network connectivity to the printer has been verified via ping from the store server (192.168.1.45 → 192.168.1.87 responding normally). StarMC Print application has been restarted and printer drivers have been reinstalled from the local driver cache. Print queue has been cleared. This is impacting kitchen operations as all order tickets must currently be printed manually, causing delays during peak service hours. Store manager estimates 15-20 minute delays in order fulfillment. No recent Windows updates or network changes occurred prior to this issue.",
+  "asset_id": "PRN-0004-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-03T13:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed basic troubleshooting steps already completed by submitter (reboot, driver reinstall, queue clear). Network connectivity to printer verified. Escalation to L2 hardware team recommended due to persistence after standard remediation."
+    },
+    {
+      "timestamp": "2026-02-03T13:22:00+05:30",
+      "actor": "System",
+      "note": "Diagnostic logs collected from StarMC Print system and stored in case repository INC-00313-DIAG. Printer MAC address 00:1A:7D:4F:89:C2 identified in network scan but not responding to device-specific queries."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

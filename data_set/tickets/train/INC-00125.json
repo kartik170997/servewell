@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00125",
+  "store_id": "SW-0116",
+  "store_name": "ServeWell - Jayanagar",
+  "submitted_by": "Sunil Patel",
+  "contact_phone": "+91-97348-58393",
+  "date_opened": "2026-04-13T11:10:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty points not syncing to customer accounts at Jayanagar",
+  "description": "Customers are not receiving loyalty points after transactions on the main counter terminal. Points are being deducted from our backend but not showing in member accounts. This started around 10:30 AM today. Need urgent fix.",
+  "asset_id": "POS-0116-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

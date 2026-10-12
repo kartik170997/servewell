@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00144",
+  "store_id": "SW-0055",
+  "store_name": "ServeWell - Sarjapur",
+  "submitted_by": "Archana Mishra",
+  "contact_phone": "+91-77882-84798",
+  "date_opened": "2025-11-29T20:57:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connection failing on RTR-0055-01 at Sarjapur store",
+  "description": "The VPN tunnel on our NetLink NL-3000 router has stopped connecting since this evening. Staff cannot access the central POS inventory system and corporate applications. The router is powered on and other network services appear functional, but VPN authentication is timing out. We've restarted the router once without success. This is affecting store operations and we need urgent connectivity restoration to process orders.",
+  "asset_id": "RTR-0055-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

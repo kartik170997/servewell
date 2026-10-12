@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00262",
+  "store_id": "SW-0038",
+  "store_name": "ServeWell - Nehru Place",
+  "submitted_by": "Meena Ghosh",
+  "contact_phone": "+91-99496-99037",
+  "date_opened": "2025-12-23T19:03:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Software Crash",
+  "subject": "StarMC Print kiosk entering repeated crash loop on order screen",
+  "description": "The ordering kiosk PRN-0038-P1 at the Nehru Place location has begun crashing repeatedly whenever a customer attempts to place an order. The system displays the order menu briefly, then freezes and restarts. This cycle repeats continuously, making the kiosk unusable for customer transactions. Staff have attempted one restart of the device, but the crash loop persists. The system is running StarMC Print v3.0. This is impacting customer service during peak hours.",
+  "asset_id": "PRN-0038-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "kiosk",
+    "hardware",
+    "software-crash"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

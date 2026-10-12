@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00227",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Ravi Iyer",
+  "contact_phone": "+91-87183-29516",
+  "date_opened": "2026-02-14T07:01:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Not Detected",
+  "subject": "Epson Receipt Printer PRN-0056-P1 Not Detected on Network",
+  "description": "The Epson TM-T88VI receipt printer at the Kadugodi store is not being detected by the POS system. The printer was operational yesterday but failed to initialize this morning during opening. The device appears to be powered on (LED indicator visible), but no communication is established with the main counter workstation. We attempted a basic power cycle but the issue persists. This printer is critical for order receipts during peak hours.",
+  "asset_id": "PRN-0056-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "printer",
+    "hardware",
+    "not-detected"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

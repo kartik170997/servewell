@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00266",
+  "store_id": "SW-0090",
+  "store_name": "ServeWell - Sholinganallur",
+  "submitted_by": "Usha Nair",
+  "contact_phone": "+91-91421-95182",
+  "date_opened": "2026-04-08T15:16:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Cleaning Cycle",
+  "subject": "Soft serve machine cleaning cycle stuck - POS-0090-T1",
+  "description": "The soft serve machine at counter 1 is stuck mid-cleaning cycle. Started the cycle around 2:45 PM but it hasn't progressed past the rinse stage. Machine still running, not responding to stop button. Need urgent fix as evening rush approaching.",
+  "asset_id": "POS-0090-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "cleaning-cycle"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

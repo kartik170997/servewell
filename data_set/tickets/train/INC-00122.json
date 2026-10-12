@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00122",
+  "store_id": "SW-0086",
+  "store_name": "ServeWell - Velachery",
+  "submitted_by": "Pooja Sharma",
+  "contact_phone": "+91-93196-27984",
+  "date_opened": "2026-05-06T20:15:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Swiggy Down",
+  "subject": "Swiggy Integration Offline - RTR-0086-01 Not Syncing Orders Since 8:00 PM",
+  "description": "Swiggy online order integration has been completely down since approximately 8:00 PM IST on 2026-05-06. The NetLink NL-3000 v2.1 router (asset RTR-0086-01) is showing 'Swiggy API Connection Failed' errors in the POS system logs. New orders placed on Swiggy are not appearing in our KOT (Kitchen Order Tickets) system, and customers cannot track their orders. We have already verified that our internet connectivity is stable (10 Mbps download, 5 Mbps upload confirmed via speedtest), rebooted the router once at 8:45 PM without success, and confirmed the issue persists across both the POS terminal and mobile manager app. This is significantly impacting our evening revenue stream—we estimate we are losing approximately 12-15 orders per hour that cannot be fulfilled. We have not disabled the Swiggy channel and other payment methods remain functional. Immediate assistance required to restore the integration.",
+  "asset_id": "RTR-0086-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "online-orders",
+    "swiggy-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-05-06T20:22:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Confirmed store connectivity is active and POS system is operational. Recommended power cycle of router and request store manager to check Swiggy merchant dashboard for any platform-wide alerts."
+    },
+    {
+      "timestamp": "2026-05-06T20:35:15+05:30",
+      "actor": "L1 Agent",
+      "note": "Follow-up call completed with Pooja Sharma. Store confirmed router reboot already attempted without resolution. Escalation pending review of Swiggy API status and NetLink gateway logs on backend."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

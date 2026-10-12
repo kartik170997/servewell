@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00274",
+  "store_id": "SW-0049",
+  "store_name": "ServeWell - Tambaram",
+  "submitted_by": "Smita Mukherjee",
+  "contact_phone": "+91-75157-58503",
+  "date_opened": "2025-12-07T16:42:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi network down at Tambaram location",
+  "description": "Guest Wi-Fi network is completely offline at ServeWell - Tambaram store since approximately 4:30 PM today. Customers are unable to connect to the guest network SSID. The router (Cisco SG350) appears to be powered on with normal indicator lights, but no wireless signal is being broadcast. Basic power cycle has not been attempted yet. This is impacting customer experience during peak evening hours.",
+  "asset_id": "RTR-0049-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-07T16:45:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Requested store manager to verify router power status and check for any visible damage or loose cables before proceeding with remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

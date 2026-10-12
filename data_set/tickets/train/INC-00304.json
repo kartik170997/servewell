@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00304",
+  "store_id": "SW-0076",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Venkat Mishra",
+  "contact_phone": "+91-97705-70012",
+  "date_opened": "2026-02-26T08:16:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Machine Won't Start",
+  "subject": "FrostyPro 800 soft serve machine not powering on at Kukatpally",
+  "description": "The soft serve machine (SSM-0076-01) at ServeWell Kukatpally location failed to start this morning during opening procedures. When the power button is pressed, there is no response—no lights, no sounds, and no compressor activation. The machine was last operational yesterday evening. Staff have verified the wall outlet is functional by testing another appliance. No error codes are displayed as the unit is not receiving power.",
+  "asset_id": "SSM-0076-01",
+  "system_version": "FrostyPro 800 v1.8",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "machine-won't-start"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-02-26T08:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and assigned. Advised customer to check power cable connection and circuit breaker. Awaiting response on basic troubleshooting steps."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

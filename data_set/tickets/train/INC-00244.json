@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00244",
+  "store_id": "SW-0018",
+  "store_name": "ServeWell - Viman Nagar",
+  "submitted_by": "Archana Hegde",
+  "contact_phone": "+91-77840-41779",
+  "date_opened": "2026-02-22T17:16:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Swiggy Down",
+  "subject": "Swiggy integration not working - orders not syncing",
+  "description": "Swiggy orders stopped coming through around 5pm. POS system not pulling any new orders from the platform. Customers are able to place orders on Swiggy but we're not receiving them in the kitchen.",
+  "asset_id": "POS-0018-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "online-orders",
+    "swiggy-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

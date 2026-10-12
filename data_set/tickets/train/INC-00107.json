@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00107",
+  "store_id": "SW-0111",
+  "store_name": "ServeWell - Goregaon East",
+  "submitted_by": "Suresh Sharma",
+  "contact_phone": "+91-81738-41186",
+  "date_opened": "2026-04-02T07:17:00+05:30",
+  "priority": "P2",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS terminal losing network connectivity intermittently",
+  "description": "Terminal POS-0111-T1 keeps disconnecting from network every few minutes. Orders are getting stuck and customers are waiting. Need urgent fix to resume operations.",
+  "asset_id": "POS-0111-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

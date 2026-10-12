@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00004",
+  "store_id": "SW-0110",
+  "store_name": "ServeWell - Paschim Vihar",
+  "submitted_by": "Rajesh Shetty",
+  "contact_phone": "+91-93550-73956",
+  "date_opened": "2025-12-10T08:30:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "PIN Pad",
+  "subject": "PIN pad not responding on Terminal 1",
+  "description": "PIN pad on main counter terminal stopped accepting input this morning. Card transactions are pending. Customer queue building up. Needs urgent attention.",
+  "asset_id": "POS-0110-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "pin-pad"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

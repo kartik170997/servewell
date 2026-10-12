@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00150",
+  "store_id": "SW-0060",
+  "store_name": "ServeWell - Satellite",
+  "submitted_by": "Swathi Tiwari",
+  "contact_phone": "+91-86479-79135",
+  "date_opened": "2025-12-30T15:15:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "Soft serve mix level alert triggered repeatedly on PRN-0060-P1",
+  "description": "The soft serve machine (PRN-0060-P1) at ServeWell - Satellite has been triggering persistent mix level low alerts since approximately 14:45 today, despite the mix reservoir appearing to have adequate product visually. The alert triggers intermittently every 3-5 minutes during active dispensing cycles, causing service disruptions during peak lunch hours. Machine continues to dispense product but with frequent warning notifications on the front display and accompanying audible alerts. This is impacting customer experience as staff must acknowledge the alert multiple times per service cycle. I have already verified: (1) mix container is filled to the marked line, (2) no visible leaks or blockages observed, (3) machine power cycled once without resolution. The sensor may require recalibration or cleaning, or there could be an issue with the level detection mechanism itself. As we serve approximately 350-400 customers daily during peak hours, continued disruptions may force temporary machine shutdown.",
+  "asset_id": "PRN-0060-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-30T15:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Initial intake completed. Confirmed asset PRN-0060-P1 is operational but alerts persisting. Advised submitter to document alert frequency and check sensor connector for loose connections. Escalation flagged due to ongoing service impact."
+    },
+    {
+      "timestamp": "2025-12-30T16:05:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Submitter confirmed sensor connector is secure. Mix level sensor may require professional cleaning or replacement. Ticket escalated to L2 technical team for remote diagnostics and potential dispatch scheduling."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

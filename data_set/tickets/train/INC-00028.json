@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00028",
+  "store_id": "SW-0044",
+  "store_name": "ServeWell - Howrah",
+  "submitted_by": "Nandini Trivedi",
+  "contact_phone": "+91-90916-72355",
+  "date_opened": "2026-01-15T11:58:00+05:30",
+  "priority": "P1",
+  "category": "Online Orders",
+  "subcategory": "Zomato Down",
+  "subject": "Zomato integration down - orders not syncing to POS",
+  "description": "The Zomato integration on our NetLink router has been offline since approximately 11:45 AM. No new orders from Zomato are appearing in the POS system, and we are unable to confirm or reject incoming orders. Customers are placing orders through the Zomato app but our kitchen cannot process them. We have attempted a basic restart of the system without resolution.",
+  "asset_id": "RTR-0044-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "online-orders",
+    "zomato-down"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-15T12:02:30+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Confirmed Zomato integration status showing offline on RTR-0044-01. Escalating to Network team for immediate investigation."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

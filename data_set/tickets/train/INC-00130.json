@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00130",
+  "store_id": "SW-0029",
+  "store_name": "ServeWell - Banashankari",
+  "submitted_by": "Rajesh Kumar",
+  "contact_phone": "+91-95281-46170",
+  "date_opened": "2025-11-09T11:38:00+05:30",
+  "priority": "P4",
+  "category": "POS",
+  "subcategory": "Network Connectivity",
+  "subject": "POS Terminal T1 unresponsive - unable to process orders since 11:15 AM",
+  "description": "POS terminal INC-00130 (Banashankari location) became completely unresponsive at approximately 11:15 AM. The terminal displays no error message but is frozen on the last transaction screen. No network activity lights visible on the terminal. Attempted to restart the POS machine twice—no change. Restarted the terminal completely using power cycle; terminal boots normally but immediately loses all connectivity. Cannot access the OrbitPOS management interface remotely. All other devices in the store (back office computer, kitchen display system) are also unable to access the internet. WiFi network name is visible but clients cannot authenticate or obtain IP addresses. Ethernet cable connections appear physically intact. Store manager reports that internet was working normally until 11:10 AM, then dropped suddenly. No configuration changes made to POS system in the past 24 hours. Business impact: Unable to process customer orders; 6 customers currently waiting. Estimated revenue loss of ₹2,500+ per hour if not resolved. Asset details confirmed: POS-0029-T1, OrbitPOS v2.0, last updated 2025-10-28.",
+  "asset_id": "POS-0029-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "pos",
+    "network-connectivity"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-11-09T11:45:30+05:30",
+      "actor": "L1 Agent - Vikram",
+      "note": "Ticket received and reviewed. Initial assessment suggests POS terminal malfunction. Recommended store manager check power connections and perform additional restart; advised to call back after 15 minutes if issue persists."
+    },
+    {
+      "timestamp": "2025-11-09T12:02:15+05:30",
+      "actor": "L1 Agent - Priya",
+      "note": "Follow-up call received from store manager confirming all other store devices offline. Escalation required - appears to be network infrastructure issue rather than isolated POS failure. Forwarding to Network team immediately."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

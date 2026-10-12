@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00083",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Shobha Singh",
+  "contact_phone": "+91-88840-39837",
+  "date_opened": "2026-04-15T20:04:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Terminal Startup",
+  "subject": "POS Terminal T2 fails to boot - stuck on splash screen",
+  "description": "Terminal 2 won't start up. Keeps showing splash screen and nothing happens. Tried power cycling once but same issue. Need this fixed urgently for dinner rush.",
+  "asset_id": "POS-0023-T2",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "pos",
+    "terminal-startup"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

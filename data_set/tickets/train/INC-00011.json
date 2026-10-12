@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00011",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Rohit Roy",
+  "contact_phone": "+91-84056-40079",
+  "date_opened": "2026-04-18T09:57:00+05:30",
+  "priority": "P4",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "Terminal 3 unable to obtain IP address - DHCP pool exhausted",
+  "description": "Terminal 3 at the order counter has been unable to acquire a valid IP address since this morning. The device shows \"No DHCP lease\" error and cannot connect to the network. The kitchen display system and other terminals are functioning normally. We suspect the DHCP pool may be exhausted due to multiple devices attempting to reconnect after yesterday's brief power fluctuation.",
+  "asset_id": "POS-9791-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "dhcp"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-18T10:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Initial diagnostic suggests DHCP server may need pool expansion or device lease timeout review. Escalating to Network team for DHCP configuration audit."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

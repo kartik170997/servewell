@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00037",
+  "store_id": "SW-0037",
+  "store_name": "ServeWell - Nagarbhavi",
+  "submitted_by": "Rohit Agarwal",
+  "contact_phone": "+91-91688-73788",
+  "date_opened": "2026-03-05T14:13:00+05:30",
+  "priority": "P2",
+  "category": "Soft Serve",
+  "subcategory": "Mix Low Alert",
+  "subject": "Soft serve mix level low alert on RTR-0037-01",
+  "description": "Getting a mix low alert on the soft serve machine. Still dispensing but want to know if we need to refill now or can wait till evening. Machine is NetLink NL-3000 v2.2.",
+  "asset_id": "RTR-0037-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "mix-low-alert"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

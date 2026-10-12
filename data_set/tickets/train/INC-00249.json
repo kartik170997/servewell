@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00249",
+  "store_id": "SW-0086",
+  "store_name": "ServeWell - Velachery",
+  "submitted_by": "Geetha Hegde",
+  "contact_phone": "+91-76563-77861",
+  "date_opened": "2026-04-22T07:23:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN connectivity failure - unable to access remote payroll portal",
+  "description": "Good morning, I am unable to connect to the VPN from my workstation at ServeWell - Velachery. When I attempt to launch the NetLink VPN client and enter my credentials, the connection fails with error code 0x80070005 (Access Denied). I have tried clearing the VPN cache, restarting the router (RTR-0086-01), and reinstalling the VPN client software, but the issue persists. This is blocking my access to the HR payroll portal where I need to verify my salary statement and review my shift hours for the month of April. I was told my salary deposit was processed, but the amount appears incorrect, and I cannot log in to check the detailed breakdown or raise a payroll correction request. The business impact is high as this is time-sensitive—our store payroll runs monthly and I need to submit any discrepancy reports by end of week. Please escalate this to the network team urgently so I can access my payroll records.",
+  "asset_id": "RTR-0086-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "vpn"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-22T08:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and categorized under VPN/Network. Initial assessment suggests potential router configuration issue. Advised user to check VPN client logs and confirm network connectivity to gateway server. Transferred to Network Operations team for further investigation."
+    },
+    {
+      "timestamp": "2026-04-22T09:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Follow-up call made. User clarified that the core issue is inability to access HR payroll portal and verify salary deposit. Realized actual issue is HR/payroll-related, not network. Ticket misdirected—user needs to contact HR department for salary discrepancy investigation. VPN credentials verified as active in directory."
+    }
+  ],
+  "resolution_notes": "Issue was user credentials related to HR portal access, not VPN/network infrastructure. VPN connectivity confirmed operational. User was redirected to HR department (ticket reassigned to INC-00250 under HR/Payroll category) to investigate salary discrepancy and shift hour reconciliation. Network asset RTR-0086-01 verified healthy.",
+  "status": "Closed"
+}

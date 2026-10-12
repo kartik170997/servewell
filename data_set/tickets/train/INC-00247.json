@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00247",
+  "store_id": "SW-0074",
+  "store_name": "ServeWell - South Extension",
+  "submitted_by": "Geetha Mishra",
+  "contact_phone": "+91-95331-29198",
+  "date_opened": "2026-04-26T18:31:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "Soft-serve machine PRN-0074-P2 producing excessively hard/frozen product",
+  "description": "The soft-serve machine (asset PRN-0074-P2, Epson TM-T88VI v1.12) at South Extension store has been dispensing product that is significantly overcooled and too hard for consumption since approximately 17:45 hours today (26 April 2026). Customers have complained that the soft-serve is nearly frozen solid and difficult to consume. The machine's temperature display shows -8°C, which is 3–4 degrees colder than the standard operating range of -4°C to -5°C. We have attempted the following troubleshooting steps: (1) powered off the unit for 5 minutes and restarted it; (2) checked the thermostat dial setting—it appears to be in the correct position; (3) verified that the refrigerant lines are not visibly kinked or obstructed. The issue persists after these attempts. This is affecting customer satisfaction and product quality during peak evening service. We have temporarily suspended soft-serve sales to prevent further customer complaints. Request urgent inspection and calibration of the temperature control system.",
+  "asset_id": "PRN-0074-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-04-26T18:45:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Confirmed asset details and store location. Basic troubleshooting steps already attempted by submitter appear sound; escalating to Equipment Support team for thermostat calibration and coolant system inspection."
+    },
+    {
+      "timestamp": "2026-04-26T19:12:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Assigned to Equipment Maintenance queue. Recommended that store maintain product suspension until technician inspection completes to avoid further customer dissatisfaction."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

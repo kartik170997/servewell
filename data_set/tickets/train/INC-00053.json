@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00053",
+  "store_id": "SW-0031",
+  "store_name": "ServeWell - T Nagar",
+  "submitted_by": "Anjali Pandey",
+  "contact_phone": "+91-77357-13694",
+  "date_opened": "2025-11-24T21:14:00+05:30",
+  "priority": "P4",
+  "category": "Soft Serve",
+  "subcategory": "Dispensing Issue",
+  "subject": "Soft serve machine dispensing inconsistent portions",
+  "description": "RTR-0031-01 is dispensing irregular amounts—sometimes too much, sometimes too little. Happening randomly throughout the shift. Affecting customer orders and waste. Need urgent check.",
+  "asset_id": "RTR-0031-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "dispensing-issue"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

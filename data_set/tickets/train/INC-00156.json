@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00156",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Ravi Pillai",
+  "contact_phone": "+91-87360-41217",
+  "date_opened": "2025-12-30T15:22:00+05:30",
+  "priority": "P1",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Slow Network",
+  "subject": "Extremely slow internet at Basavanagudi store - impacting POS operations",
+  "description": "Internet connectivity at SW-0109 has been severely degraded since approximately 14:45 today. All connected POS terminals, kitchen display systems, and customer-facing devices are experiencing significant latency and frequent disconnections. Network speeds have dropped from normal 50 Mbps to approximately 2-3 Mbps, causing delays in order processing and payment transactions. The NetLink router (RTR-0109-01) is powered on but unresponsive to standard troubleshooting.",
+  "asset_id": "RTR-0109-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "network",
+    "connectivity",
+    "slow-network"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2025-12-30T15:28:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and acknowledged. Initial diagnostics show router is online but experiencing packet loss. Requested store manager to confirm if ISP line is active and check for physical cable disconnections."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

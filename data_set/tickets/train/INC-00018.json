@@ -1,0 +1,35 @@
+{
+  "ticket_id": "INC-00018",
+  "store_id": "SW-0001",
+  "store_name": "ServeWell - Banjara Hills",
+  "submitted_by": "Krishnan Mishra",
+  "contact_phone": "+91-80226-26899",
+  "date_opened": "2026-03-17T10:46:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS Terminal T1 intermittent network disconnections during peak service hours",
+  "description": "POS terminal T1 (located at counter 1, main ordering station) is experiencing intermittent network disconnections occurring approximately every 15-20 minutes, primarily during peak lunch and dinner service windows (12:00-14:00 and 19:00-21:30 IST). When disconnections occur, the terminal displays 'Network Unavailable' error and queues all transactions locally, which causes checkout delays and customer frustration. The terminal reconnects automatically after 3-5 minutes, but this pattern repeats throughout service hours. We have already verified: (1) WiFi signal strength is adequate (-55 dBm recorded), (2) ethernet cable connections are secure and functional, (3) network switch ports show no errors in LED status, (4) other terminals on the network (T2, T3, T4) are operating normally without connectivity issues, and (5) POS software version FoodTech v5.1.0 has been recently updated (2026-03-10) with no rollback attempted. Business impact: During peak hours today (17-Mar-2026), we experienced 8 disconnection events resulting in an estimated 12 minutes of cumulative downtime and customer queue backup at counter 1. Asset confirmed: POS-0001-T1 is a FoodTech terminal with Intel processor, 8GB RAM, 256GB SSD, manufactured 2024, last hardware maintenance on 2026-02-28.",
+  "asset_id": "POS-0001-T1",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-17T11:15:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and triaged. Initial assessment confirms POS-0001-T1 connectivity issue during peak hours. Remote diagnostics initiated; confirmed other terminals functioning normally. Scheduled for Level 2 network analysis."
+    },
+    {
+      "timestamp": "2026-03-17T11:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Requested detailed network logs from store; advised terminal restart and WiFi/ethernet failover testing. Awaiting store confirmation on whether issue persists post-restart."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

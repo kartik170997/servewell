@@ -1,0 +1,31 @@
+{
+  "ticket_id": "INC-00291",
+  "store_id": "SW-0111",
+  "store_name": "ServeWell - Goregaon East",
+  "submitted_by": "Rohit Joshi",
+  "contact_phone": "+91-85653-19283",
+  "date_opened": "2026-03-03T08:08:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Overcooling",
+  "subject": "FrostyPro 800 soft serve machine producing frozen product - overcooling issue",
+  "description": "The soft serve machine at Goregaon East location is dispensing product that is too frozen and hard, making it difficult for customers to consume. The machine appears to be running at a lower temperature than normal settings, resulting in a consistency closer to ice cream rather than soft serve. Staff have attempted basic temperature adjustment without improvement. This is impacting customer satisfaction and product quality.",
+  "asset_id": "SSM-0111-01",
+  "system_version": "FrostyPro 800 v2.0",
+  "tags": [
+    "soft-serve",
+    "equipment",
+    "overcooling"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-03-03T08:42:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket received and reviewed. Initial diagnosis suggests thermostat malfunction or refrigerant issue. Escalating to L2 technical team for remote diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

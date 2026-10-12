@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00129",
+  "store_id": "SW-0058",
+  "store_name": "ServeWell - OMR",
+  "submitted_by": "Sunita Pandey",
+  "contact_phone": "+91-97253-47627",
+  "date_opened": "2025-11-18T14:28:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Screen Frozen",
+  "subject": "POS Terminal T1 screen frozen - customer orders blocked",
+  "description": "The POS terminal at counter 1 (POS-0058-T1) has become unresponsive with the screen frozen on the order entry screen. The terminal is not accepting any keyboard or touchscreen input. Staff attempted a basic power cycle but the issue persists. This is affecting customer service as we cannot process orders on this terminal during peak lunch hours. The system appears to be running FoodTech POS v4.2.3.",
+  "asset_id": "POS-0058-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "screen-frozen"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket_id": "INC-00031",
+  "store_id": "SW-0100",
+  "store_name": "ServeWell - Wakad",
+  "submitted_by": "Anita Mukherjee",
+  "contact_phone": "+91-90677-33176",
+  "date_opened": "2025-12-22T12:26:00+05:30",
+  "priority": "P4",
+  "category": "Printers",
+  "subcategory": "Printer Offline",
+  "subject": "Kitchen receipt printer not responding",
+  "description": "The main kitchen receipt printer has gone offline and is not printing orders. Staff cannot process incoming orders without it.",
+  "asset_id": "PRN-0100-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "printer",
+    "hardware",
+    "printer-offline"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

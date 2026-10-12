@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00202",
+  "store_id": "SW-0091",
+  "store_name": "ServeWell - Chromepet",
+  "submitted_by": "Kiran Mehta",
+  "contact_phone": "+91-92741-49251",
+  "date_opened": "2025-12-31T17:43:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Network",
+  "subject": "POS Terminal T1 losing network connection intermittently",
+  "description": "POS terminal at counter 1 is disconnecting from the network periodically throughout the shift. Staff reports the terminal becomes unresponsive for a few minutes at a time.",
+  "asset_id": "POS-0091-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "pos",
+    "network"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

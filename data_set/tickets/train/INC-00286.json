@@ -1,0 +1,30 @@
+{
+  "ticket_id": "INC-00286",
+  "store_id": "SW-0072",
+  "store_name": "ServeWell - LB Nagar",
+  "submitted_by": "Pallavi Hegde",
+  "contact_phone": "+91-84038-86484",
+  "date_opened": "2026-01-20T10:41:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty program points not syncing to customer accounts",
+  "description": "Customers are reporting that loyalty points earned during transactions on 2026-01-19 are not appearing in their account balances. The POS terminal is processing transactions normally and generating receipts, but the loyalty sync module appears to be failing silently. This has affected approximately 15-20 customer transactions since yesterday evening. The issue persists across multiple customer accounts.",
+  "asset_id": "POS-0072-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "pos",
+    "loyalty-sync"
+  ],
+  "escalation_flag": true,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-20T10:52:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Ticket acknowledged. Verified that POS terminal hardware is operational and network connectivity is stable. Recommended store team to monitor next batch of transactions and confirm if issue persists."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

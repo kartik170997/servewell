@@ -1,0 +1,36 @@
+{
+  "ticket_id": "INC-00211",
+  "store_id": "SW-0006",
+  "store_name": "ServeWell - New Town",
+  "submitted_by": "Rajesh Kulkarni",
+  "contact_phone": "+91-71666-91968",
+  "date_opened": "2026-01-11T15:16:00+05:30",
+  "priority": "P2",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi completely down at ServeWell New Town location",
+  "description": "The guest Wi-Fi network at SW-0006 (ServeWell - New Town) has been completely non-functional since approximately 14:45 IST today. Customers are unable to connect to the 'ServeWell-Guest' SSID—the network does not appear in available networks list on any device tested (iPhone, Android, laptop). Initial troubleshooting performed: (1) Verified RTR-0006-01 (NetLink NL-3000 v2.1) power status—device is powered on with normal LED indicators; (2) Confirmed WAN connectivity is active and LAN network functioning normally; (3) Attempted router reboot via power cycle (held 30 seconds), network still not broadcasting; (4) Checked guest Wi-Fi SSID settings in admin panel—configuration appears intact but SSID broadcast flag status unknown due to restricted access. This impacts customer experience significantly as guests cannot access complimentary internet during their visit. Error messages observed: None specific; only absence of network availability. Business impact: Estimated 40-50 customers affected during lunch service window, potential negative online reviews.",
+  "asset_id": "RTR-0006-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "network",
+    "connectivity",
+    "guest-wi-fi"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-01-11T15:28:00+05:30",
+      "actor": "L1 Agent - Priya Sharma",
+      "note": "Ticket received and triaged. Confirmed guest Wi-Fi broadcast failure on RTR-0006-01. Requested remote access credentials from store manager to access router admin panel and check SSID broadcast settings and antenna status."
+    },
+    {
+      "timestamp": "2026-01-11T15:35:00+05:30",
+      "actor": "L1 Agent - Amit Verma",
+      "note": "Attempted remote connection to router but credentials not yet provided by store. Advised submitter to check if any recent power fluctuations or cable disconnections occurred. Escalation pending network admin availability for advanced diagnostics."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

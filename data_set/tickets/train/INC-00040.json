@@ -1,0 +1,24 @@
+{
+  "ticket_id": "INC-00040",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Sunita Gupta",
+  "contact_phone": "+91-86977-30056",
+  "date_opened": "2026-02-24T14:43:00+05:30",
+  "priority": "P4",
+  "category": "Online Orders",
+  "subcategory": "Menu Mismatch",
+  "subject": "Online menu showing discontinued items; customers ordering unavailable products",
+  "description": "The online ordering system for ServeWell - Kadugodi is displaying menu items that are no longer available at this location. Customers have placed orders for the Spiced Paneer Wrap and Classic Masala Fries, both of which were removed from our menu two weeks ago. This is causing customer complaints and order cancellations. The physical menu board at the store counter reflects the correct current offerings, but the online portal has not been updated. We need the menu synchronization checked between the POS system and the online ordering platform.",
+  "asset_id": "PRN-0056-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "online-orders",
+    "menu-mismatch"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}
