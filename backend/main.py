@@ -130,10 +130,12 @@ def initialize():
         c.executescript('''CREATE TABLE IF NOT EXISTS settings (id INTEGER PRIMARY KEY, value BLOB NOT NULL);
         CREATE TABLE IF NOT EXISTS documents (id TEXT PRIMARY KEY, hash TEXT UNIQUE, status TEXT, payload TEXT);
         CREATE TABLE IF NOT EXISTS chunks (id TEXT PRIMARY KEY, document_id TEXT, position INTEGER, text TEXT, page INTEGER);
-        CREATE VIRTUAL TABLE IF NOT EXISTS chunks_fts USING fts5(id UNINDEXED, text, tokenize='unicode61');''')
+        CREATE VIRTUAL TABLE IF NOT EXISTS raw_fts USING fts5(document_id UNINDEXED, page UNINDEXED, text, tokenize='unicode61');
+        DROP TABLE IF EXISTS chunks_fts;''')
         for row in c.execute("SELECT id,payload FROM documents WHERE status IN ('parsing','summarizing','embedding','indexing')").fetchall():
             d = json.loads(row['payload']); d['status'] = 'queued'; d['error'] = None
             c.execute('UPDATE documents SET status=?,payload=? WHERE id=?', ('queued', json.dumps(d), row['id']))
+    backfill_raw_index()
     observability.safe(observability.ticket_tracing.initialize,DATA)
     ticket_workflow.initialize()
     versioning.initialize(sys.modules[__name__])
@@ -347,6 +349,25 @@ def chunk_pages(pages, size, overlap):
             start=max(start+1,end-overlap)
     return output
 
+def index_raw(c, doc_id, pages, s):
+    # Lexical search runs over the original text; vectors stay on the summary.
+    c.execute('DELETE FROM raw_fts WHERE document_id=?',(doc_id,))
+    for chunk in chunk_pages(pages,s.chunk_chars,s.overlap_chars):
+        c.execute('INSERT INTO raw_fts VALUES (?,?,?)',(doc_id,chunk['page'],chunk['text']))
+
+def backfill_raw_index():
+    # Documents ingested before raw lexical indexing: rebuild from the stored upload, no provider calls.
+    with db() as c:
+        missing=[json.loads(r['payload']) for r in c.execute("SELECT payload FROM documents WHERE status='ready' AND id NOT IN (SELECT document_id FROM raw_fts)")]
+    if not missing: return
+    s=resolve_settings(saved_settings())
+    for d in missing:
+        path=DATA/'uploads'/d['id']; extension=d.get('extension') or Path(d.get('filename','')).suffix.lower()
+        if not path.exists() or extension not in EXTENSIONS: continue
+        try: pages,_=parse_file(path,extension)
+        except Exception: continue  # Never block startup; the document keeps vector search.
+        with db() as c: index_raw(c,d['id'],pages,s)
+
 @observability.traced('ingest','CHAIN')
 def ingest(doc_id):
     try:
@@ -355,19 +376,17 @@ def ingest(doc_id):
         pages,text=parse_file(DATA/'uploads'/doc_id,d['extension'])
         update_doc(doc_id,status='summarizing',progress=25)
         info=enrich(s,text)
-        # Keep the existing storage/API shape, but index only one whole-document summary.
+        # Keep the existing storage/API shape: one whole-document summary is the chunk and the vector.
         chunks=[{'text':info['summary'],'page':None}]
         with db() as c:
             old_ids=[r['id'] for r in c.execute('SELECT id FROM chunks WHERE document_id=?',(doc_id,)) if r['id']!=f'{doc_id}:0']
         for start in range(0,len(old_ids),100):
             pine(s,'/vectors/delete',{'namespace':d.get('namespace',s.namespace),'ids':old_ids[start:start+100]},index=True)
         with db() as c:
-            c.execute('DELETE FROM chunks_fts WHERE id IN (SELECT id FROM chunks WHERE document_id=?)',(doc_id,))
             c.execute('DELETE FROM chunks WHERE document_id=?',(doc_id,))
             for i,chunk in enumerate(chunks):
-                cid=f'{doc_id}:{i}'
-                c.execute('INSERT INTO chunks VALUES (?,?,?,?,?)',(cid,doc_id,i,chunk['text'],chunk['page']))
-                c.execute('INSERT INTO chunks_fts VALUES (?,?)',(cid,chunk['text']))
+                c.execute('INSERT INTO chunks VALUES (?,?,?,?,?)',(f'{doc_id}:{i}',doc_id,i,chunk['text'],chunk['page']))
+            index_raw(c,doc_id,pages,s)
         update_doc(doc_id,**info,chunk_count=len(chunks),page_count=len(pages) if d['extension']=='.pdf' else None,
             character_count=len(text),status='embedding',progress=45,models={'summary':s.claude_model,'embedding':s.embedding_model},
             namespace=s.namespace,indexing_mode='document_summary')
@@ -547,7 +566,7 @@ def delete(doc_id: str):
             for i in range(0,len(ids),100): pine(settings(),'/vectors/delete',{'ids':ids[i:i+100],'namespace':d.get('namespace',settings().namespace)},index=True)
         except ValueError as e: raise HTTPException(502,str(e)) from None
         with db() as c:
-            c.execute('DELETE FROM chunks_fts WHERE id IN (SELECT id FROM chunks WHERE document_id=?)',(doc_id,))
+            c.execute('DELETE FROM raw_fts WHERE document_id=?',(doc_id,))
             c.execute('DELETE FROM chunks WHERE document_id=?',(doc_id,))
             c.execute('UPDATE document_versions SET deleted_at=? WHERE document_id=?',(now(),doc_id))
             c.execute('DELETE FROM documents WHERE id=?',(doc_id,))
@@ -585,10 +604,15 @@ def search(body: Search):
             expr=' OR '.join('"'+w+'"' for w in terms[:40])
             if expr:
                 placeholders=','.join('?' for _ in docs)
-                rows=c.execute(f'''SELECT c.*,bm25(chunks_fts) AS rank FROM chunks_fts
-                  JOIN chunks c ON c.id=chunks_fts.id WHERE chunks_fts MATCH ? AND c.document_id IN ({placeholders})
-                  ORDER BY rank LIMIT ?''',(expr,*docs.keys(),body.candidates)).fetchall()
-                lexical=[{**dict(r),'score':-r['rank'],'sources':['lexical']} for r in rows]
+                rows=c.execute(f'''SELECT document_id,page,text,bm25(raw_fts) AS rank FROM raw_fts
+                  WHERE raw_fts MATCH ? AND document_id IN ({placeholders}) ORDER BY rank''',(expr,*docs.keys())).fetchall()
+                # Best raw-text passage per document, returned as that document's summary entry so
+                # lexical and vector hits fuse on the same id and citations stay unchanged.
+                for r in rows:
+                    if len(lexical)>=body.candidates: break
+                    if any(x['document_id']==r['document_id'] for x in lexical): continue
+                    entry=c.execute('SELECT * FROM chunks WHERE document_id=? ORDER BY position LIMIT 1',(r['document_id'],)).fetchone()
+                    if entry: lexical.append({**dict(entry),'score':-r['rank'],'sources':['lexical'],'matched_text':r['text'],'matched_page':r['page']})
         try:
             if body.mode in ('vector','hybrid'):
                 filters=[{'document_id':{'$in':list(docs)}}]

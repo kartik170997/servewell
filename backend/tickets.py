@@ -49,7 +49,7 @@ class Ticket(BaseModel):
     resolution_notes: str | None = Field(default=None, max_length=12000)
     status: Literal['Open','In Progress','Awaiting Customer','Escalated','Resolved','Closed'] = 'Open'
     escalation_info: dict = Field(default_factory=dict)
-    checklist_optional: bool = False
+    checklist_optional: bool = True
 
 
 class Turn(BaseModel):
@@ -389,7 +389,7 @@ def escalate(t, reason):
     if 'customer_escalation' in cl.get('overrides',[]) or 'customer_escalation' in cl.get('immediate_triggers',[]):
         w['manager_review_required']=True;recipient.append('it-manager@servewell.in')
     summary=f"{t['subject']}\n{reason}\nAsset: {t['asset_id'] or 'Missing'}\nStore: {t['store_name']}\nContact: {t['submitted_by']} {t['contact_phone']}\nPriority: {t['priority']}\nInformation: {json.dumps(t.get('escalation_info',{}))}\nConfirmed steps: {json.dumps(w.get('steps',[]))}\nMissing information: {', '.join(gaps) or 'None'}\nTicket: {t['ticket_id']}"
-    if t.get('checklist_optional'): summary+='\nChecklist policy: User selected Store ID only; other fields and minimum troubleshooting time optional.'
+    if t.get('checklist_optional'): summary+='\nChecklist policy: Store ID only; other fields and minimum troubleshooting time optional.'
     w['notification_draft']={'to':recipient,'subject':f"[ESCALATION] {t['ticket_id']} - {t['store_name']} - {t['priority']}",'body':summary,'sent':False}
     message='Escalated to the local L2 queue. '+reason+' Notification draft is ready; send it through your approved email tool.'
     if gaps: message+=' Collect missing information in parallel: '+', '.join(gaps)+'.'

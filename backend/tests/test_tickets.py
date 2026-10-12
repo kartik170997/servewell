@@ -68,7 +68,7 @@ def test_resolved_import_keeps_notes_and_blocks_agent(client):
 def test_immediate_trigger_precedes_exclusion_and_checklist(client,providers,monkeypatch):
     setup_agent(client,providers,monkeypatch,classification(immediate_triggers=['payment_failure'],do_not_escalate='third_party',intent='escalate'))
     monkeypatch.setattr(W,'decision',lambda *a:pytest.fail('Immediate escalation must not troubleshoot'))
-    providers.clear();t=ticket(client);r=ask(client,t);assert r.status_code==200,r.text
+    providers.clear();t=ticket(client,checklist_optional=False);r=ask(client,t);assert r.status_code==200,r.text
     t=r.json();assert t['status']=='Escalated' and t['priority']=='P1' and t['escalation_flag']
     assert t['workflow']['queue']=='L2 Support Team' and t['workflow']['missing_information']
     assert t['workflow']['notification_draft']['to']==['it-l2@servewell.in','oncall@servewell.in']

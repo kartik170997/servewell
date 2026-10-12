@@ -1,0 +1,726 @@
+{
+ "run": "first-turn-5pc",
+ "set": "all",
+ "generated_at": "2026-10-12T14:02:36+00:00",
+ "baselines": {
+  "dev": {
+   "always_escalate": {
+    "n": 155,
+    "tp": 103,
+    "fp": 52,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.6645161290322581,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.6645161290322581,
+    "f1": 0.7984496124031008,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "never_escalate": {
+    "n": 155,
+    "tp": 0,
+    "fp": 0,
+    "fn": 103,
+    "tn": 52,
+    "accuracy": 0.33548387096774196,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "ticket_escalation_flag": {
+    "n": 155,
+    "tp": 32,
+    "fp": 3,
+    "fn": 71,
+    "tn": 49,
+    "accuracy": 0.5225806451612903,
+    "recall": 0.3106796116504854,
+    "specificity": 0.9423076923076923,
+    "precision": 0.9142857142857143,
+    "f1": 0.46376811594202894,
+    "balanced_accuracy": 0.6264936519790889,
+    "missed_escalation_rate": 0.6893203883495146,
+    "unnecessary_escalation_rate": 0.057692307692307696
+   },
+   "has_prior_troubleshooting": {
+    "n": 155,
+    "tp": 81,
+    "fp": 15,
+    "fn": 22,
+    "tn": 37,
+    "accuracy": 0.7612903225806451,
+    "recall": 0.7864077669902912,
+    "specificity": 0.7115384615384616,
+    "precision": 0.84375,
+    "f1": 0.8140703517587939,
+    "balanced_accuracy": 0.7489731142643764,
+    "missed_escalation_rate": 0.21359223300970873,
+    "unnecessary_escalation_rate": 0.28846153846153844
+   },
+   "p1_or_p2": {
+    "n": 155,
+    "tp": 42,
+    "fp": 16,
+    "fn": 61,
+    "tn": 36,
+    "accuracy": 0.5032258064516129,
+    "recall": 0.4077669902912621,
+    "specificity": 0.6923076923076923,
+    "precision": 0.7241379310344828,
+    "f1": 0.5217391304347826,
+    "balanced_accuracy": 0.5500373412994772,
+    "missed_escalation_rate": 0.5922330097087378,
+    "unnecessary_escalation_rate": 0.3076923076923077
+   }
+  },
+  "holdout": {
+   "always_escalate": {
+    "n": 65,
+    "tp": 43,
+    "fp": 22,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.6615384615384615,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.6615384615384615,
+    "f1": 0.7962962962962964,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "never_escalate": {
+    "n": 65,
+    "tp": 0,
+    "fp": 0,
+    "fn": 43,
+    "tn": 22,
+    "accuracy": 0.3384615384615385,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "ticket_escalation_flag": {
+    "n": 65,
+    "tp": 15,
+    "fp": 4,
+    "fn": 28,
+    "tn": 18,
+    "accuracy": 0.5076923076923077,
+    "recall": 0.3488372093023256,
+    "specificity": 0.8181818181818182,
+    "precision": 0.7894736842105263,
+    "f1": 0.48387096774193555,
+    "balanced_accuracy": 0.5835095137420719,
+    "missed_escalation_rate": 0.6511627906976745,
+    "unnecessary_escalation_rate": 0.18181818181818182
+   },
+   "has_prior_troubleshooting": {
+    "n": 65,
+    "tp": 28,
+    "fp": 3,
+    "fn": 15,
+    "tn": 19,
+    "accuracy": 0.7230769230769231,
+    "recall": 0.6511627906976745,
+    "specificity": 0.8636363636363636,
+    "precision": 0.9032258064516129,
+    "f1": 0.7567567567567568,
+    "balanced_accuracy": 0.757399577167019,
+    "missed_escalation_rate": 0.3488372093023256,
+    "unnecessary_escalation_rate": 0.13636363636363635
+   },
+   "p1_or_p2": {
+    "n": 65,
+    "tp": 10,
+    "fp": 2,
+    "fn": 33,
+    "tn": 20,
+    "accuracy": 0.46153846153846156,
+    "recall": 0.23255813953488372,
+    "specificity": 0.9090909090909091,
+    "precision": 0.8333333333333334,
+    "f1": 0.3636363636363636,
+    "balanced_accuracy": 0.5708245243128964,
+    "missed_escalation_rate": 0.7674418604651163,
+    "unnecessary_escalation_rate": 0.09090909090909091
+   }
+  }
+ },
+ "workflow": {
+  "tickets": 30,
+  "errors": 0,
+  "error_messages": [],
+  "routing_confusion": {
+   "l1_guided -> l1_guided": 10,
+   "l1_guided -> l2_escalation": 3,
+   "l1_guided -> needs_clarification": 2,
+   "l2_escalation -> l1_guided": 13,
+   "l2_escalation -> l2_escalation": 2
+  },
+  "escalation_first_turn": {
+   "n": 30,
+   "tp": 3,
+   "fp": 2,
+   "fn": 13,
+   "tn": 12,
+   "accuracy": 0.5,
+   "recall": 0.1875,
+   "specificity": 0.8571428571428571,
+   "precision": 0.6,
+   "f1": 0.2857142857142857,
+   "balanced_accuracy": 0.5223214285714286,
+   "missed_escalation_rate": 0.8125,
+   "unnecessary_escalation_rate": 0.14285714285714285
+  },
+  "escalation_intent": {
+   "n": 30,
+   "tp": 3,
+   "fp": 2,
+   "fn": 13,
+   "tn": 12,
+   "accuracy": 0.5,
+   "recall": 0.1875,
+   "specificity": 0.8571428571428571,
+   "precision": 0.6,
+   "f1": 0.2857142857142857,
+   "balanced_accuracy": 0.5223214285714286,
+   "missed_escalation_rate": 0.8125,
+   "unnecessary_escalation_rate": 0.14285714285714285
+  },
+  "baselines_same_tickets": {
+   "always_escalate": {
+    "n": 30,
+    "tp": 16,
+    "fp": 14,
+    "fn": 0,
+    "tn": 0,
+    "accuracy": 0.5333333333333333,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "precision": 0.5333333333333333,
+    "f1": 0.6956521739130436,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 0.0,
+    "unnecessary_escalation_rate": 1.0
+   },
+   "ticket_escalation_flag": {
+    "n": 30,
+    "tp": 3,
+    "fp": 3,
+    "fn": 13,
+    "tn": 11,
+    "accuracy": 0.4666666666666667,
+    "recall": 0.1875,
+    "specificity": 0.7857142857142857,
+    "precision": 0.5,
+    "f1": 0.2727272727272727,
+    "balanced_accuracy": 0.48660714285714285,
+    "missed_escalation_rate": 0.8125,
+    "unnecessary_escalation_rate": 0.21428571428571427
+   },
+   "has_prior_troubleshooting": {
+    "n": 30,
+    "tp": 10,
+    "fp": 3,
+    "fn": 6,
+    "tn": 11,
+    "accuracy": 0.7,
+    "recall": 0.625,
+    "specificity": 0.7857142857142857,
+    "precision": 0.7692307692307693,
+    "f1": 0.6896551724137931,
+    "balanced_accuracy": 0.7053571428571428,
+    "missed_escalation_rate": 0.375,
+    "unnecessary_escalation_rate": 0.21428571428571427
+   }
+  },
+  "escalation_by_history": {
+   "history=True": {
+    "n": 13,
+    "tp": 2,
+    "fp": 0,
+    "fn": 8,
+    "tn": 3,
+    "accuracy": 0.38461538461538464,
+    "recall": 0.2,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.33333333333333337,
+    "balanced_accuracy": 0.6,
+    "missed_escalation_rate": 0.8,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "history=False": {
+    "n": 17,
+    "tp": 1,
+    "fp": 2,
+    "fn": 5,
+    "tn": 9,
+    "accuracy": 0.5882352941176471,
+    "recall": 0.16666666666666666,
+    "specificity": 0.8181818181818182,
+    "precision": 0.3333333333333333,
+    "f1": 0.2222222222222222,
+    "balanced_accuracy": 0.49242424242424243,
+    "missed_escalation_rate": 0.8333333333333334,
+    "unnecessary_escalation_rate": 0.18181818181818182
+   }
+  },
+  "escalation_by_category": {
+   "Kiosks": {
+    "n": 5,
+    "tp": 1,
+    "fp": 0,
+    "fn": 2,
+    "tn": 2,
+    "accuracy": 0.6,
+    "recall": 0.3333333333333333,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.5,
+    "balanced_accuracy": 0.6666666666666666,
+    "missed_escalation_rate": 0.6666666666666666,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Online Orders": {
+    "n": 5,
+    "tp": 1,
+    "fp": 1,
+    "fn": 2,
+    "tn": 1,
+    "accuracy": 0.4,
+    "recall": 0.3333333333333333,
+    "specificity": 0.5,
+    "precision": 0.5,
+    "f1": 0.4,
+    "balanced_accuracy": 0.41666666666666663,
+    "missed_escalation_rate": 0.6666666666666666,
+    "unnecessary_escalation_rate": 0.5
+   },
+   "POS": {
+    "n": 5,
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "tn": 2,
+    "accuracy": 0.4,
+    "recall": 0.0,
+    "specificity": 0.6666666666666666,
+    "precision": 0.0,
+    "f1": null,
+    "balanced_accuracy": 0.3333333333333333,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.3333333333333333
+   },
+   "Printers": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "tn": 3,
+    "accuracy": 0.6,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Soft Serve": {
+    "n": 5,
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "tn": 2,
+    "accuracy": 0.4,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "f1": null,
+    "balanced_accuracy": 0.5,
+    "missed_escalation_rate": 1.0,
+    "unnecessary_escalation_rate": 0.0
+   },
+   "Wi-Fi / Network": {
+    "n": 5,
+    "tp": 1,
+    "fp": 0,
+    "fn": 2,
+    "tn": 2,
+    "accuracy": 0.6,
+    "recall": 0.3333333333333333,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.5,
+    "balanced_accuracy": 0.6666666666666666,
+    "missed_escalation_rate": 0.6666666666666666,
+    "unnecessary_escalation_rate": 0.0
+   }
+  },
+  "priority_matches_intake": 0.3333333333333333,
+  "label_fields": {
+   "overall": {
+    "n": 30,
+    "correct_routing": 0.4,
+    "kb_recall@5": 0.5381746031746032,
+    "kb_hit@5": 0.7666666666666667,
+    "should_escalate": 0.5,
+    "priority": 0.3333333333333333
+   },
+   "by_routing": {
+    "l1_guided": {
+     "n": 15,
+     "correct_routing": 0.6666666666666666,
+     "kb_recall@5": 0.5733333333333335,
+     "kb_hit@5": 0.8,
+     "should_escalate": 0.8666666666666667,
+     "priority": 0.3333333333333333
+    },
+    "l2_escalation": {
+     "n": 15,
+     "correct_routing": 0.13333333333333333,
+     "kb_recall@5": 0.503015873015873,
+     "kb_hit@5": 0.7333333333333333,
+     "should_escalate": 0.13333333333333333,
+     "priority": 0.3333333333333333
+    }
+   },
+   "by_category": {
+    "Kiosks": {
+     "n": 5,
+     "correct_routing": 0.2,
+     "kb_recall@5": 0.4666666666666666,
+     "kb_hit@5": 0.8,
+     "should_escalate": 0.6,
+     "priority": 0.2
+    },
+    "Online Orders": {
+     "n": 5,
+     "correct_routing": 0.4,
+     "kb_recall@5": 0.44571428571428573,
+     "kb_hit@5": 0.6,
+     "should_escalate": 0.4,
+     "priority": 0.2
+    },
+    "POS": {
+     "n": 5,
+     "correct_routing": 0.4,
+     "kb_recall@5": 0.2,
+     "kb_hit@5": 0.4,
+     "should_escalate": 0.4,
+     "priority": 0.2
+    },
+    "Printers": {
+     "n": 5,
+     "correct_routing": 0.6,
+     "kb_recall@5": 0.8300000000000001,
+     "kb_hit@5": 1.0,
+     "should_escalate": 0.6,
+     "priority": 0.2
+    },
+    "Soft Serve": {
+     "n": 5,
+     "correct_routing": 0.2,
+     "kb_recall@5": 0.6433333333333333,
+     "kb_hit@5": 1.0,
+     "should_escalate": 0.4,
+     "priority": 0.6
+    },
+    "Wi-Fi / Network": {
+     "n": 5,
+     "correct_routing": 0.6,
+     "kb_recall@5": 0.6433333333333333,
+     "kb_hit@5": 0.8,
+     "should_escalate": 0.6,
+     "priority": 0.6
+    }
+   },
+   "priority_confusion": {
+    "P2 -> P1": 3,
+    "P2 -> P2": 5,
+    "P2 -> P3": 2,
+    "P3 -> P1": 2,
+    "P3 -> P2": 2,
+    "P3 -> P3": 5,
+    "P4 -> P1": 1,
+    "P4 -> P2": 2,
+    "P4 -> P3": 8
+   },
+   "tickets": [
+    {
+     "ticket_id": "INC-00038",
+     "category": "Kiosks",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.6666666666666666
+    },
+    {
+     "ticket_id": "INC-00062",
+     "category": "Kiosks",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.75
+    },
+    {
+     "ticket_id": "INC-00056",
+     "category": "Kiosks",
+     "routing": "l1_guided -> l2_escalation",
+     "escalate": "True -> True",
+     "priority": "P2 -> P1",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00314",
+     "category": "Kiosks",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P2",
+     "kb_recall@5": 0.25
+    },
+    {
+     "ticket_id": "INC-00094",
+     "category": "Kiosks",
+     "routing": "l1_guided -> needs_clarification",
+     "escalate": "False -> False",
+     "priority": "P4 -> P2",
+     "kb_recall@5": 0.6666666666666666
+    },
+    {
+     "ticket_id": "INC-00020",
+     "category": "Online Orders",
+     "routing": "l2_escalation -> l2_escalation",
+     "escalate": "True -> True",
+     "priority": "P2 -> P1",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00040",
+     "category": "Online Orders",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 1.0
+    },
+    {
+     "ticket_id": "INC-00022",
+     "category": "Online Orders",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P2",
+     "kb_recall@5": 0.8
+    },
+    {
+     "ticket_id": "INC-00117",
+     "category": "Online Orders",
+     "routing": "l1_guided -> l2_escalation",
+     "escalate": "False -> True",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00023",
+     "category": "Online Orders",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P1",
+     "kb_recall@5": 0.42857142857142855
+    },
+    {
+     "ticket_id": "INC-00004",
+     "category": "POS",
+     "routing": "l1_guided -> l2_escalation",
+     "escalate": "False -> True",
+     "priority": "P3 -> P1",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00001",
+     "category": "POS",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00008",
+     "category": "POS",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P3 -> P2",
+     "kb_recall@5": 0.5
+    },
+    {
+     "ticket_id": "INC-00007",
+     "category": "POS",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P3 -> P3",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00015",
+     "category": "POS",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P3 -> P2",
+     "kb_recall@5": 0.5
+    },
+    {
+     "ticket_id": "INC-00029",
+     "category": "Printers",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P3 -> P3",
+     "kb_recall@5": 0.6
+    },
+    {
+     "ticket_id": "INC-00016",
+     "category": "Printers",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.8
+    },
+    {
+     "ticket_id": "INC-00031",
+     "category": "Printers",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P4 -> P1",
+     "kb_recall@5": 1.0
+    },
+    {
+     "ticket_id": "INC-00041",
+     "category": "Printers",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P2",
+     "kb_recall@5": 0.75
+    },
+    {
+     "ticket_id": "INC-00058",
+     "category": "Printers",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P2 -> P3",
+     "kb_recall@5": 1.0
+    },
+    {
+     "ticket_id": "INC-00026",
+     "category": "Soft Serve",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P3",
+     "kb_recall@5": 0.75
+    },
+    {
+     "ticket_id": "INC-00017",
+     "category": "Soft Serve",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P3 -> P3",
+     "kb_recall@5": 0.6666666666666666
+    },
+    {
+     "ticket_id": "INC-00053",
+     "category": "Soft Serve",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.8
+    },
+    {
+     "ticket_id": "INC-00021",
+     "category": "Soft Serve",
+     "routing": "l1_guided -> needs_clarification",
+     "escalate": "False -> False",
+     "priority": "P3 -> P3",
+     "kb_recall@5": 0.3333333333333333
+    },
+    {
+     "ticket_id": "INC-00079",
+     "category": "Soft Serve",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P2",
+     "kb_recall@5": 0.6666666666666666
+    },
+    {
+     "ticket_id": "INC-00012",
+     "category": "Wi-Fi / Network",
+     "routing": "l2_escalation -> l2_escalation",
+     "escalate": "True -> True",
+     "priority": "P3 -> P1",
+     "kb_recall@5": 0.0
+    },
+    {
+     "ticket_id": "INC-00081",
+     "category": "Wi-Fi / Network",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P2 -> P2",
+     "kb_recall@5": 0.6666666666666666
+    },
+    {
+     "ticket_id": "INC-00013",
+     "category": "Wi-Fi / Network",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P2 -> P2",
+     "kb_recall@5": 0.75
+    },
+    {
+     "ticket_id": "INC-00103",
+     "category": "Wi-Fi / Network",
+     "routing": "l1_guided -> l1_guided",
+     "escalate": "False -> False",
+     "priority": "P3 -> P3",
+     "kb_recall@5": 1.0
+    },
+    {
+     "ticket_id": "INC-00025",
+     "category": "Wi-Fi / Network",
+     "routing": "l2_escalation -> l1_guided",
+     "escalate": "True -> False",
+     "priority": "P4 -> P3",
+     "kb_recall@5": 0.8
+    }
+   ]
+  },
+  "agent_retrieval": {
+   "recall@5": 0.5381746031746032,
+   "hit@5": 0.7666666666666667,
+   "mrr": 0.7666666666666667
+  },
+  "grounding": {
+   "steps": 109,
+   "steps_with_citation": 1.0,
+   "steps_citing_a_labeled_relevant_doc": 0.7247706422018348
+  },
+  "latency_seconds": {
+   "p50": 76.9,
+   "p95": 84.3,
+   "max": 88.5
+  },
+  "judge": {
+   "labeled": null,
+   "adversarial": null,
+   "adversarial_by_type": {}
+  }
+ }
+}

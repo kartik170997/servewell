@@ -53,8 +53,8 @@ def write(path, data):
     path.write_text(json.dumps(data,indent=1,default=str),encoding='utf-8')
 
 
-def labeled(cases, name, limit=None, per_category=None):
-    return [cases[tid] for tid in dataset.select(cases,name,limit,per_category) if cases[tid]['label']]
+def labeled(cases, name, limit=None, per_category=None, first_turn_only=False):
+    return [cases[tid] for tid in dataset.select(cases,name,limit,per_category,first_turn_only) if cases[tid]['label']]
 
 
 # --- baselines -------------------------------------------------------------------------
@@ -86,14 +86,14 @@ def metadata_tags(ticket, assets, doc_tags):
     return sorted({tag for tag in doc_tags if tag.casefold() in desired})
 
 
-def retrieval(cases, http, name, limit, k, run, per_category=None):
+def retrieval(cases, http, name, limit, k, run, per_category=None, first_turn_only=False):
     assets={a['asset_id']:a for a in http.get('/api/ticket-directory/assets').raise_for_status().json()}
     docs=[d for d in http.get('/api/documents').raise_for_status().json() if d.get('status')=='ready']
     doc_tags={tag for d in docs for tag in d.get('tags',[])}
     out=RESULTS/run/'retrieval.json'
     rows=json.loads(out.read_text(encoding='utf-8')) if out.exists() else []
     done={r['ticket_id'] for r in rows}
-    for case in labeled(cases,name,limit,per_category):
+    for case in labeled(cases,name,limit,per_category,first_turn_only):
         t=case['ticket'];relevant=metrics.relevant_documents(case['label'])
         if not relevant or t['ticket_id'] in done: continue
         query=workflow_query(t,assets);tags=metadata_tags(t,assets,doc_tags)
@@ -174,10 +174,10 @@ def run_ticket(http, case, run):
         'escalation_reason':w.get('escalation_reason') or (w.get('notification_draft') or {}).get('subject')}
 
 
-def workflow(cases, http, name, limit, run, per_category=None):
+def workflow(cases, http, name, limit, run, per_category=None, first_turn_only=False):
     out=RESULTS/run/'workflow.jsonl';out.parent.mkdir(parents=True,exist_ok=True)
     done={json.loads(x)['ticket_id'] for x in out.read_text(encoding='utf-8').splitlines() if x.strip()} if out.exists() else set()
-    ids=dataset.select(cases,name,limit,per_category)
+    ids=dataset.select(cases,name,limit,per_category,first_turn_only)
     with out.open('a',encoding='utf-8') as f:
         for i,tid in enumerate(ids,1):
             if tid in done: continue
@@ -249,6 +249,23 @@ def judge(cases, run, model):
 
 # --- report ------------------------------------------------------------------------------
 
+def label_fields(scored):
+    """The four first-turn checks: routing, KB documents, escalation decision, priority."""
+    def stats(rows):
+        docs=[x for x in (metrics.retrieval(metrics.relevant_documents(r['label']),r['retrieved_files'],5) for r in rows) if x]
+        return {'n':len(rows),'correct_routing':sum(r['route']==r['label']['correct_routing'] for r in rows)/len(rows),
+                'kb_recall@5':metrics.mean(docs,'recall'),'kb_hit@5':metrics.mean(docs,'hit'),
+                'should_escalate':sum((r['route']=='l2_escalation')==r['label']['should_escalate'] for r in rows)/len(rows),
+                'priority':sum(r['priority']==r['intake_priority'] for r in rows)/len(rows)}
+    if not scored: return None
+    return {'overall':stats(scored),'by_routing':metrics.by([{**r,'label_routing':r['label']['correct_routing']} for r in scored],'label_routing',stats),
+            'by_category':metrics.by(scored,'category',stats),
+            'priority_confusion':metrics.confusion([(r['intake_priority'],r['priority']) for r in scored]),
+            'tickets':[{'ticket_id':r['ticket_id'],'category':r['category'],'routing':f"{r['label']['correct_routing']} -> {r['route']}",
+                        'escalate':f"{r['label']['should_escalate']} -> {r['route']=='l2_escalation'}",'priority':f"{r['intake_priority']} -> {r['priority']}",
+                        'kb_recall@5':(metrics.retrieval(metrics.relevant_documents(r['label']),r['retrieved_files'],5) or {}).get('recall')} for r in scored]}
+
+
 def summarize_workflow(records, judged):
     ok=[r for r in records if not r.get('error')];scored=[r for r in ok if r.get('label')]
     pairs=[(r['label']['should_escalate'],r['route']=='l2_escalation') for r in scored]
@@ -274,6 +291,7 @@ def summarize_workflow(records, judged):
         'escalation_by_history':{f'history={h}':metrics.binary([(r['label']['should_escalate'],r['route']=='l2_escalation') for r in scored if r['has_history']==h]) for h in (True,False)},
         'escalation_by_category':metrics.by(scored,'category',lambda g:metrics.binary([(r['label']['should_escalate'],r['route']=='l2_escalation') for r in g])),
         'priority_matches_intake':sum(r['priority']==r['intake_priority'] for r in ok)/len(ok) if ok else None,
+        'label_fields':label_fields(scored),
         'agent_retrieval':{'recall@5':metrics.mean([x for x in retrieval_rows if x],'recall'),'hit@5':metrics.mean([x for x in retrieval_rows if x],'hit'),'mrr':metrics.mean([x for x in retrieval_rows if x],'rr')},
         'grounding':{'steps':len(steps),'steps_with_citation':sum(bool(s['citations']) for s in steps)/len(steps) if steps else None,
                      'steps_citing_a_labeled_relevant_doc':sum(relevant_cited)/len(relevant_cited) if relevant_cited else None},
@@ -315,6 +333,14 @@ def markdown(summary):
             if j: lines.append(f"Judge ({name}, n={j['graded']}): PASS {pct(j['pass'])}, PARTIAL {pct(j['partial'])}, FAIL {pct(j['fail'])}; routing appropriate {pct(j['routing_appropriate'])}; grounded {pct(j['grounded'])}; repeats attempted steps {pct(j['repeats_attempted_steps'])}.")
         for k,j in (w['judge']['adversarial_by_type'] or {}).items():
             if j: lines.append(f"- {k}: n={j['graded']}, PASS {pct(j['pass'])}, FAIL {pct(j['fail'])}")
+        f=w.get('label_fields')
+        if f:
+            row=lambda name,m:f"| {name} | {m['n']} | {pct(m['correct_routing'])} | {pct(m['kb_recall@5'])} | {pct(m['kb_hit@5'])} | {pct(m['should_escalate'])} | {pct(m['priority'])} |"
+            lines+=['','## Label fields (first turn)','','| Group | n | correct_routing | relevant_kb_docs recall@5 | relevant_kb_docs hit@5 | should_escalate | priority |','|---|---|---|---|---|---|---|',
+                    row('overall',f['overall'])]+[row('label '+k,m) for k,m in f['by_routing'].items()]+[row(k,m) for k,m in f['by_category'].items()]
+            lines+=['','Priority (ticket -> agent):','']+[f"- {k}: {v}" for k,v in f['priority_confusion'].items()]
+            lines+=['','| Ticket | Category | Routing (label -> agent) | Escalate (label -> agent) | Priority (ticket -> agent) | KB recall@5 |','|---|---|---|---|---|---|']
+            lines+=[f"| {t['ticket_id']} | {t['category']} | {t['routing']} | {t['escalate']} | {t['priority']} | {pct(t['kb_recall@5'])} |" for t in f['tickets']]
         if w['error_messages']: lines+=['','Errors:','']+[f'- {m}' for m in w['error_messages']]
     return '\n'.join(lines)+'\n'
 
@@ -412,6 +438,7 @@ def main(argv=None):
     p.add_argument('--run',default=None,help='Results folder name under evaluation/results.')
     p.add_argument('--limit',type=int,default=None)
     p.add_argument('--per-category',type=int,default=None,help='Take only the first N tickets of each category.')
+    p.add_argument('--first-turn-only',action='store_true',help='Skip unlabeled tickets and L2 labels that need L1 troubleshooting first; balance routes per category.')
     p.add_argument('--k',type=int,default=5)
     p.add_argument('--base-url',default='http://localhost:8000')
     p.add_argument('--judge-model',default=ENV.get('EVAL_JUDGE_MODEL'))
@@ -422,10 +449,10 @@ def main(argv=None):
         s=dataset.split(cases);print({k:len(v) for k,v in s.items() if isinstance(v,list)})
     elif a.command=='baselines': print(json.dumps(baselines(cases),indent=1))
     elif a.command=='retrieval':
-        with client(a.base_url) as http: retrieval(cases,http,a.set,a.limit,a.k,run,a.per_category)
+        with client(a.base_url) as http: retrieval(cases,http,a.set,a.limit,a.k,run,a.per_category,a.first_turn_only)
         report(cases,run,a.set)
     elif a.command=='workflow':
-        with client(a.base_url) as http: workflow(cases,http,a.set,a.limit,run,a.per_category)
+        with client(a.base_url) as http: workflow(cases,http,a.set,a.limit,run,a.per_category,a.first_turn_only)
         report(cases,run,a.set)
     elif a.command=='judge':
         if not a.judge_model: sys.exit('Pass --judge-model or set EVAL_JUDGE_MODEL; use a different model from CLAUDE_MODEL to avoid self-grading.')

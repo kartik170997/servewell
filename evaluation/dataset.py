@@ -49,8 +49,27 @@ def split(cases=None):
     return result
 
 
-def select(cases, name, limit=None, per_category=None):
+def guided_then_escalated(label):
+    """L2 by label, but only after L1 troubleshooting fails: a first-turn harness cannot score these."""
+    return label['correct_routing']=='l2_escalation' and label['expected_agent_action']=='retrieve_runbook_and_guide'
+
+
+def select(cases, name, limit=None, per_category=None, first_turn_only=False):
     ids=list(cases) if name=='all' else split(cases)[name]
+    if first_turn_only:
+        # Labeled tickets whose correct route is decided on the first turn: L1-guided or immediate L2.
+        ids=[tid for tid in ids if cases[tid]['label'] and not guided_then_escalated(cases[tid]['label'])]
+        if per_category:
+            # Interleave routes inside each category, majority route first, so both are tested.
+            groups=defaultdict(lambda:defaultdict(list))
+            for tid in ids: groups[cases[tid]['ticket']['category']][cases[tid]['label']['correct_routing']].append(tid)
+            ids=[]
+            for category in sorted(groups):
+                routes=sorted(groups[category].values(),key=len,reverse=True);picked=[]
+                for i in range(max(map(len,routes))):
+                    picked+=[r[i] for r in routes if i<len(r)]
+                ids+=picked[:per_category]
+            return ids[:limit] if limit else ids
     if per_category:
         # A small, balanced slice: the first N tickets of each category in the fixed split.
         taken=defaultdict(int);chosen=[]

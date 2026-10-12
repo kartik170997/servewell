@@ -139,7 +139,7 @@ def test_ingestion_duplicate_search_filters_delete(client,providers):
     assert any(url.endswith('/vectors/delete') for url,body in providers)
     assert not client.get('/api/documents').json()
     assert client.get('/api/documents/'+doc).status_code==404
-    with main.db() as db: assert db.execute('SELECT count(*) FROM chunks_fts').fetchone()[0]==0
+    with main.db() as db: assert db.execute('SELECT count(*) FROM raw_fts').fetchone()[0]==0
 
 def test_failed_docs_invisible_retry_idempotent(client,providers,monkeypatch):
     configure(client);doc=add_doc(client)
@@ -241,7 +241,19 @@ def test_full_document_is_summarized_once_and_only_summary_is_embedded(client,pr
     upserts=[body for url,body in providers if url.endswith('/vectors/upsert')]
     assert len(upserts)==1 and len(upserts[0]['vectors'])==1
     assert upserts[0]['vectors'][0]['metadata']['text']==d['summary']
-    assert not client.post('/api/search',json={'query':'OriginalOnlyToken','mode':'lexical','rerank':False}).json()['results']
+    # Lexical search reads the original text, but still returns the summary entry for citation.
+    hits=client.post('/api/search',json={'query':'OriginalOnlyToken','mode':'lexical','rerank':False}).json()['results']
+    assert [h['id'] for h in hits]==[doc+':0'] and hits[0]['text']==d['summary']
+    assert 'OriginalOnlyToken' in hits[0]['matched_text']
+    assert not client.post('/api/search',json={'query':'Hybrid','mode':'lexical','rerank':False}).json()['results']
+
+def test_backfill_indexes_raw_text_of_existing_documents(client,providers):
+    configure(client); doc=add_doc(client,content=b'BackfillToken '+b'Legacy content. '*100); main.ingest(doc)
+    with main.db() as db: db.execute('DELETE FROM raw_fts')
+    assert not client.post('/api/search',json={'query':'BackfillToken','mode':'lexical','rerank':False}).json()['results']
+    providers.clear(); main.backfill_raw_index()
+    assert not providers
+    assert client.post('/api/search',json={'query':'BackfillToken','mode':'lexical','rerank':False}).json()['results'][0]['document_id']==doc
 
 
 @pytest.mark.parametrize('mode',['vector','hybrid'])
