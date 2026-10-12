@@ -80,18 +80,33 @@ def redact(value,source=None):
     return walk(value)
 
 
+def model_payload(value):
+    """Preserve ticket PII for workflow reasoning; strip credentials only."""
+    secrets=set(SECRETS)
+    def collect(v):
+        if isinstance(v,dict):
+            for k,x in v.items():
+                if str(k).lower() in SECRET_FIELDS and isinstance(x,str) and x: secrets.add(x)
+                collect(x)
+        elif isinstance(v,(list,tuple)):
+            for x in v: collect(x)
+    collect(value)
+    def walk(v):
+        v=as_data(v)
+        if isinstance(v,dict): return {k:'[redacted]' if str(k).lower() in SECRET_FIELDS else walk(x) for k,x in v.items()}
+        if isinstance(v,(list,tuple)): return [walk(x) for x in v]
+        if isinstance(v,str):
+            for secret in sorted(secrets,key=len,reverse=True): v=v.replace(secret,'[redacted]')
+            v=re.sub(r'(?i)\bBearer\s+[^\s"\']+','Bearer [redacted]',v)
+            v=re.sub(r'\bsk-[A-Za-z0-9_-]{12,}','[redacted]',v)
+            v=re.sub(r'(?i)\b(api[_ -]?key|password|secret|access[_ -]?token)\s*[:=]\s*[^\s,;]+',r'\1=[redacted]',v)
+        return v
+    return walk(value)
+
+
 def ticket_context(t,task='classify'):
-    result={k:t[k] for k in TICKET_FIELDS if k in t}
-    result['asset_details']={k:v for k,v in t.get('asset_details',{}).items() if k in {'asset_type','make','model','system_version'}}
-    result['store_details']={k:v for k,v in t.get('store_details',{}).items() if k in {'store_type','service_hours','business_hours','timezone'}}
-    info=t.get('escalation_info',{})
-    result['escalation_info']={k:v for k,v in info.items() if k in CHECKLIST_FIELDS}
-    result['contact_information_present']={k:bool(t.get(k) and t[k]!='Not provided') for k in ('submitted_by','contact_phone')}
-    result['contact_information_present']['store_address']=bool(info.get('store_address'))
-    # Confirmed steps are supplied explicitly by planning/feedback. Arbitrary history is omitted.
-    if task=='information':
-        result={k:v for k,v in result.items() if k in {'ticket_id','store_id','asset_id','system_version','procedure_ref','contact_information_present'}}
-    return redact(result,t)
+    fields=TICKET_FIELDS|PERSONAL_FIELDS|{'asset_details','store_details','escalation_info','ticket_history','resolution_notes'}
+    return model_payload({k:t[k] for k in fields if k in t})
 
 
 def local_contact_updates(text):

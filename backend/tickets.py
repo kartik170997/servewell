@@ -243,10 +243,10 @@ def create(body):
 def structured(schema, system, data):
     s=A.settings()
     if not s.claude_key: raise ValueError('Configure Claude to use the ticket assistant.')
-    result=A.request('POST','https://api.anthropic.com/v1/messages',{'x-api-key':s.claude_key,'anthropic-version':'2023-06-01'},json={
+    result=A.request('POST','https://api.anthropic.com/v1/messages',{'x-api-key':s.claude_key,'anthropic-version':'2023-06-01'},ticket_pii=True,json={
         'model':s.claude_model,'max_tokens':A.runtime_config.integer('CLAUDE_LEGACY_MAX_TOKENS'),'system':[versioning.cache_block(procedure_for(data.get('ticket'))),{'type':'text','text':system}],
         'tools':[{'name':'workflow_result','description':'Return the next workflow decision.','input_schema':schema.model_json_schema()}],
-        'tool_choice':{'type':'tool','name':'workflow_result'},'messages':[{'role':'user','content':json.dumps(privacy.redact(data))}]})
+        'tool_choice':{'type':'tool','name':'workflow_result'},'messages':[{'role':'user','content':json.dumps(privacy.model_payload(data))}]})
     observability.model_usage({s.claude_model:result.get('usage',{})})
     for b in result.get('content',[]):
         if b.get('type')=='tool_use' and b.get('name')=='workflow_result':

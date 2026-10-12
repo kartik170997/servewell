@@ -21,7 +21,7 @@ def ticket(client,**changes):
 
 
 def classification(**changes):
-    return dict(intent='troubleshoot',immediate_triggers=[],do_not_escalate='none',reason='Single affected terminal.',base_priority='P3',overrides=[])|changes
+    return dict(intent='troubleshoot',immediate_triggers=[],do_not_escalate='none',reason='Single affected terminal.',base_priority='P3',overrides=[],citations=['procedure:SOP-IT-L1-002:v1'],confidence=0.8,confidence_reason='Reported symptoms match the procedure.')|changes
 
 
 def plan(**changes):

@@ -193,7 +193,8 @@ def now():
 
 def request(method, url, headers, **kwargs):
     """Bounded retry for temporary upstream errors; never return keys or provider payloads."""
-    if 'json' in kwargs: kwargs['json']=privacy.redact(kwargs['json'])
+    ticket_pii=kwargs.pop('ticket_pii',False)
+    if 'json' in kwargs: kwargs['json']=(privacy.model_payload if ticket_pii else privacy.redact)(kwargs['json'])
     attempts=runtime_config.integer('PROVIDER_MAX_ATTEMPTS')
     for attempt in range(attempts):
         try:
