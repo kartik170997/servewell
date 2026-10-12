@@ -9,6 +9,7 @@ from contextlib import contextmanager
 from typing import Literal, TypedDict
 
 import dspy
+from dspy.utils.exceptions import AdapterParseError
 from fastapi import Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from langgraph.checkpoint.sqlite import SqliteSaver
@@ -148,8 +149,25 @@ class ProcedureChatAdapter(dspy.ChatAdapter):
         super().__init__(use_native_function_calling=False, use_json_adapter_fallback=False)
         self.procedure = procedure
 
+    def user_message_output_requirements(self, signature):
+        # DSPy's default reminder asks for a Python class instance, which conflicts
+        # with the JSON parser for our nested Pydantic output fields.
+        parts = ['Return only the following output sections, followed by [[ ## completed ## ]]. '
+                 'Each section must contain JSON, never a Python constructor or code fence.']
+        for name, field in signature.output_fields.items():
+            from pydantic import TypeAdapter
+            parts.append('[[ ## '+name+' ## ]]\nJSON schema: '+json.dumps(TypeAdapter(field.annotation).json_schema()))
+        return '\n'.join(parts)
+
     def format(self, signature, demos, inputs):
         messages = super().format(signature, demos, {**inputs, 'procedure': 'Follow the versioned procedure in the system prefix.'})
+        messages[0]['content'] += (
+            '\nOutput format: preserve the requested [[ ## field ## ]] markers. '
+            'Inside each structured output field, return a valid JSON object matching its schema. '
+            'Use double-quoted keys and JSON values (true, false, null). '
+            'Never return Python constructors such as LiveClassification(...), Python code, '
+            'or Markdown code fences. Schema class names describe types; they are not output syntax.'
+        )
         messages[0]['content'] = [W.versioning.cache_block(self.procedure), {'type':'text','text':messages[0]['content']}]
         return messages
 
@@ -166,7 +184,17 @@ def predict(signature, output, context):
         # Validate typed outputs in DSPy; Anthropic's native schema subset rejects
         # array/string bounds in these Pydantic models (e.g. maxItems).
         with dspy.context(lm=lm,adapter=ProcedureChatAdapter(procedure),disable_history=True,track_usage=True):
-            result=dspy.Predict(signature)(procedure=procedure['text'],context=json.dumps(privacy.redact(context)))
+            retries=W.A.runtime_config.integer('WORKFLOW_OUTPUT_MAX_RETRIES')
+            for attempt in range(retries+1):
+                try:
+                    result=dspy.Predict(signature)(procedure=procedure['text'],context=json.dumps(privacy.redact(context)))
+                    break
+                except AdapterParseError:
+                    if attempt==retries: raise
+                    # Regenerate from the original trusted instructions and redacted
+                    # context. Never execute or log malformed model output.
+                    import logging
+                    logging.getLogger(__name__).warning('Retrying invalid workflow output: attempt=%s output=%s',attempt+1,output)
         observability.model_usage(result.get_lm_usage())
         return getattr(result,output).model_dump()
     except Exception as error:
@@ -174,6 +202,8 @@ def predict(signature, output, context):
         # Log only diagnostics, never prompts, provider bodies, or credentials.
         import logging
         logging.getLogger(__name__).warning('Workflow model decision failed: type=%s status=%s', type(error).__name__, status)
+        if isinstance(error, AdapterParseError):
+            raise ValueError('Claude responded, but DSPy could not parse its workflow decision into the required JSON schema. Resume the checkpoint to retry; this is an output-format error, not an API-key error.') from None
         if status == 400:
             raise ValueError('Claude rejected the workflow request (HTTP 400). Check model parameter compatibility in the backend.') from None
         if status == 404:

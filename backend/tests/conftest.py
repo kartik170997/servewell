@@ -20,6 +20,7 @@ def configured_models(monkeypatch):
     monkeypatch.setenv('PROVIDER_TIMEOUT_SECONDS', '90')
     monkeypatch.setenv('PROVIDER_MAX_ATTEMPTS', '3')
     monkeypatch.setenv('WORKFLOW_MODEL_MAX_RETRIES', '1')
+    monkeypatch.setenv('WORKFLOW_OUTPUT_MAX_RETRIES', '1')
     monkeypatch.setenv('RETRIEVAL_VECTOR_MIN_SCORE', '0.5')
     monkeypatch.setenv('RETRIEVAL_RERANK_MIN_SCORE', '0.3')
     monkeypatch.setenv('RETRIEVAL_BM25_MIN_SCORE', '0')

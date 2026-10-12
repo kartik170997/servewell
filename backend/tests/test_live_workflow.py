@@ -161,6 +161,31 @@ def test_dspy_signatures_and_adapter_are_really_used(client,live,monkeypatch):
     assert result['base_priority']=='P3'
 
 
+def test_python_constructor_output_reports_format_error(client,live,monkeypatch):
+    import dspy
+    import pytest
+    from dspy.utils import DummyLM
+    monkeypatch.setattr(dspy,'LM',lambda *a,**kw:DummyLM([
+        {'classification':'LiveClassification(intent="troubleshoot", base_priority="P3")'}]))
+    with pytest.raises(ValueError,match='output-format error, not an API-key error'):
+        L.predict(L.classify_signature(),'classification',{'query':'A terminal is down.'})
+
+
+def test_invalid_output_is_retried_and_reminder_requires_json(client,live,monkeypatch):
+    import dspy
+    from dspy.utils import DummyLM
+    lm=DummyLM([{'classification':'LiveClassification(intent="troubleshoot")'},
+                {'classification':classification()}])
+    monkeypatch.setattr(dspy,'LM',lambda *a,**kw:lm)
+    signature=L.classify_signature()
+    reminder=L.ProcedureChatAdapter({}).user_message_output_requirements(signature)
+    assert 'valid Python' not in reminder
+    assert 'JSON schema:' in reminder
+    assert '[[ ## classification ## ]]' in reminder
+    result=L.predict(signature,'classification',{'query':'A terminal is down.'})
+    assert result['base_priority']=='P3'
+
+
 def test_planner_maps_only_valid_source_aliases(client,providers,monkeypatch):
     configure(client)
     t={'ticket_history':[],'workflow':{'classification':{},'steps':[],'messages':[],
