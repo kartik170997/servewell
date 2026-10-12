@@ -161,6 +161,7 @@ def hydrate_asset(ticket, required=False):
 
 
 def apply_information(ticket, information):
+    information=normalize_information(information)
     validate_information(information)
     asset_id=str(information.get('asset_id',ticket.get('asset_id','')) or '').strip()
     store_id=str(information.get('store_id',ticket.get('store_id','')) or '').strip()
@@ -301,11 +302,26 @@ def missing_info(t):
     return missing
 
 
+def normalize_information(info):
+    import re
+    result=dict(info)
+    for key in ('affected_devices','affected_users','prior_troubleshooting_minutes'):
+        value=result.get(key)
+        if isinstance(value,str):
+            value=value.strip()
+            if re.fullmatch(r'\d+',value): result[key]=int(value)
+            elif key!='prior_troubleshooting_minutes':
+                if value.casefold() in ('na','n/a','not applicable'): result[key]='N/A'
+                elif value.casefold() in ('unknown','not sure',"don't know",'dont know'): result[key]='Unknown'
+    return result
+
+
 def validate_information(info):
     allowed=set(REQUIRED)|set(DIRECTORY_FIELDS)|{'asset_id','contact_phone','submitted_by','steps_already_tried','diagnostic_links','deadline','prior_troubleshooting_minutes'}
     if len(json.dumps(info))>24000 or any(k not in allowed for k in info): raise HTTPException(422,'Use the supported checklist fields (at most 24,000 characters).')
     for key,value in info.items():
         if key in ('affected_devices','affected_users','prior_troubleshooting_minutes'):
+            if key!='prior_troubleshooting_minutes' and value in ('N/A','Unknown'): continue
             if value not in (None,'') and (type(value) is not int or value<0): raise HTTPException(422,'Affected device/user counts must be nonnegative whole numbers.')
         elif value is not None and (not isinstance(value,str) or len(value)>8000): raise HTTPException(422,'Checklist text fields must contain text (at most 8,000 characters each).')
 

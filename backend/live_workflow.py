@@ -62,6 +62,13 @@ def capture_information(t, text, decision=None):
     # Directory IDs typed in free text are captured reliably without a model guess.
     stores=list(dict.fromkeys(re.findall(r'\bSW-\d+\b',text,flags=re.I)))
     deterministic=privacy.local_contact_updates(text)
+    # Recover explicitly labelled details from earlier user answers rejected as
+    # part of a batch. Never overwrite a field that is already stored.
+    current={**t.get('escalation_info',{}),**{k:t.get(k) for k in ('submitted_by','contact_phone')}}
+    for entry in reversed(t.get('ticket_history',[])):
+        if entry.get('actor')!='User': continue
+        for field,value in privacy.local_contact_updates(entry.get('note','')).items():
+            if current.get(field) in (None,'','Not provided'): deterministic.setdefault(field,value)
     if len(stores)==1: deterministic['store_id']=stores[0].upper()
     if decision is None:
         decision=predict(InformationSignature,'decision',{'ticket':W.model_ticket(t,'information'),'latest_user_message':text,
@@ -76,14 +83,26 @@ def capture_information(t, text, decision=None):
             if fact.evidence in text and '[PRIVATE]' not in str(fact.value) and '[PHONE]' not in str(fact.value): changes[fact.field]=fact.value
         if name=='update_checklist': changes.update(deterministic)
         if not changes: continue
-        try:
-            tools[name](**{argument:changes})
-            event={'id':uuid.uuid4().hex,'timestamp':W.timestamp(),'actor':'Agent tool','note':name+': '+json.dumps(changes),'tool':name,'changes':changes}
+        if name=='update_checklist': changes=W.normalize_information(changes)
+        def apply_group(group):
+            tools[name](**{argument:group})
+            event={'id':uuid.uuid4().hex,'timestamp':W.timestamp(),'actor':'Agent tool','note':name+': '+json.dumps(group),'tool':name,'changes':group}
             t['workflow'].setdefault('audit',[]).append(event)
-            t['workflow'].setdefault('trace',[]).append({'action':'tool','tool':name,'changes':changes,'ok':True})
-        except HTTPException as error:
-            t['workflow'].setdefault('trace',[]).append({'action':'tool','tool':name,'ok':False,'error':error.detail})
-            audit(t,'L1 Agent','Could not apply supplied details: '+str(error.detail))
+            t['workflow'].setdefault('trace',[]).append({'action':'tool','tool':name,'changes':group,'ok':True})
+        try:
+            apply_group(changes)
+        except HTTPException:
+            # Keep relationship edits atomic, but an invalid count must not discard
+            # a valid contact name, frequency or other independent detail.
+            related={k:v for k,v in changes.items() if k in ('asset_id','store_id')}
+            groups=([related] if related else [])+[{k:v} for k,v in changes.items() if k not in related]
+            for group in groups:
+                try: apply_group(group)
+                except HTTPException as error:
+                    fields=', '.join(group)
+                    t['workflow'].setdefault('trace',[]).append({'action':'tool','tool':name,'ok':False,'fields':list(group),'error':error.detail})
+                    audit(t,'L1 Agent','Could not save '+fields+': '+str(error.detail)+'. Other valid details have been retained.')
+
 
 
 class PlannedStep(ResponseSupport):

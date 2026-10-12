@@ -118,6 +118,17 @@ def local_contact_updates(text):
     if phone: result['contact_phone']=phone[1].strip()
     address=re.search(r'(?im)\b(?:store address|address)\s*[:=]\s*([^\n;]+)',text)
     if address: result['store_address']=address[1].strip()
+    labels={'customer name':'submitted_by','frequency':'frequency','issue frequency':'frequency',
+            'number of affected devices':'affected_devices','affected devices':'affected_devices',
+            'affected users':'affected_users','number of affected users':'affected_users',
+            'contact method':'preferred_contact','contract metod':'preferred_contact','preferred contact method':'preferred_contact',
+            'store address':'store_address','contact phone':'contact_phone','workaround':'workaround',
+            'availability':'availability','constraints':'constraints'}
+    for line in text.splitlines():
+        match=re.match(r'^\s*([a-z ]+)\s*[-:=–]\s*(.+?)\s*$',line,re.I)
+        if match:
+            label=match[1].strip().casefold().replace('afftected','affected').replace('contrtact','contact').replace('metod','method')
+            if label in labels: result[labels[label]]=match[2].strip()
     return result
 
 
