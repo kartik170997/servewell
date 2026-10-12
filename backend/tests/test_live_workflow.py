@@ -191,11 +191,17 @@ def test_planner_maps_only_valid_source_aliases(client,providers,monkeypatch):
     configure(client)
     t={'ticket_history':[],'workflow':{'classification':{},'steps':[],'messages':[],
         'evidence':[{'id':'long-document-id:0@16000','document_id':'long-document-id','text':'Source text'}]}}
+    t['workflow'].update(original_issue='Original frozen terminal',plan=[{'title':'Earlier check','status':'completed'}],
+        steps=[{'step':str(i)} for i in range(45)],messages=[{'text':str(i)} for i in range(50)])
     def predicted(*args):
         context=args[-1]
         # Evidence aliases plus the pinned procedure, which is citable for standard L1 steps.
         assert context['allowed_citation_ids']==['S1',L.procedure_citation(t)]
         assert context['evidence'][0]['id']=='S1'
+        assert len(context['confirmed_steps'])==45
+        assert len(context['recent_messages'])==50
+        assert context['original_issue']=='Original frozen terminal'
+        assert context['earlier_plan'][0]['status']=='completed'
         return {'steps':[{'title':'Check','instructions':'Check source','expected_result':'Pass','citations':['S1']}],'document_id':'S1'}
     monkeypatch.setattr(L,'predict',predicted)
     result=L.plan(t,'Query')

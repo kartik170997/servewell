@@ -414,6 +414,7 @@ def pause_for(t,kind,message,citations=None,step_id=None,support=None):
 
 def planning_questions_remaining(t):
     w=t['workflow']
+    if w.get('clarification_unavailable'): return 0
     # Older checkpoints recorded answers without a question counter. Count those
     # conservatively so resuming an existing conversation does not restart the limit.
     if 'planning_questions_asked' not in w:
@@ -466,6 +467,10 @@ def standard_procedure_steps(t):
     attempted=' '.join(str(x.get('step',''))+' '+str(x.get('note','')) for x in w.get('steps',[]) if x.get('kind')=='step' or x.get('outcome') in ('completed','not_resolved'))
     attempted+=' '+str(t.get('escalation_info',{}).get('steps_already_tried',''))
     attempted+=' '+' '.join(x['instructions'] for x in done)
+    reported=' '.join(str(h.get('note','')) for h in t.get('ticket_history',[]) if h.get('actor')=='User')
+    reported+=' '+str(t.get('description',''))+' '+str(w.get('original_issue',''))
+    if re.search(r'(?is)(?:tried|performed|completed|after|already).{0,60}(?:restart|reboot)|(?:restart|reboot).{0,60}(?:failed|completed|did not help|didn.t help)',reported):
+        attempted+=' restart already reported'
     result=[]
     for bullet in bullets:
         if bullet.casefold() in attempted.casefold(): continue
@@ -549,6 +554,7 @@ def plan_node(state):
         asked=ask_planning_question(t,'What changed after the steps already attempted?')
         return {'ticket':t,'phase':'plan','route':'wait' if asked else proceed_after_planning(t)}
     w['plan']=retained+[{**x,'id':uuid.uuid4().hex,'status':'pending','feedback':'','minutes_spent':0} for x in proposed]
+    w.pop('planning_blocked_reason',None)
     audit(t,'L1 Agent','Checklist planned: '+'; '.join(x['title'] for x in proposed)+'. No steps have been marked complete.',w['plan_support'])
     return {'ticket':t,'phase':'plan','route':'prepare'}
 
@@ -587,6 +593,10 @@ def feedback_node(state):
         return {'ticket':t,'query':f['query'],'mode':f['mode'],'tag':f.get('tag'),'phase':'feedback','route':'classify','hops':0,'replans':0}
     if not p or f['action_id']!=p['id']: raise ValueError('This feedback does not match the checkpoint action.')
     outcome=f['outcome'];note=f['note'];minutes=f.get('minutes_spent',0)
+    if p['kind']=='clarify':
+        import re
+        if re.search(r"\b(?:don['’]?t know|do not know|dont know|unknown|not sure|no idea|cannot answer)\b",note,re.I):
+            w['clarification_unavailable']=True
     if p['kind']=='clarify' and not p.get('planning_question'):
         planning_questions_remaining(t)
         w['planning_questions_asked']+=1
@@ -761,8 +771,13 @@ def run_events(ticket_id, kind, body):
             if p['kind'] in ('information','clarify') and body.outcome not in ('answer','resolved'): raise HTTPException(422,'Answer the pending question to continue.')
             data=Command(resume={'kind':'feedback',**body.model_dump(),'context':context})
         elif kind=='recover':
-            if interrupted or not snapshot.next: raise HTTPException(409,'There is no failed graph operation to resume.')
-            data=None
+            if not interrupted and not snapshot.next and t['workflow'].get('planning_blocked_reason'):
+                audit(t,'L1 Agent','Continuing planning from the original issue, full ticket history and pinned procedure.')
+                data={**snapshot.values,'ticket':t,'query':t['workflow'].get('original_issue') or t.get('description') or snapshot.values.get('query',''),
+                    'phase':'start','route':'','retrieval_query':'','read_request':None,'hops':0,'replans':0,'response':{},'operation_id':uuid.uuid4().hex}
+            else:
+                if interrupted or not snapshot.next: raise HTTPException(409,'There is no failed graph operation to resume.')
+                data=None
         elif interrupted:
             data=Command(resume={'kind':'query','query':body.query,'mode':body.mode,'tag':body.tag,'context':context})
         else:
