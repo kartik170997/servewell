@@ -294,3 +294,19 @@ def test_external_ticket_tool_changes_survive_graph_resume(client,live):
     assert t['subject']=='Confirmed issue description'
     t=final(feedback(client,t))
     assert t['subject']=='Confirmed issue description'
+
+
+def test_priority_criterion_must_come_from_the_active_procedure():
+    procedure='- **High (P2)**: Single location partial outage, 50%+ of POS terminals down\n- **Medium (P3)**: Single terminal down'
+    grounded=classification(base_priority='P2',priority_criterion='High (P2): Single location partial outage, 50%+ of POS terminals down')
+    assert L.consistency_reason('classification',grounded,procedure) is None
+    assert L.consistency_reason('classification',classification(priority_criterion='Most machines down means P2'),procedure)=='priority_criterion_not_in_procedure'
+    assert L.consistency_reason('classification',classification(priority_criterion=''),procedure)=='priority_criterion_not_in_procedure'
+    mismatch=classification(base_priority='P3',priority_criterion='High (P2): Single location partial outage')
+    assert L.consistency_reason('classification',mismatch,procedure)=='priority_criterion_mismatch'
+
+
+def test_priority_reason_cites_the_procedure_criterion():
+    t={'date_opened':'2026-10-12T09:00:00+05:30'}
+    p,reason=W.priority(t,classification(base_priority='P2',priority_criterion='High (P2): 50%+ of POS terminals down'))
+    assert p=='P2' and 'procedure: "High (P2): 50%+ of POS terminals down"' in reason

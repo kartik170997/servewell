@@ -49,6 +49,7 @@ class Ticket(BaseModel):
     resolution_notes: str | None = Field(default=None, max_length=12000)
     status: Literal['Open','In Progress','Awaiting Customer','Escalated','Resolved','Closed'] = 'Open'
     escalation_info: dict = Field(default_factory=dict)
+    checklist_optional: bool = False
 
 
 class Turn(BaseModel):
@@ -70,6 +71,7 @@ class Confirm(BaseModel):
 class InfoUpdate(BaseModel):
     version: int
     information: dict
+    checklist_optional: bool | None = None
 
 
 class Monitor(BaseModel):
@@ -84,6 +86,7 @@ class Classification(BaseModel):
     do_not_escalate: Literal['none','how_to','user_configuration','billing','maintenance','feature_request','third_party','connectivity_resolved'] = 'none'
     reason: str = Field(max_length=2000)
     base_priority: Literal['P1','P2','P3','P4'] = 'P3'
+    priority_criterion: str = Field(default='',max_length=600,description='Verbatim text of the impact criterion in the supplied procedure that the reported impact meets for base_priority. Compare reported quantities with its thresholds; an approximate quantity counts when it unambiguously satisfies a threshold, so an exact count is not required.')
     overrides: list[Literal['recurring','vip','external_dependency','customer_escalation','known_workaround']] = Field(default_factory=list)
 
 
@@ -272,7 +275,8 @@ def classify(t, query):
 
 
 def priority(t, classification):
-    level=int(classification['base_priority'][1]); reasons=['Base '+classification['base_priority']+': '+classification['reason']]
+    level=int(classification['base_priority'][1]); basis=classification.get('priority_criterion')
+    reasons=['Base '+classification['base_priority']+(' (procedure: "'+basis+'")' if basis else '')+': '+classification['reason']]
     opened=datetime.fromisoformat(t['date_opened']).astimezone(IST)
     overrides=list(dict.fromkeys(classification['overrides']))
     if 11<=opened.hour<14 or 18<=opened.hour<21: overrides.insert(0,'peak_service_hours')
@@ -292,6 +296,8 @@ REQUIRED = {'asset_type':'asset type','store_address':'store address','error_cod
 
 
 def missing_info(t):
+    if t.get('checklist_optional'):
+        return [] if t.get('store_id') not in (None,'','UNSPECIFIED') else ['store ID']
     info=t.get('escalation_info',{})
     missing=[label for field,label in REQUIRED.items() if info.get(field) is None or str(info.get(field)).strip()=='']
     if not t['asset_id']: missing.append('asset ID')
@@ -383,6 +389,7 @@ def escalate(t, reason):
     if 'customer_escalation' in cl.get('overrides',[]) or 'customer_escalation' in cl.get('immediate_triggers',[]):
         w['manager_review_required']=True;recipient.append('it-manager@servewell.in')
     summary=f"{t['subject']}\n{reason}\nAsset: {t['asset_id'] or 'Missing'}\nStore: {t['store_name']}\nContact: {t['submitted_by']} {t['contact_phone']}\nPriority: {t['priority']}\nInformation: {json.dumps(t.get('escalation_info',{}))}\nConfirmed steps: {json.dumps(w.get('steps',[]))}\nMissing information: {', '.join(gaps) or 'None'}\nTicket: {t['ticket_id']}"
+    if t.get('checklist_optional'): summary+='\nChecklist policy: User selected Store ID only; other fields and minimum troubleshooting time optional.'
     w['notification_draft']={'to':recipient,'subject':f"[ESCALATION] {t['ticket_id']} - {t['store_name']} - {t['priority']}",'body':summary,'sent':False}
     message='Escalated to the local L2 queue. '+reason+' Notification draft is ready; send it through your approved email tool.'
     if gaps: message+=' Collect missing information in parallel: '+', '.join(gaps)+'.'
@@ -554,12 +561,20 @@ def install(app, api):
 
     @app.put('/api/tickets/{ticket_id}/information',dependencies=auth)
     def update_information(ticket_id: str,body: InfoUpdate):
-        validate_information(body.information)
+        validate_information(normalize_information(body.information))
         with LOCK:
             t=load(ticket_id);check_version(t,body.version)
             apply_information(t,body.information)
+            if body.checklist_optional is not None:
+                if body.checklist_optional and t.get('store_id') in (None,'','UNSPECIFIED'): raise HTTPException(422,'Store ID is required before enabling optional checklist mode.')
+                t['checklist_optional']=body.checklist_optional
+                pending=t['workflow'].get('pending')
+                if body.checklist_optional and pending and pending['kind']=='information':
+                    pending['message']='Only Store ID is required. Add any optional details, or leave the answer blank and continue to handoff after all troubleshooting steps are completed.'
             if t['status']=='Escalated': escalate(t,'Escalation information updated. Review the refreshed notification draft.')
-            return save(t,body.version,[('User','Escalation information updated: '+json.dumps(body.information))])
+            note='Escalation information updated: '+json.dumps(body.information)
+            if body.checklist_optional is not None: note+='; optional checklist mode '+('enabled' if body.checklist_optional else 'disabled')
+            return save(t,body.version,[('User',note)])
 
     @app.post('/api/tickets/{ticket_id}/monitor',dependencies=auth)
     def monitor(ticket_id: str,body: Monitor):

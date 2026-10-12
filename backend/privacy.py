@@ -11,7 +11,7 @@ CHECKLIST_FIELDS = {'asset_type','error_code','first_occurrence','frequency','af
     'affected_users','business_impact','workaround','availability','constraints','steps_already_tried',
     'deadline','prior_troubleshooting_minutes','store_id','asset_id','system_version'}
 TICKET_FIELDS = {'ticket_id','store_id','asset_id','system_version','date_opened','priority',
-    'category','subcategory','subject','description','tags','status','escalation_flag','procedure_ref'}
+    'category','subcategory','subject','description','tags','status','escalation_flag','procedure_ref','checklist_optional'}
 _KNOWN = ContextVar('privacy_known_values',default=())
 SECRETS=set()
 EMAIL = re.compile(r'(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b')
