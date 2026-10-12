@@ -53,29 +53,17 @@ def test_golden_validation_rejects_unreviewed_examples_and_duplicates(tmp_path):
     with pytest.raises(ValueError,match='reviewed'): read_records(path)
 
 
-def test_workflow_run_records_failure_logs_and_terminates(monkeypatch):
-    calls=[]
-    class Client:
-        def create_run(self,*a,**kw): return SimpleNamespace(info=SimpleNamespace(run_id='run-test'))
-        def __getattr__(self,name):
-            return lambda *a,**kw:calls.append((name,a,kw))
-    class Span:
-        trace_id='trace-test'
-        def __getattr__(self,name): return lambda *a,**kw:None
-    class Manager:
-        def __enter__(self): return Span()
-        def __exit__(self,*args): pass
+def test_ticket_trace_identity_outage_does_not_break_workflow(monkeypatch):
     monkeypatch.setattr(O,'configure',lambda:True)
-    monkeypatch.setattr(O,'_CLIENT',Client());monkeypatch.setattr(O,'_EXPERIMENT','test')
-    monkeypatch.setitem(sys.modules,'mlflow',SimpleNamespace(start_span=lambda **kw:Manager(),update_current_trace=lambda **kw:None))
+    def unavailable(*args): raise ConnectionError('offline')
+    monkeypatch.setattr(O.ticket_tracing,'begin',unavailable)
     @O.stream_operation
     def operation(ticket_id,kind,body):
         yield {'type':'stage','node':'classify','message':'Checking'}
         raise ValueError('A failed model decision')
     with pytest.raises(ValueError): list(operation('WF-test','query',{'query':'Test'}))
-    assert any(name=='set_terminated' and kw['status']=='FAILED' for name,args,kw in calls)
-    assert any(name=='log_dict' and args[2]=='logs/events.json' for name,args,kw in calls)
     assert O._RUN.get() is None
+    assert O._SUPPRESS.get() is False
 
 
 def test_model_signature_class_is_serialized_without_calling_model_dump():

@@ -18,9 +18,9 @@ from langgraph.types import Command, interrupt
 from pydantic import BaseModel, Field
 
 if __package__:
-    from . import agent_tools, observability
+    from . import agent_tools, observability, privacy
 else:
-    import agent_tools, observability
+    import agent_tools, observability, privacy
 
 W = None
 
@@ -47,23 +47,25 @@ class InformationSignature(dspy.Signature):
     decision: ToolDecision = dspy.OutputField()
 
 
+@privacy.scoped
 def capture_information(t, text, decision=None):
     import re
     from fastapi import HTTPException
     tools=agent_tools.registry(W,t)
     # Directory IDs typed in free text are captured reliably without a model guess.
     stores=list(dict.fromkeys(re.findall(r'\bSW-\d+\b',text,flags=re.I)))
-    deterministic={'store_id':stores[0].upper()} if len(stores)==1 else {}
+    deterministic=privacy.local_contact_updates(text)
+    if len(stores)==1: deterministic['store_id']=stores[0].upper()
     if decision is None:
-        decision=predict(InformationSignature,'decision',{'ticket':W.model_ticket(t),'latest_user_message':text,
+        decision=predict(InformationSignature,'decision',{'ticket':W.model_ticket(t,'information'),'latest_user_message':text,
             'allowed_ticket_fields':sorted(agent_tools.TICKET_FIELDS),
-            'allowed_checklist_fields':sorted(set(W.REQUIRED)|{'asset_id','store_id','submitted_by','contact_phone','steps_already_tried','diagnostic_links','deadline','prior_troubleshooting_minutes'}),
+            'allowed_checklist_fields':sorted(privacy.CHECKLIST_FIELDS),
             'tools':[{'name':tools[n].name,'description':tools[n].desc} for n in ('update_ticket','update_checklist')]})
     for name,key,argument in [('update_ticket','ticket_updates','fields'),('update_checklist','checklist_updates','information')]:
         changes={}
         for raw in decision.get(key,[]):
             fact=FactUpdate.model_validate(raw)
-            if fact.evidence in text: changes[fact.field]=fact.value
+            if fact.field not in privacy.PERSONAL_FIELDS and fact.evidence in text and '[PRIVATE]' not in str(fact.value) and '[PHONE]' not in str(fact.value): changes[fact.field]=fact.value
         if name=='update_checklist': changes.update(deterministic)
         if not changes: continue
         try:
@@ -159,12 +161,12 @@ def predict(signature, output, context):
     if not s.claude_key: raise ValueError('Configure Claude before starting a live workflow.')
     # No disk cache, prompt history, or credentials are included in graph state.
     lm=dspy.LM('anthropic/'+s.claude_model,api_key=s.claude_key,cache=False,engine='litellm',
-        max_tokens=3500,num_retries=1,timeout=90)
+        max_tokens=15000,num_retries=1,timeout=90)
     try:
         # Validate typed outputs in DSPy; Anthropic's native schema subset rejects
         # array/string bounds in these Pydantic models (e.g. maxItems).
         with dspy.context(lm=lm,adapter=ProcedureChatAdapter(procedure),disable_history=True,track_usage=True):
-            result=dspy.Predict(signature)(procedure=procedure['text'],context=json.dumps(context))
+            result=dspy.Predict(signature)(procedure=procedure['text'],context=json.dumps(privacy.redact(context)))
         observability.model_usage(result.get_lm_usage())
         return getattr(result,output).model_dump()
     except Exception as error:
@@ -183,16 +185,18 @@ def predict(signature, output, context):
         raise ValueError('DSPy could not complete a valid workflow decision. Check model access and provider connectivity, then resume the checkpoint.') from None
 
 
+@privacy.scoped
 def classify(t, query):
     _,docs=W.metadata_scope(t)
     available_tags=sorted({tag for doc in docs for tag in doc.get('tags',[])})[:200]
-    return predict(classify_signature(),'classification',{'ticket':W.model_ticket(t),'query':query,'available_tags':available_tags,'allowed_ticket_fields':sorted(agent_tools.TICKET_FIELDS),'allowed_checklist_fields':sorted(set(W.REQUIRED)|{'store_id','asset_id','submitted_by','contact_phone','steps_already_tried','diagnostic_links','deadline','prior_troubleshooting_minutes'})})
+    return predict(classify_signature(),'classification',{'ticket':W.model_ticket(t),'query':query,'available_tags':available_tags,'allowed_ticket_fields':sorted(agent_tools.TICKET_FIELDS),'allowed_checklist_fields':sorted(privacy.CHECKLIST_FIELDS)})
 
 
+@privacy.scoped
 def plan(t, query):
     w=t['workflow']
     aliases={'S'+str(i+1):e for i,e in enumerate(w['evidence'])}
-    result=predict(PlanningSignature,'plan',{'ticket':W.model_ticket(t),'query':query,
+    result=predict(PlanningSignature,'plan',{'ticket':W.model_ticket(t,'plan'),'query':query,
         'classification':w['classification'],'allowed_citation_ids':list(aliases),
         'evidence':[{**e,'id':alias} for alias,e in aliases.items()],
         'confirmed_steps':w.get('steps',[])[-30:],'recent_messages':w['messages'][-10:]})
@@ -204,8 +208,9 @@ def plan(t, query):
     return result
 
 
+@privacy.scoped
 def assess(t, feedback):
-    return predict(FeedbackSignature,'assessment',{'ticket':W.model_ticket(t),'feedback':feedback,
+    return predict(FeedbackSignature,'assessment',{'ticket':W.model_ticket(t,'feedback'),'feedback':feedback,
         'checklist':t['workflow'].get('plan',[]),'evidence':t['workflow']['evidence'],
         'classification':t['workflow']['classification']})
 

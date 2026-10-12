@@ -6,6 +6,10 @@ from pathlib import Path
 
 from fastapi import Depends, HTTPException
 from pydantic import BaseModel, Field
+if __package__:
+    from . import privacy
+else:
+    import privacy
 
 PROCEDURE_ID = 'SOP-IT-L1-002'
 
@@ -66,7 +70,7 @@ def procedure(a, reference=None):
 def cache_block(p):
     ttl = os.getenv('PROCEDURE_CACHE_TTL', '1h')
     if ttl not in ('5m', '1h'): raise ValueError('PROCEDURE_CACHE_TTL must be 5m or 1h.')
-    return {'type': 'text', 'text': f"Escalation procedure {p['id']} version {p['version']} SHA256 {p['sha256']}\n{p['text']}",
+    return {'type': 'text', 'text': f"Escalation procedure {p['id']} version {p['version']} SHA256 {p['sha256']}\n{privacy.mask_text(p['text'])}",
             'cache_control': {'type': 'ephemeral', 'ttl': ttl}}
 
 

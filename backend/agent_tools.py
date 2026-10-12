@@ -64,7 +64,7 @@ def registry(W, ticket=None, persist=False):
         W.store_details(store_id)
         with W.A.db() as c: return [json.loads(r['payload']) for r in c.execute('SELECT payload FROM assets WHERE store_id=? ORDER BY asset_id',(store_id,))]
 
-    return {fn.__name__:dspy.Tool(observability.traced('tool.'+fn.__name__,'TOOL')(fn)) for fn in (create_ticket,update_ticket,update_checklist,get_ticket,lookup_asset,lookup_store,list_store_assets)}
+    return {fn.__name__:dspy.Tool(observability.ticket_tool(fn,ticket)) for fn in (create_ticket,update_ticket,update_checklist,get_ticket,lookup_asset,lookup_store,list_store_assets)}
 
 
 class Invocation(BaseModel):

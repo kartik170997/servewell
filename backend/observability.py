@@ -7,6 +7,13 @@ import os
 import re
 import threading
 import time
+import sys
+from contextlib import ExitStack
+
+if __package__:
+    from . import ticket_tracing, privacy
+else:
+    import ticket_tracing, privacy
 from contextlib import contextmanager
 from contextvars import ContextVar
 
@@ -17,14 +24,17 @@ _EXPERIMENT=None
 _LAST_FAILURE=0
 _SECRETS=set()
 _RUN=ContextVar('folio_mlflow_run',default=None)
+_SUPPRESS=ContextVar('folio_mlflow_suppress',default=False)
 LOG=logging.getLogger(__name__)
 
 
 def register_secrets(*values):
     _SECRETS.update(str(v) for v in values if v and len(str(v))>=6)
+    privacy.SECRETS.update(_SECRETS)
 
 
 def sanitize(value, depth=0):
+    if depth==0: value=privacy.redact(value)
     if depth>10: return '[depth limit]'
     if isinstance(value,type): return value.__name__
     if hasattr(value,'model_dump'): value=value.model_dump(mode='json')
@@ -72,13 +82,13 @@ def safe(fn,*args,**kwargs):
 
 
 class Record:
-    def __init__(self): self.outputs=None;self.attributes={};self.trace_id=None
+    def __init__(self): self.outputs=None;self.attributes={};self.trace_id=None;self.status=None
 
 
 @contextmanager
 def span(name,kind='CHAIN',inputs=None,attributes=None):
     record=Record();manager=None;active=None
-    if configure():
+    if not _SUPPRESS.get() and configure():
         try:
             import mlflow
             manager=mlflow.start_span(name=name,span_type=kind)
@@ -107,6 +117,7 @@ def span(name,kind='CHAIN',inputs=None,attributes=None):
         if active:
             if record.outputs is not None: safe(active.set_outputs,sanitize(record.outputs))
             safe(active.set_attributes,sanitize(record.attributes))
+            if record.status: safe(active.set_status,record.status)
         # Never hand an unsanitized exception/traceback to the exporter.
         if manager: safe(manager.__exit__,None,None,None)
 
@@ -116,7 +127,7 @@ def traced(name=None,kind='CHAIN'):
         @functools.wraps(fn)
         def wrapped(*args,**kwargs):
             inputs=dict(inspect.signature(fn).bind_partial(*args,**kwargs).arguments)
-            with span(name or fn.__name__,kind,inputs) as record:
+            with privacy.scope(inputs), span(name or fn.__name__,kind,inputs) as record:
                 result=fn(*args,**kwargs);record.outputs=result;return result
         return wrapped
     return decorate
@@ -126,17 +137,27 @@ def stream_operation(fn):
     @functools.wraps(fn)
     def wrapped(ticket_id,kind,body):
         run_id=None;events=[];result=None;failed=False;started=time.monotonic();token=None
+        state=None;stack=ExitStack();suppression=None
         if configure():
-            run=safe(_CLIENT.create_run,_EXPERIMENT,tags={'mlflow.runName':ticket_id+' / '+kind,'ticket_id':ticket_id,'operation':kind})
-            if run:
-                run_id=run.info.run_id;token=_RUN.set(run_id)
-                for field in ('CLAUDE_MODEL','EMBEDDING_MODEL','RERANK_MODEL'):
-                    safe(_CLIENT.log_param,run_id,field,os.getenv(field,''))
+            state=safe(ticket_tracing.begin,sys.modules[__name__],ticket_id)
+            if state:
+                run_id=state['run_id'];token=_RUN.set(run_id)
+                safe(ticket_tracing.publish_root,sys.modules[__name__],state)
+                try:
+                    from mlflow.tracing import set_tracing_context_from_http_request_headers
+                    stack.enter_context(set_tracing_context_from_http_request_headers(state['headers']))
+                except Exception:
+                    suppression=_SUPPRESS.set(True)
+                # Models can change between turns; preserve per-turn configuration in artifacts.
+                safe(_CLIENT.log_dict,run_id,{field:os.getenv(field,'') for field in ('CLAUDE_MODEL','EMBEDDING_MODEL','RERANK_MODEL')},f"workflow/turns/{state['turn']:06d}/models.json")
+            else:
+                suppression=_SUPPRESS.set(True)
         try:
-            with span('workflow.'+kind,'AGENT',{'ticket_id':ticket_id,'request':body}, {'mlflow.trace.session':ticket_id}) as trace:
+            with span('workflow.'+kind,'AGENT',{'ticket_id':ticket_id,'request':body}, {'mlflow.trace.session':ticket_id,'folio.turn':state['turn'] if state else None}) as trace:
                 if trace.trace_id and run_id: safe(_CLIENT.set_tag,run_id,'trace_id',trace.trace_id)
                 for event in fn(ticket_id,kind,body):
                     if event.get('type') in ('stage','error'): events.append(sanitize(event))
+                    if event.get('type')=='error': failed=True;trace.status='ERROR'
                     if event.get('type')=='result':
                         result=event['ticket']
                         trace.outputs={'ticket_id':ticket_id,'status':result['status'],'checkpoint':result['workflow'].get('checkpoint'),'pending':result['workflow'].get('pending')}
@@ -146,18 +167,24 @@ def stream_operation(fn):
             raise
         finally:
             if run_id:
-                safe(_CLIENT.log_metric,run_id,'duration_seconds',time.monotonic()-started)
+                safe(_CLIENT.log_metric,run_id,'duration_seconds',time.monotonic()-started,step=state['turn'])
                 safe(_CLIENT.log_metric,run_id,'stage_events',len(events))
                 safe(_CLIENT.log_dict,run_id,{'events':events},'logs/events.json')
+                safe(_CLIENT.log_dict,run_id,{'operation':kind,'events':events},f"logs/turns/{state['turn']:06d}.json")
                 if result:
                     w=result['workflow']
-                    safe(_CLIENT.log_dict,run_id,sanitize({'procedure_ref':result.get('procedure_ref'),'evidence':w.get('evidence'),'classification':w.get('classification'),'plan':w.get('plan'),'steps':w.get('steps'),'tool_and_retrieval_trace':w.get('trace'),'checkpoint':w.get('checkpoint')}),'workflow/result.json')
+                    snapshot=sanitize({'procedure_ref':result.get('procedure_ref'),'evidence':w.get('evidence'),'classification':w.get('classification'),'plan':w.get('plan'),'steps':w.get('steps'),'tool_and_retrieval_trace':w.get('trace'),'checkpoint':w.get('checkpoint')})
+                    safe(_CLIENT.log_dict,run_id,snapshot,'workflow/result.json')
+                    safe(_CLIENT.log_dict,run_id,snapshot,f"workflow/turns/{state['turn']:06d}/result.json")
                     safe(_CLIENT.set_tag,run_id,'ticket_status',result['status'])
                     safe(_CLIENT.set_tag,run_id,'procedure_version',str(result.get('procedure_ref',{}).get('version','unknown')))
                     safe(_CLIENT.log_metric,run_id,'retrieved_sources',len(w.get('evidence',[])))
                     safe(_CLIENT.log_metric,run_id,'planned_steps',len(w.get('plan',[])))
                     safe(_CLIENT.log_metric,run_id,'escalated',int(result.get('escalation_flag',False)))
+                safe(ticket_tracing.publish_root,sys.modules[__name__],state,result,failed)
                 safe(_CLIENT.set_terminated,run_id,status='FAILED' if failed else 'FINISHED')
+            safe(stack.close)
+            if suppression is not None: _SUPPRESS.reset(suppression)
             if token is not None: _RUN.reset(token)
     return wrapped
 
@@ -175,3 +202,18 @@ def model_usage(usage):
                 'total_tokens':sum(v.get('total_tokens',0) or 0 for v in entries)}
             active.set_attribute('mlflow.chat.tokenUsage',counts)
     safe(record)
+
+
+def ticket_tool(fn, ticket=None):
+    """Attach standalone ticket tools (including creation) to the durable ticket trace."""
+    instrumented=traced('tool.'+fn.__name__,'TOOL')(fn)
+    @functools.wraps(fn)
+    def wrapped(*args,**kwargs):
+        inputs=dict(inspect.signature(fn).bind_partial(*args,**kwargs).arguments)
+        ticket_id=(ticket or {}).get('ticket_id') or inputs.get('ticket_id') or inputs.get('ticket_data',{}).get('ticket_id')
+        if _RUN.get() or not ticket_id: return instrumented(*args,**kwargs)
+        @stream_operation
+        def invoke(ticket_id,kind,body):
+            yield {'type':'tool_result','value':instrumented(*args,**kwargs)}
+        return next((e['value'] for e in list(invoke(ticket_id,'tool.'+fn.__name__,inputs)) if e['type']=='tool_result'))
+    return wrapped

@@ -32,9 +32,9 @@ from pydantic import BaseModel, Field, field_validator
 # Local runs read the project .env; deployment environment variables take precedence.
 load_dotenv(Path(__file__).resolve().parents[1] / '.env', override=False)
 if __package__:
-    from . import observability, versioning
+    from . import observability, versioning, privacy
 else:
-    import observability, versioning
+    import observability, versioning, privacy
 
 DATA = Path(os.getenv('DATA_DIR', './data'))
 MAX_BYTES = 20 * 1024 * 1024
@@ -133,6 +133,7 @@ def initialize():
         for row in c.execute("SELECT id,payload FROM documents WHERE status IN ('parsing','summarizing','embedding','indexing')").fetchall():
             d = json.loads(row['payload']); d['status'] = 'queued'; d['error'] = None
             c.execute('UPDATE documents SET status=?,payload=? WHERE id=?', ('queued', json.dumps(d), row['id']))
+    observability.safe(observability.ticket_tracing.initialize,DATA)
     ticket_workflow.initialize()
     versioning.initialize(sys.modules[__name__])
 
@@ -191,6 +192,7 @@ def now():
 
 def request(method, url, headers, **kwargs):
     """Bounded retry for temporary upstream errors; never return keys or provider payloads."""
+    if 'json' in kwargs: kwargs['json']=privacy.redact(kwargs['json'])
     for attempt in range(3):
         try:
             with httpx.Client(timeout=90, follow_redirects=False) as client:
