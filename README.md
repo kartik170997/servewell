@@ -130,15 +130,32 @@ python -m venv .venv
 . .venv/bin/activate
 # Windows PowerShell: .venv\Scripts\Activate.ps1
 pip install -r backend/requirements.lock.txt
-# uvicorn[standard] includes python-dotenv for --env-file
-uvicorn backend.main:app --env-file .env --reload --port 8000
+npm install
 ```
 
-Run the React app in another terminal:
+### Start everything with one command
+
+With the virtual environment activated:
 
 ```sh
-npm install
-npm run dev
+python start.py
+```
+
+This starts the MLflow tracking server (when `MLFLOW_ENABLED=true` in `.env`), waits for it to accept connections, then starts the backend on http://localhost:8000 with auto-reload and the React app on http://localhost:5173. Output from all three appears in one terminal, prefixed `[mlflow]`, `[backend]` and `[frontend]`. Press **Ctrl+C** to stop all of them. If one exits, the others are stopped too.
+
+| Option | Effect |
+|---|---|
+| `--no-mlflow` | Skip MLflow (tracing is then lost until a server is running) |
+| `--no-reload` | Run the backend without auto-reload |
+| `--backend-port 8001` | Use a different backend port |
+
+### Or start each one separately
+
+```sh
+# uvicorn[standard] includes python-dotenv for --env-file
+python -m backend.mlflow_server                                   # optional, terminal 1
+uvicorn backend.main:app --env-file .env --reload --port 8000     # terminal 2
+npm run dev                                                       # terminal 3
 ```
 
 If working in the full hosted Sites source checkout instead of the portable bundle, use `npx vite --config frontend/vite.config.ts` for the standalone frontend. The root hosted build retains its Sites/Vinext integration.
@@ -237,7 +254,9 @@ Send that body to `/api/agent/tools/update_checklist`. `update_ticket` takes `ar
 
 **With Docker:** nothing extra is needed. `docker compose up --build` starts an `mlflow` service and points the backend at it (`MLFLOW_TRACKING_URI=http://mlflow:5000` inside the network). Open **http://localhost:5000**.
 
-**Without Docker:** start MLflow before the backend, in its own terminal with the virtual environment activated:
+**Without Docker, one command:** `python start.py` starts MLflow, the backend and the frontend together (see [Develop without Docker](#develop-without-docker)).
+
+**Without Docker, separate terminals:** start MLflow before the backend, in its own terminal with the virtual environment activated:
 
 ```sh
 # 1. Make sure .env contains (copied from .env.example):
