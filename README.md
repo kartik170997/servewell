@@ -4,6 +4,19 @@ Upload documents, generate summaries and metadata with Claude, index dense vecto
 
 ## Run locally
 
+```sh
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r backend/requirements.lock.txt
+npm install
+python seed_data.py restore --force
+python start.py
+```
+
+> **Note:** MLflow data is not included in the seed restore. The MLflow UI will be empty after setup. Run at least one workflow to generate runs and traces you can view in MLflow.
+
+OR 
+
 Install Docker with Compose and Python 3, then clone the repository and start the stack:
 
 ```sh
