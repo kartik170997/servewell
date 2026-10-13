@@ -2,6 +2,23 @@
 
 Upload documents, generate summaries and metadata with Claude, index dense vectors in Pinecone, and search using lexical BM25, vector retrieval, hybrid RRF, and optional model reranking.
 
+## Windows PowerShell quick setup (no Docker)
+
+Requires Python 3.12 and Node 22.13+. Run from PowerShell:
+
+```powershell
+git clone https://github.com/kartik170997/servewell.git
+cd servewell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r backend/requirements.lock.txt
+npm install
+python seed_data.py restore --force   # loads the shared seed data; overwrites any existing data/
+python start.py
+```
+
+Then open http://localhost:5173 (backend http://localhost:8000, MLflow http://localhost:5000). See [Start everything with one command](#start-everything-with-one-command) for options.
+
 ## Run locally
 
 Install Docker with Compose and Python 3, then clone the repository and start the stack:
