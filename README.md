@@ -4,12 +4,22 @@ Upload documents, generate summaries and metadata with Claude, index dense vecto
 
 ## Run locally
 
-Install Docker with Compose and Python 3. Run these commands from the extracted project folder:
+Install Docker with Compose and Python 3, then clone the repository and start the stack:
 
 ```sh
+git clone https://github.com/kartik170997/servewell.git
+cd servewell
 python setup.py
 docker compose up --build
 ```
+
+Compose starts three services, all bound to localhost:
+
+| Service | URL |
+|---|---|
+| React interface | http://localhost:5173 |
+| FastAPI backend (OpenAPI docs at `/docs`) | http://localhost:8000 |
+| MLflow tracking UI | http://localhost:5000 |
 
 Open **http://localhost:5173**. The interface initially shows a clearly labeled sample workspace. Sample search is a simple keyword demonstration, not the live retrieval engine.
 
@@ -143,6 +153,8 @@ python -m pytest backend/tests -q
 npm run build
 ```
 
+Offline evaluation of the agent (retrieval recall, escalation, routing, grounding and LLM-judged resolution quality on the labeled `data_set/` tickets) is described in [evaluation/README.md](evaluation/README.md).
+
 Backend integration tests exercise real FastAPI routing, SQLite FTS5, encryption, auth, ingestion, duplicate detection, failed-state exclusion, retries, deletion, filters, hybrid fusion, reranking index mapping, and file parsers. External provider responses are mocked; no live provider calls were executed during development because credentials were not supplied. Frontend TypeScript and both hosted and standalone builds are checked. Browser visual QA and a Docker build were not available in the build environment.
 
 ## Deployment scope
@@ -221,7 +233,33 @@ Send that body to `/api/agent/tools/update_checklist`. `update_ticket` takes `ar
 
 ## MLflow logs, traces and golden datasets
 
-Start the local tracking server with `python -m backend.mlflow_server`. Open **http://localhost:5000**, experiment **folio-workflows**. Docker Compose starts a persistent MLflow service automatically. SQLite tracking data and artifacts are stored in `data/mlflow.db` and `data/mlflow-artifacts` locally, or the `mlflow-data` Docker volume.
+### Quick start
+
+**With Docker:** nothing extra is needed. `docker compose up --build` starts an `mlflow` service and points the backend at it (`MLFLOW_TRACKING_URI=http://mlflow:5000` inside the network). Open **http://localhost:5000**.
+
+**Without Docker:** start MLflow before the backend, in its own terminal with the virtual environment activated:
+
+```sh
+# 1. Make sure .env contains (copied from .env.example):
+#    MLFLOW_ENABLED=true
+#    MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+#    MLFLOW_EXPERIMENT_NAME=folio-workflows
+
+# 2. Terminal 1: tracking server (SQLite store in data/mlflow.db, artifacts in data/mlflow-artifacts)
+python -m backend.mlflow_server            # optional: --host 127.0.0.1 --port 5000
+
+# 3. Terminal 2: backend
+uvicorn backend.main:app --env-file .env --reload --port 8000
+
+# 4. Terminal 3: frontend
+npm run dev
+```
+
+Then run a Live workflow, a search, or an upload, open **http://localhost:5000**, choose the **folio-workflows** experiment, and open the **Traces** tab. Ticket traces are named `ticket.<ticket_id>`. Filter them with `tags.trace_layout = 'ticket'`. If you use a different port, update `MLFLOW_TRACKING_URI` to match and restart the backend. Set `MLFLOW_ENABLED=false` to turn tracing off. If the MLflow server is down, workflows still run; only telemetry is lost.
+
+### Details
+
+`python -m backend.mlflow_server` reads `DATA_DIR` from `.env` (default `./data`). Docker Compose starts a persistent MLflow service automatically. SQLite tracking data and artifacts are stored in `data/mlflow.db` and `data/mlflow-artifacts` locally, or the `mlflow-data` Docker volume.
 
 Set `MLFLOW_ENABLED=true`, `MLFLOW_TRACKING_URI`, and `MLFLOW_EXPERIMENT_NAME` in `.env`. Each workflow query, feedback or checkpoint resume creates a run with model IDs, timings, outcome metrics, `logs/events.json`, and `workflow/result.json`. Nested spans show LangGraph nodes, DSPy model decisions, retrieval, embedding and agent tools. Traces contain sanitized inputs/outputs and errors, with ticket/session and checkpoint identifiers. Provider credentials and workspace tokens are redacted. Telemetry outages do not stop workflow execution. Tracing starts with new operations; previous executions are not reconstructed. Ingestion and search also emit traces. Supported DSPy usage data is attached to model spans; cost estimates are not invented.
 
@@ -242,7 +280,7 @@ This creates a native MLflow GenAI evaluation dataset. Importing a dataset does 
 
 ## Procedure and document revisions
 
-The active escalation procedure is stored in `data/folio.db`, in `procedure_versions` and `procedure_heads`. The Markdown file seeds version 1 only when the database is first initialized. Later file edits do not replace the database procedure. Open **Live workflow ? Procedure** to inspect history, create a revision, and activate it for new workflows. Revisions are immutable; restoring old text means creating a new revision from it. Existing tickets and checkpoints retain their `procedure_ref` (ID, version, SHA256). Tickets created before this feature are marked `assigned_on_upgrade`; their earlier decisions cannot be retroactively attributed to a known procedure version.
+The active escalation procedure is stored in `data/folio.db`, in `procedure_versions` and `procedure_heads`. The Markdown file seeds version 1 only when the database is first initialized. Later file edits do not replace the database procedure. Open **Live workflow → Procedure** to inspect history, create a revision, and activate it for new workflows. Revisions are immutable; restoring old text means creating a new revision from it. Existing tickets and checkpoints retain their `procedure_ref` (ID, version, SHA256). Tickets created before this feature are marked `assigned_on_upgrade`; their earlier decisions cannot be retroactively attributed to a known procedure version.
 
 The authenticated API supports `GET /api/procedures`, `GET /api/procedures/{version}`, and `POST /api/procedures` with `expected_version`, `text`, and `note`. Saving atomically creates and activates the next version; stale edits return 409. Procedure editing changes model guidance. Deterministic SLA timers, priority overrides, required fields, and escalation gates are implemented in Python and require corresponding code changes when those rules change.
 
@@ -308,18 +346,18 @@ These are relevance scores, **not calibrated confidence probabilities**. BM25 is
 
 Example API request: `POST /api/search` with `{"query":"printer offline","mode":"vector","rerank":false,"min_score":0.7}`. Omit `min_score` (or pass null) for the server default. Responses include `min_score` and `score_type`, including empty results. Negative/nonfinite thresholds are rejected; non-BM25 thresholds must be at most 1. Workflow retrieval traces include the effective cutoff and score type.
 
-Workflow output validation: `WORKFLOW_OUTPUT_MAX_RETRIES=2` allows two automatic regenerations after DSPy rejects a malformed or schema-invalid decision (at most three output-generation attempts). This is separate from provider/network retries and can incur an additional model charge. Values 0?3 are accepted; 0 disables output retries. Output still must pass the typed schema; exhausted retries preserve the checkpoint. Restart the backend after changing this setting.
+Workflow output validation: `WORKFLOW_OUTPUT_MAX_RETRIES=2` allows two automatic regenerations after DSPy rejects a malformed or schema-invalid decision (at most three output-generation attempts). This is separate from provider/network retries and can incur an additional model charge. Values 0–3 are accepted; 0 disables output retries. Output still must pass the typed schema; exhausted retries preserve the checkpoint. Restart the backend after changing this setting.
 
 
 Workflow response provenance and ticket context:
-- New DSPy decisions and troubleshooting steps require source citations, a 0?1 confidence estimate, and a short rationale. The UI shows confidence as a percentage explicitly labeled ?model estimate?; it is not a calibrated probability or retrieval similarity score. Existing responses without metadata display ?not recorded?; scores are never invented retroactively.
+- New DSPy decisions and troubleshooting steps require source citations, a 0–1 confidence estimate, and a short rationale. The UI shows confidence as a percentage explicitly labeled “model estimate”; it is not a calibrated probability or retrieval similarity score. Existing responses without metadata display “not recorded”; scores are never invented retroactively.
 - Citation IDs must belong to the pinned procedure version, current ticket facts, or supplied retrieved evidence. Technical troubleshooting steps cite retrieved documents or the pinned procedure for its standard L1 instructions. ID validation does not prove that every claim is entailed by a source. Model decision metadata is saved in the ticket workflow/checkpoint and shown under Sources & graph trace.
 
 Live workflow structured output: DSPy uses a JSON adapter and sends Claude a native `output_config.format` JSON schema for classification, planning, feedback and information extraction. Unsupported schema bounds are removed only from the provider schema; Pydantic still enforces them locally. There is no prompt-only fallback. The versioned procedure cache prefix and credential filtering are preserved. Validation retries are controlled by `WORKFLOW_OUTPUT_MAX_RETRIES=2`; transport retries remain separately controlled by `WORKFLOW_MODEL_MAX_RETRIES`. Rejected attempts log a safe reason code (schema/JSON, support metadata, or step citations), never raw prompts or responses. Exhaustion preserves the checkpoint and reports the attempt count. Retries incur provider usage; schema enforcement does not guarantee factually correct advice or citations.
 
 Workflow context now includes actual store/contact details, asset and store records, escalation checklist, and ticket history in Claude prompts. The added question-memory/suppression layer has been removed: the model and procedure determine clarifications, without automatic question rewriting or skipping. Existing saved question-memory records are ignored. Credentials remain excluded from model context; MLflow traces/logs still mask PII and secrets. General document/search provider requests retain their existing privacy filtering.
 
-Planning clarification limit: `WORKFLOW_PLANNING_MAX_QUESTIONS=2` permits at most two clarification turns per ticket (set to 1 for one). Each turn asks one question. The count persists across checkpoints, resumes and new queries; older recorded answers count toward the limit. After the limit, the agent proceeds with supported troubleshooting steps, including when the user answered ?don?t know?. Step-result confirmations and mandatory escalation requirements remain separate. If no supported step exists, the workflow stops for L1 review instead of inventing instructions or entering another planning-question loop. Actual store/contact context remains available to the model.
+Planning clarification limit: `WORKFLOW_PLANNING_MAX_QUESTIONS=2` permits at most two clarification turns per ticket (set to 1 for one). Each turn asks one question. The count persists across checkpoints, resumes and new queries; older recorded answers count toward the limit. After the limit, the agent proceeds with supported troubleshooting steps, including when the user answered “don’t know”. Step-result confirmations and mandatory escalation requirements remain separate. If no supported step exists, the workflow stops for L1 review instead of inventing instructions or entering another planning-question loop. Actual store/contact context remains available to the model.
 
 When clarification is unavailable (for example, "I don't know"), planning moves to the applicable standard procedure immediately. Planning includes the original issue, complete stored ticket history, all confirmed outcomes and the earlier plan. If model planning yields no step, the app reuses pending earlier steps or offers the unattempted basic troubleshooting bullets from Step 2 of the pinned procedure, with procedure citations. Deterministic procedure steps do not receive invented model confidence scores.
 
