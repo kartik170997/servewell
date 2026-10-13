@@ -57,6 +57,7 @@ class Turn(BaseModel):
     version: int
     request_id: str = Field(min_length=8, max_length=80)
     mode: Literal['lexical','hybrid','vector'] = 'hybrid'
+    hyde: bool = False
     tag: str | None = Field(default=None, max_length=120)
 
 
@@ -405,7 +406,7 @@ def metadata_scope(t, explicit_tag=None):
 
 
 @privacy.scoped
-def retrieve(t, query, mode, explicit_tag=None):
+def retrieve(t, query, mode, explicit_tag=None, hyde=False):
     hydrate_asset(t)
     tags,docs=metadata_scope(t,explicit_tag)
     asset=t.get('asset_details',{})
@@ -415,14 +416,15 @@ def retrieve(t, query, mode, explicit_tag=None):
     # No guessed metadata values: use actual ingested tags or explicitly trace a broad search.
     args={'query':query,'mode':mode,'rerank':A.runtime_config.boolean('WORKFLOW_RETRIEVAL_RERANK'),
           'top_k':A.runtime_config.integer('WORKFLOW_RETRIEVAL_TOP_K'),
-          'candidates':A.runtime_config.integer('WORKFLOW_RETRIEVAL_CANDIDATES'),'tags':tags[:100]}
+          'candidates':A.runtime_config.integer('WORKFLOW_RETRIEVAL_CANDIDATES'),'tags':tags[:100],
+          'hyde':bool(hyde and mode!='lexical')}  # HyDE only shapes the vector query.
     retrieved=A.search(A.Search(**args));results=retrieved['results']
     accepted={r['document_id']:r for r in results}
     existing={e['id']:{**e,'score':accepted[e['document_id']]['score'],'score_type':accepted[e['document_id']]['score_type']} for e in t['workflow']['evidence'] if e.get('original') and e['document_id'] in accepted}
     for r in results:
         existing[r['id']]={k:r.get(k) for k in ('id','document_id','filename','title','text','tags','score','score_type','sources','lineage_id','document_version','content_sha256')}
     t['workflow']['evidence']=list(existing.values())[-20:]
-    return {'action':'retrieve','query':query,'metadata_filter':{'tags_any':tags,'status':'ready'},'min_score':retrieved.get('min_score'),'score_type':retrieved.get('score_type'),'matches':len(results),
+    return {'action':'retrieve','query':query,'metadata_filter':{'tags_any':tags,'status':'ready'},'min_score':retrieved.get('min_score'),'score_type':retrieved.get('score_type'),'hyde':retrieved.get('hyde',False),'matches':len(results),
         'procedure_ref':t.get('procedure_ref'),'document_refs':[{k:r.get(k) for k in ('document_id','lineage_id','document_version','content_sha256')} for r in results],
         'note':'Filtered by matching ticket metadata.' if tags else 'No matching ingested tags; searched ready documents explicitly.'}
 
@@ -468,7 +470,7 @@ def agent_turn(ticket_id, body):
             elif cl['intent']=='status':
                 message=f"Ticket status: {t['status']}. Priority: {t['priority']}. No troubleshooting action was performed."
             else:
-                if not w['evidence']: w['trace'].append(retrieve(t,body.query,body.mode,body.tag))
+                if not w['evidence']: w['trace'].append(retrieve(t,body.query,body.mode,body.tag,body.hyde))
                 else:
                     # Exclude deleted/reingested sources and sources outside an explicit filter.
                     with A.db() as c: valid={r['id']:r['text'] for r in c.execute("SELECT c.id,c.text FROM chunks c JOIN documents d ON d.id=c.document_id WHERE d.status='ready'")}
@@ -478,7 +480,7 @@ def agent_turn(ticket_id, body):
                 for hop in range(4):
                     planned=decision(t,body.query);w['trace'].append({'action':planned['action'],'hop':hop+1,'query':planned['query'],'document_id':planned['document_id']})
                     if planned['action']=='search':
-                        w['trace'].append(retrieve(t,planned['query'] or body.query,body.mode,body.tag));continue
+                        w['trace'].append(retrieve(t,planned['query'] or body.query,body.mode,body.tag,body.hyde));continue
                     if planned['action']=='read':
                         source=next((e for e in w['evidence'] if e['document_id']==planned['document_id']),None)
                         if not source: raise ValueError('The assistant requested a document outside its retrieved evidence. Retry.')

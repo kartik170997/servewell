@@ -310,3 +310,12 @@ def test_priority_reason_cites_the_procedure_criterion():
     t={'date_opened':'2026-10-12T09:00:00+05:30'}
     p,reason=W.priority(t,classification(base_priority='P2',priority_criterion='High (P2): 50%+ of POS terminals down'))
     assert p=='P2' and 'procedure: "High (P2): 50%+ of POS terminals down"' in reason
+
+
+@pytest.mark.parametrize('mode,hyde,expected',[('hybrid',True,True),('hybrid',False,False),('lexical',True,False)])
+def test_workflow_hyde_toggle_reaches_retrieval(client,live,monkeypatch,mode,hyde,expected):
+    original=main.search;seen=[]
+    monkeypatch.setattr(main,'search',lambda body:(seen.append(body.hyde),original(body))[1])
+    t=final(start(client,mode=mode,hyde=hyde))
+    assert seen and all(x is expected for x in seen)
+    assert next(e for e in t['workflow']['trace'] if e['action']=='retrieve')['hyde'] is expected

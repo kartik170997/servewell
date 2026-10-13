@@ -409,6 +409,7 @@ class State(TypedDict, total=False):
     ticket: dict
     query: str
     mode: str
+    hyde: bool
     tag: str | None
     route: str
     phase: str
@@ -554,7 +555,7 @@ def retrieve_node(state):
         trace={'action':'read','document_id':doc['id'],'offset':offset,**{k:doc.get(k) for k in ('document_version','lineage_id','content_sha256')}}
     elif state.get('retrieval_query') or not w['evidence']:
         query=state.get('retrieval_query') or state['query']+' '+t['category']+' '+t['subject']
-        trace=W.retrieve(t,query[:2000],state['mode'],state.get('tag'))
+        trace=W.retrieve(t,query[:2000],state['mode'],state.get('tag'),state.get('hyde',False))
     else: trace={'action':'reuse','entries':len(w['evidence'])}
     w['trace']=(w['trace']+[trace])[-60:];w['evidence']=w['evidence'][-20:]
     return {'ticket':t,'phase':'retrieve','retrieval_query':'','read_request':None,'hops':state.get('hops',0)+1}
@@ -621,7 +622,7 @@ def feedback_node(state):
         for step in w.get('plan',[]):
             if step['status']=='active': step['status']='pending'
         w['pending']=None; audit(t,'User',f['query'])
-        return {'ticket':t,'query':f['query'],'mode':f['mode'],'tag':f.get('tag'),'phase':'feedback','route':'classify','hops':0,'replans':0}
+        return {'ticket':t,'query':f['query'],'mode':f['mode'],'hyde':f.get('hyde',False),'tag':f.get('tag'),'phase':'feedback','route':'classify','hops':0,'replans':0}
     if not p or f['action_id']!=p['id']: raise ValueError('This feedback does not match the checkpoint action.')
     outcome=f['outcome'];note=f['note'];minutes=f.get('minutes_spent',0)
     if p['kind']=='information' and t.get('checklist_optional'): w['optional_checklist_asked']=True
@@ -778,6 +779,7 @@ class StartRequest(BaseModel):
     query: str = Field(min_length=1,max_length=4000)
     request_id: str = Field(min_length=8,max_length=80)
     mode: Literal['lexical','hybrid','vector'] = 'hybrid'
+    hyde: bool = False
     tag: str | None = None
     store_id: str = Field(default='UNSPECIFIED',max_length=80)
     store_name: str = Field(default='Not provided',max_length=200)
@@ -797,7 +799,7 @@ def initial(t,body):
     w.setdefault('original_issue',body.query)
     w.setdefault('plan',[]);w.setdefault('audit',[])
     audit(t,'User',body.query)
-    return {'ticket':t,'query':body.query,'mode':body.mode,'tag':body.tag,'operation_id':body.request_id,
+    return {'ticket':t,'query':body.query,'mode':body.mode,'hyde':body.hyde,'tag':body.tag,'operation_id':body.request_id,
         'route':'','phase':'start','retrieval_query':'','read_request':None,'hops':0,'replans':0,'response':{}}
 
 
@@ -831,7 +833,7 @@ def run_events(ticket_id, kind, body):
                 if interrupted or not snapshot.next: raise HTTPException(409,'There is no failed graph operation to resume.')
                 data=None
         elif interrupted:
-            data=Command(resume={'kind':'query','query':body.query,'mode':body.mode,'tag':body.tag,'context':context})
+            data=Command(resume={'kind':'query','query':body.query,'mode':body.mode,'hyde':body.hyde,'tag':body.tag,'context':context})
         else:
             if snapshot.next: raise HTTPException(409,'Resume the saved operation before starting a new query.')
             data=initial(t,body)
@@ -898,7 +900,7 @@ def install(app,tickets):
                 t=agent_tools.registry(W)['create_ticket'](ticket_data=W.Ticket(ticket_id=ticket_id,store_id=context['store_id'],store_name=context['store_name'],
                     submitted_by=body.submitted_by or 'Not provided',contact_phone=body.contact_phone,date_opened=W.timestamp(),
                     subject=body.query[:300],description=body.query,asset_id=context['asset_id'],category=body.category,system_version=context.get('system_version',''),escalation_info=context.get('escalation_info',{})).model_dump(mode='json'))
-        turn=W.Turn(query=body.query,version=t['version'],request_id=body.request_id,mode=body.mode,tag=body.tag)
+        turn=W.Turn(query=body.query,version=t['version'],request_id=body.request_id,mode=body.mode,hyde=body.hyde,tag=body.tag)
         def events():
             yield {'type':'created','ticket':t}
             yield from run_events(ticket_id,'query',turn)
