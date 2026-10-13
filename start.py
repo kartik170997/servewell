@@ -86,6 +86,9 @@ def main():
         except FileNotFoundError:
             sys.exit('npm not found. Install Node.js 22.13+ from https://nodejs.org and open a new terminal.')
     load_dotenv(ROOT / '.env')
+    if not (ROOT / 'data' / 'folio.db').exists():
+        import seed_data
+        seed_data.restore()  # fresh clone: load the shared documents and tickets from seed/
 
     procs = {}
     mlflow_enabled = os.getenv('MLFLOW_ENABLED', 'false').strip().lower() in ('1', 'true', 'yes')

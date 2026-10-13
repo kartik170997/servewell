@@ -149,6 +149,20 @@ On the first run it executes `npm install` automatically if `node_modules` is mi
 | `--no-reload` | Run the backend without auto-reload |
 | `--backend-port 8001` | Use a different backend port |
 
+### Shared workspace data (seed)
+
+`data/` is never committed. Instead, `seed/` holds a snapshot of the workspace: the documents and their original uploads, tickets and ticket history, the store/asset directory, procedure versions and live-workflow checkpoints. On a fresh clone, `python start.py` copies `seed/` into `data/` automatically when `data/folio.db` does not exist yet. You can also run `python seed_data.py restore` yourself (`--force` overwrites existing data).
+
+To share your current data, refresh the snapshot and commit it:
+
+```sh
+python seed_data.py export
+git add seed
+git commit -m "Update seed data"
+```
+
+The snapshot never contains API keys: saved provider settings and `.encryption-key` are left out, so each clone uses the keys in its own `.env`. Search vectors live in Pinecone, not in the snapshot, so the clone's `.env` must point at the **same** `PINECONE_INDEX_HOST` and `PINECONE_NAMESPACE`. MLflow history (`mlflow.db`, over GitHub's 100 MB file limit) and `ticket-traces.sqlite` are not shared; traces start fresh on each machine. Ticket records include contact details, so keep the repository private if they are real. The Docker setup uses its own `folio-data` volume and does not load the seed.
+
 ### Or start each one separately
 
 ```sh
