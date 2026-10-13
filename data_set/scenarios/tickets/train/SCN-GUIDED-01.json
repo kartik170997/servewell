@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-GUIDED-01",
+  "store_id": "SW-0012",
+  "store_name": "ServeWell - Gachibowli",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-92549-83000",
+  "date_opened": "2026-10-06T09:31:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Offline",
+  "subject": "Receipt printer offline on counter",
+  "description": "POS shows \"Printer offline\" for the counter receipt printer since this morning. Other printers are fine. Power light is on.",
+  "asset_id": "PRN-0012-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "l1_guided"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

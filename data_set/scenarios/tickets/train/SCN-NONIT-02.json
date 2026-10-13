@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-NONIT-02",
+  "store_id": "SW-0032",
+  "store_name": "ServeWell - Brookefield",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-96460-63354",
+  "date_opened": "2026-10-08T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Other",
+  "subject": "Dining area AC not cooling",
+  "description": "The air conditioner in the dining area is blowing warm air and customers are complaining about the heat.",
+  "asset_id": "SSM-0032-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "non_it"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

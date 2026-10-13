@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P4-01",
+  "store_id": "SW-0062",
+  "store_name": "ServeWell - Baner",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-77288-36158",
+  "date_opened": "2026-10-13T09:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Display",
+  "subject": "POS screen flickers when idle",
+  "description": "The POS screen flickers after it sits idle for a long time. Billing works normally.",
+  "asset_id": "POS-0062-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "P4"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

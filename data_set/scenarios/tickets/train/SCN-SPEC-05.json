@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SPEC-05",
+  "store_id": "SW-0069",
+  "store_name": "ServeWell - Porur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-90419-51145",
+  "date_opened": "2026-10-15T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Specification",
+  "subject": "Can the Star printer connect by Ethernet",
+  "description": "Does the StarMC receipt printer support Ethernet, or only USB?",
+  "asset_id": "PRN-0069-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "specification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

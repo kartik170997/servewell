@@ -1,0 +1,39 @@
+{
+  "ticket_id": "SCN-L2-05",
+  "store_id": "SW-0015",
+  "store_name": "ServeWell - Yeshwanthpur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-74681-44718",
+  "date_opened": "2026-10-07T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Paper Jam",
+  "subject": "Paper jam keeps coming back after all checks",
+  "description": "Receipt printer jams again every few receipts.",
+  "asset_id": "PRN-0015-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "l2_escalation"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-10-07T06:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Guided paper path cleaning and roll reseat per printer-paper-jam runbook. Jam recurred after 3 receipts."
+    },
+    {
+      "timestamp": "2026-10-07T07:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Reinstalled printer driver and power cycled printer and POS. Jam recurred."
+    },
+    {
+      "timestamp": "2026-10-07T08:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Replaced paper roll with new 80mm stock. Still jamming. 35 minutes of troubleshooting logged."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

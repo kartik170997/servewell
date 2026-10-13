@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-BUG-05",
+  "store_id": "SW-0068",
+  "store_name": "ServeWell - Lokhandwala",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-70055-78146",
+  "date_opened": "2026-10-16T09:35:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Cash Drawer",
+  "subject": "Cash drawer opens when voiding items",
+  "description": "The cash drawer pops open whenever we void an item on the OrbitPOS.",
+  "asset_id": "POS-0068-T1",
+  "system_version": "OrbitPOS v2.0",
+  "tags": [
+    "known_bug_version"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

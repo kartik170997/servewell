@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SELF-01",
+  "store_id": "SW-0006",
+  "store_name": "ServeWell - New Town",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-81763-55082",
+  "date_opened": "2026-10-05T09:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Reports",
+  "subject": "How to generate the daily sales report",
+  "description": "Store manager here. How do I generate and print the daily sales summary on FoodTech POS at closing? Nothing is broken, I just need the steps.",
+  "asset_id": "POS-0006-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "l1_self_service"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

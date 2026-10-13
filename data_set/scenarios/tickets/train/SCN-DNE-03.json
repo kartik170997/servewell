@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-DNE-03",
+  "store_id": "SW-0080",
+  "store_name": "ServeWell - FC Road",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-85222-16582",
+  "date_opened": "2026-10-18T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Maintenance",
+  "subject": "Online ordering down during maintenance",
+  "description": "Online ordering is unavailable right now; we got an email about maintenance tonight 1-3 AM. Is this that?",
+  "asset_id": "POS-0080-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "do_not_escalate"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -319,3 +319,27 @@ def test_workflow_hyde_toggle_reaches_retrieval(client,live,monkeypatch,mode,hyd
     t=final(start(client,mode=mode,hyde=hyde))
     assert seen and all(x is expected for x in seen)
     assert next(e for e in t['workflow']['trace'] if e['action']=='retrieve')['hyde'] is expected
+
+
+@pytest.mark.parametrize('changes,expected',[
+    ({'routing':'non_it'},'non_it'),
+    ({'routing':'needs_clarification'},'needs_clarification'),
+    ({'routing':'l1_guided'},'l1_self_service'),
+    ({},'l1_self_service'),
+    ({'routing':'l1_guided','immediate_triggers':['payment_failure']},'l2_escalation')])
+def test_routing_before_any_step_is_completed(client,live,monkeypatch,changes,expected):
+    monkeypatch.setattr(L,'classify',lambda *a:classification(**changes))
+    t=final(start(client))
+    assert t['workflow']['routing']['value']==expected
+    assert t['workflow']['routing']['model_choice']==changes.get('routing')
+
+
+def test_routing_follows_completed_steps(client,live):
+    t=final(start(client))
+    assert t['workflow']['routing']['value']=='l1_self_service' and t['workflow']['routing']['steps_total']==2
+    t=final(feedback(client,t))
+    assert t['workflow']['routing']['value']=='l1_guided' and t['workflow']['routing']['steps_completed']==1
+    t=final(feedback(client,t))
+    assert t['workflow']['routing']['value']=='l2_escalation' and t['workflow']['routing']['steps_completed']==2
+    changes=[h['note'] for h in t['ticket_history'] if h['note'].startswith('Routing:')]
+    assert len(changes)==3 and changes[-1].startswith('Routing: l1_guided -> l2_escalation')

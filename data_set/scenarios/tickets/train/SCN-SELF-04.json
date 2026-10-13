@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SELF-04",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-70976-22280",
+  "date_opened": "2026-10-05T09:34:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Cleaning",
+  "subject": "Daily cleaning schedule for soft serve machine",
+  "description": "What is the recommended daily cleaning routine for our CreamTech soft serve machine? Machine is working fine.",
+  "asset_id": "SSM-0002-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "l1_self_service"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

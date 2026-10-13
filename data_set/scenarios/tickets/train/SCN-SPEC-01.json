@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SPEC-01",
+  "store_id": "SW-0055",
+  "store_name": "ServeWell - Sarjapur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-70316-24663",
+  "date_opened": "2026-10-15T09:31:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Specification",
+  "subject": "Which paper does the Epson printer use",
+  "description": "What paper width and type does our Epson receipt printer support?",
+  "asset_id": "PRN-0055-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "specification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

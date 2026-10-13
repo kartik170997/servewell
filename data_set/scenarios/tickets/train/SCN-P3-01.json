@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P3-01",
+  "store_id": "SW-0048",
+  "store_name": "ServeWell - SG Highway",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-74340-55745",
+  "date_opened": "2026-10-12T09:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Performance",
+  "subject": "One POS terminal very slow",
+  "description": "Terminal 2 takes 10 seconds per item. Other terminals are normal.",
+  "asset_id": "POS-0048-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "P3"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

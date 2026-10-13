@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P4-03",
+  "store_id": "SW-0118",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-79904-11854",
+  "date_opened": "2026-10-13T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Configuration",
+  "subject": "Kiosk welcome screen in wrong language",
+  "description": "The kiosk welcome screen opens in Hindi by default; we want English first.",
+  "asset_id": "KSK-0118-01",
+  "system_version": "ServeWell Kiosk v2.0",
+  "tags": [
+    "P4"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-NONIT-03",
+  "store_id": "SW-0035",
+  "store_name": "ServeWell - Madhapur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-84700-28373",
+  "date_opened": "2026-10-08T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Other",
+  "subject": "Leave request for next week",
+  "description": "I want to apply for 3 days leave next week, please approve.",
+  "asset_id": "KSK-0035-01",
+  "system_version": "ServeWell Kiosk v2.1",
+  "tags": [
+    "non_it"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

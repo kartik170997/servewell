@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-GUIDED-03",
+  "store_id": "SW-0024",
+  "store_name": "ServeWell - Mylapore",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-81894-50306",
+  "date_opened": "2026-10-06T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Touchscreen",
+  "subject": "Kiosk touchscreen ignores taps in lower area",
+  "description": "On one kiosk, taps on the bottom part of the screen do nothing. The other kiosk is fine.",
+  "asset_id": "KSK-0024-01",
+  "system_version": "TouchPoint K1 v1.1",
+  "tags": [
+    "l1_guided"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

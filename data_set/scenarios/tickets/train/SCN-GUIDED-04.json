@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-GUIDED-04",
+  "store_id": "SW-0004",
+  "store_name": "ServeWell - Kondapur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-96523-10851",
+  "date_opened": "2026-10-06T09:34:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Slow",
+  "subject": "Back-office Wi-Fi very slow",
+  "description": "Wi-Fi in the back office is very slow for the manager laptop. POS billing is working normally.",
+  "asset_id": "RTR-0004-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "l1_guided"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

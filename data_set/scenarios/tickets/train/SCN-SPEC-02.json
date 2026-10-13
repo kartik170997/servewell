@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SPEC-02",
+  "store_id": "SW-0064",
+  "store_name": "ServeWell - Kompally",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-81506-94080",
+  "date_opened": "2026-10-15T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Specification",
+  "subject": "How many devices can our router handle",
+  "description": "We are adding two kiosks. How many devices can the NetLink router support on DHCP?",
+  "asset_id": "RTR-0064-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "specification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

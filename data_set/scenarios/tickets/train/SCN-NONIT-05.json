@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-NONIT-05",
+  "store_id": "SW-0023",
+  "store_name": "ServeWell - Saket",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-87674-79514",
+  "date_opened": "2026-10-08T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Other",
+  "subject": "Water leaking from ceiling near counter",
+  "description": "Water is dripping from the ceiling near the billing counter. The POS is not affected yet but we moved it aside.",
+  "asset_id": "RTR-0023-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "non_it"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

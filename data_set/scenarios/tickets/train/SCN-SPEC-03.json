@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SPEC-03",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-70976-22280",
+  "date_opened": "2026-10-15T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Specification",
+  "subject": "Max room temperature for soft serve machine",
+  "description": "Our kitchen reaches 36°C in afternoons. Is that within the operating range of the CreamTech machine?",
+  "asset_id": "SSM-0002-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "specification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

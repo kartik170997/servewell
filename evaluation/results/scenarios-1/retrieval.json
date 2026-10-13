@@ -1,0 +1,3532 @@
+[
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "lexical",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 1121,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "kiosks-faq.md",
+   "soft-serve-faq.md",
+   "online-orders-faq.md"
+  ],
+  "scores": [
+   38.2102,
+   32.4409,
+   31.1191,
+   27.7635,
+   25.9293
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "lexical +tags",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 177,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "pos-screen-frozen.md",
+   "foodtech-pos.md",
+   "pos-printer-integration.md"
+  ],
+  "scores": [
+   38.2102,
+   32.4409,
+   16.3065,
+   15.7018,
+   14.2999
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "vector",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4306,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-startup-failure.md",
+   "foodtech-pos.md",
+   "pos-slow-performance.md",
+   "pos-payment-error.md",
+   "pos-end-of-day.md"
+  ],
+  "scores": [
+   0.8664,
+   0.8611,
+   0.8576,
+   0.857,
+   0.8569
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "vector +tags",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4219,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-startup-failure.md",
+   "foodtech-pos.md",
+   "pos-slow-performance.md",
+   "pos-payment-error.md",
+   "pos-end-of-day.md"
+  ],
+  "scores": [
+   0.8664,
+   0.8611,
+   0.8576,
+   0.857,
+   0.8569
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "hybrid",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 5006,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-end-of-day.md",
+   "pos-faq.md",
+   "foodtech-pos.md",
+   "pos-screen-frozen.md",
+   "pos-slow-performance.md"
+  ],
+  "scores": [
+   0.0315,
+   0.0309,
+   0.0302,
+   0.0292,
+   0.0285
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "hybrid +tags",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3900,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "foodtech-pos.md",
+   "pos-end-of-day.md",
+   "pos-faq.md",
+   "pos-screen-frozen.md",
+   "pos-slow-performance.md"
+  ],
+  "scores": [
+   0.0318,
+   0.0315,
+   0.0309,
+   0.0308,
+   0.0308
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "hybrid+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5750,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "foodtech-pos.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.8219,
+   0.6764,
+   0.6633,
+   0.6059,
+   0.5301
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5040,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "foodtech-pos.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.8238,
+   0.6743,
+   0.662,
+   0.6043,
+   0.5299
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "vector+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5155,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "foodtech-pos.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.8233,
+   0.6767,
+   0.6642,
+   0.6045,
+   0.5289
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-01",
+  "category": "POS",
+  "config": "vector+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5078,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "pos-end-of-day.md",
+   "foodtech-pos.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.823,
+   0.6775,
+   0.6651,
+   0.6057,
+   0.5299
+  ],
+  "relevant": [
+   "pos-end-of-day.md",
+   "pos-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "lexical",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 185,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-faq.md",
+   "printers-faq.md",
+   "star-printer.md",
+   "printer-paper-jam.md",
+   "epson-printer.md"
+  ],
+  "scores": [
+   71.1461,
+   63.5204,
+   52.2832,
+   49.2371,
+   44.8773
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "lexical +tags",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 192,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "star-printer.md",
+   "printer-paper-jam.md",
+   "epson-printer.md",
+   "printer-driver-reinstall.md"
+  ],
+  "scores": [
+   63.5204,
+   52.2832,
+   49.2371,
+   44.8773,
+   29.9026
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "vector",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4564,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-paper-jam.md",
+   "printer-wrong-output.md",
+   "printer-driver-reinstall.md"
+  ],
+  "scores": [
+   0.8855,
+   0.8756,
+   0.8691,
+   0.8658,
+   0.8567
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "vector +tags",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3993,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-paper-jam.md",
+   "printer-driver-reinstall.md",
+   "pos-printer-integration.md"
+  ],
+  "scores": [
+   0.8855,
+   0.8756,
+   0.8691,
+   0.8567,
+   0.8481
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "hybrid",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 5088,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-paper-jam.md",
+   "printer-wrong-output.md",
+   "star-printer.md"
+  ],
+  "scores": [
+   0.0325,
+   0.0315,
+   0.0315,
+   0.0308,
+   0.0306
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "hybrid +tags",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3922,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-paper-jam.md",
+   "star-printer.md",
+   "printer-driver-reinstall.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0318,
+   0.0317,
+   0.0313,
+   0.031
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "hybrid+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 6252,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printer-wrong-output.md",
+   "printers-faq.md",
+   "printer-paper-jam.md",
+   "epson-printer.md",
+   "pos-printer-integration.md"
+  ],
+  "scores": [
+   0.9268,
+   0.9094,
+   0.9028,
+   0.795,
+   0.7917
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5249,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "printer-paper-jam.md",
+   "epson-printer.md",
+   "pos-printer-integration.md",
+   "star-printer.md"
+  ],
+  "scores": [
+   0.9096,
+   0.9019,
+   0.795,
+   0.7905,
+   0.7415
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "vector+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5501,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printer-wrong-output.md",
+   "printers-faq.md",
+   "printer-paper-jam.md",
+   "epson-printer.md",
+   "pos-printer-integration.md"
+  ],
+  "scores": [
+   0.9268,
+   0.9094,
+   0.9028,
+   0.795,
+   0.7902
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-02",
+  "category": "Printers",
+  "config": "vector+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4239,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "printer-paper-jam.md",
+   "epson-printer.md",
+   "pos-printer-integration.md",
+   "star-printer.md"
+  ],
+  "scores": [
+   0.9096,
+   0.9019,
+   0.795,
+   0.7905,
+   0.7404
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "lexical",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 186,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-faq.md",
+   "netlink-router.md",
+   "network-slow.md",
+   "pos-slow-performance.md"
+  ],
+  "scores": [
+   72.8006,
+   71.6351,
+   60.688,
+   49.4003,
+   41.4035
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "lexical +tags",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 208,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-vpn.md",
+   "network-devices-not-connecting.md"
+  ],
+  "scores": [
+   72.8006,
+   49.4003,
+   32.3314,
+   7.6274,
+   5.3142
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "vector",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4564,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "netlink-router.md",
+   "network-guest-wifi.md",
+   "network-faq.md",
+   "network-devices-not-connecting.md",
+   "network-slow.md"
+  ],
+  "scores": [
+   0.8707,
+   0.8571,
+   0.8435,
+   0.8337,
+   0.8295
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "vector +tags",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3941,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-devices-not-connecting.md",
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.8571,
+   0.8337,
+   0.8295,
+   0.827,
+   0.8207
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4581,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "netlink-router.md",
+   "network-faq.md",
+   "network-slow.md",
+   "network-router-offline.md"
+  ],
+  "scores": [
+   0.0325,
+   0.0323,
+   0.032,
+   0.031,
+   0.0296
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid +tags",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3731,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-slow.md",
+   "network-devices-not-connecting.md",
+   "network-router-offline.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.0328,
+   0.032,
+   0.0315,
+   0.0315,
+   0.031
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5478,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "netlink-router.md",
+   "network-guest-wifi.md",
+   "network-faq.md",
+   "network-devices-not-connecting.md",
+   "network-slow.md"
+  ],
+  "scores": [
+   0.9907,
+   0.9906,
+   0.9904,
+   0.9813,
+   0.9733
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 3891,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-devices-not-connecting.md",
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.9906,
+   0.9813,
+   0.9728,
+   0.9643,
+   0.8262
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "vector+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5750,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "netlink-router.md",
+   "network-guest-wifi.md",
+   "network-faq.md",
+   "network-devices-not-connecting.md",
+   "star-printer.md"
+  ],
+  "scores": [
+   0.9907,
+   0.9906,
+   0.9904,
+   0.9813,
+   0.9766
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-03",
+  "category": "Wi-Fi / Network",
+  "config": "vector+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4206,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-guest-wifi.md",
+   "network-devices-not-connecting.md",
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.9906,
+   0.9813,
+   0.9726,
+   0.9643,
+   0.8262
+  ],
+  "relevant": [
+   "network-faq.md",
+   "network-guest-wifi.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "lexical",
+  "tags_used": 2,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 194,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-faq.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-overcooling.md",
+   "soft-serve-error-codes.md",
+   "soft-serve-motor-alarm.md"
+  ],
+  "scores": [
+   99.4522,
+   75.4379,
+   66.7603,
+   66.5714,
+   64.6011
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "lexical +tags",
+  "tags_used": 2,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 167,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.14285714285714285
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.14285714285714285
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-overcooling.md",
+   "soft-serve-error-codes.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-not-cooling.md"
+  ],
+  "scores": [
+   75.4379,
+   66.7603,
+   66.5714,
+   64.6011,
+   62.1629
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "vector",
+  "tags_used": 2,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 6322,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-faq.md",
+   "soft-serve-cleaning-stuck.md",
+   "creamtech-soft-serve.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-not-cooling.md"
+  ],
+  "scores": [
+   0.8822,
+   0.8678,
+   0.8666,
+   0.8625,
+   0.8619
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "vector +tags",
+  "tags_used": 2,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3794,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-cleaning-stuck.md",
+   "creamtech-soft-serve.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-not-cooling.md",
+   "soft-serve-error-codes.md"
+  ],
+  "scores": [
+   0.8672,
+   0.866,
+   0.8621,
+   0.8615,
+   0.8606
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "hybrid",
+  "tags_used": 2,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3488,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-faq.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-overcooling.md",
+   "soft-serve-error-codes.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0323,
+   0.031,
+   0.0308,
+   0.0308
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "hybrid +tags",
+  "tags_used": 2,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4433,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.2
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-overcooling.md",
+   "soft-serve-error-codes.md",
+   "creamtech-soft-serve.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0315,
+   0.0313,
+   0.0313,
+   0.0311
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "hybrid+rerank",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5693,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-faq.md",
+   "creamtech-soft-serve.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-not-cooling.md",
+   "network-faq.md"
+  ],
+  "scores": [
+   0.9719,
+   0.9718,
+   0.9333,
+   0.9192,
+   0.8836
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4738,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "creamtech-soft-serve.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-not-cooling.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-overcooling.md"
+  ],
+  "scores": [
+   0.9719,
+   0.9329,
+   0.9195,
+   0.869,
+   0.8656
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "vector+rerank",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5876,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "soft-serve-faq.md",
+   "creamtech-soft-serve.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-not-cooling.md",
+   "network-faq.md"
+  ],
+  "scores": [
+   0.9719,
+   0.9716,
+   0.9333,
+   0.9194,
+   0.88
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-04",
+  "category": "Soft Serve",
+  "config": "vector+rerank +tags",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4080,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "creamtech-soft-serve.md",
+   "soft-serve-cleaning-stuck.md",
+   "soft-serve-not-cooling.md",
+   "soft-serve-motor-alarm.md",
+   "soft-serve-overcooling.md"
+  ],
+  "scores": [
+   0.9716,
+   0.9329,
+   0.9189,
+   0.8688,
+   0.8653
+  ],
+  "relevant": [
+   "creamtech-soft-serve.md",
+   "soft-serve-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "lexical",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 218,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosks-faq.md",
+   "online-orders-faq.md",
+   "kiosk-payment-reader.md",
+   "kiosk-touchscreen.md",
+   "kiosk-software-crash.md"
+  ],
+  "scores": [
+   43.8193,
+   31.7751,
+   27.1659,
+   26.3121,
+   23.0991
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "lexical +tags",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 158,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md"
+  ],
+  "scores": [
+   26.3121
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "vector",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3846,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "pos-faq.md",
+   "kiosk-software-crash.md",
+   "network-faq.md"
+  ],
+  "scores": [
+   0.8658,
+   0.8644,
+   0.8457,
+   0.8438,
+   0.8385
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "vector +tags",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3699,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md"
+  ],
+  "scores": [
+   0.8162
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "hybrid",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4568,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosks-faq.md",
+   "kiosk-frozen.md",
+   "kiosk-payment-reader.md",
+   "kiosk-software-crash.md",
+   "pos-faq.md"
+  ],
+  "scores": [
+   0.0325,
+   0.0311,
+   0.031,
+   0.031,
+   0.0308
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "hybrid +tags",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3466,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md"
+  ],
+  "scores": [
+   0.0328
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "hybrid+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5459,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-software-crash.md",
+   "kiosk-payment-reader.md",
+   "pos-cash-drawer.md"
+  ],
+  "scores": [
+   0.8673,
+   0.8559,
+   0.7837,
+   0.7565,
+   0.7337
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 3576,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md"
+  ],
+  "scores": [
+   0.5315
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "vector+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 6070,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-software-crash.md",
+   "kiosk-payment-reader.md",
+   "pos-cash-drawer.md"
+  ],
+  "scores": [
+   0.868,
+   0.8561,
+   0.7837,
+   0.7547,
+   0.736
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-SELF-05",
+  "category": "Kiosks",
+  "config": "vector+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4819,
+  "raw": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "with_cutoff": {
+   "recall": 0.0,
+   "hit": 0.0,
+   "precision": 0.0,
+   "rr": 0.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md"
+  ],
+  "scores": [
+   0.5315
+  ],
+  "relevant": [
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "lexical",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 185,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.6,
+   "rr": 0.3333333333333333
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.6,
+   "rr": 0.3333333333333333
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printer-driver-reinstall.md",
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ],
+  "scores": [
+   64.8231,
+   60.2956,
+   51.525,
+   49.9582,
+   47.8684
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "lexical +tags",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 192,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.3333333333333333
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.3333333333333333
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printer-driver-reinstall.md",
+   "epson-printer.md",
+   "printers-faq.md",
+   "printer-paper-jam.md"
+  ],
+  "scores": [
+   64.8231,
+   60.2956,
+   51.525,
+   47.8684,
+   40.668
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "vector",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4989,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "pos-printer-integration.md",
+   "printer-wrong-output.md",
+   "epson-printer.md",
+   "printer-paper-jam.md"
+  ],
+  "scores": [
+   0.8695,
+   0.868,
+   0.8634,
+   0.8604,
+   0.8564
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "vector +tags",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4133,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "printers-faq.md",
+   "pos-printer-integration.md",
+   "epson-printer.md",
+   "printer-paper-jam.md",
+   "printer-driver-reinstall.md"
+  ],
+  "scores": [
+   0.8695,
+   0.868,
+   0.8604,
+   0.8564,
+   0.8551
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "hybrid",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4586,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-driver-reinstall.md",
+   "printer-wrong-output.md"
+  ],
+  "scores": [
+   0.0325,
+   0.0318,
+   0.0315,
+   0.0313,
+   0.0308
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "hybrid +tags",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4130,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printers-faq.md",
+   "epson-printer.md",
+   "printer-driver-reinstall.md",
+   "printer-paper-jam.md"
+  ],
+  "scores": [
+   0.0325,
+   0.032,
+   0.0317,
+   0.0315,
+   0.031
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "hybrid+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5119,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printer-offline.md",
+   "printers-faq.md",
+   "printer-wrong-output.md",
+   "online-orders-sync-failure.md"
+  ],
+  "scores": [
+   0.9463,
+   0.9394,
+   0.8942,
+   0.8005,
+   0.7873
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4832,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printers-faq.md",
+   "printer-driver-reinstall.md",
+   "star-printer.md",
+   "epson-printer.md"
+  ],
+  "scores": [
+   0.9467,
+   0.8944,
+   0.7612,
+   0.7596,
+   0.7028
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "vector+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5471,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printer-offline.md",
+   "printers-faq.md",
+   "printer-wrong-output.md",
+   "online-orders-sync-failure.md"
+  ],
+  "scores": [
+   0.9466,
+   0.939,
+   0.8941,
+   0.8024,
+   0.7886
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-01",
+  "category": "Printers",
+  "config": "vector+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4654,
+  "raw": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.6666666666666666,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-printer-integration.md",
+   "printers-faq.md",
+   "star-printer.md",
+   "printer-driver-reinstall.md",
+   "epson-printer.md"
+  ],
+  "scores": [
+   0.9467,
+   0.8944,
+   0.7596,
+   0.7589,
+   0.7028
+  ],
+  "relevant": [
+   "epson-printer.md",
+   "printer-offline.md",
+   "printers-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "lexical",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 192,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "orbitpos.md",
+   "online-orders-menu-mismatch.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   65.0564,
+   19.2434,
+   19.238,
+   19.0036,
+   18.4322
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "lexical +tags",
+  "tags_used": 3,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 218,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md",
+   "pos-faq.md",
+   "pos-startup-failure.md"
+  ],
+  "scores": [
+   65.0564,
+   19.0036,
+   18.4322,
+   17.4642,
+   16.7389
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "vector",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4321,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md",
+   "pos-startup-failure.md",
+   "foodtech-pos.md"
+  ],
+  "scores": [
+   0.873,
+   0.8469,
+   0.8417,
+   0.8415,
+   0.8414
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "vector +tags",
+  "tags_used": 3,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3884,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md",
+   "pos-startup-failure.md",
+   "foodtech-pos.md"
+  ],
+  "scores": [
+   0.873,
+   0.8469,
+   0.8417,
+   0.8415,
+   0.8414
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "hybrid",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4882,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0318,
+   0.0313,
+   0.0306,
+   0.0296
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "hybrid +tags",
+  "tags_used": 3,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4126,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-screen-frozen.md",
+   "pos-startup-failure.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0323,
+   0.0317,
+   0.031,
+   0.0301
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "hybrid+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5769,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-software-update.md",
+   "pos-cash-drawer.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.9392,
+   0.7631,
+   0.7314,
+   0.7017,
+   0.6838
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5299,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-software-update.md",
+   "pos-cash-drawer.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.9397,
+   0.7621,
+   0.7328,
+   0.7033,
+   0.6847
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "vector+rerank",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5458,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-software-update.md",
+   "pos-cash-drawer.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.9392,
+   0.7631,
+   0.7306,
+   0.702,
+   0.6807
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-02",
+  "category": "POS",
+  "config": "vector+rerank +tags",
+  "tags_used": 3,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4628,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "pos-scanner.md",
+   "pos-slow-performance.md",
+   "pos-software-update.md",
+   "pos-cash-drawer.md",
+   "pos-pin-pad.md"
+  ],
+  "scores": [
+   0.9397,
+   0.7621,
+   0.7328,
+   0.7017,
+   0.6834
+  ],
+  "relevant": [
+   "pos-scanner.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "lexical",
+  "tags_used": 2,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 192,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-payment-reader.md",
+   "kiosk-software-crash.md"
+  ],
+  "scores": [
+   63.5598,
+   50.8218,
+   43.8853,
+   39.6659,
+   25.3496
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "lexical +tags",
+  "tags_used": 2,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 167,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   63.5598,
+   50.8218,
+   24.9335
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "vector",
+  "tags_used": 2,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4136,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "pos-screen-frozen.md",
+   "kiosk-payment-reader.md"
+  ],
+  "scores": [
+   0.849,
+   0.8479,
+   0.8471,
+   0.8266,
+   0.825
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "vector +tags",
+  "tags_used": 2,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 3626,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.849,
+   0.8479,
+   0.8266
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "hybrid",
+  "tags_used": 2,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4592,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-payment-reader.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0323,
+   0.0317,
+   0.031,
+   0.0308
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "hybrid +tags",
+  "tags_used": 2,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 2714,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-touchscreen.md",
+   "kiosk-frozen.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.0328,
+   0.0323,
+   0.0317
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "hybrid+rerank",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5423,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-touchscreen.md",
+   "kiosk-payment-reader.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.9561,
+   0.9297,
+   0.9172,
+   0.8487,
+   0.8277
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4817,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosk-touchscreen.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.9564,
+   0.9177,
+   0.8263
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "vector+rerank",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 6243,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosks-faq.md",
+   "kiosk-touchscreen.md",
+   "kiosk-payment-reader.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.9557,
+   0.9306,
+   0.9172,
+   0.8513,
+   0.8287
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-03",
+  "category": "Kiosks",
+  "config": "vector+rerank +tags",
+  "tags_used": 2,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 3945,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "kiosk-frozen.md",
+   "kiosk-touchscreen.md",
+   "pos-screen-frozen.md"
+  ],
+  "scores": [
+   0.9564,
+   0.9177,
+   0.8263
+  ],
+  "relevant": [
+   "kiosk-touchscreen.md",
+   "kiosks-faq.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "lexical",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 184,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 0.5
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-faq.md",
+   "network-slow.md",
+   "netlink-router.md",
+   "network-guest-wifi.md",
+   "pos-slow-performance.md"
+  ],
+  "scores": [
+   59.3323,
+   58.1064,
+   56.8869,
+   46.4083,
+   43.71
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "lexical +tags",
+  "tags_used": 1,
+  "cutoff": 0.0,
+  "score_type": "BM25",
+  "ms": 192,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "network-router-offline.md",
+   "network-vpn.md",
+   "network-devices-not-connecting.md"
+  ],
+  "scores": [
+   58.1064,
+   46.4083,
+   37.9513,
+   21.3985,
+   17.0205
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "vector",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4360,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "netlink-router.md",
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-guest-wifi.md",
+   "network-devices-not-connecting.md"
+  ],
+  "scores": [
+   0.8725,
+   0.8585,
+   0.8509,
+   0.8505,
+   0.8468
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "vector +tags",
+  "tags_used": 1,
+  "cutoff": 0.2,
+  "score_type": "Similarity",
+  "ms": 4207,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-router-offline.md",
+   "network-guest-wifi.md",
+   "network-devices-not-connecting.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.8585,
+   0.8509,
+   0.8505,
+   0.8468,
+   0.8412
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 4500,
+  "raw": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 1.0,
+   "hit": 1.0,
+   "precision": 0.4,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "netlink-router.md",
+   "network-slow.md",
+   "network-faq.md",
+   "network-guest-wifi.md",
+   "network-router-offline.md"
+  ],
+  "scores": [
+   0.0323,
+   0.0323,
+   0.0315,
+   0.0312,
+   0.031
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid +tags",
+  "tags_used": 1,
+  "cutoff": 0.01,
+  "score_type": "RRF",
+  "ms": 3305,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "network-router-offline.md",
+   "network-vpn.md",
+   "network-devices-not-connecting.md"
+  ],
+  "scores": [
+   0.0328,
+   0.032,
+   0.032,
+   0.031,
+   0.031
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 6836,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "pos-faq.md",
+   "network-router-offline.md",
+   "network-faq.md"
+  ],
+  "scores": [
+   0.928,
+   0.8476,
+   0.8132,
+   0.8044,
+   0.7322
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "hybrid+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4125,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "network-router-offline.md",
+   "network-devices-not-connecting.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.9281,
+   0.8478,
+   0.8043,
+   0.6326,
+   0.3186
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "vector+rerank",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 5946,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "pos-faq.md",
+   "network-router-offline.md",
+   "network-faq.md"
+  ],
+  "scores": [
+   0.928,
+   0.8476,
+   0.8133,
+   0.8044,
+   0.7341
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ },
+ {
+  "ticket_id": "SCN-GUIDED-04",
+  "category": "Wi-Fi / Network",
+  "config": "vector+rerank +tags",
+  "tags_used": 1,
+  "cutoff": 0.3,
+  "score_type": "Rerank",
+  "ms": 4669,
+  "raw": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "with_cutoff": {
+   "recall": 0.5,
+   "hit": 1.0,
+   "precision": 0.2,
+   "rr": 1.0
+  },
+  "empty_after_cutoff": false,
+  "top": [
+   "network-slow.md",
+   "network-guest-wifi.md",
+   "network-router-offline.md",
+   "network-devices-not-connecting.md",
+   "network-vpn.md"
+  ],
+  "scores": [
+   0.9281,
+   0.849,
+   0.8055,
+   0.634,
+   0.3166
+  ],
+  "relevant": [
+   "netlink-router.md",
+   "network-slow.md"
+  ]
+ }
+]

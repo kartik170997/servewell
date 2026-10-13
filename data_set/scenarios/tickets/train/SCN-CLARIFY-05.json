@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-CLARIFY-05",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-90876-44335",
+  "date_opened": "2026-10-09T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "",
+  "subject": "Screen problem",
+  "description": "Screen problem at store, please check.",
+  "asset_id": "KSK-0054-01",
+  "system_version": "ServeWell Kiosk v2.0",
+  "tags": [
+    "needs_clarification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

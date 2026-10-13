@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P1-03",
+  "store_id": "SW-0041",
+  "store_name": "ServeWell - Andheri West",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-94509-51104",
+  "date_opened": "2026-10-10T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Online Orders",
+  "subcategory": "Aggregator",
+  "subject": "Online orders missing at three stores",
+  "description": "Swiggy and Zomato orders are not reaching our store or the two other stores in this area since 9 AM. Aggregator dashboards show orders accepted.",
+  "asset_id": "POS-0041-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "P1"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SELF-03",
+  "store_id": "SW-0003",
+  "store_name": "ServeWell - Vijayanagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-93462-95181",
+  "date_opened": "2026-10-05T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Guest Wi-Fi",
+  "subject": "Guest Wi-Fi details for customers",
+  "description": "Customers keep asking for Wi-Fi. How do we find the guest Wi-Fi name and password to share with them?",
+  "asset_id": "RTR-0003-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "l1_self_service"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

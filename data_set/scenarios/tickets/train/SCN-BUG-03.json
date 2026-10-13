@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-BUG-03",
+  "store_id": "SW-0076",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-92046-50687",
+  "date_opened": "2026-10-16T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "DHCP",
+  "subject": "New devices cannot get an IP",
+  "description": "New tablets cannot connect to Wi-Fi; they say no IP address. About 45 devices are already connected.",
+  "asset_id": "RTR-0076-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "known_bug_version"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

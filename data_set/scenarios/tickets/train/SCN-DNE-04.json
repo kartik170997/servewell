@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-DNE-04",
+  "store_id": "SW-0081",
+  "store_name": "ServeWell - Karol Bagh",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-91875-79616",
+  "date_opened": "2026-10-18T09:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Configuration",
+  "subject": "Wrong terminal assigned to register 2",
+  "description": "Register 2 bills are showing under terminal 1 in reports; I think we set the wrong terminal.",
+  "asset_id": "POS-0081-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "do_not_escalate"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

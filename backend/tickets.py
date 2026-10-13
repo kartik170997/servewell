@@ -81,6 +81,15 @@ class Monitor(BaseModel):
     note: str = Field(min_length=1, max_length=2000)
 
 
+ROUTING=('l1_self_service','l1_guided','l2_escalation','non_it','needs_clarification')
+ROUTING_GUIDE=('Triage routing for this ticket. l1_self_service: a how-to or information request the store user can complete alone from documentation. '
+    'l1_guided: an IT fault L1 should troubleshoot with the user step by step. '
+    'l2_escalation: L2 is needed now, because an immediate trigger applies, the ticket history shows the documented L1 troubleshooting was already done without resolution, '
+    'or the fix needs hardware replacement, vendor, or engineering work. '
+    'non_it: not an IT systems issue (for example HR, payroll, facilities, food quality); redirect, do not troubleshoot. '
+    'needs_clarification: the report is too vague to choose any other route.')
+
+
 class Classification(BaseModel):
     intent: Literal['troubleshoot','how_to','status','information','resolve','escalate']
     immediate_triggers: list[Literal['payment_failure','all_pos_down','data_loss','security','network_failure','integration_failure','unknown_error','wait_over_30_minutes','compliance','customer_escalation']] = Field(default_factory=list)
@@ -89,6 +98,24 @@ class Classification(BaseModel):
     base_priority: Literal['P1','P2','P3','P4'] = 'P3'
     priority_criterion: str = Field(default='',max_length=600,description='Verbatim text of the impact criterion in the supplied procedure that the reported impact meets for base_priority. Compare reported quantities with its thresholds; an approximate quantity counts when it unambiguously satisfies a threshold, so an exact count is not required.')
     overrides: list[Literal['recurring','vip','external_dependency','customer_escalation','known_workaround']] = Field(default_factory=list)
+    routing: Literal[ROUTING] = Field(default='l1_guided',description=ROUTING_GUIDE)
+
+
+def routing(t):
+    """Routing in the label vocabulary, from workflow progress: no completed step is self-service,
+    one or more is guided, and every planned step completed without resolution is L2."""
+    w=t.get('workflow') or {};cl=w.get('classification') or {};plan=w.get('plan') or []
+    done=[x for x in plan if x.get('status') in ('completed','failed')]
+    if cl.get('immediate_triggers'):
+        return 'l2_escalation','Immediate trigger: '+', '.join(cl['immediate_triggers'])
+    if t.get('status')=='Escalated' or w.get('escalated_at'): return 'l2_escalation','The incident is with L2.'
+    if plan and len(done)==len(plan) and t.get('status')!='Resolved':
+        return 'l2_escalation',f'All {len(plan)} planned steps were completed without resolution.'
+    if done: return 'l1_guided',f'{len(done)} of {len(plan)} planned steps completed with the user.'
+    # Before any step is done, keep a classifier decision that is not an L1 route.
+    if cl.get('routing') in ('non_it','needs_clarification','l2_escalation'):
+        return cl['routing'],'Classifier: '+(cl.get('reason') or cl['routing'])
+    return 'l1_self_service','No planned step completed yet.'
 
 
 class AgentDecision(BaseModel):

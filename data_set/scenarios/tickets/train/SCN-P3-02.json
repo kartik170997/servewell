@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P3-02",
+  "store_id": "SW-0049",
+  "store_name": "ServeWell - Tambaram",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-97320-81200",
+  "date_opened": "2026-10-12T09:32:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Update",
+  "subject": "Software update stuck on one terminal",
+  "description": "One POS shows \"Installing update 45%\" for an hour. Other terminals are fine.",
+  "asset_id": "POS-0049-T2",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "P3"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

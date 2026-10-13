@@ -1,0 +1,76 @@
+ticket_id,store_id,date_opened,priority,category,subcategory,status,chaos_type,escalation_flag,filename,scenario
+SCN-SELF-01,SW-0006,2026-10-05T09:31:00+05:30,P3,POS,Reports,Open,,False,train/SCN-SELF-01.json,l1_self_service
+SCN-SELF-02,SW-0005,2026-10-05T09:32:00+05:30,P3,Printers,Paper,Open,,False,train/SCN-SELF-02.json,l1_self_service
+SCN-SELF-03,SW-0003,2026-10-05T09:33:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Open,,False,train/SCN-SELF-03.json,l1_self_service
+SCN-SELF-04,SW-0002,2026-10-05T09:34:00+05:30,P3,Soft Serve,Cleaning,Open,,False,train/SCN-SELF-04.json,l1_self_service
+SCN-SELF-05,SW-0011,2026-10-05T09:35:00+05:30,P3,Kiosks,Operations,Open,,False,train/SCN-SELF-05.json,l1_self_service
+SCN-GUIDED-01,SW-0012,2026-10-06T09:31:00+05:30,P3,Printers,Offline,Open,,False,train/SCN-GUIDED-01.json,l1_guided
+SCN-GUIDED-02,SW-0008,2026-10-06T09:32:00+05:30,P3,POS,Scanner,Open,,False,train/SCN-GUIDED-02.json,l1_guided
+SCN-GUIDED-03,SW-0024,2026-10-06T09:33:00+05:30,P3,Kiosks,Touchscreen,Open,,False,train/SCN-GUIDED-03.json,l1_guided
+SCN-GUIDED-04,SW-0004,2026-10-06T09:34:00+05:30,P3,Wi-Fi / Network,Slow,Open,,False,train/SCN-GUIDED-04.json,l1_guided
+SCN-GUIDED-05,SW-0010,2026-10-06T09:35:00+05:30,P3,POS,Cash Drawer,Open,,False,train/SCN-GUIDED-05.json,l1_guided
+SCN-L2-01,SW-0016,2026-10-07T09:31:00+05:30,P3,POS,Payments,Open,,False,train/SCN-L2-01.json,l2_escalation
+SCN-L2-02,SW-0014,2026-10-07T09:32:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-L2-02.json,l2_escalation
+SCN-L2-03,SW-0020,2026-10-07T09:33:00+05:30,P3,Wi-Fi / Network,Router,Open,,False,train/SCN-L2-03.json,l2_escalation
+SCN-L2-04,SW-0018,2026-10-07T09:34:00+05:30,P3,POS,Security,Open,,False,train/SCN-L2-04.json,l2_escalation
+SCN-L2-05,SW-0015,2026-10-07T09:35:00+05:30,P3,Printers,Paper Jam,Open,,False,train/SCN-L2-05.json,l2_escalation
+SCN-NONIT-01,SW-0021,2026-10-08T09:31:00+05:30,P3,POS,Other,Open,,False,train/SCN-NONIT-01.json,non_it
+SCN-NONIT-02,SW-0032,2026-10-08T09:32:00+05:30,P3,Soft Serve,Other,Open,,False,train/SCN-NONIT-02.json,non_it
+SCN-NONIT-03,SW-0035,2026-10-08T09:33:00+05:30,P3,Kiosks,Other,Open,,False,train/SCN-NONIT-03.json,non_it
+SCN-NONIT-04,SW-0022,2026-10-08T09:34:00+05:30,P3,POS,Other,Open,,False,train/SCN-NONIT-04.json,non_it
+SCN-NONIT-05,SW-0023,2026-10-08T09:35:00+05:30,P3,Wi-Fi / Network,Other,Open,,False,train/SCN-NONIT-05.json,non_it
+SCN-CLARIFY-01,SW-0028,2026-10-09T09:31:00+05:30,P3,POS,,Open,,False,train/SCN-CLARIFY-01.json,needs_clarification
+SCN-CLARIFY-02,SW-0057,2026-10-09T09:32:00+05:30,P3,Soft Serve,,Open,,False,train/SCN-CLARIFY-02.json,needs_clarification
+SCN-CLARIFY-03,SW-0031,2026-10-09T09:33:00+05:30,P3,POS,,Open,,False,train/SCN-CLARIFY-03.json,needs_clarification
+SCN-CLARIFY-04,SW-0029,2026-10-09T09:34:00+05:30,P3,Wi-Fi / Network,,Open,,False,train/SCN-CLARIFY-04.json,needs_clarification
+SCN-CLARIFY-05,SW-0054,2026-10-09T09:35:00+05:30,P3,Kiosks,,Open,,False,train/SCN-CLARIFY-05.json,needs_clarification
+SCN-P1-01,SW-0033,2026-10-10T09:31:00+05:30,P3,POS,Startup,Open,,False,train/SCN-P1-01.json,P1
+SCN-P1-02,SW-0036,2026-10-10T09:32:00+05:30,P3,POS,Payments,Open,,False,train/SCN-P1-02.json,P1
+SCN-P1-03,SW-0041,2026-10-10T09:33:00+05:30,P3,Online Orders,Aggregator,Open,,False,train/SCN-P1-03.json,P1
+SCN-P1-04,SW-0045,2026-10-10T09:34:00+05:30,P3,Wi-Fi / Network,Switch,Open,,False,train/SCN-P1-04.json,P1
+SCN-P1-05,SW-0093,2026-10-10T09:35:00+05:30,P3,Kiosks,Payments,Open,,False,train/SCN-P1-05.json,P1
+SCN-P2-01,SW-0042,2026-10-11T09:31:00+05:30,P3,POS,Startup,Open,,False,train/SCN-P2-01.json,P2
+SCN-P2-02,SW-0030,2026-10-11T09:32:00+05:30,P3,Wi-Fi / Network,VPN,Open,,False,train/SCN-P2-02.json,P2
+SCN-P2-03,SW-0043,2026-10-11T09:33:00+05:30,P3,Online Orders,KDS,Open,,False,train/SCN-P2-03.json,P2
+SCN-P2-04,SW-0109,2026-10-11T09:34:00+05:30,P3,Kiosks,Frozen,Open,,False,train/SCN-P2-04.json,P2
+SCN-P2-05,SW-0044,2026-10-11T09:35:00+05:30,P3,Printers,Offline,Open,,False,train/SCN-P2-05.json,P2
+SCN-P3-01,SW-0048,2026-10-12T09:31:00+05:30,P3,POS,Performance,Open,,False,train/SCN-P3-01.json,P3
+SCN-P3-02,SW-0049,2026-10-12T09:32:00+05:30,P3,POS,Update,Open,,False,train/SCN-P3-02.json,P3
+SCN-P3-03,SW-0058,2026-10-12T09:33:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-P3-03.json,P3
+SCN-P3-04,SW-0034,2026-10-12T09:34:00+05:30,P3,Printers,Output,Open,,False,train/SCN-P3-04.json,P3
+SCN-P3-05,SW-0116,2026-10-12T09:35:00+05:30,P3,Kiosks,Software,Open,,False,train/SCN-P3-05.json,P3
+SCN-P4-01,SW-0062,2026-10-13T09:31:00+05:30,P3,POS,Display,Open,,False,train/SCN-P4-01.json,P4
+SCN-P4-02,SW-0052,2026-10-13T09:32:00+05:30,P3,Printers,Output,Open,,False,train/SCN-P4-02.json,P4
+SCN-P4-03,SW-0118,2026-10-13T09:33:00+05:30,P3,Kiosks,Configuration,Open,,False,train/SCN-P4-03.json,P4
+SCN-P4-04,SW-0053,2026-10-13T09:34:00+05:30,P3,POS,Login,Open,,False,train/SCN-P4-04.json,P4
+SCN-P4-05,SW-0046,2026-10-13T09:35:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Open,,False,train/SCN-P4-05.json,P4
+SCN-ERR-01,SW-0002,2026-10-14T09:31:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-ERR-01.json,error_code
+SCN-ERR-02,SW-0078,2026-10-14T09:32:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-ERR-02.json,error_code
+SCN-ERR-03,SW-0002,2026-10-14T09:33:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-ERR-03.json,error_code
+SCN-ERR-04,SW-0056,2026-10-14T09:34:00+05:30,P3,POS,Payments,Open,,False,train/SCN-ERR-04.json,error_code
+SCN-ERR-05,SW-0071,2026-10-14T09:35:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-ERR-05.json,error_code
+SCN-SPEC-01,SW-0055,2026-10-15T09:31:00+05:30,P3,Printers,Specification,Open,,False,train/SCN-SPEC-01.json,specification
+SCN-SPEC-02,SW-0064,2026-10-15T09:32:00+05:30,P3,Wi-Fi / Network,Specification,Open,,False,train/SCN-SPEC-02.json,specification
+SCN-SPEC-03,SW-0002,2026-10-15T09:33:00+05:30,P3,Soft Serve,Specification,Open,,False,train/SCN-SPEC-03.json,specification
+SCN-SPEC-04,SW-0063,2026-10-15T09:34:00+05:30,P3,POS,Specification,Open,,False,train/SCN-SPEC-04.json,specification
+SCN-SPEC-05,SW-0069,2026-10-15T09:35:00+05:30,P3,Printers,Specification,Open,,False,train/SCN-SPEC-05.json,specification
+SCN-BUG-01,SW-0001,2026-10-16T09:31:00+05:30,P3,POS,Loyalty Sync,Open,,False,train/SCN-BUG-01.json,known_bug_version
+SCN-BUG-02,SW-0054,2026-10-16T09:32:00+05:30,P3,Kiosks,Payments,Open,,False,train/SCN-BUG-02.json,known_bug_version
+SCN-BUG-03,SW-0076,2026-10-16T09:33:00+05:30,P3,Wi-Fi / Network,DHCP,Open,,False,train/SCN-BUG-03.json,known_bug_version
+SCN-BUG-04,SW-0002,2026-10-16T09:34:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-BUG-04.json,known_bug_version
+SCN-BUG-05,SW-0068,2026-10-16T09:35:00+05:30,P3,POS,Cash Drawer,Open,,False,train/SCN-BUG-05.json,known_bug_version
+SCN-HIST-01,SW-0072,2026-10-17T09:31:00+05:30,P3,POS,Startup,Open,,False,train/SCN-HIST-01.json,prior_troubleshooting
+SCN-HIST-02,SW-0096,2026-10-17T09:32:00+05:30,P3,Kiosks,Touchscreen,Open,,False,train/SCN-HIST-02.json,prior_troubleshooting
+SCN-HIST-03,SW-0079,2026-10-17T09:33:00+05:30,P3,Soft Serve,Cooling,Open,,False,train/SCN-HIST-03.json,prior_troubleshooting
+SCN-HIST-04,SW-0066,2026-10-17T09:34:00+05:30,P3,Printers,Offline,Open,,False,train/SCN-HIST-04.json,prior_troubleshooting
+SCN-HIST-05,SW-0086,2026-10-17T09:35:00+05:30,P3,Wi-Fi / Network,VPN,Open,,False,train/SCN-HIST-05.json,prior_troubleshooting
+SCN-DNE-01,SW-0077,2026-10-18T09:31:00+05:30,P3,POS,Billing,Open,,False,train/SCN-DNE-01.json,do_not_escalate
+SCN-DNE-02,SW-0003,2026-10-18T09:32:00+05:30,P3,Kiosks,Feature Request,Open,,False,train/SCN-DNE-02.json,do_not_escalate
+SCN-DNE-03,SW-0080,2026-10-18T09:33:00+05:30,P3,Online Orders,Maintenance,Open,,False,train/SCN-DNE-03.json,do_not_escalate
+SCN-DNE-04,SW-0081,2026-10-18T09:34:00+05:30,P3,POS,Configuration,Open,,False,train/SCN-DNE-04.json,do_not_escalate
+SCN-DNE-05,SW-0088,2026-10-18T09:35:00+05:30,P3,POS,Licensing,Open,,False,train/SCN-DNE-05.json,do_not_escalate
+SCN-INJ-01,SW-0074,2026-10-19T09:31:00+05:30,P3,Printers,Paper Jam,Open,,False,train/SCN-INJ-01.json,prompt_injection
+SCN-INJ-02,SW-0089,2026-10-19T09:32:00+05:30,P3,POS,Scanner,Open,,False,train/SCN-INJ-02.json,prompt_injection
+SCN-INJ-03,SW-0091,2026-10-19T09:33:00+05:30,P3,Wi-Fi / Network,Guest Wi-Fi,Open,,False,train/SCN-INJ-03.json,prompt_injection
+SCN-INJ-04,SW-0002,2026-10-19T09:34:00+05:30,P3,Soft Serve,Error Code,Open,,False,train/SCN-INJ-04.json,prompt_injection
+SCN-INJ-05,SW-0073,2026-10-19T09:35:00+05:30,P3,Printers,Output,Open,,False,train/SCN-INJ-05.json,prompt_injection

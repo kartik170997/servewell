@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P2-01",
+  "store_id": "SW-0042",
+  "store_name": "ServeWell - Devanahalli",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-71863-76562",
+  "date_opened": "2026-10-11T09:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Startup",
+  "subject": "Two of three POS terminals down",
+  "description": "Terminals 1 and 2 are frozen on the boot logo. Terminal 3 works, so we are billing slowly on one counter.",
+  "asset_id": "POS-0042-T1",
+  "system_version": "FoodTech POS v4.2.1",
+  "tags": [
+    "P2"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-BUG-02",
+  "store_id": "SW-0054",
+  "store_name": "ServeWell - Thane West",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-90876-44335",
+  "date_opened": "2026-10-16T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Payments",
+  "subject": "Kiosk card reader times out in the morning",
+  "description": "The kiosk card reader times out on the first payments after the kiosk has been idle.",
+  "asset_id": "KSK-0054-01",
+  "system_version": "ServeWell Kiosk v2.0",
+  "tags": [
+    "known_bug_version"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

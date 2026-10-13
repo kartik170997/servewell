@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P1-04",
+  "store_id": "SW-0045",
+  "store_name": "ServeWell - Chembur",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-76693-97782",
+  "date_opened": "2026-10-10T09:34:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Switch",
+  "subject": "Network switch down, store offline",
+  "description": "The main network switch is dead. POS, kiosks and the payment terminals are all offline.",
+  "asset_id": "RTR-0045-01",
+  "system_version": "Cisco SG350 15.2.1",
+  "tags": [
+    "P1"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,34 @@
+{
+  "ticket_id": "SCN-HIST-02",
+  "store_id": "SW-0096",
+  "store_name": "ServeWell - Bandra West",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-71706-55870",
+  "date_opened": "2026-10-17T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Touchscreen",
+  "subject": "Kiosk touchscreen dead",
+  "description": "Kiosk screen does not respond to touch at all.",
+  "asset_id": "KSK-0096-01",
+  "system_version": "TouchPoint K1 v1.1",
+  "tags": [
+    "prior_troubleshooting"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-10-17T06:32:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Screen cleaned and recalibration attempted; no touch response."
+    },
+    {
+      "timestamp": "2026-10-17T07:32:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Full kiosk reboot and USB touch cable reseated; still dead. 30 minutes logged."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

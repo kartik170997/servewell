@@ -1,0 +1,34 @@
+{
+  "ticket_id": "SCN-HIST-03",
+  "store_id": "SW-0079",
+  "store_name": "ServeWell - Janakpuri",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-99250-23970",
+  "date_opened": "2026-10-17T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Cooling",
+  "subject": "Soft serve not cooling, E02 again",
+  "description": "Product is runny again and E02 is back.",
+  "asset_id": "SSM-0079-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "prior_troubleshooting"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-10-17T06:33:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Condenser filter cleaned and airflow clearance checked; E02 cleared for 2 hours."
+    },
+    {
+      "timestamp": "2026-10-17T07:33:00+05:30",
+      "actor": "L1 Agent",
+      "note": "E02 returned; machine reset per runbook, still warm. 40 minutes logged."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-DNE-02",
+  "store_id": "SW-0003",
+  "store_name": "ServeWell - Vijayanagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-93462-95181",
+  "date_opened": "2026-10-18T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Feature Request",
+  "subject": "Please add UPI QR on kiosk screen",
+  "description": "Can you add a UPI QR code payment option on the kiosk home screen?",
+  "asset_id": "KSK-0003-01",
+  "system_version": "ServeWell Kiosk v2.1",
+  "tags": [
+    "do_not_escalate"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

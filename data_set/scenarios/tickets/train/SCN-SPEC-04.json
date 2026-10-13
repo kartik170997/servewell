@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SPEC-04",
+  "store_id": "SW-0063",
+  "store_name": "ServeWell - Deccan",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-77304-13101",
+  "date_opened": "2026-10-15T09:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Specification",
+  "subject": "Is our POS version still supported",
+  "description": "Which FoodTech POS version is the current stable release, and when does v4.2 reach end of life?",
+  "asset_id": "POS-0063-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "specification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

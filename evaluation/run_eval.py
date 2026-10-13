@@ -145,7 +145,7 @@ def stream(response):
 
 def run_ticket(http, case, run):
     t=intake_ticket(case['ticket'],run);started=time.perf_counter()
-    record={'ticket_id':case['ticket']['ticket_id'],'eval_ticket_id':t['ticket_id'],'category':t['category'],'chaos_type':case['index']['chaos_type'],
+    record={'ticket_id':case['ticket']['ticket_id'],'eval_ticket_id':t['ticket_id'],'category':t['category'],'chaos_type':case['index']['chaos_type'],'scenario':case['index'].get('scenario',''),
             'intake_priority':t['priority'],'intake_escalation_flag':t['escalation_flag'],'has_history':bool(t['ticket_history']),'label':case['label']}
     created=http.post('/api/tickets',json=t)
     if created.status_code==409: created=http.get('/api/tickets/'+t['ticket_id'])
@@ -167,7 +167,7 @@ def run_ticket(http, case, run):
     cl=w.get('classification') or {}
     steps=[{'title':s.get('title'),'instructions':s.get('instructions'),'expected_result':s.get('expected_result'),'citations':s.get('citations',[]),
             'cited_files':sorted({evidence[c]['filename'] for c in s.get('citations',[]) if c in evidence}),'confidence':s.get('confidence')} for s in w.get('plan',[])]
-    return {**record,'route':metrics.workflow_route(final),'status':final['status'],'priority':final['priority'],
+    return {**record,'route':metrics.workflow_route(final),'routing':metrics.triage_routing(final),'status':final['status'],'priority':final['priority'],
         'classification':{k:cl.get(k) for k in ('intent','immediate_triggers','do_not_escalate','base_priority','overrides','category','subcategory','confidence','reason')},
         'retrieved_files':retrieved,'steps':steps,'pending':{k:(w.get('pending') or {}).get(k) for k in ('kind','message','citations','confidence')},
         'plan_summary':w.get('plan_summary'),'retrieval_traces':[x for x in w.get('trace',[]) if x.get('action') in ('retrieve','read')],
@@ -249,20 +249,31 @@ def judge(cases, run, model):
 
 # --- report ------------------------------------------------------------------------------
 
+def expected_priority(r):
+    # Scenario labels state the procedure's priority; the training labels have none, so fall back to intake.
+    return r['label'].get('expected_priority') or r['intake_priority']
+
+
+def routed(r):
+    # Agent's stated triage routing; records from runs before the routing field use the observed outcome.
+    return r.get('routing') or r['route']
+
+
 def label_fields(scored):
     """The four first-turn checks: routing, KB documents, escalation decision, priority."""
     def stats(rows):
         docs=[x for x in (metrics.retrieval(metrics.relevant_documents(r['label']),r['retrieved_files'],5) for r in rows) if x]
-        return {'n':len(rows),'correct_routing':sum(r['route']==r['label']['correct_routing'] for r in rows)/len(rows),
+        return {'n':len(rows),'correct_routing':sum(routed(r)==r['label']['correct_routing'] for r in rows)/len(rows),
                 'kb_recall@5':metrics.mean(docs,'recall'),'kb_hit@5':metrics.mean(docs,'hit'),
                 'should_escalate':sum((r['route']=='l2_escalation')==r['label']['should_escalate'] for r in rows)/len(rows),
-                'priority':sum(r['priority']==r['intake_priority'] for r in rows)/len(rows)}
+                'priority':sum(r['priority']==expected_priority(r) for r in rows)/len(rows)}
     if not scored: return None
     return {'overall':stats(scored),'by_routing':metrics.by([{**r,'label_routing':r['label']['correct_routing']} for r in scored],'label_routing',stats),
             'by_category':metrics.by(scored,'category',stats),
-            'priority_confusion':metrics.confusion([(r['intake_priority'],r['priority']) for r in scored]),
-            'tickets':[{'ticket_id':r['ticket_id'],'category':r['category'],'routing':f"{r['label']['correct_routing']} -> {r['route']}",
-                        'escalate':f"{r['label']['should_escalate']} -> {r['route']=='l2_escalation'}",'priority':f"{r['intake_priority']} -> {r['priority']}",
+            'by_scenario':metrics.by([r for r in scored if r.get('scenario')],'scenario',stats),
+            'priority_confusion':metrics.confusion([(expected_priority(r),r['priority']) for r in scored]),
+            'tickets':[{'ticket_id':r['ticket_id'],'category':r['category'],'routing':f"{r['label']['correct_routing']} -> {routed(r)}",
+                        'escalate':f"{r['label']['should_escalate']} -> {r['route']=='l2_escalation'}",'priority':f"{expected_priority(r)} -> {r['priority']}",
                         'kb_recall@5':(metrics.retrieval(metrics.relevant_documents(r['label']),r['retrieved_files'],5) or {}).get('recall')} for r in scored]}
 
 
@@ -283,7 +294,8 @@ def summarize_workflow(records, judged):
                 'repeats_attempted_steps':sum(x['repeats_attempted_steps'] for x in g)/len(g)} if g else None
     return {
         'tickets':len(records),'errors':len(records)-len(ok),'error_messages':sorted({str(r['error'])[:160] for r in records if r.get('error')}),
-        'routing_confusion':metrics.confusion([(r['label']['correct_routing'],r['route']) for r in scored]),
+        'routing_confusion':metrics.confusion([(r['label']['correct_routing'],routed(r)) for r in scored]),
+        'outcome_confusion':metrics.confusion([(r['label']['correct_routing'],r['route']) for r in scored]),
         'escalation_first_turn':metrics.binary(pairs),
         'escalation_intent':metrics.binary(intends),
         'baselines_same_tickets':{rule:metrics.binary([(r['label']['should_escalate'],metrics.baseline_predictions({'ticket':{'escalation_flag':r['intake_escalation_flag'],'ticket_history':[1] if r['has_history'] else [],'priority':r['intake_priority']}})[rule]) for r in scored])
@@ -323,7 +335,8 @@ def markdown(summary):
                 '| Escalation decision | Accuracy | Balanced acc. | Recall | Precision | Missed | Unnecessary |','|---|---|---|---|---|---|---|']
         for name,m in [('agent: escalated now',e),('agent: escalated or immediate trigger',i),*[('baseline: '+k,v) for k,v in w['baselines_same_tickets'].items()]]:
             lines.append(f"| {name} | {pct(m['accuracy'])} | {pct(m['balanced_accuracy'])} | {pct(m['recall'])} | {pct(m['precision'])} | {pct(m['missed_escalation_rate'])} | {pct(m['unnecessary_escalation_rate'])} |")
-        lines+=['','Routing (label -> agent first turn):','']+[f"- {k}: {v}" for k,v in w['routing_confusion'].items()]
+        lines+=['','Routing (label -> agent triage decision):','']+[f"- {k}: {v}" for k,v in w['routing_confusion'].items()]
+        lines+=['','Outcome (label -> what the agent did on turn 1):','']+[f"- {k}: {v}" for k,v in w.get('outcome_confusion',{}).items()]
         lines+=['','By prior troubleshooting in ticket history:','']+[f"- {k}: n={m['n']}, recall {pct(m['recall'])}, unnecessary {pct(m['unnecessary_escalation_rate'])}" for k,m in w['escalation_by_history'].items()]
         lines+=['','By category:','']+[f"- {k}: n={m['n']}, accuracy {pct(m['accuracy'])}, recall {pct(m['recall'])}, unnecessary {pct(m['unnecessary_escalation_rate'])}" for k,m in w['escalation_by_category'].items()]
         g=w['grounding'];a=w['agent_retrieval']
@@ -338,6 +351,7 @@ def markdown(summary):
             row=lambda name,m:f"| {name} | {m['n']} | {pct(m['correct_routing'])} | {pct(m['kb_recall@5'])} | {pct(m['kb_hit@5'])} | {pct(m['should_escalate'])} | {pct(m['priority'])} |"
             lines+=['','## Label fields (first turn)','','| Group | n | correct_routing | relevant_kb_docs recall@5 | relevant_kb_docs hit@5 | should_escalate | priority |','|---|---|---|---|---|---|---|',
                     row('overall',f['overall'])]+[row('label '+k,m) for k,m in f['by_routing'].items()]+[row(k,m) for k,m in f['by_category'].items()]
+            lines+=[row('scenario '+k,m) for k,m in f.get('by_scenario',{}).items()]
             lines+=['','Priority (ticket -> agent):','']+[f"- {k}: {v}" for k,v in f['priority_confusion'].items()]
             lines+=['','| Ticket | Category | Routing (label -> agent) | Escalate (label -> agent) | Priority (ticket -> agent) | KB recall@5 |','|---|---|---|---|---|---|']
             lines+=[f"| {t['ticket_id']} | {t['category']} | {t['routing']} | {t['escalate']} | {t['priority']} | {pct(t['kb_recall@5'])} |" for t in f['tickets']]
@@ -345,9 +359,9 @@ def markdown(summary):
     return '\n'.join(lines)+'\n'
 
 
-def report(cases, run, set_name):
+def report(cases, run, set_name, baseline_sets=('dev','holdout')):
     folder=RESULTS/run
-    summary={'run':run,'set':set_name,'generated_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),'baselines':baselines(cases)}
+    summary={'run':run,'set':set_name,'generated_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),'baselines':baselines(cases,baseline_sets)}
     if (folder/'retrieval.json').exists(): summary['retrieval']=summarize_retrieval(json.loads((folder/'retrieval.json').read_text(encoding='utf-8')))
     records=read_jsonl(folder/'workflow.jsonl')
     if records: summary['workflow']=summarize_workflow(records,read_jsonl(folder/'judge.jsonl'))
@@ -410,7 +424,7 @@ def log_to_mlflow(run, summary, folder, records):
     for r in records:
         label=r.get('label') or {};trace=traces.get(r.get('eval_ticket_id'),{})
         rows.append({'ticket_id':r['ticket_id'],'category':r.get('category'),'chaos_type':r.get('chaos_type') or '',
-            'label_routing':label.get('correct_routing',''),'agent_route':r.get('route') or 'ERROR',
+            'label_routing':label.get('correct_routing',''),'agent_routing':r.get('routing') or r.get('route') or 'ERROR','agent_outcome':r.get('route') or 'ERROR',
             'escalation_correct':label.get('should_escalate')==(r.get('route')=='l2_escalation') if label else None,
             'has_history':r.get('has_history'),'immediate_triggers':', '.join((r.get('classification') or {}).get('immediate_triggers') or []),
             'priority':f"{r.get('intake_priority')} -> {r.get('priority')}",
@@ -440,24 +454,28 @@ def main(argv=None):
     p.add_argument('--per-category',type=int,default=None,help='Take only the first N tickets of each category.')
     p.add_argument('--first-turn-only',action='store_true',help='Skip unlabeled tickets and L2 labels that need L1 troubleshooting first; balance routes per category.')
     p.add_argument('--k',type=int,default=5)
+    p.add_argument('--data-set',default=None,help='Another folder in the data_set layout, e.g. data_set/scenarios; use with --set all.')
     p.add_argument('--base-url',default='http://localhost:8000')
     p.add_argument('--judge-model',default=ENV.get('EVAL_JUDGE_MODEL'))
-    a=p.parse_args(argv);cases=dataset.load();run=a.run or a.set
+    a=p.parse_args(argv);run=a.run or a.set
+    if a.data_set and a.set!='all': sys.exit('--data-set has no dev/holdout split; use --set all.')
+    cases=dataset.load(Path(a.data_set)) if a.data_set else dataset.load()
+    sets=('all',) if a.data_set else ('dev','holdout')
     # MLflow prints emoji; a Windows console code page would otherwise crash the run at the end.
     for stream_ in (sys.stdout,sys.stderr): stream_.reconfigure(encoding='utf-8',errors='replace')
     if a.command=='split':
         s=dataset.split(cases);print({k:len(v) for k,v in s.items() if isinstance(v,list)})
-    elif a.command=='baselines': print(json.dumps(baselines(cases),indent=1))
+    elif a.command=='baselines': print(json.dumps(baselines(cases,sets),indent=1))
     elif a.command=='retrieval':
         with client(a.base_url) as http: retrieval(cases,http,a.set,a.limit,a.k,run,a.per_category,a.first_turn_only)
-        report(cases,run,a.set)
+        report(cases,run,a.set,sets)
     elif a.command=='workflow':
         with client(a.base_url) as http: workflow(cases,http,a.set,a.limit,run,a.per_category,a.first_turn_only)
-        report(cases,run,a.set)
+        report(cases,run,a.set,sets)
     elif a.command=='judge':
         if not a.judge_model: sys.exit('Pass --judge-model or set EVAL_JUDGE_MODEL; use a different model from CLAUDE_MODEL to avoid self-grading.')
-        judge(cases,run,a.judge_model);report(cases,run,a.set)
-    else: report(cases,run,a.set)
+        judge(cases,run,a.judge_model);report(cases,run,a.set,sets)
+    else: report(cases,run,a.set,sets)
 
 
 if __name__=='__main__':

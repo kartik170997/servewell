@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P3-05",
+  "store_id": "SW-0116",
+  "store_name": "ServeWell - Jayanagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-94975-34267",
+  "date_opened": "2026-10-12T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Software",
+  "subject": "Kiosk app crashes sometimes",
+  "description": "One kiosk app closed by itself twice today. It works after restart.",
+  "asset_id": "KSK-0116-01",
+  "system_version": "ServeWell Kiosk v2.0",
+  "tags": [
+    "P3"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

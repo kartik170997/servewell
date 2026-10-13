@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P4-04",
+  "store_id": "SW-0053",
+  "store_name": "ServeWell - Rajajinagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-73024-93136",
+  "date_opened": "2026-10-13T09:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Login",
+  "subject": "Cashier forgot POS password",
+  "description": "One cashier forgot her POS password and cannot log in. Others are working.",
+  "asset_id": "POS-0053-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "P4"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

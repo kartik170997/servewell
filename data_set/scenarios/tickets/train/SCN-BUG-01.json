@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-BUG-01",
+  "store_id": "SW-0001",
+  "store_name": "ServeWell - Banjara Hills",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-74572-23434",
+  "date_opened": "2026-10-16T09:31:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Loyalty Sync",
+  "subject": "Loyalty points slow to sync at lunch",
+  "description": "Loyalty points take more than 5 minutes to appear during lunch rush.",
+  "asset_id": "POS-0001-T1",
+  "system_version": "FoodTech POS v5.1.0",
+  "tags": [
+    "known_bug_version"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

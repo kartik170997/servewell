@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-GUIDED-05",
+  "store_id": "SW-0010",
+  "store_name": "ServeWell - Kurla",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-91960-44993",
+  "date_opened": "2026-10-06T09:35:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Cash Drawer",
+  "subject": "Cash drawer does not open on cash sale",
+  "description": "Cash drawer stays closed after cash payments on the POS. We can open it with the key for now.",
+  "asset_id": "POS-0010-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "l1_guided"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

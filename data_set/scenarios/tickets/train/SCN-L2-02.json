@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-L2-02",
+  "store_id": "SW-0014",
+  "store_name": "ServeWell - Hadapsar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-98716-51245",
+  "date_opened": "2026-10-07T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve machine shows E12 lockout",
+  "description": "The CreamTech machine is locked with error E12 System Lockout and will not respond to any button.",
+  "asset_id": "SSM-0014-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "l2_escalation"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

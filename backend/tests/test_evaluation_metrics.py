@@ -33,3 +33,9 @@ def test_split_is_stratified_disjoint_and_deterministic():
     a=dataset.make_split(cases);b=dataset.make_split(cases)
     assert a==b and not set(a['dev'])&set(a['holdout'])
     assert len(a['holdout'])==12 and a['adversarial']==['C1']
+
+
+def test_triage_routing_prefers_stated_decision_over_outcome():
+    ticket={'status':'Awaiting Customer','workflow':{'pending':{'kind':'step'},'routing':{'value':'l2_escalation'}}}
+    assert metrics.triage_routing(ticket)=='l2_escalation' and metrics.workflow_route(ticket)=='l1_guided'
+    assert metrics.triage_routing({'status':'Awaiting Customer','workflow':{'pending':{'kind':'clarify'}}})=='needs_clarification'

@@ -68,6 +68,11 @@ def baseline_predictions(case):
             'p1_or_p2':t.get('priority') in ('P1','P2')}
 
 
+def triage_routing(ticket):
+    """The agent's stated routing decision (correct_routing vocabulary); older runs fall back to the observed outcome."""
+    return ((ticket.get('workflow') or {}).get('routing') or {}).get('value') or workflow_route(ticket)
+
+
 def workflow_route(ticket):
     """Map a workflow ticket after its first agent turn onto the label's routing vocabulary."""
     w=ticket.get('workflow',{});kind=(w.get('pending') or {}).get('kind')

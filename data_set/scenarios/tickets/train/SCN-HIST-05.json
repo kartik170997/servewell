@@ -1,0 +1,34 @@
+{
+  "ticket_id": "SCN-HIST-05",
+  "store_id": "SW-0086",
+  "store_name": "ServeWell - Velachery",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-92739-30028",
+  "date_opened": "2026-10-17T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "VPN 0x8003 after all fixes",
+  "description": "Back-office VPN still fails with 0x8003.",
+  "asset_id": "RTR-0086-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "prior_troubleshooting"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [
+    {
+      "timestamp": "2026-10-17T06:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Router restart and VPN client restart done; 0x8003 persists."
+    },
+    {
+      "timestamp": "2026-10-17T07:35:00+05:30",
+      "actor": "L1 Agent",
+      "note": "Credentials re-entered and time sync verified; still 0x8003. 35 minutes logged."
+    }
+  ],
+  "resolution_notes": null,
+  "status": "Open"
+}

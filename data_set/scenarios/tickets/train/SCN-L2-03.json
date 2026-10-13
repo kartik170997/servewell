@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-L2-03",
+  "store_id": "SW-0020",
+  "store_name": "ServeWell - Hitech City",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-95185-94012",
+  "date_opened": "2026-10-07T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "Router",
+  "subject": "Router down, whole store offline",
+  "description": "The router has no lights except power. All POS terminals and kiosks show offline and online orders stopped.",
+  "asset_id": "RTR-0020-01",
+  "system_version": "NetLink NL-3000 v2.1",
+  "tags": [
+    "l2_escalation"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

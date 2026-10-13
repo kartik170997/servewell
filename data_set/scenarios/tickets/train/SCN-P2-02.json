@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P2-02",
+  "store_id": "SW-0030",
+  "store_name": "ServeWell - KR Puram",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-99668-14117",
+  "date_opened": "2026-10-11T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Wi-Fi / Network",
+  "subcategory": "VPN",
+  "subject": "Back-office VPN error 0x8007",
+  "description": "The back-office PC cannot connect to the HQ VPN, error 0x8007. Inventory and ordering screens are unavailable. Billing is fine.",
+  "asset_id": "RTR-0030-01",
+  "system_version": "NetLink NL-3000 v2.2",
+  "tags": [
+    "P2"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P2-04",
+  "store_id": "SW-0109",
+  "store_name": "ServeWell - Basavanagudi",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-81023-13761",
+  "date_opened": "2026-10-11T09:34:00+05:30",
+  "priority": "P3",
+  "category": "Kiosks",
+  "subcategory": "Frozen",
+  "subject": "Both kiosks frozen",
+  "description": "Both self-order kiosks are frozen on the menu screen. Counter POS is working.",
+  "asset_id": "KSK-0109-01",
+  "system_version": "ServeWell Kiosk v2.0",
+  "tags": [
+    "P2"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

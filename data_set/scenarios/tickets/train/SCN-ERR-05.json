@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-ERR-05",
+  "store_id": "SW-0071",
+  "store_name": "ServeWell - Dadar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-76286-65108",
+  "date_opened": "2026-10-14T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Unknown error ERR-5521 on soft serve",
+  "description": "FrostyPro machine shows ERR-5521 and stops dispensing. We cannot find this code in the manual.",
+  "asset_id": "SSM-0071-01",
+  "system_version": "FrostyPro 800 v2.0",
+  "tags": [
+    "error_code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

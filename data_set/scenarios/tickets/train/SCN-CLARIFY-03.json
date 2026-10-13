@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-CLARIFY-03",
+  "store_id": "SW-0031",
+  "store_name": "ServeWell - T Nagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-77020-80678",
+  "date_opened": "2026-10-09T09:33:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "",
+  "subject": "Error coming",
+  "description": "An error is coming on the screen again and again.",
+  "asset_id": "POS-0031-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "needs_clarification"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

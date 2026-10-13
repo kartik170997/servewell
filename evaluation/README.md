@@ -27,6 +27,21 @@ Tune prompts, thresholds and retrieval settings on dev only. Score holdout once 
 candidate, so reported numbers are not fitted to it (this mirrors the unseen test cases the
 reviewers will bring).
 
+## Scenario set
+
+`data_set/scenarios` holds 75 hand-written tickets, 5 per type: each routing value
+(`l1_self_service`, `l1_guided`, `l2_escalation`, `non_it`, `needs_clarification`), each priority
+(P1-P4), error codes, specification questions, known version bugs, prior troubleshooting in the
+history, do-not-escalate items and prompt injection. Labels add `scenario` and `expected_priority`
+(the procedure's priority; `null` for vague tickets). Rebuild with `python -m evaluation.scenarios`;
+specs and assumptions are in that file. Run it with:
+
+```
+python -m evaluation.run_eval workflow --data-set data_set/scenarios --set all --run scenarios-1
+```
+
+The report adds one row per scenario type and scores priority against `expected_priority`.
+
 ## Baselines (no model)
 
 | Rule | Dev accuracy | Escalation recall | Unnecessary escalations |
@@ -101,7 +116,11 @@ the isolated instance; traces go to the `folio-eval` MLflow experiment.
 
 - First-turn only. A simulated-user replay (feeding step outcomes back) would measure full
   routine escalation, but a simulator that knows the label leaks the answer, so it needs care.
-- The label vocabulary includes `non_it` and `needs_clarification`; the classifier has no
-  `non_it` intent, so non-IT requests can only surface as clarification or a do-not-escalate category.
+- `correct_routing` is scored against the workflow's `routing` status, which follows progress:
+  no completed step is `l1_self_service`, one or more is `l1_guided`, every planned step completed
+  without resolution (or an immediate trigger / escalation) is `l2_escalation`; before any step the
+  classifier may still choose `non_it`, `needs_clarification` or `l2_escalation`. A first-turn run has
+  no completed steps, so `l1_guided` labels cannot match until feedback is replayed. Runs recorded
+  before this field fall back to the observed outcome.
 - One run per ticket. The model runs without a forced temperature, so repeat a subset to
   measure run-to-run variance before quoting small differences.

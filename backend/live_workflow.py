@@ -427,6 +427,16 @@ def fresh(state):
     return W.hydrate_asset(t)
 
 
+def update_routing(t,saved=None):
+    # `saved` is the persisted routing: graph state does not carry the projected value between saves.
+    w=t['workflow'];value,reason=W.routing(t);saved=saved or w.get('routing') or {};previous=saved.get('value')
+    plan=w.get('plan') or []
+    w['routing']={'value':value,'reason':reason,'model_choice':(w.get('classification') or {}).get('routing'),
+        'steps_completed':sum(x.get('status') in ('completed','failed') for x in plan),'steps_total':len(plan),
+        'updated_at':W.timestamp() if value!=previous else saved.get('updated_at')}
+    if value!=previous: audit(t,'L1 Agent',f"Routing: {previous+' -> ' if previous else ''}{value}. {reason}")
+
+
 def audit(t,actor,note,support=None):
     event={'id':uuid.uuid4().hex,'timestamp':W.timestamp(),'actor':actor,'note':note}
     t['workflow'].setdefault('audit',[]).append(event)
@@ -754,6 +764,7 @@ def project(snapshot):
     w=t['workflow'];w['engine']='LangGraph + DSPy'
     w['checkpoint']={'id':checkpoint_id,'thread_id':'live:'+t['ticket_id'],'next':list(snapshot.next),'phase':state.get('phase','classify'),
         'paused':any(task.interrupts for task in snapshot.tasks),'recoverable':bool(snapshot.next) and not any(task.interrupts for task in snapshot.tasks)}
+    update_routing(t,current['workflow'].get('routing'))
     applied=set(current['workflow'].get('audit_applied',[]))
     events=[e for e in w.get('audit',[]) if e['id'] not in applied]
     w['audit_applied']=list(applied|{e['id'] for e in events})

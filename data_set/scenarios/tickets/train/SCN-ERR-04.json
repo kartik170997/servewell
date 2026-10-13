@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-ERR-04",
+  "store_id": "SW-0056",
+  "store_name": "ServeWell - Kadugodi",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-71180-58393",
+  "date_opened": "2026-10-14T09:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Payments",
+  "subject": "Card payments fail with E202",
+  "description": "Card payments fail with E202 Merchant Authentication Failure on all terminals.",
+  "asset_id": "POS-0056-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "error_code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

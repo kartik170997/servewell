@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P4-02",
+  "store_id": "SW-0052",
+  "store_name": "ServeWell - Adyar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-93514-54942",
+  "date_opened": "2026-10-13T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Output",
+  "subject": "Logo on receipts is faded",
+  "description": "The store logo at the top of receipts looks faded. Text is readable.",
+  "asset_id": "PRN-0052-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "P4"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

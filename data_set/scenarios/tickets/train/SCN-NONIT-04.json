@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-NONIT-04",
+  "store_id": "SW-0022",
+  "store_name": "ServeWell - Navrangpura",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-79779-93748",
+  "date_opened": "2026-10-08T09:34:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Other",
+  "subject": "Customer complaint about cold food",
+  "description": "A customer complained the burger was cold and wants a refund. What should I do?",
+  "asset_id": "POS-0022-T1",
+  "system_version": "FoodTech POS v4.2.3",
+  "tags": [
+    "non_it"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

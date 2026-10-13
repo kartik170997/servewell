@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P2-05",
+  "store_id": "SW-0044",
+  "store_name": "ServeWell - Howrah",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-90295-20745",
+  "date_opened": "2026-10-11T09:35:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Offline",
+  "subject": "Kitchen and counter printers both offline",
+  "description": "Both the kitchen order printer and the counter receipt printer show offline. Orders are being shouted to the kitchen.",
+  "asset_id": "PRN-0044-P2",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "P2"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

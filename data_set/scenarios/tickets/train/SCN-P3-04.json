@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-P3-04",
+  "store_id": "SW-0034",
+  "store_name": "ServeWell - Anna Nagar",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-71986-62772",
+  "date_opened": "2026-10-12T09:34:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Output",
+  "subject": "Receipts printing garbled characters",
+  "description": "The receipt printer prints random symbols instead of text. Kitchen printer is fine.",
+  "asset_id": "PRN-0034-P1",
+  "system_version": "StarMC Print v2 v3.0",
+  "tags": [
+    "P3"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-ERR-02",
+  "store_id": "SW-0078",
+  "store_name": "ServeWell - Kothrud",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-76371-60328",
+  "date_opened": "2026-10-14T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve error E07",
+  "description": "Soft serve machine shows E07 and the dashboard says machine offline.",
+  "asset_id": "SSM-0078-01",
+  "system_version": "CreamTech SC-500 v2.4",
+  "tags": [
+    "error_code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

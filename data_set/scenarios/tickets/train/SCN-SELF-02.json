@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-SELF-02",
+  "store_id": "SW-0005",
+  "store_name": "ServeWell - Kharadi",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-75094-38221",
+  "date_opened": "2026-10-05T09:32:00+05:30",
+  "priority": "P3",
+  "category": "Printers",
+  "subcategory": "Paper",
+  "subject": "How do I load a new receipt paper roll",
+  "description": "New staff member asking how to replace the receipt paper roll on the Epson printer and which paper to buy.",
+  "asset_id": "PRN-0005-P1",
+  "system_version": "EpsonTM-T88VI v1.12",
+  "tags": [
+    "l1_self_service"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

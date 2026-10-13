@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-ERR-03",
+  "store_id": "SW-0002",
+  "store_name": "ServeWell - Kukatpally",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-70976-22280",
+  "date_opened": "2026-10-14T09:33:00+05:30",
+  "priority": "P3",
+  "category": "Soft Serve",
+  "subcategory": "Error Code",
+  "subject": "Soft serve error E03 motor failure",
+  "description": "Machine stopped with E03 and the motor is not turning.",
+  "asset_id": "SSM-0002-01",
+  "system_version": "CreamTech SC-300 v3.1",
+  "tags": [
+    "error_code"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}

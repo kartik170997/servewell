@@ -1,0 +1,23 @@
+{
+  "ticket_id": "SCN-GUIDED-02",
+  "store_id": "SW-0008",
+  "store_name": "ServeWell - Pitampura",
+  "submitted_by": "Scenario Tester",
+  "contact_phone": "+91-71501-96673",
+  "date_opened": "2026-10-06T09:32:00+05:30",
+  "priority": "P3",
+  "category": "POS",
+  "subcategory": "Scanner",
+  "subject": "Barcode scanner not reading packaged items",
+  "description": "The handheld scanner on the POS beeps but items do not get added. Typing the code manually works.",
+  "asset_id": "POS-0008-T1",
+  "system_version": "FoodTech POS v4.2.2",
+  "tags": [
+    "l1_guided"
+  ],
+  "escalation_flag": false,
+  "related_tickets": [],
+  "ticket_history": [],
+  "resolution_notes": null,
+  "status": "Open"
+}
