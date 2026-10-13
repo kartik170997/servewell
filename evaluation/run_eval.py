@@ -13,6 +13,9 @@ every ticket and runs a real agent turn, so point it at a separate evaluation in
 """
 import argparse
 import json
+import queue
+import threading
+from concurrent.futures import ThreadPoolExecutor
 import os
 import statistics
 import sys
@@ -174,17 +177,24 @@ def run_ticket(http, case, run):
         'escalation_reason':w.get('escalation_reason') or (w.get('notification_draft') or {}).get('subject')}
 
 
-def workflow(cases, http, name, limit, run, per_category=None, first_turn_only=False):
+def workflow(cases, clients, name, limit, run, per_category=None, first_turn_only=False):
+    """Each client is one backend process: a backend runs one workflow at a time, so parallel
+    tickets need one server per worker (all sharing the same eval DATA_DIR)."""
     out=RESULTS/run/'workflow.jsonl';out.parent.mkdir(parents=True,exist_ok=True)
     done={json.loads(x)['ticket_id'] for x in out.read_text(encoding='utf-8').splitlines() if x.strip()} if out.exists() else set()
-    ids=dataset.select(cases,name,limit,per_category,first_turn_only)
-    with out.open('a',encoding='utf-8') as f:
-        for i,tid in enumerate(ids,1):
-            if tid in done: continue
-            try: record=run_ticket(http,cases[tid],run)
-            except httpx.HTTPError as e: record={'ticket_id':tid,'label':cases[tid]['label'],'error':f'{type(e).__name__}: {e}'}
-            f.write(json.dumps(record,default=str)+'\n');f.flush()
-            print(f"[{i}/{len(ids)}] {tid} -> {record.get('route') or record.get('error')}",file=sys.stderr)
+    ids=dataset.select(cases,name,limit,per_category,first_turn_only);todo=[t for t in ids if t not in done]
+    lock=threading.Lock();free=queue.Queue();count=[len(ids)-len(todo)]
+    for http in clients: free.put(http)
+    def one(tid):
+        http=free.get()
+        try: record=run_ticket(http,cases[tid],run)
+        except httpx.HTTPError as e: record={'ticket_id':tid,'label':cases[tid]['label'],'error':f'{type(e).__name__}: {e}'}
+        finally: free.put(http)
+        with lock:
+            f.write(json.dumps(record,default=str)+'\n');f.flush();count[0]+=1
+            print(f"[{count[0]}/{len(ids)}] {tid} -> {record.get('route') or record.get('error')}",file=sys.stderr,flush=True)
+    with out.open('a',encoding='utf-8') as f,ThreadPoolExecutor(max_workers=len(clients)) as pool:
+        list(pool.map(one,todo))
 
 
 def read_jsonl(path):
@@ -455,7 +465,7 @@ def main(argv=None):
     p.add_argument('--first-turn-only',action='store_true',help='Skip unlabeled tickets and L2 labels that need L1 troubleshooting first; balance routes per category.')
     p.add_argument('--k',type=int,default=5)
     p.add_argument('--data-set',default=None,help='Another folder in the data_set layout, e.g. data_set/scenarios; use with --set all.')
-    p.add_argument('--base-url',default='http://localhost:8000')
+    p.add_argument('--base-url',default='http://localhost:8000',help='Comma-separated for parallel workflow runs: one backend per URL.')
     p.add_argument('--judge-model',default=ENV.get('EVAL_JUDGE_MODEL'))
     a=p.parse_args(argv);run=a.run or a.set
     if a.data_set and a.set!='all': sys.exit('--data-set has no dev/holdout split; use --set all.')
@@ -467,10 +477,13 @@ def main(argv=None):
         s=dataset.split(cases);print({k:len(v) for k,v in s.items() if isinstance(v,list)})
     elif a.command=='baselines': print(json.dumps(baselines(cases,sets),indent=1))
     elif a.command=='retrieval':
-        with client(a.base_url) as http: retrieval(cases,http,a.set,a.limit,a.k,run,a.per_category,a.first_turn_only)
+        with client(a.base_url.split(',')[0]) as http: retrieval(cases,http,a.set,a.limit,a.k,run,a.per_category,a.first_turn_only)
         report(cases,run,a.set,sets)
     elif a.command=='workflow':
-        with client(a.base_url) as http: workflow(cases,http,a.set,a.limit,run,a.per_category,a.first_turn_only)
+        clients=[client(u.strip()) for u in a.base_url.split(',') if u.strip()]
+        try: workflow(cases,clients,a.set,a.limit,run,a.per_category,a.first_turn_only)
+        finally:
+            for http in clients: http.close()
         report(cases,run,a.set,sets)
     elif a.command=='judge':
         if not a.judge_model: sys.exit('Pass --judge-model or set EVAL_JUDGE_MODEL; use a different model from CLAUDE_MODEL to avoid self-grading.')
