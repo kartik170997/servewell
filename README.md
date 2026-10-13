@@ -141,7 +141,7 @@ With the virtual environment activated:
 python start.py
 ```
 
-This starts the MLflow tracking server (when `MLFLOW_ENABLED=true` in `.env`), waits for it to accept connections, then starts the backend on http://localhost:8000 with auto-reload and the React app on http://localhost:5173. Output from all three appears in one terminal, prefixed `[mlflow]`, `[backend]` and `[frontend]`. Press **Ctrl+C** to stop all of them. If one exits, the others are stopped too.
+On the first run it executes `npm install` automatically if `node_modules` is missing, and it stops with instructions if `.env` or the Python packages are missing. It then starts the MLflow tracking server (when `MLFLOW_ENABLED=true` in `.env`), waits for it to accept connections, then starts the backend on http://localhost:8000 with auto-reload and the React app on http://localhost:5173. Output from all three appears in one terminal, prefixed `[mlflow]`, `[backend]` and `[frontend]`. Press **Ctrl+C** to stop all of them. If one exits, the others are stopped too.
 
 | Option | Effect |
 |---|---|

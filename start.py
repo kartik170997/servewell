@@ -1,9 +1,10 @@
-"""Start MLflow, the FastAPI backend and the React frontend together, without Docker.
+﻿"""Start MLflow, the FastAPI backend and the React frontend together, without Docker.
 
 Run from the project folder with the virtual environment activated:  python start.py
 Ctrl+C stops all three. If one of them exits, the others are stopped too.
 """
 import argparse
+import importlib.util
 import os
 import signal
 import socket
@@ -13,7 +14,6 @@ import threading
 import time
 from pathlib import Path
 from urllib.parse import urlparse
-from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
 WINDOWS = os.name == 'nt'
@@ -71,8 +71,20 @@ def main():
         os.system('')  # enable ANSI colours in the Windows console
     if not (ROOT / '.env').exists():
         sys.exit('.env not found. Run "python setup.py" first, then fill in the provider keys.')
+    missing = [m for m in ('dotenv', 'fastapi', 'uvicorn', 'mlflow', 'dspy', 'langgraph') if importlib.util.find_spec(m) is None]
+    if missing:
+        sys.exit(f'Python packages missing for {sys.executable}: {", ".join(missing)}.\n'
+                 'Activate the virtual environment (.venv\\Scripts\\Activate.ps1 on Windows), then run:\n'
+                 '  pip install -r backend/requirements.lock.txt')
+    from dotenv import load_dotenv
+    npm = 'npm.cmd' if WINDOWS else 'npm'
     if not (ROOT / 'node_modules').exists():
-        sys.exit('node_modules not found. Run "npm install" first.')
+        print('node_modules not found; running "npm install" (first run only)...')
+        try:
+            if subprocess.call([npm, 'install'], cwd=ROOT) != 0:
+                sys.exit('"npm install" failed; fix the error above and run start.py again.')
+        except FileNotFoundError:
+            sys.exit('npm not found. Install Node.js 22.13+ from https://nodejs.org and open a new terminal.')
     load_dotenv(ROOT / '.env')
 
     procs = {}
@@ -87,7 +99,7 @@ def main():
 
     backend = [sys.executable, '-m', 'uvicorn', 'backend.main:app', '--env-file', '.env', '--port', args.backend_port]
     procs['backend'] = start('backend', backend if args.no_reload else backend + ['--reload'])
-    procs['frontend'] = start('frontend', ['npm.cmd' if WINDOWS else 'npm', 'run', 'dev'])
+    procs['frontend'] = start('frontend', [npm, 'run', 'dev'])
 
     print('\nFrontend http://localhost:5173 | Backend http://localhost:%s/docs%s\nPress Ctrl+C to stop all.\n'
           % (args.backend_port, ' | MLflow http://localhost:5000' if 'mlflow' in procs else ''))
