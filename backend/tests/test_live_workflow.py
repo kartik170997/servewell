@@ -334,6 +334,25 @@ def test_routing_before_any_step_is_completed(client,live,monkeypatch,changes,ex
     assert t['workflow']['routing']['model_choice']==changes.get('routing')
 
 
+def test_out_of_scope_query_is_redirected_without_troubleshooting(client,live,monkeypatch):
+    monkeypatch.setattr(L,'classify',lambda *a:classification(routing='non_it',intent='information',reason='General knowledge question about a person.'))
+    t=final(start(client))
+    assert t['workflow']['routing']['value']=='non_it'
+    assert not t['workflow'].get('plan') and t['workflow'].get('pending') is None and t['status']!='Escalated'
+    assert not any(e['action'] in ('retrieve','reuse') for e in t['workflow']['trace'])
+    assert any('outside IT support scope' in h['note'] for h in t['ticket_history'])
+
+
+def test_provider_auth_error_is_reported_as_401(client,live,monkeypatch):
+    from dspy.utils.exceptions import LMAuthError
+    class Failing:
+        def __init__(self,*a,**k): pass
+        def __call__(self,*a,**k): raise LMAuthError('invalid x-api-key',status=401)
+    monkeypatch.setattr(L.dspy,'Predict',Failing)
+    with pytest.raises(ValueError,match='HTTP 401'):
+        L.predict(L.FeedbackSignature,'assessment',{'ticket':{}})
+
+
 def test_routing_follows_completed_steps(client,live):
     t=final(start(client))
     assert t['workflow']['routing']['value']=='l1_self_service' and t['workflow']['routing']['steps_total']==2

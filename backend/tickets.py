@@ -86,7 +86,8 @@ ROUTING_GUIDE=('Triage routing for this ticket. l1_self_service: a how-to or inf
     'l1_guided: an IT fault L1 should troubleshoot with the user step by step. '
     'l2_escalation: L2 is needed now, because an immediate trigger applies, the ticket history shows the documented L1 troubleshooting was already done without resolution, '
     'or the fix needs hardware replacement, vendor, or engineering work. '
-    'non_it: not an IT systems issue (for example HR, payroll, facilities, food quality); redirect, do not troubleshoot. '
+    'non_it: not an IT systems issue (for example HR, payroll, facilities, food quality) or outside IT support scope entirely '
+    '(general knowledge, people, trivia, chit-chat); redirect, do not troubleshoot. '
     'needs_clarification: the report is too vague to choose any other route.')
 
 
